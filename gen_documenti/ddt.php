@@ -1,4 +1,4 @@
-<?php $base_url = $_SERVER["SERVER_NAME"]."/proges"; echo $base_url;?>
+<?php $base_url = $_SERVER["SERVER_NAME"]."/proges"; ?>
 <!doctype html>
 <html>
 <head>
@@ -10,6 +10,15 @@
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" >
     <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <style>
+        .autocomplete-suggestions {color: #000000}
+        .autocomplete-suggestions { border: 1px solid #999; background: #FFF; overflow: auto; }
+        .autocomplete-suggestion { padding: 2px 5px; white-space: nowrap; overflow: hidden; }
+        .autocomplete-selected { background: #F0F0F0; }
+        .autocomplete-suggestions strong { font-weight: normal; color: #3399FF; }
+        .autocomplete-group { padding: 2px 5px; }
+        .autocomplete-group strong { display: block; border-bottom: 1px solid #000; }
+    </style>
     <style>
         @media print {
             p {
@@ -98,7 +107,9 @@
                             <td id="incolonnaArticoli" colspan="2">
                                 <input id="incolonnatore" type="text" class="form-control">
                             </td>
-                            <td></td>
+                            <td id="incolonnaQuantita">
+                                <input id="idQuantita-default" type="number" class="form-control arrQuantita" min="1" value="1">
+                            </td>
 
                         </tr>
                         <tr>
@@ -129,18 +140,23 @@
     <div id="stampa" class="container-fluid text-center"><span class="h1"><a href="#" onclick="window.print()"><span class="glyphicon glyphicon-print"></span> Stampa</a></span></div>
 <?php include_once("../template/parrot/foot.php") ?>
     <script>
-
+        var idRiga = 1;
         $('#incolonnatore').devbridgeAutocomplete({
             dataType: "json",
             paramName: "check",
             serviceUrl: 'http://<?php echo $base_url ?>/json/get_articoli.php',
             formatResult: function(suggestion, currentValue){
-                return suggestion.value + ' - ' +suggestion.data.nome+' '+ suggestion.data.note;
+                return suggestion.value + ' - ' + suggestion.data.note + suggestion.data.prezzo + suggestion.data.descr + suggestion.data.cod_int;
             },
             onSelect: function (suggestion) {
+                $(function () {
+                    var articoli = "<p class=\"col-sm-12 arrArticoli\" id=\"idArticoli-"+ idRiga +"\" >" + suggestion.data.nome + " - " + suggestion.data.note + "</p>";
+                    $("#incolonnaArticoli").append(articoli);
 
-                var elemento = "<p>" + suggestion.data.nome + " - " + suggestion.data.note + "</p>";
-                $("#incolonnaArticoli").append(elemento);
+                    var quantita = "<input id=\"idQuantita-" + idRiga +"\" type=\"number\" class=\"form-control arrQuantita\" min=\"1\" value=\"1\">";
+                    $("#incolonnaQuantita").append(quantita);
+                    idRiga++;
+                });
             }
         });
     </script>

@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: danielo
- * Date: 24/05/2016
- * Time: 16:31
- */
-
 
 include("../DB/config.php");
 
@@ -21,8 +14,8 @@ $query = "SELECT * FROM articoli WHERE nome LIKE \"%".$check."%\" OR descr LIKE 
 
 
 if ($result = $conndb->query($query)) {
-    if ($debug === true) printf("/* Select returned %d rows. */\n", $result->num_rows);
-    echo $query;
+    //if ($debug === true) printf("/* Select returned %d rows. */\n", $result->num_rows);
+    //echo $query;
 
     $result = $conndb->query($query);
 }
@@ -34,7 +27,7 @@ if ($conndb->connect_errno) {
 $newKey = array();
 
 while ($articoli= $result->fetch_object()) {
-echo $articoli->id;
+//echo $articoli->id;
     array_push($newKey, [
         "value" => $articoli->id,
         "data" => [
