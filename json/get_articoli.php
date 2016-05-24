@@ -1,0 +1,58 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: danielo
+ * Date: 24/05/2016
+ * Time: 16:31
+ */
+
+
+include("../DB/config.php");
+
+
+// Queries
+if (isset($_GET["check"])) $check = mysqli_real_escape_string($conndb,$_GET["check"]);
+
+    else $check = "Nessuna query";
+
+$query = "SELECT * FROM articoli WHERE nome LIKE \"%".$check."%\" OR descr LIKE \"%".$check."%\" OR cod_barre LIKE \"%".$check."%\" OR prezzo LIKE \"%".$check."%\" OR cod_int LIKE \"%".$check."%\"";
+
+/* check connection */
+
+
+if ($result = $conndb->query($query)) {
+    if ($debug === true) printf("/* Select returned %d rows. */\n", $result->num_rows);
+    echo $query;
+
+    $result = $conndb->query($query);
+}
+if ($conndb->connect_errno) {
+    printf("Connect failed: %s\n", $conndb->connect_error);
+
+}
+
+$newKey = array();
+
+while ($articoli= $result->fetch_object()) {
+echo $articoli->id;
+    array_push($newKey, [
+        "value" => $articoli->id,
+        "data" => [
+            "cod_int" => $articoli->cod_int,
+            "nome" => $articoli->nome,
+            "descr" => $articoli->descr,
+            "cod_barre" => $articoli->cod_barre,
+            "prezzo" => $articoli->prezzo,
+            "note" => $articoli->note,
+            "reg_note" => $articoli->reg_date
+        ]
+    ]);
+}
+
+$json = json_encode($newKey, JSON_PRETTY_PRINT);
+
+?>
+{
+"query" : "<?php echo $check ?>",
+"suggestions" : <?php echo $json ?>
+}

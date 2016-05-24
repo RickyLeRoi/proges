@@ -53,12 +53,16 @@
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right navbar-icons">
-                    <li><a href="http://<?php echo $base_url ?>/settings.php"><span class="fa-user fa"></span>
-                        <span class="hidden-lg"><?php echo $user; ?></span></a></li>
-                    <li><a href="http://<?php echo $base_url ?>/function/logout.php">
-                        <span class="fa-cog fa"></span>
-                        <span class="hidden-lg">Logout</span>
-                        <span class="navbar-new"></span></a></li>
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="fa-user fa"></span>
+                            <span class="hidden-lg"><?php echo $user; ?></span> <span class="fa-chevron-down fa"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <div class="arrow top"></div>
+                            <li id="ck_login"><li><a href="http://<?php echo $base_url ?>/function/logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
+                            <li id="ck_causale"><a href="http://<?php echo $base_url ?>/settings.php"><span class="fa-cog fa"></span> Impostazioni</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
