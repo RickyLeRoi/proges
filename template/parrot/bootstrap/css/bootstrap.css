@@ -2544,6 +2544,10 @@ input[type="button"].btn-block {
 .glyphicon-print:before {
   content: "\e045";
 }
+
+.glyphicon-unshare:before {
+    content: "\e222";
+}
 .glyphicon-camera:before {
   content: "\e046";
 }

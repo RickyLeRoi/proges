@@ -41,60 +41,92 @@
         .typo {
             font-family: monospace, monospace;
             padding-left: 5px;
-            font-size: 14px;
+            font-size: 12px;
         }
 
     </style>
 </head>
 <body>
-<div id="stampa" style="padding-top: 10px; padding-bottom: 10px;" class="container-fluid text-center"><span class="h1"><a href="#" onclick="window.print()"><span class="glyphicon glyphicon-print"></span> Stampa</a></span></div>
+
+    <div id="stampa" style="padding-top: 10px; padding-bottom: 10px;" class="container-fluid">
+        <span class="h1">
+            <a href="../ddt.php"> <span class="glyphicon glyphicon-chevron-left"></span>Indietro</a>
+            <a href="#" onclick="window.print()"> <span class="glyphicon glyphicon-print"></span> Stampa</a>
+        </span>
+    </div>
+
     <page>
         <div style="background: #FFF" class="container-fluid">
             <div class="table-responsive">
                 <table class="table-bordered table table-striped">
                 <thead>
                     <tr colspan="2">
-                        <td><div class="col-md-12">
-                                            <img class="logo" src="../images/logos.png" alt="" width="127">
-                            </div></td>
+                        <td><div class="col-md-12"></div></td>
                         <td colspan="2">
 
                             <p class="col-md-12"><h5 class="text-center"><strong>DOCUMENTO DI TRASPORTO<br>DPR 476/96</strong></h5></p>
-                            <div class="text-left">
+                    <div class="text-left"><br/>
+                        <span>
                             <p class="col-xs-4"><input type="checkbox"> Mittente </p>
                             <p class="col-xs-4"><input type="checkbox"> Destinatario </p>
-                            <p class="col-xs-4"><input type="checkbox"> Vettore</p>
-                            </div>
+                            <p class="col-xs-4"><input type="checkbox"> Vettore </p>
+                        </span>
+                    </div>
 
                         </td>
                     </tr>
                 </thead>
                 <tbody>
                         <tr>
-                            <td colspan="3"><p class="col-md-12">Destinatario <span class="typo">Danielo</span> </p></td>
+                            <td colspan="3"><p class="col-md-12">Destinatario <span class="typo"><input style="width:80%; float:right;" type="text"></span> </p></td>
                         </tr>
 
                         <tr>
-                            <td colspan="3"><p class="col-md-12">Domicilio o residenza <span class="typo">Danielo</span></p></td>
+                            <td colspan="3"><p class="col-md-12">Domicilio o residenza <span class="typo"><input style="width:80%; float:right;" type="text" readonly></span></p></td>
                         </tr>
                         <tr>
-                            <td colspan="3"><p class="col-md-12">Causale del trasporto <span class="typo">Danielo</span></p></td>
+                            <td colspan="3"><p class="col-md-12">Causale del trasporto
+                                <select style="width:80%; float:right;" class="typo">
+                                    <option>Vendita</option>
+                                    <option>Campionatura</option>
+                                    <option>Reso</option>
+                                </select></p></td>
                         </tr>
                         <tr>
-                            <td><p class="col-md-12">Aspetto esteriore dei beni</p></td>
-                            <td><p class="col-md-12">N. Colli <span class="typo">Danielo</span></td>
-                            <td><p class="col-md-12">Peso Kg. <span class="typo">Danielo</span></td>
+                            <td><p class="col-md-12">Aspetto esteriore dei beni
+                                <select style="width:60%; float:right;" class="typo">
+                                    <option>Pacchi o scatoli</option>
+                                    <option>Pedana</option>
+                                    <option>Proprio dei beni</option>
+                                </select>
+                            </p></td>
+                            <td><p class="col-md-12">N. Colli <input style="width:50%; float:right;" class="typo" type="number"></td>
+                            <td><p class="col-md-12">Peso <input style="width:50%; float:right;" class="typo" type="number">Kg</td>
 
                         </tr>
                         <tr>
-                            <td><p class="col-md-3">Consegna o inizio trasporto a mezzo mittente o destinatario</p></td>
-                            <td><p class="col-md-3">Data e ora</p><p class="col-md-9"></p><td><p class="col-md-3">Firma del Conducente</p><p class="col-md-9"></td>
+                            <td><p class="col-md-12">Consegna o inizio trasporto a mezzo mittente o destinatario</p> <input style="width:80%; float:right;" type="text"></td>
+                            <td><p class="col-md-12">Data e ora</p><br/>
+
+                                <!--<input class="typo" style="width:50%; float:left;" type="date"><input class="typo" style="width:50%; float:right;" type="time">-->
+                                <SCRIPT LANGUAGE="JavaScript">
+                                Stamp = new Date();
+                                document.write('<p class="typo">' + Stamp.getDate() + "/" + (Stamp.getMonth() + 1) + "/" + (Stamp.getYear() + 1900) + "   " + Stamp.getHours() + ":" + Stamp.getMinutes() + '</p>');
+                                </SCRIPT>
+
+                            </td>
+                            <td><p class="col-md-12">Firma del Conducente</p><p class="col-md-9"></td>
                         </tr>
                         <tr>
-                            <td colspan="2"><p class="col-md-12">Descrizione dei beni</p></td><td><p class="col-md-12">Q.tà'</p></td></tr>
+                            <td colspan="2"><p class="col-md-12">Descrizione dei beni</p></td>
+                            <td><p class="col-md-12">Q.tà'</p></td>
+                    </tr>
                         <tr class="qnt" height="400">
-                            <td colspan="2"></td>
-                            <td></td>
+                            <td colspan="2"><input style="width:15%;" type="text" class="typo" placeholder="Cod. Articolo"><span style="width:15%;"> - </span><input style="width:75%;" type="text" class="typo" placeholder="Descrizione articolo">
+                            </td>
+                            <td>
+                                <input style="width:100%;" class="typo" type="number">
+                            </td>
 
                         </tr>
                         <tr>
@@ -105,12 +137,16 @@
                             </td>
                         </tr>
                         <tr>
-                            <td height=100><p class="col-md-12"></p></td>
-                            <td height=100><p class="col-md-12"></p></td>
-                            <td height=100><p class="col-md-12"></p></td>
+                            <td height=50><p class="col-md-12"></p></td>
+                            <td height=50><p class="col-md-12"></p>
+                                <input class="typo" type="date" style="width:50%; float:left;">
+                                <input class="typo" type="time" style="width:50%; float:right;">
+                            </td>
+                            <td height=50><p class="col-md-12"></p></td>
                         </tr>
                         <tr height="400" class="var">
-                            <td><p  class="col-md-12">Annotazioni - Variazioni</p></td>
+                            <td><p  class="col-md-12">Annotazioni - Variazioni</p><br/>
+                            <textarea class="typo" style="height:95%; width:100%; padding: 1em 1em;">Nessuna nota</textarea></td>
                             <td colspan="2"><p class="col-md-12">Firma del destinatario</p></td>
 
                         </tr>
@@ -122,6 +158,13 @@
             </div>
         </div>
     </page>
-    <div id="stampa" class="container-fluid text-center"><span class="h1"><a href="#" onclick="window.print()"><span class="glyphicon glyphicon-print"></span> Stampa</a></span></div>
+
+    <div id="stampa" style="padding-top: 10px; padding-bottom: 10px;" class="container-fluid">
+        <span class="h1">
+            <a href="../ddt.php"> <span class="glyphicon glyphicon-chevron-left"></span>Indietro</a>
+            <a href="#" onclick="window.print()"> <span class="glyphicon glyphicon-print"></span> Stampa</a>
+        </span>
+    </div>
+
 </body>
 </html>
