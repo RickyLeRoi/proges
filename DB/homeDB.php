@@ -80,15 +80,6 @@
         </div>
     </form><br/>
 
-    <form class="form-horizontal" action="../index.php" method="POST">
-        <div class="form-group">
-            <label class="col-sm-2 control-label">Home gestionale</label>
-            <div class="col-sm-10">
-                <input class="btn btn-default" type="submit" value="Provami">
-            </div>
-        </div>
-    </form><br/>
-
 </div>
 
 <?php include_once("../template/parrot/foot.php") ?>

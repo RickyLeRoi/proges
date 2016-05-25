@@ -25,14 +25,7 @@
                             <li id="lista_fornitori"><a href="http://<?php echo $base_url ?>/lista_fornitori.php">Lista</a></li>
                         </ul>
                     </li>
-                    <li class="fatture agg_fattura">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Fattura <span class="fa-chevron-down fa"></span></a>
-                        <ul class="dropdown-menu">
-                            <div class="arrow top"></div>
-                            <li id="agg_fattura"><a href="http://<?php echo $base_url ?>/function/agg_fattura.php">Aggiungi nuova...</a></li>
-                            <li id="fatture"><a href="http://<?php echo $base_url ?>/fatture.php">Lista fatture</a></li>
-                        </ul>
-                    </li>
+                    <li id="fatture"><a href="http://<?php echo $base_url ?>/fatture.php">Fatture</a></li>
                     <li id="ddt"><a href="http://<?php echo $base_url ?>/ddt.php">DDT</a></li>
                     <li id="preventivi"><a href="http://<?php echo $base_url ?>/preventivi.php">Preventivi</a></li>
                     <li id="ndc"><a href="http://<?php echo $base_url ?>/ndc.php">NDC</a></li>
@@ -58,7 +51,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <div class="arrow top"></div>
-                            <li id="impostazioni"><a href="http://<?php echo $base_url ?>/settings.php"><span class="fa-cog fa"></span> Impostazioni</a></li>
+                            <li id="settings"><a href="http://<?php echo $base_url ?>/settings.php"><span class="fa-cog fa"></span> Impostazioni</a></li>
                             <li id="homeDB"><a href="http://<?php echo $base_url ?>/DB/homeDB.php"><span class="fa-cog fa"></span> Avanzate DB</a></li>
                             <li id="logout"><li><a href="http://<?php echo $base_url ?>/function/logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
                         </ul>

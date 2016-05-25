@@ -21,7 +21,6 @@
     <div class="masthead-title">
         <div class="container">
             Lista Clienti sintetica
-            <small>Gestionale & Fatturazione</small>
         </div>
     </div>
 </div>
