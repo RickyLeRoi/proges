@@ -1,66 +1,97 @@
-<html>
+<!DOCTYPE html>
 
+<html lang="it">
 <head>
+    <!-- blu #071E3F arancione #EA640C -->
     <meta charset="utf-8">
-    <title>Accesso riservato</title>
-    <link rel="stylesheet" href="css/style.css" media="all">
+    <title>Settaggi DB</title>
+    <meta name="description" content="Gestionale per etichettificio Provenzano"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <?php include("../template/parrot/style.php") // Carica gli stili del tema in uso ?>
+
+    <?php include("../function/session.php"); ?>
+    <style>
+        label {
+            color: #FFF;
+        }
+    </style>
 </head>
 
 <body>
+<!-- #### Navbars #### -->
+<?php include("../template/parrot/navbar.php") ?>
 
-<div class="loginContainer">
-    <div class="container">
-        <div class="loginForm">
-                <form action="creadb.php" method="POST">
-                    <span>Creazione DB</span><br>
-                    <input type="text" name="host" placeholder="Server del database">
-                    <input type="text" name="userDB" placeholder="Username">
-                    <input type="password" name="pswdDB" placeholder="Password">
-                    <input type="text" name="database" placeholder="Nome del database locale">
-                    <br><input type="submit" value="Crea DB">
-                </form>
-        </div>
-        <div class="loginForm">
-                <form action="creatabelle.php" method="POST">
-                    <span>Crea Tabelle</span><br>
-                    <input type="submit" value="Crea tabelle">
-                </form>
-        </div>
-        <div class="loginForm">
-        <form action="dropDB.php" method="POST">
-            <span>Cancella DB</span><br>
-            <input type="submit" value="Cancella">
-        </form>
-        </div>
-        <div class="loginForm">
-        <form action="droptabelle.php" method="POST">
-            <span>Cancella Tabelle</span><br>
-            <input type="submit" value="Cancella tabelle">
-        </form>
-        </div>
-            <div class="loginForm">
-                <form action="creareclogin.php" method="POST">
-                    <h3>Nuovo utente</h3>
-                    <select name="tipoFORM">
-                        <option value="Titolare">Titolare</option>
-                        <option value="Operatore">Operatore</option>
-                        <option value="Tecnico">Tecnico</option>
-                    </select><br/>
-                    <input type="text" name="userFORM" placeholder="Username">
-                    <input type="password" name="pswdFORM" placeholder="Password">
-                    <br/><input type="submit" value="Crea utente">
-                </form>
+<div class="container">
+    <h2 style="color: #FFF" >Gestione DB</h2>
+    <form class="form-horizontal" action="creadb.php" method="POST">
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Creazione DB</label>
+            <div class="col-sm-10">
+                <input class="form-control" type="text" name="host" placeholder="Server del database">
+                <input class="form-control" type="text" name="userDB" placeholder="Username">
+                <input class="form-control" type="password" name="pswdDB" placeholder="Password">
+                <input class="form-control" type="text" name="database" placeholder="Nome del database locale">
+                <input class="btn btn-default" type="submit" value="Crea DB">
             </div>
-
-        <div class="loginForm">
-                <form action="../index.php" method="POST">
-                    <span>Provami</span><br>
-                    <input type="submit" value="Home gestionale">
-                </form>
         </div>
-    </div>
+    </form><br/>
+
+    <form class="form-horizontal" action="creatabelle.php" method="POST">
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Crea Tabelle</label>
+            <div class="col-sm-10">
+                <input class="btn btn-default" type="submit" value="Crea tabelle">
+            </div>
+        </div>
+    </form><br/>
+
+    <form class="form-horizontal" action="droptabelle.php" method="POST">
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Cancella Tabelle</label>
+            <div class="col-sm-10">
+                <input class="btn btn-default" type="submit" value="Cancella tabelle">
+            </div>
+        </div>
+    </form><br/>
+
+    <form class="form-horizontal" action="dropDB.php" method="POST">
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Cancella DB</label>
+            <div class="col-sm-10">
+                <input class="btn btn-default" type="submit" value="Cancella DB">
+            </div>
+        </div>
+    </form><br/>
+
+    <form class="form-horizontal" action="creareclogin.php" method="POST">
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Nuovo utente</label>
+            <div class="col-sm-10">
+                <select name="tipoFORM" class="form-control">
+                    <option value="Titolare">Titolare</option>
+                    <option value="Operatore">Operatore</option>
+                    <option value="Tecnico" selected="selected">Tecnico</option>
+                </select>
+                <input class="form-control" type="text" name="userFORM" placeholder="Username">
+                <input class="form-control" type="password" name="pswdFORM" placeholder="Password">
+                <input class="btn btn-default" type="submit" value="Crea utente">
+            </div>
+        </div>
+    </form><br/>
+
+    <form class="form-horizontal" action="../index.php" method="POST">
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Home gestionale</label>
+            <div class="col-sm-10">
+                <input class="btn btn-default" type="submit" value="Provami">
+            </div>
+        </div>
+    </form><br/>
+
 </div>
 
-</body>
+<?php include_once("../template/parrot/foot.php") ?>
 
+</body>
 </html>
