@@ -39,13 +39,14 @@
                 border: none;
                 background: transparent;
                 box-shadow: none;
-                height: 7pt;
-                padding: 0;
+                height: 13px;
+            / / padding: 0;
                 margin: 0 0 0;
                 font-size: 7pt;
             }
             p {
                 font-size: 7pt;
+                height: 13px;
             }
             .logo {
                 max-width: 100%;
