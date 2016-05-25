@@ -49,3 +49,4 @@ $json = json_encode($newKey, JSON_PRETTY_PRINT);
 "query" : "<?php echo $check ?>",
 "suggestions" : <?php echo $json ?>
 }
+
