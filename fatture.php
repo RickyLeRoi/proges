@@ -30,7 +30,7 @@ $queryb = "SELECT num
 /* check connection */
 if ($resultb = $conndb->query($queryb)) {
     if ($debugb === true) printf("<!-- Select returned %d rows.\n -->", $resultb->num_rows);
-    $oggetto_prev = 1;
+    $oggetto_fatt = 1;
     if ($resultb->num_rows === 0) {
         $numerazione_fatt = 1;
     }
@@ -92,27 +92,15 @@ if ($conndb->connect_errno) {
 
     <div class="container">
         <div class="row">
-        <form class="form-horizontal" method="post" action="#">
-            <input type="hidden" value="<?php echo $numerazione_fatt ?>">
-            <div class="form-group col-sm-3">
-                <label class="col-sm-12 control-label">ID cliente</label>
-                <div class="col-sm-12">
-                    <input id="idCliente" type="number" name="idcliente" class="idCliente form-control">
+            <form class="form-horizontal" method="post" action="gen_documenti/fattura.html">
+                <input type="hidden" value="<?php echo $numerazione_fatt ?>">
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-default">Genera</button>
+                    </div>
                 </div>
-            </div>
-            <div class="form-group col-sm-9">
-                <label class="col-sm-12 control-label">Nome e cognome</label>
-                <div class="col-sm-12">
-                    <input id="nomeCognome" type="text" class="idCliente form-control">
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-default">Conferma</button>
-                </div>
-            </div>
-        </form>
-            </div>
+            </form>
+        </div>
     </div>
 
     <div class="masthead">
@@ -124,14 +112,21 @@ if ($conndb->connect_errno) {
     </div>
 
 <div class="container">
+    <span style="color:#EA640C">
+    Totale voci n.
+    <?php
+    $sql_rows = "SELECT * FROM numerazione_ftt";
+    echo mysqli_num_rows(mysqli_query($conndb, $sql_rows));
+    ?>
+    </span>
+</div>
+
+<div class="container">
     <table class="table table-responsive">
         <tr>
-            <th>Preventivo n°</th>
+            <th>Fattura n°</th>
             <th>Codice Cliente</th>
             <th>Cliente</th>
-            <th>Cod. Mezzo</th>
-            <th>Cod. Causale</th>
-            <th>Cod. Imballaggio</th>
             <th>Note</th>
             <th>Data</th>
         </tr>
@@ -152,9 +147,6 @@ if ($conndb->connect_errno) {
             <td><?php echo $oggett_fatt->num ?></td>
             <td><?php echo $oggett_fatt->codC ?></td>
             <td><?php echo $oggett_fatt->nomeC." ".$oggett_fatt->nomeC ?></td>
-            <td><?php echo $oggett_fatt->id_mezzo ?></td>
-            <td><?php echo $oggett_fatt->id_caus ?></td>
-            <td><?php echo $oggett_fatt->id_imb ?></td>
             <td><?php echo $oggett_fatt->note ?></td>
             <td><?php echo $oggett_fatt->reg_date ?></td>
 
@@ -186,6 +178,8 @@ if ($conndb->connect_errno) {
         }
     });
 </script>
+
+    <?php include_once("template/parrot/foot.php") ?>
 
 </body>
 </html>

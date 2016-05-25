@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Carta Intestata</title>
+    <title>DocumentoDiTrasporto</title>
     <meta charset="utf-8">
     <meta name="author" content="Daniele Irsuti">
     <meta name="image" content="../images/logos.png">
@@ -107,13 +107,11 @@
                         <tr>
                             <td><p class="col-md-12">Consegna o inizio trasporto a mezzo mittente o destinatario</p> <input style="width:80%; float:right;" type="text"></td>
                             <td><p class="col-md-12">Data e ora</p><br/>
-
                                 <!--<input class="typo" style="width:50%; float:left;" type="date"><input class="typo" style="width:50%; float:right;" type="time">-->
                                 <SCRIPT LANGUAGE="JavaScript">
                                 Stamp = new Date();
                                 document.write('<p class="typo">' + Stamp.getDate() + "/" + (Stamp.getMonth() + 1) + "/" + (Stamp.getYear() + 1900) + "   " + Stamp.getHours() + ":" + Stamp.getMinutes() + '</p>');
                                 </SCRIPT>
-
                             </td>
                             <td><p class="col-md-12">Firma del Conducente</p><p class="col-md-9"></td>
                         </tr>
