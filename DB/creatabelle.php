@@ -363,10 +363,10 @@ $sql_custom_settings = "CREATE TABLE `custom_settings` (
 )";
 
 if (mysqli_query($conndb, $sql_prev)) {
-    echo "Tabella preventivi creata con successo'<br/>'";
+    echo "Tabella settaggi creata con successo'<br/>'";
     header('Refresh: 3; URL = homeDB.php');
 } else {
-    echo "C'e' stato un errore creando la tabella preventivi: " . mysqli_error($conndb) . '<br/>';
+    echo "C'e' stato un errore creando la tabella settaggi: " . mysqli_error($conndb) . '<br/>';
 }
 
 ?>

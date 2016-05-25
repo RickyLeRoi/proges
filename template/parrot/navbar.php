@@ -41,7 +41,6 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Controllo <span class="fa-chevron-down fa"></span></a>
                         <ul class="dropdown-menu">
                             <div class="arrow top"></div>
-                            <li id="ck_login"><a href="http://<?php echo $base_url ?>/check/ck_login.php">Login</a></li>
                             <li id="ck_causale"><a href="http://<?php echo $base_url ?>/check/ck_causale.php">Causale</a></li>
                             <li id="ck_mezzo"><a href="http://<?php echo $base_url ?>/check/ck_mezzo.php">Mezzo Trasporto</a></li>
                             <li id="ck_iva"><a href="http://<?php echo $base_url ?>/check/ck_iva.php">IVA</a></li>
@@ -59,8 +58,9 @@
                         </a>
                         <ul class="dropdown-menu">
                             <div class="arrow top"></div>
-                            <li id="ck_login"><li><a href="http://<?php echo $base_url ?>/function/logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
-                            <li id="ck_causale"><a href="http://<?php echo $base_url ?>/settings.php"><span class="fa-cog fa"></span> Impostazioni</a></li>
+                            <li id="impostazioni"><a href="http://<?php echo $base_url ?>/settings.php"><span class="fa-cog fa"></span> Impostazioni</a></li>
+                            <li id="homeDB"><a href="http://<?php echo $base_url ?>/DB/homeDB.php"><span class="fa-cog fa"></span> Avanzate DB</a></li>
+                            <li id="logout"><li><a href="http://<?php echo $base_url ?>/function/logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
                         </ul>
                     </li>
                 </ul>
