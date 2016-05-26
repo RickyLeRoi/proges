@@ -1,5 +1,6 @@
 <?php
 
+include("../function/session.php");
 include("../DB/config.php");
 
 
