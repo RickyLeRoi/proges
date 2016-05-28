@@ -119,7 +119,7 @@ if ($conndb->query($sql_gen) === TRUE) {
                     <input class="form-control widthAuto" type="text" name="cittaLC" placeholder="Citta'">
                     <input class="form-control widthAuto" type="text" name="capLC" placeholder="CAP"><br/>
                     <input class="form-control widthAuto" type="text" name="provLC" placeholder="Provincia (XX)">
-                    <input class="form-control widthAuto" type="number" name="telLC" placeholder="Telefono">
+                    <input class="form-control widthAuto" type="text" name="telLC" placeholder="Telefono">
                     <input class="form-control widthAuto" type="text" name="faxLC" placeholder="Fax"><br/>
                     <input class="form-control widthAuto" type="text" name="statoLC" placeholder="Stato">
                     <input class="form-control widthAuto" type="text" name="emailLC" placeholder="e-Mail">

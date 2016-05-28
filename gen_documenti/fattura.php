@@ -1,148 +1,172 @@
 <?php $base_url = $_SERVER["SERVER_NAME"] . "/proges"; ?>
 <html>
 <head>
-    <title>Fattura</title>
-    <meta charset="utf-8">
-    <meta name="author" content="Daniele Irsuti">
-    <meta name="image" content="../images/logos.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="favicon.ico">
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
-    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
-    <style>
-        .autocomplete-suggestions {
-            color: #000000
-        }
+<title>Fattura</title>
+<meta charset="utf-8">
+<meta name="image" content="../images/logos.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+<script language="JavaScript">
+    data = new Date();
+    var aaaa = data.getFullYear();
+    var MM = data.getMonth() + 1;
+    var gg = data.getDate();
+    if (gg<10) {
+        gg = "0" + gg;
+    }
+    if (MM<10) {
+        MM = "0" + MM;
+    }
+    var hh = data.getHours();
+    var mm = data.getMinutes();
+    if (hh<10) {
+        hh = "0" + hh;
+    }
+    if (mm<10) {
+        mm = "0" + mm;
+    }
+</script>
+<style>
+/*@media screen {
+.noMargin {
+padding: 6px 12px;
+margin: 0;
+line-height: 1.42857143;
+height: 34px;
+}
+}
+@media print {
+.noMargin {
+margin: 0 0 0;
+}
+.form-control {
+display: inline-block;
+width: auto;
+}
+select.form-control {
+position: relative !important;
+top: -1px !important;
+z-index: 1;
+}
+input[type=number],
+input[type=text],
+input[type=date],
+select.form-control,
+input[type=datetime] {
+border: none;
+background: transparent;
+box-shadow: none;
+height: 13px;
+padding-left: 0;
+padding-right: 0;
+margin: 0 0 0;
+font-size: 7pt;
+position: relative;
+top: -1px;
+width: auto;
+}
+p {
+font-size: 7pt;
+height: 13px;
+}
+.logo {
+max-width: 100%;
+width: 100px;
+height: auto;
+}
+#sottotabella {
+border: none !important;
+border-collapse: collapse;
+}
+page {
+size: a4;
+}
+.qnt {
+height: 6cm;
+}
+.var {
+height: 3cm;
+}
+.stampa {
+display: none;
+}
+}*/
+.autocomplete-suggestions {
+color: #000000
+}
+.autocomplete-suggestions {
+border: 1px solid #999;
+background: #FFF;
+overflow: auto;
+}
+.autocomplete-suggestion {
+padding: 2px 5px;
+white-space: nowrap;
+overflow: hidden;
+}
+.autocomplete-selected {
+background: #F0F0F0;
+}
+.autocomplete-suggestions strong {
+font-weight: normal;
+color: #3399FF;
+}
+.autocomplete-group {
+padding: 2px 5px;
+}
+.autocomplete-group strong {
+display: block;
+border-bottom: 1px solid #000;
+}
+.valuta:before {
+content: "\f153 ";
+font-family: FontAwesome;
+position: relative;
+margin-right: 5px;
+}
+.form-control {
+    margin: 0;
+    padding: 0;
+}
 
-        .autocomplete-suggestions {
-            border: 1px solid #999;
-            background: #FFF;
-            overflow: auto;
-        }
+@media print {
+    p {
+    font-size: 7pt;
+    }
+    .logo {
+    max-width: 100%;
+    width: 100px;
+    height: auto;
+    }
+    #sottotabella {
+    border: none !important;
+    border-collapse: collapse;
+    }
 
-        .autocomplete-suggestion {
-            padding: 2px 5px;
-            white-space: nowrap;
-            overflow: hidden;
-        }
+    page {
+    size: a4;
+    }
 
-        .autocomplete-selected {
-            background: #F0F0F0;
-        }
+    .qnt {
+    height: 6cm;
+    }
 
-        .autocomplete-suggestions strong {
-            font-weight: normal;
-            color: #3399FF;
-        }
+    .var {
+    height: 3cm;
+    }
+    #stampa {
+    display: none;
+    }
+}
 
-        .autocomplete-group {
-            padding: 2px 5px;
-        }
-
-        .autocomplete-group strong {
-            display: block;
-            border-bottom: 1px solid #000;
-        }
-
-        .valuta:before {
-            content: "\f153 ";
-            font-family: FontAwesome;
-            position: relative;
-            margin-right: 5px;
-        }
-
-        .form-control {
-        / / display: inline-block;
-        / / width: auto;
-        }
-
-        @media screen {
-            .noMargin {
-                padding: 6px 12px;
-                margin: 0;
-                line-height: 1.42857143;
-                height: 34px;
-            }
-        }
-
-        @media print {
-            .noMargin {
-                margin: 0 0 0;
-            }
-
-            .form-control {
-                display: inline-block;
-                width: auto;
-            }
-
-            select.form-control {
-                position: relative !important;
-                top: -1px !important;
-                z-index: 1;
-            }
-
-            input[type=number],
-            input[type=text],
-            input[type=date],
-            select.form-control,
-            input[type=datetime] {
-                border: none;
-                background: transparent;
-                box-shadow: none;
-                height: 13px;
-                padding-left: 0;
-                padding-right: 0;
-                margin: 0 0 0;
-                font-size: 7pt;
-                position: relative;
-                top: -1px;
-                width: auto;
-            }
-
-            p {
-                font-size: 7pt;
-                height: 13px;
-            }
-
-            .logo {
-                max-width: 100%;
-                width: 100px;
-                height: auto;
-            }
-
-            #sottotabella {
-                border: none !important;
-                border-collapse: collapse;
-            }
-
-            page {
-                size: a4;
-            }
-
-            .qnt {
-                height: 6cm;
-            }
-
-            .var {
-                height: 3cm;
-            }
-
-            .stampa {
-                display: none;
-            }
-        }
-
-        .typo {
-            font-family: monospace, monospace;
-            padding-left: 5px;
-            font-size: 14px;
-        }
-    </style>
+</style>
 </head>
 <body>
 
-<div style="padding-top: 10px; padding-bottom: 10px;" class="container-fluid stampa">
+<div id="stampa" style="padding-top: 10px; padding-bottom: 10px;" class="container-fluid">
 <span class="h1">
 <a href="../ddt.php"> <span class="glyphicon glyphicon-chevron-left"></span>Indietro</a>
 <a href="#" onclick="window.print()"> <span class="glyphicon glyphicon-print"></span> Stampa</a>
@@ -150,103 +174,121 @@
 </div>
 
 <page>
-    <div style="background: #FFF" class="container-fluid">
-        <div class="table-responsive">
-            <table class="table-bordered table table-striped">
-                <thead>
-                <tr>
-                    <td colspan="4">
-                        <div class="row"> <!-- 1 -->
-                            <div class="col-xs-4">
-                                <p><b>FATT. N°</b></p>
-                            </div>
-                            <div class="col-xs-2">
-                                <div class="row">
-                                    <input class="form-control" value="0" type="number" size="4" placeholder="0000"
-                                           readonly>
-                                </div>
-                            </div>
-                            <div class="col-xs-6">
-                                <p><b id="datime"></b></p>
-                            </div>
-                        </div>
-                        <div class="row"><!-- 2 -->
-                            <div class="col-xs-4">
-                                <p>Pagamento</p>
-                            </div>
-                            <div class="col-xs-8">
-                                <input type="text" class="form-control" value="lo prendo dal db">
-                            </div>
-                        </div>
-                        <div class="row"><!-- 3 -->
-                            <div class="col-xs-12">
-                                <p>CREDITO SICILIANO - AG. BAGHERIA</p>
-                                <p>IBAN: <strong>IT 69 F 03019 43070 000008380468</strong></p>
-                            </div>
-                        </div>
-                    </td>
-                    <td colspan="1">
-                        <div class="col-md-12">
-                            <div class="row">
-                                <div class="col-xs-3"><p>Spett.le</p></div>
-                                <div class="col-xs-9"><input class="form-control" type="text" placeholder="Cliente">
-                                </div>
-                                <div class="col-xs-12"><input class="form-control" type="text" placeholder="P.IVA">
-                                </div>
-                                <div class="col-xs-12"><input class="form-control" type="text"
-                                                              placeholder="Indirizzo legale"></div>
+<div style="background: #FFF" class="container-fluid">
+<div class="table-responsive">
 
-                                <div class="col-xs-6">
-                                    <input class="form-control" type="text" placeholder="Città">
-                                </div>
-                                <div class="col-xs-3">
-                                    <input class="form-control" type="text" placeholder="(PR)">
-                                </div>
-                                <div class="col-xs-3">
-                                    <input class="form-control" type="text" placeholder="CAP">
-                                </div>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-                </thead>
+<table class="table-bordered table table-striped">
 
-                <tbody>
+<thead>
 
-                <tr>
-                    <td colspan="2"><p class="col-md-12">Descrizione della merce</p></td>
-                    <td><p class="col-md-12">Quantità</p></td>
-                    <td colspan="1"><p class="col-md-12">Imp.unit.</p></td>
-                    <td><p class="col-md-12">Importo</p></td>
-                </tr>
+<tr>
 
-                <tr class="qnt" height="400">
-                    <td id="incolonnaArticoli" colspan="2">
-                        <input id="idProdotto" class=" stampa form-control incolonnatore" type="text"
-                               placeholder="Cod. Articolo">
-                    </td>
-                    <td id="incolonnaQuantita">
-                        <input id="idQuantita-default" type="number" class="stampa form-control arrQuantita" min="0">
-                    </td>
-                    <td id="incolonnaPrezzi">
-                        <input class="form-control stampa" type="text" value="Auto" readonly>
-                    </td>
-                    <td id="incolonnaPrezziTot">
-                        <input class="form-control stampa" type="text" value="Auto" readonly>
-                    </td>
-                </tr>
+<td colspan="4" style="width:600;">
+<p class="col-md-12">
+    <h5 class="text-center">
+        <strong>FATT N.
+        <input class="form-control" style="width:15%; text-align:right; display:inline" type="number" size="4" placeholder="0000" readonly>/
+            <script language="javascript">
+                document.write(aaaa);
+            </script>
+        <br/> del <script language="javascript">
+                document.write(gg + "/" + MM + "/" + aaaa);
+            </script>
+            ore <script language="javascript">
+                document.write(hh + ":" + mm);
+        </script>
+        </strong>
+    </h5>
+</p>
+<span>Pagamento
+<select class="form-control" style="float:right; width:50%; display:inline">
+<option>LO PRENDE</option>
+<option>DAL DB</option>
+</select></span><br/><br/>
+<span class="row text-center"><p>CREDITO SICILIANO - AG. BAGHERIA</p>
+<p>IBAN: <strong>IT 69 F 03019 43070 000008380468</strong></p></span>
+</td>
 
-                </tbody>
+<td colspan="3">
+<div class="col-md-12">
+Spett.le<br/><br/>
+<input type="text" class="text-center form-control" placeholder="Cliente con suggerimento"><br/>
+<input type="text" class="text-center form-control" placeholder="auto P.IVA" readonly><br/>
+<input type="text" class="text-center form-control" placeholder="auto Indirizzo legale" readonly><br/>
+    <input class="text-center form-control" type="text" style="width:45%; display:inline;" placeholder="auto Città" readonly>
+    <span style="width:7%;"> - </span>
+    <input class="text-center form-control" type="text" style="width:15%; display:inline;" placeholder="(PR)" readonly>
+    <span style="width:7%;"> - </span>
+    <input class="text-center form-control" type="number" min="00010" max="98199" style="width:25%; display:inline;" placeholder="auto CAP" readonly>
+</div>
+</td>
 
+</tr>
 
-                </tr>
+</thead>
 
-            </table>
-        </div>
-    </div>
+<tbody>
+
+<tr>
+<td colspan="4"><p class="col-md-12">Descrizione della merce</p></td>
+<td><p class="col-md-12">Quantità</p></td>
+<td><p class="col-md-12">Imp.unit.</p></td>
+<td><p class="col-md-12">Importo</p></td>
+</tr>
+
+<tr class="qnt" height="auto">
+
+<td id="incolonnaArticoli" colspan="4">
+    <input id="idProdotto" class="stampa form-control incolonnatore" style="width:15%; display:inline" type="text" placeholder="Cod. Articolo">
+    <span style="width:15%;"> - </span>
+    <input class="stampa form-control" style="width:75%; display:inline" type="text" placeholder="Descrizione articolo automatica" readonly>
+</td>
+
+<td id="incolonnaQuantita">
+    <input id="idQuantita-default" type="number" style="text-align:right;" class="stampa form-control arrQuantita" min="0">
+</td>
+
+<td id="incolonnaPrezzi">
+    <input class="form-control stampa" style="text-align:right;" type="text" placeholder="auto da DB €" readonly>
+</td>
+
+<td id="incolonnaPrezziTot">
+    <input class="form-control stampa" style="text-align:right;" type="text" placeholder="auto da riga €" readonly>
+</td>
+
+</tr>
+
+<tr>
+<td style="text-align:center" colspan="5" rowspan="3">Contributo CONAI assolto ove dovuto.</td>
+<td style="text-align:right">Totale parziale €</td>
+<td>
+    <input class="form-control stampa" style="text-align:right" type="number" placeholder="auto da colonna €" readonly>
+</td>
+</tr>
+
+<tr>
+<td style="text-align:right">IVA %</td>
+<td><select class="form-control" style="text-align:right">
+<option>LA PRENDE %</option>
+<option>DAL DB %</option>
+</select></td>
+</tr>
+
+<tr>
+<td style="text-align:right"><strong>Totale dovuto €</strong></td>
+<td>
+    <input class="form-control stampa" style="text-align:right" type="number" placeholder="auto da colonna €" readonly>
+</td>
+</tr>
+
+</tbody>
+
+</table>
+</div>
+</div>
 </page>
 
-<div style="padding-top: 10px; padding-bottom: 10px;" class="container-fluid stampa">
+<div id="stampa" style="padding-top: 10px; padding-bottom: 10px;" class="container-fluid">
 <span class="h1">
 <a href="../ddt.php"> <span class="glyphicon glyphicon-chevron-left"></span>Indietro</a>
 <a href="#" onclick="window.print()"> <span class="glyphicon glyphicon-print"></span> Stampa</a>
@@ -267,17 +309,14 @@
             $(function () {
                 var articoli = "<p class=\"col-xs-12 arrArticoli noMargin\" id=\"idArticoli-" + idRiga + "\" >" + suggestion.value + " - " + suggestion.data.descr + "</p>";
                 $("#incolonnaArticoli").append(articoli);
-
                 var quantita = "<input id=\"idQuantita-" + idRiga + "\" type=\"number\" class=\"form-control arrQuantita\" min=\"1\" value=\"1\">";
                 $("#incolonnaQuantita").append(quantita);
-
                 var prezzo = "<p class=\"valuta col-xs-10 noMargin\" id=\"prezzo-" + idRiga + "\">" + suggestion.data.prezzo + "</p> ";
                 var prezzoTOT = "<p class=\"valuta col-xs-10 noMargin\" id=\"prezzoTOT-" + idRiga + "\">" + parseFloat(suggestion.data.prezzo, 2) + "</p>";
                 $("#incolonnaPrezzi").append(prezzo);
                 $("#incolonnaPrezziTot").append(prezzoTOT);
                 idRiga++;
             });
-
             $(".arrQuantita").keyup(function () {
                 prezziTot($(this));
             });
@@ -286,36 +325,16 @@
             });
         }
     });
-
-    $(function () {
-        var Stamp = new Date(),
-            min = Stamp.getMinutes();
-
-        if (min < 10) {
-            min = "0" + min;
-        }
-        var stampElem = Stamp.getDate() + "/" + (Stamp.getMonth() + 1) + "/" + (Stamp.getYear() + 1900) + "   " + Stamp.getHours() + ":" + min;
-        $("#datime").html(stampElem);
-    });
-
     function prezziTot(quantita) {
         console.log(quantita);
         quantitaScelta = quantita.val();
-
         quantitaId = quantita.attr("id");
         quantitaId = quantitaId.split("-");
-
         prezzoUnitario = $("#prezzo-" + quantitaId[1]).text();
         prezzoTotale = quantitaScelta * (parseInt(prezzoUnitario));
-
         prezzoTotID = $("#prezzoTOT-" + quantitaId[1]);
         prezzoTotID.text(prezzoTotale);
-
-
         //console.log(prezzoUnitario[1]);
     }
-
-
 </script>
 </body>
-</html>
