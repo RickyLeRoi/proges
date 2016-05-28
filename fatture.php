@@ -92,7 +92,7 @@ if ($conndb->connect_errno) {
 
     <div class="container">
         <div class="row">
-            <form class="form-horizontal" method="post" action="gen_documenti/fattura.html">
+            <form class="form-horizontal" method="post" action="gen_documenti/fattura.php">
                 <input type="hidden" value="<?php echo $numerazione_fatt ?>">
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
