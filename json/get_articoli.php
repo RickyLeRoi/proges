@@ -1,7 +1,7 @@
 <?php
 
-include("../function/session.php");
-include("../DB/config.php");
+include_once("../function/session.php");
+include_once("../DB/config.php");
 
 
 // Queries
