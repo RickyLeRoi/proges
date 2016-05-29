@@ -128,7 +128,7 @@
     <span style="color:#EA640C">
     Totale voci n.
     <?php
-    $sql_rows = "SELECT * FROM mezzo";
+    $sql_rows = "SELECT * FROM pagam";
     echo mysqli_num_rows(mysqli_query($conndb, $sql_rows));
     ?>
     </span>

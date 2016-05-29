@@ -168,7 +168,7 @@ margin-right: 5px;
 
 <div id="stampa" style="padding-top: 10px; padding-bottom: 10px;" class="container-fluid">
 <span class="h1">
-<a href="../ddt.php"> <span class="glyphicon glyphicon-chevron-left"></span>Indietro</a>
+<a href="../fatture.php"> <span class="glyphicon glyphicon-chevron-left"></span>Indietro</a>
 <a href="#" onclick="window.print()"> <span class="glyphicon glyphicon-print"></span> Stampa</a>
 </span>
 </div>
@@ -181,31 +181,28 @@ margin-right: 5px;
 
 <thead>
 
+<tr height="150px"></tr>
+
 <tr>
 
 <td colspan="4" style="width:600;">
 <p class="col-md-12">
-    <h5 class="text-center">
+    <h5>
         <strong>FATT N.
-        <input class="form-control" style="width:15%; text-align:right; display:inline" type="number" size="4" placeholder="0000" readonly>/
+        <input class="stampa form-control" style="width:15%; text-align:right; display:inline" type="number" size="4" placeholder="0000" readonly>/
             <script language="javascript">
                 document.write(aaaa);
             </script>
-        <br/> del <script language="javascript">
-                document.write(gg + "/" + MM + "/" + aaaa);
-            </script>
-            ore <script language="javascript">
-                document.write(hh + ":" + mm);
-        </script>
+        <br/> del <input type="date" class="stampa form-control" style="width:30%; display:inline">
         </strong>
     </h5>
-</p>
+</p><br/>
 <span>Pagamento
-<select class="form-control" style="float:right; width:50%; display:inline">
+<select class="form-control" style="width:50%; display:inline">
 <option>LO PRENDE</option>
 <option>DAL DB</option>
 </select></span><br/><br/>
-<span class="row text-center"><p>CREDITO SICILIANO - AG. BAGHERIA</p>
+<span class="row"><p>CREDITO SICILIANO - AG. BAGHERIA</p><br/>
 <p>IBAN: <strong>IT 69 F 03019 43070 000008380468</strong></p></span>
 </td>
 
@@ -230,22 +227,20 @@ Spett.le<br/><br/>
 <tbody>
 
 <tr>
-<td colspan="4"><p class="col-md-12">Descrizione della merce</p></td>
 <td><p class="col-md-12">Quantità</p></td>
+<td colspan="4"><p class="col-md-12">Descrizione della merce</p></td>
 <td><p class="col-md-12">Imp.unit.</p></td>
 <td><p class="col-md-12">Importo</p></td>
 </tr>
 
-<tr class="qnt" height="auto">
-
-<td id="incolonnaArticoli" colspan="4">
-    <input id="idProdotto" class="stampa form-control incolonnatore" style="width:15%; display:inline" type="text" placeholder="Cod. Articolo">
-    <span style="width:15%;"> - </span>
-    <input class="stampa form-control" style="width:75%; display:inline" type="text" placeholder="Descrizione articolo automatica" readonly>
-</td>
+<tr class="qnt" height="800px">
 
 <td id="incolonnaQuantita">
     <input id="idQuantita-default" type="number" style="text-align:right;" class="stampa form-control arrQuantita" min="0">
+</td>
+
+<td id="incolonnaArticoli" colspan="4">
+    <input class="stampa form-control" type="text" placeholder="Descrizione articolo automatica">
 </td>
 
 <td id="incolonnaPrezzi">
@@ -281,6 +276,11 @@ Spett.le<br/><br/>
 </td>
 </tr>
 
+<tr>
+    <td colspan="6">Esente IVA ai sensi dell’art.8 del D.P.R. 633/72. Documento n°<input type="number" class="form-control" style="width:5%; display:inline" placeholder="0000"> valido dal <input type="date" class="form-control" style="display:inline; width:20%"> al <input type="date" class="form-control" style="display:inline; width:20%"></td>
+    <td class="text-center">S. E. & O.</td>
+</tr>
+
 </tbody>
 
 </table>
@@ -290,7 +290,7 @@ Spett.le<br/><br/>
 
 <div id="stampa" style="padding-top: 10px; padding-bottom: 10px;" class="container-fluid">
 <span class="h1">
-<a href="../ddt.php"> <span class="glyphicon glyphicon-chevron-left"></span>Indietro</a>
+<a href="../fatture.php."> <span class="glyphicon glyphicon-chevron-left"></span>Indietro</a>
 <a href="#" onclick="window.print()"> <span class="glyphicon glyphicon-print"></span> Stampa</a>
 </span>
 </div>

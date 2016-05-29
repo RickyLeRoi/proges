@@ -7,7 +7,7 @@ include_once("config.php");
 $sql_iva = "CREATE TABLE iva (
 id INT(3) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 aliquota INT(3) NOT NULL,
-descr VARCHAR(100) NULL,
+descr VARCHAR(150) NULL,
 reg_date TIMESTAMP,
 UNIQUE (id)
 )";
@@ -22,7 +22,7 @@ if (mysqli_query($conndb, $sql_iva)) {
 $sql_imb = "CREATE TABLE imballo (
 id INT(3) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 tipo VARCHAR(20) NOT NULL,
-descr VARCHAR(100) NULL,
+descr VARCHAR(150) NULL,
 reg_date TIMESTAMP,
 UNIQUE (tipo)
 )";
@@ -37,11 +37,11 @@ if (mysqli_query($conndb, $sql_imb)) {
 $sql_art = "CREATE TABLE articoli (
 id INT(3) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 cod_int VARCHAR(6) NOT NULL,
-nome VARCHAR(50) NOT NULL,
-descr VARCHAR(100) NULL,
+descr VARCHAR(150) NULL,
+misure VARCHAR(50) NOT NULL,
 cod_barre BIGINT(30) NOT NULL,
 prezzo INT(5) NULL,
-note VARCHAR(100) NULL,
+note VARCHAR(200) NULL,
 reg_date TIMESTAMP,
 UNIQUE (cod_barre)
 )";
@@ -58,8 +58,8 @@ id INT(3) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 nomeC VARCHAR(40) NOT NULL,
 cognomeC VARCHAR(20) NULL,
 codC VARCHAR(4) NOT NULL,
-descrC VARCHAR(100) NULL,
-noteC VARCHAR(100) NULL,
+descrC VARCHAR(150) NULL,
+noteC VARCHAR(200) NULL,
 indirizzoLC VARCHAR(50) NULL,
 cittaLC VARCHAR(20) NULL,
 capLC INT(5) NULL,
@@ -96,7 +96,7 @@ if (mysqli_query($conndb, $sql_c)) {
 $sql_cau = "CREATE TABLE causale (
 id INT(3) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 tipo VARCHAR(20) NOT NULL,
-descr VARCHAR(100) NULL,
+descr VARCHAR(150) NULL,
 reg_date TIMESTAMP,
 UNIQUE (tipo)
 )";
@@ -111,7 +111,7 @@ if (mysqli_query($conndb, $sql_cau)) {
 $sql_mezzo = "CREATE TABLE mezzo (
 id INT(3) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 tipo VARCHAR(20) NOT NULL,
-descr VARCHAR(100) NULL,
+descr VARCHAR(150) NULL,
 reg_date TIMESTAMP,
 UNIQUE (tipo)
 )";
@@ -125,9 +125,9 @@ if (mysqli_query($conndb, $sql_mezzo)) {
 // Creo tabella Spese Aggiuntive
 $sql_sag = "CREATE TABLE sp_agg (
 id INT(3) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-tipo VARCHAR(20) NOT NULL,
+tipo VARCHAR(25) NOT NULL,
 prezzo INT(5) NOT NULL,
-descr VARCHAR(100) NULL,
+descr VARCHAR(150) NULL,
 UNIQUE (tipo)
 )";
 
@@ -141,7 +141,7 @@ if (mysqli_query($conndb, $sql_sag)) {
 $sql_pag = "CREATE TABLE pagam (
 id INT(3) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 tipo VARCHAR(20) NOT NULL,
-descr VARCHAR(100) NULL,
+descr VARCHAR(150) NULL,
 UNIQUE (tipo)
 )";
 
@@ -157,8 +157,8 @@ id INT(3) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 nomeF VARCHAR(40) NOT NULL,
 cognomeF VARCHAR(20) NULL,
 codF VARCHAR(4) NOT NULL,
-descrF VARCHAR(100) NULL,
-noteF VARCHAR(100) NULL,
+descrF VARCHAR(150) NULL,
+noteF VARCHAR(200) NULL,
 indirizzoLF VARCHAR(50) NULL,
 cittaLF VARCHAR(20) NULL,
 capLF INT(5) NULL,
@@ -225,7 +225,7 @@ id_iva INT(3) NOT NULL,
 id_mezzo INT(3) NULL,
 id_caus INT(3) NULL,
 id_imb INT(3) NULL,
-note VARCHAR(100) NULL,
+note VARCHAR(200) NULL,
 reg_date TIMESTAMP
 )";
 
@@ -261,7 +261,7 @@ qta INT(5) NOT NULL,
 id_mezzo INT(3) NULL,
 id_caus INT(3) NULL,
 id_imb INT(3) NULL,
-note VARCHAR(100) NULL,
+note VARCHAR(200) NULL,
 reg_date TIMESTAMP
 )";
 
@@ -298,7 +298,7 @@ id_iva INT(3) NOT NULL,
 id_mezzo INT(3) NULL,
 id_caus INT(3) NULL,
 id_imb INT(3) NULL,
-note VARCHAR(100) NULL,
+note VARCHAR(200) NULL,
 reg_date TIMESTAMP
 )";
 
@@ -335,7 +335,7 @@ id_iva INT(3) NOT NULL,
 id_mezzo INT(3) NULL,
 id_caus INT(3) NULL,
 id_imb INT(3) NULL,
-note VARCHAR(100) NULL,
+note VARCHAR(200) NULL,
 reg_date TIMESTAMP
 )";
 

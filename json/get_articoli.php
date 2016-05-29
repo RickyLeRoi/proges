@@ -8,7 +8,7 @@ if (isset($_GET["check"])) $check = mysqli_real_escape_string($conndb,$_GET["che
 
     else $check = "Nessuna query";
 
-$query = "SELECT * FROM articoli WHERE nome LIKE \"%".$check."%\" OR descr LIKE \"%".$check."%\" OR cod_barre LIKE \"%".$check."%\" OR prezzo LIKE \"%".$check."%\" OR cod_int LIKE \"%".$check."%\"";
+$query = "SELECT * FROM articoli WHERE misura LIKE \"%".$check."%\" OR descr LIKE \"%".$check."%\" OR cod_barre LIKE \"%".$check."%\" OR prezzo LIKE \"%".$check."%\" OR cod_int LIKE \"%".$check."%\"";
 
 /* check connection */
 
@@ -32,7 +32,7 @@ while ($articoli= $result->fetch_object()) {
         "value" => $articoli->id,
         "data" => [
             "cod_int" => $articoli->cod_int,
-            "nome" => $articoli->nome,
+            "misura" => $articoli->misura,
             "descr" => $articoli->descr,
             "cod_barre" => $articoli->cod_barre,
             "prezzo" => $articoli->prezzo,
