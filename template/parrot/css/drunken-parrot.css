@@ -84,14 +84,13 @@ a:focus {
 }
 .alert-success {
   background-color: rgba(62, 181, 172, 0.4);
-  color: #6aa;
 }
 .alert-success .alert-link {
   color: #1d6c66;
 }
-.alert-success .close {
+/*.alert-success .close {
   color: #3eb5ac;
-}
+}*/
 .alert-info {
   background-color: rgba(168, 140, 213, 0.2);
   color: #9175bd;
