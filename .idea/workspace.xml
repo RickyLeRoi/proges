@@ -1,194 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="262bcaf4-44d1-46db-b05b-0150860b8c78" name="Default" comment="Nuove funzioni, layout sistemato.">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
+    <list default="true" id="262bcaf4-44d1-46db-b05b-0150860b8c78" name="Default" comment="Update">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/plugins/jQuery-Autocomplete" afterPath="$PROJECT_DIR$/template/parrot/plugins/jQuery-Autocomplete" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DB/creatabelle.php" afterPath="$PROJECT_DIR$/DB/creatabelle.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DB/data.php" afterPath="$PROJECT_DIR$/DB/data.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/check/ck_causale.php" afterPath="$PROJECT_DIR$/check/ck_causale.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/check/ck_imb.php" afterPath="$PROJECT_DIR$/check/ck_imb.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/check/ck_iva.php" afterPath="$PROJECT_DIR$/check/ck_iva.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/check/ck_login.php" afterPath="$PROJECT_DIR$/check/ck_login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/check/ck_mezzo.php" afterPath="$PROJECT_DIR$/check/ck_mezzo.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/check/ck_pagam.php" afterPath="$PROJECT_DIR$/check/ck_pagam.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/check/ck_spagg.php" afterPath="$PROJECT_DIR$/check/ck_spagg.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ddt.php" afterPath="$PROJECT_DIR$/ddt.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fatture.php" afterPath="$PROJECT_DIR$/fatture.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/function/login.php" afterPath="$PROJECT_DIR$/function/login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen_documenti/ddt.php" afterPath="$PROJECT_DIR$/gen_documenti/ddt.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen_documenti/fattura.php" afterPath="$PROJECT_DIR$/gen_documenti/fattura.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/json/get_articoli.php" afterPath="$PROJECT_DIR$/json/get_articoli.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/json/get_fatture.php" afterPath="$PROJECT_DIR$/json/get_fatture.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lista_clienti.php" afterPath="$PROJECT_DIR$/lista_clienti.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/bootstrap/css/bootstrap.css" afterPath="$PROJECT_DIR$/template/parrot/bootstrap/css/bootstrap.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/bootstrap/css/prettify.css" afterPath="$PROJECT_DIR$/template/parrot/bootstrap/css/prettify.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/bootstrap/fonts/glyphicons-halflings-regular.svg" afterPath="$PROJECT_DIR$/template/parrot/bootstrap/fonts/glyphicons-halflings-regular.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/bootstrap/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/template/parrot/bootstrap/js/bootstrap.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/bootstrap/js/prettify.js" afterPath="$PROJECT_DIR$/template/parrot/bootstrap/js/prettify.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/css/custom.css" afterPath="$PROJECT_DIR$/template/parrot/css/custom.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/css/custom.min.css" afterPath="$PROJECT_DIR$/template/parrot/css/custom.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/css/demo.css" afterPath="$PROJECT_DIR$/template/parrot/css/demo.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/css/docs.css" afterPath="$PROJECT_DIR$/template/parrot/css/docs.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/css/drunken-parrot.css" afterPath="$PROJECT_DIR$/template/parrot/css/drunken-parrot.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/css/font-awesome.min.css" afterPath="$PROJECT_DIR$/template/parrot/css/font-awesome.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/fonts/fontawesome/fontawesome-webfont.svg" afterPath="$PROJECT_DIR$/template/parrot/fonts/fontawesome/fontawesome-webfont.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/fonts/source-sans-pro/sourcesanspro-bold.svg" afterPath="$PROJECT_DIR$/template/parrot/fonts/source-sans-pro/sourcesanspro-bold.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/fonts/source-sans-pro/sourcesanspro-extralight.svg" afterPath="$PROJECT_DIR$/template/parrot/fonts/source-sans-pro/sourcesanspro-extralight.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/fonts/source-sans-pro/sourcesanspro-regular.svg" afterPath="$PROJECT_DIR$/template/parrot/fonts/source-sans-pro/sourcesanspro-regular.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/fonts/source-sans-pro/sourcesanspro-semibold.svg" afterPath="$PROJECT_DIR$/template/parrot/fonts/source-sans-pro/sourcesanspro-semibold.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/foot.php" afterPath="$PROJECT_DIR$/template/parrot/foot.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/active.js" afterPath="$PROJECT_DIR$/template/parrot/js/active.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/application.js" afterPath="$PROJECT_DIR$/template/parrot/js/application.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bootstrap-switch.js" afterPath="$PROJECT_DIR$/template/parrot/js/bootstrap-switch.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/bootstrap-sweetalert/.bower.json" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/bootstrap-sweetalert/.bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/bootstrap-sweetalert/.editorconfig" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/bootstrap-sweetalert/.editorconfig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/bootstrap-sweetalert/.gitignore" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/bootstrap-sweetalert/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/bootstrap-sweetalert/Gruntfile.coffee" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/bootstrap-sweetalert/Gruntfile.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/bootstrap-sweetalert/LICENSE" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/bootstrap-sweetalert/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/bootstrap-sweetalert/README.md" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/bootstrap-sweetalert/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/bootstrap-sweetalert/assets/docs.css" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/bootstrap-sweetalert/assets/docs.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/bootstrap-sweetalert/bootstrap/mixins.less" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/bootstrap-sweetalert/bootstrap/mixins.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/bootstrap-sweetalert/bootstrap/variables.less" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/bootstrap-sweetalert/bootstrap/variables.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/bootstrap-sweetalert/bower.json" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/bootstrap-sweetalert/bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/bootstrap-sweetalert/index.html" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/bootstrap-sweetalert/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/bootstrap-sweetalert/lib/sweet-alert-animations.less" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/bootstrap-sweetalert/lib/sweet-alert-animations.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/bootstrap-sweetalert/lib/sweet-alert-combine.less" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/bootstrap-sweetalert/lib/sweet-alert-combine.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/bootstrap-sweetalert/lib/sweet-alert.css" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/bootstrap-sweetalert/lib/sweet-alert.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/bootstrap-sweetalert/lib/sweet-alert.html" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/bootstrap-sweetalert/lib/sweet-alert.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/bootstrap-sweetalert/lib/sweet-alert.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/bootstrap-sweetalert/lib/sweet-alert.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/bootstrap-sweetalert/lib/sweet-alert.less" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/bootstrap-sweetalert/lib/sweet-alert.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/bootstrap-sweetalert/lib/sweet-alert.min.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/bootstrap-sweetalert/lib/sweet-alert.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/bootstrap-sweetalert/package.json" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/bootstrap-sweetalert/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/.bower.json" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/.bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/AUTHORS.txt" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/AUTHORS.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/LICENSE.txt" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/LICENSE.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/README.md" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/bower.json" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/dist/jquery.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/dist/jquery.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/dist/jquery.min.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/dist/jquery.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/dist/jquery.slim.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/dist/jquery.slim.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/dist/jquery.slim.min.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/dist/jquery.slim.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/.jshintrc" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/.jshintrc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/ajax.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/ajax.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/ajax/jsonp.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/ajax/jsonp.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/ajax/load.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/ajax/load.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/ajax/parseJSON.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/ajax/parseJSON.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/ajax/parseXML.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/ajax/parseXML.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/ajax/script.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/ajax/script.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/ajax/var/location.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/ajax/var/location.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/ajax/var/nonce.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/ajax/var/nonce.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/ajax/var/rquery.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/ajax/var/rquery.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/ajax/xhr.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/ajax/xhr.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/attributes.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/attributes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/attributes/attr.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/attributes/attr.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/attributes/classes.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/attributes/classes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/attributes/prop.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/attributes/prop.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/attributes/support.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/attributes/support.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/attributes/val.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/attributes/val.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/callbacks.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/callbacks.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/core.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/core.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/core/DOMEval.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/core/DOMEval.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/core/access.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/core/access.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/core/init.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/core/init.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/core/parseHTML.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/core/parseHTML.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/core/ready.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/core/ready.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/core/support.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/core/support.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/core/var/rsingleTag.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/core/var/rsingleTag.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/css.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/css.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/css/addGetHookIf.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/css/addGetHookIf.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/css/adjustCSS.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/css/adjustCSS.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/css/curCSS.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/css/curCSS.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/css/defaultDisplay.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/css/defaultDisplay.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/css/hiddenVisibleSelectors.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/css/hiddenVisibleSelectors.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/css/showHide.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/css/showHide.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/css/support.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/css/support.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/css/var/cssExpand.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/css/var/cssExpand.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/css/var/getStyles.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/css/var/getStyles.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/css/var/isHidden.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/css/var/isHidden.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/css/var/rmargin.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/css/var/rmargin.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/css/var/rnumnonpx.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/css/var/rnumnonpx.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/css/var/swap.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/css/var/swap.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/data.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/data.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/data/Data.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/data/Data.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/data/accepts.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/data/accepts.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/data/support.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/data/support.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/data/var/acceptData.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/data/var/acceptData.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/data/var/dataPriv.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/data/var/dataPriv.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/data/var/dataUser.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/data/var/dataUser.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/deferred.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/deferred.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/deferred/exceptionHook.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/deferred/exceptionHook.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/deprecated.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/deprecated.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/dimensions.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/dimensions.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/effects.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/effects.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/effects/Tween.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/effects/Tween.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/effects/animatedSelector.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/effects/animatedSelector.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/effects/support.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/effects/support.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/event.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/event.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/event/ajax.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/event/ajax.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/event/alias.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/event/alias.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/event/focusin.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/event/focusin.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/event/support.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/event/support.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/event/trigger.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/event/trigger.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/exports/amd.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/exports/amd.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/exports/global.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/exports/global.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/intro.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/intro.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/jquery.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/jquery.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/manipulation.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/manipulation.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/manipulation/_evalUrl.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/manipulation/_evalUrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/manipulation/buildFragment.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/manipulation/buildFragment.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/manipulation/createSafeFragment.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/manipulation/createSafeFragment.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/manipulation/getAll.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/manipulation/getAll.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/manipulation/setGlobalEval.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/manipulation/setGlobalEval.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/manipulation/support.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/manipulation/support.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/manipulation/var/nodeNames.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/manipulation/var/nodeNames.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/manipulation/var/rcheckableType.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/manipulation/var/rcheckableType.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/manipulation/var/rleadingWhitespace.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/manipulation/var/rleadingWhitespace.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/manipulation/var/rscriptType.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/manipulation/var/rscriptType.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/manipulation/var/rtagName.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/manipulation/var/rtagName.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/manipulation/wrapMap.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/manipulation/wrapMap.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/offset.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/offset.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/outro.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/outro.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/queue.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/queue.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/queue/delay.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/queue/delay.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/selector-native.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/selector-native.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/selector-sizzle.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/selector-sizzle.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/selector.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/selector.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/serialize.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/serialize.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/support.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/support.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/traversing.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/traversing.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/traversing/findFilter.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/traversing/findFilter.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/traversing/var/dir.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/traversing/var/dir.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/traversing/var/rneedsContext.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/traversing/var/rneedsContext.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/traversing/var/siblings.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/traversing/var/siblings.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/var/arr.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/var/arr.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/var/class2type.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/var/class2type.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/var/concat.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/var/concat.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/var/deletedIds.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/var/deletedIds.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/var/document.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/var/document.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/var/documentElement.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/var/documentElement.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/var/hasOwn.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/var/hasOwn.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/var/indexOf.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/var/indexOf.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/var/pnum.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/var/pnum.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/var/push.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/var/push.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/var/rcssNum.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/var/rcssNum.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/var/rnotwhite.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/var/rnotwhite.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/var/slice.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/var/slice.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/var/support.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/var/support.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/var/toString.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/var/toString.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/wrap.js" afterPath="$PROJECT_DIR$/template/parrot/js/bower_components/jquery/src/wrap.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/checkbox.js" afterPath="$PROJECT_DIR$/template/parrot/js/checkbox.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/custom.js" afterPath="$PROJECT_DIR$/template/parrot/js/custom.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/custom.min.js" afterPath="$PROJECT_DIR$/template/parrot/js/custom.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/html5shiv.js" afterPath="$PROJECT_DIR$/template/parrot/js/html5shiv.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/jquery.min.js" afterPath="$PROJECT_DIR$/template/parrot/js/jquery.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/radio.js" afterPath="$PROJECT_DIR$/template/parrot/js/radio.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/switch.js" afterPath="$PROJECT_DIR$/template/parrot/js/switch.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/js/toolbar.js" afterPath="$PROJECT_DIR$/template/parrot/js/toolbar.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/navbar.php" afterPath="$PROJECT_DIR$/template/parrot/navbar.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/style.php" afterPath="$PROJECT_DIR$/template/parrot/style.php" />
     </list>
     <ignored path="proges.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -210,178 +25,107 @@
     <option name="SORT_POSITIONED" value="false" />
     <option name="SHOW_TABLE_DETAILS" value="true" />
     <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="MySQL - zazzarot@localhost" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="MySQL - zazzarot@localhost" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="prev" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="MySQL - zazzarot@localhost" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="numerazione_p" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="MySQL - zazzarot@localhost" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="numerazione_ftt" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="MySQL - zazzarot@localhost" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="ndc" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="MySQL - zazzarot@localhost" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="fatt" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="MySQL - zazzarot@localhost" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="ddt" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="proges" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="vertical" split-proportion="0.49452955">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="get_fornitori.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/json/get_fornitori.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="357">
-                  <caret line="21" column="35" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="35" />
-                  <folding>
-                    <marker date="1464283948045" expanded="true" signature="238:290" ph="SELECT * FRO... fornitori" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="fattura.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/gen_documenti/fattura.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="413">
-                  <caret line="354" column="7" selection-start-line="328" selection-start-column="4" selection-end-line="354" selection-end-column="7" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="zazzarot.pagam" pinned="false" current-in-tab="false">
-            <entry file="dbDummy://dbtable:/8bd68956/196bd43d-5ada-4cd3-92cc-085293f786a1/zazzarot.pagam">
-              <provider editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-              <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-                <state>
-                  <filtering enabled="true" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="creatabelle.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/DB/creatabelle.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="544">
-                  <caret line="130" column="13" selection-start-line="130" selection-start-column="13" selection-end-line="130" selection-end-column="13" />
-                  <folding>
-                    <marker date="1464699738251" expanded="true" signature="83:233" ph="CREATE TABLE... iva" />
-                    <marker date="1464699738251" expanded="true" signature="466:623" ph="CREATE TABLE... imballo" />
-                    <marker date="1464699738251" expanded="true" signature="865:1134" ph="CREATE TABLE... articoli" />
-                    <marker date="1464699738251" expanded="true" signature="1375:2170" ph="CREATE TABLE... clienti" />
-                    <marker date="1464699738251" expanded="true" signature="2410:2567" ph="CREATE TABLE... causale" />
-                    <marker date="1464699738251" expanded="true" signature="2809:2964" ph="CREATE TABLE... mezzo" />
-                    <marker date="1464699738251" expanded="true" signature="3213:3373" ph="CREATE TABLE... sp_agg" />
-                    <marker date="1464699738251" expanded="true" signature="3631:3766" ph="CREATE TABLE... pagam" />
-                    <marker date="1464699738251" expanded="true" signature="4020:4596" ph="CREATE TABLE... fornitori" />
-                    <marker date="1464699738251" expanded="true" signature="4837:5023" ph="CREATE TABLE... login" />
-                    <marker date="1464699738251" expanded="true" signature="5315:5721" ph="CREATE TABLE... fatt" />
-                    <marker date="1464699738251" expanded="true" signature="6030:6297" ph="CREATE TABLE... fatt" />
-                    <marker date="1464699738251" expanded="true" signature="6607:6777" ph="CREATE TABLE... numerazione_ddt" />
-                    <marker date="1464699738251" expanded="true" signature="7073:7315" ph="CREATE TABLE... ddt" />
-                    <marker date="1464699738251" expanded="true" signature="7609:7779" ph="CREATE TABLE... numerazione_ndc" />
-                    <marker date="1464699738251" expanded="true" signature="8075:8341" ph="CREATE TABLE... ndc" />
-                    <marker date="1464699738251" expanded="true" signature="8632:8800" ph="CREATE TABLE... numerazione_p" />
-                    <marker date="1464699738251" expanded="true" signature="9118:9385" ph="CREATE TABLE... prev" />
-                    <marker date="1464699738251" expanded="true" signature="9721:10162" ph="CREATE TABLE... custom_settings" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="get_clienti.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/json/get_clienti.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="901">
-                  <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-                  <folding>
-                    <marker date="1464452518846" expanded="true" signature="226:302" ph="SELECT * FRO... articoli" />
-                    <marker date="1464452518846" expanded="true" signature="226:498" ph="SELECT nomeC... clienti" />
-                    <marker date="1464452518846" expanded="true" signature="226:535" ph="SELECT id, n... clienti" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="get_fatture.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/json/get_fatture.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="416">
-                  <caret line="62" column="1" selection-start-line="62" selection-start-column="1" selection-end-line="62" selection-end-column="1" />
-                  <folding>
-                    <marker date="1464708634887" expanded="true" signature="216:223" ph="SELECT * FRO... articoli" />
-                    <marker date="1464708634887" expanded="true" signature="216:519" ph="SELECT fatt.... fatt" />
-                    <marker date="1464708634887" expanded="true" signature="216:597" ph="SELECT fatt.... fatt" />
-                    <marker date="1464708634887" expanded="true" signature="216:599" ph="SELECT fatt.... fatt" />
-                    <marker date="1464708634887" expanded="true" signature="797:819" ph="/* check con... " />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="fatture.php" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/fatture.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="181">
-                  <caret line="150" column="146" selection-start-line="150" selection-start-column="146" selection-end-line="150" selection-end-column="146" />
-                  <folding>
-                    <marker date="1464709375512" expanded="true" signature="81:372" ph="SELECT fatt.... fatt" />
-                    <marker date="1464709375512" expanded="true" signature="783:830" ph="SELECT num F... numerazione_ftt" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="zazzarot.fatt" pinned="false" current-in-tab="false">
-            <entry file="dbDummy://dbtable:/8bd68956/196bd43d-5ada-4cd3-92cc-085293f786a1/zazzarot.fatt">
-              <provider editor-type-id="text-editor">
-                <state relative-caret-position="187">
-                  <caret line="11" column="2" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
-                  <folding />
-                </state>
-              </provider>
-              <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-                <state>
-                  <filtering enabled="true" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="zazzarot.numerazione_ftt" pinned="false" current-in-tab="false">
-            <entry file="dbDummy://dbtable:/8bd68956/196bd43d-5ada-4cd3-92cc-085293f786a1/zazzarot.numerazione_ftt">
-              <provider editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-              <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-                <state>
-                  <filtering enabled="true" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="get_fatture.php" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/json/get_fatture.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="406">
-                  <caret line="62" column="1" selection-start-line="62" selection-start-column="1" selection-end-line="62" selection-end-column="1" />
-                  <folding>
-                    <marker date="1464708634887" expanded="true" signature="216:223" ph="SELECT * FRO... articoli" />
-                    <marker date="1464708634887" expanded="true" signature="216:519" ph="SELECT fatt.... fatt" />
-                    <marker date="1464708634887" expanded="true" signature="216:597" ph="SELECT fatt.... fatt" />
-                    <marker date="1464708634887" expanded="true" signature="216:599" ph="SELECT fatt.... fatt" />
-                    <marker date="1464708634887" expanded="true" signature="797:819" ph="/* check con... " />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
@@ -417,11 +161,17 @@
         <option value="$PROJECT_DIR$/json/get_clienti.php" />
         <option value="$PROJECT_DIR$/gen_documenti/fattura.php" />
         <option value="$PROJECT_DIR$/DB/data.php" />
-        <option value="$PROJECT_DIR$/ddt.php" />
         <option value="dbtable:/8bd68956/196bd43d-5ada-4cd3-92cc-085293f786a1/zazzarot.fatt" />
         <option value="$PROJECT_DIR$/DB/creatabelle.php" />
         <option value="$PROJECT_DIR$/lista_clienti.php" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/196bd43d-5ada-4cd3-92cc-085293f786a1/console.sql" />
+        <option value="$PROJECT_DIR$/json/get_ddt.php" />
+        <option value="$PROJECT_DIR$/ddt.php" />
+        <option value="$PROJECT_DIR$/preventivi.php" />
         <option value="$PROJECT_DIR$/json/get_fatture.php" />
+        <option value="$PROJECT_DIR$/ndc.php" />
+        <option value="$PROJECT_DIR$/gen_documenti/ndc.php" />
+        <option value="$PROJECT_DIR$/gen_documenti/preventivo.php" />
         <option value="$PROJECT_DIR$/fatture.php" />
       </list>
     </option>
@@ -470,15 +220,138 @@
       <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
-        <subPane />
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="proges" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="proges" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="proges" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="proges" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="proges" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="json" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="proges" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="proges" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="proges" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="proges" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gen_documenti" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="proges" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="proges" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gen_documenti" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bower_components" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="proges" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="proges" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="function" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="proges" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="proges" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DB" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="proges" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="proges" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="check" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
       </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="Console.TableResult.DefaultCopyAction" value="SQL Insert Statements" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\wamp64\www\proges\gen_documenti" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\wamp64\www\proges\json" />
     </key>
@@ -555,7 +428,7 @@
       <workItem from="1464356663733" duration="14673000" />
       <workItem from="1464441888100" duration="10048000" />
       <workItem from="1464687049641" duration="4624000" />
-      <workItem from="1464696027869" duration="12250000" />
+      <workItem from="1464696027869" duration="19875000" />
     </task>
     <task id="LOCAL-00004" summary="JSON ordinati, funzione ridotta, lista clienti e lista fornitori non visualizzano la navbar di scorrimento se non ci sono record in più pagine.">
       <created>1464283951639</created>
@@ -585,21 +458,37 @@
       <option name="project" value="LOCAL" />
       <updated>1464708689533</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="fattura e cose">
+      <created>1464709585063</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1464709585063</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Update">
+      <created>1464717054357</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1464717054357</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57593000" />
+    <option name="totallyTimeSpent" value="65218000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.56236327" sideWeight="0.49562362" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1609808" sideWeight="0.49562362" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2936078" sideWeight="0.51492536" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31728664" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.74647886" sideWeight="0.48507464" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14765458" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1603467" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1332611" sideWeight="0.48507464" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32792208" sideWeight="0.4978678" order="8" side_tool="false" content_ui="tabs" />
@@ -612,7 +501,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -653,7 +541,9 @@
     <MESSAGE value="JSON ordinati, funzione ridotta, lista clienti e lista fornitori non visualizzano la navbar di scorrimento se non ci sono record in più pagine." />
     <MESSAGE value="&quot;Restyle&quot; della fattura e nuove funzioni" />
     <MESSAGE value="Nuove funzioni, layout sistemato." />
-    <option name="LAST_COMMIT_MESSAGE" value="Nuove funzioni, layout sistemato." />
+    <MESSAGE value="fattura e cose" />
+    <MESSAGE value="Update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="UPDATE_GROUP_BY_PACKAGES" value="true" />
   </component>
@@ -662,98 +552,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ddt.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="54" selection-start-line="22" selection-start-column="54" selection-end-line="22" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/json/get_articoli.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
-          <folding>
-            <marker date="1464708635067" expanded="true" signature="229:258" ph="SELECT * FRO... articoli" />
-            <marker date="1464708635067" expanded="true" signature="229:437" ph="SELECT * FRO... articoli" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/template/parrot/navbar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DB/data.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gen_documenti/ddt.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ddt.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="54" selection-start-line="22" selection-start-column="54" selection-end-line="22" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/json/get_articoli.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
-          <folding>
-            <marker date="1464708635067" expanded="true" signature="229:258" ph="SELECT * FRO... articoli" />
-            <marker date="1464708635067" expanded="true" signature="229:437" ph="SELECT * FRO... articoli" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/template/parrot/navbar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DB/data.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/5709c671-b8af-4270-9a5c-be8b4983dc30/console.sql" />
     <entry file="file://$PROJECT_DIR$/template/parrot/navbar.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -791,13 +589,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/template/parrot/js/application.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/196bd43d-5ada-4cd3-92cc-085293f786a1/console.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -921,18 +712,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ddt.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="31" column="14" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
-          <folding>
-            <marker date="1464696326777" expanded="true" signature="81:369" ph="SELECT ddt.*... ddt" />
-            <marker date="1464696326777" expanded="true" signature="778:825" ph="SELECT num F... numerazione_ddt" />
-            <marker date="1464696326777" expanded="true" signature="3609:3638" ph="SELECT * FRO... numerazione_ddt" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/json/get_articoli.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -1008,16 +787,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/json/get_fornitori.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="35" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="35" />
-          <folding>
-            <marker date="1464283948045" expanded="true" signature="238:290" ph="SELECT * FRO... fornitori" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gen_documenti/fattura.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="413">
@@ -1038,20 +807,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/json/get_fatture.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="62" column="1" selection-start-line="62" selection-start-column="1" selection-end-line="62" selection-end-column="1" />
-          <folding>
-            <marker date="1464708634887" expanded="true" signature="216:223" ph="SELECT * FRO... articoli" />
-            <marker date="1464708634887" expanded="true" signature="216:519" ph="SELECT fatt.... fatt" />
-            <marker date="1464708634887" expanded="true" signature="216:597" ph="SELECT fatt.... fatt" />
-            <marker date="1464708634887" expanded="true" signature="216:599" ph="SELECT fatt.... fatt" />
-            <marker date="1464708634887" expanded="true" signature="797:819" ph="/* check con... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/8bd68956/196bd43d-5ada-4cd3-92cc-085293f786a1/zazzarot.pagam">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1065,10 +820,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/8bd68956/196bd43d-5ada-4cd3-92cc-085293f786a1/zazzarot.fatt">
+    <entry file="dbDummy://dbtable:/8bd68956/196bd43d-5ada-4cd3-92cc-085293f786a1/zazzarot.ddt">
       <provider editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="2" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/8bd68956/196bd43d-5ada-4cd3-92cc-085293f786a1/zazzarot.prev">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/8bd68956/196bd43d-5ada-4cd3-92cc-085293f786a1/zazzarot.numerazione_p">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/json/get_preventivi.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
+          <folding>
+            <marker date="1464714337772" expanded="true" signature="216:589" ph="SELECT prev.... prev" />
+            <marker date="1464714337772" expanded="true" signature="631:786" ph="..." />
+            <marker date="1464714337772" expanded="true" signature="853:1002" ph="..." />
+            <marker date="1464714337772" expanded="true" signature="1033:1095" ph="..." />
+            <marker date="1464714337772" expanded="true" signature="1159:1539" ph="..." />
+            <marker date="1464714337772" expanded="true" signature="1193:1536" ph="..." />
+            <marker date="1464714337772" expanded="true" signature="1203:1535" ph="..." />
+            <marker date="1464714337772" expanded="true" signature="1253:1529" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/8bd68956/196bd43d-5ada-4cd3-92cc-085293f786a1/zazzarot.ndc">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1091,14 +902,398 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ndc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="54" column="83" selection-start-line="54" selection-start-column="83" selection-end-line="54" selection-end-column="83" />
+          <folding>
+            <marker date="1464717051653" expanded="true" signature="45:333" ph="SELECT ndc.*... ndc" />
+            <marker date="1464717051653" expanded="true" signature="399:604" ph="..." />
+            <marker date="1464717051653" expanded="true" signature="547:601" ph="..." />
+            <marker date="1464717051653" expanded="true" signature="635:718" ph="..." />
+            <marker date="1464717051653" expanded="true" signature="756:4144" ph="..." />
+            <marker date="1464717051653" expanded="true" signature="763:1217" ph="..." />
+            <marker date="1464717051653" expanded="true" signature="1224:4136" ph="..." />
+            <marker date="1464717051653" expanded="true" signature="1328:1449" ph="..." />
+            <marker date="1464717051653" expanded="true" signature="1361:1442" ph="..." />
+            <marker date="1464717051653" expanded="true" signature="1393:1431" ph="..." />
+            <marker date="1464717051653" expanded="true" signature="1474:1831" ph="..." />
+            <marker date="1464717051653" expanded="true" signature="1496:1824" ph="..." />
+            <marker date="1464717051653" expanded="true" signature="1580:1813" ph="..." />
+            <marker date="1464717051653" expanded="true" signature="1617:1797" ph="..." />
+            <marker date="1464717051653" expanded="true" signature="1673:1778" ph="..." />
+            <marker date="1464717051653" expanded="true" signature="1855:2201" ph="..." />
+            <marker date="1464717051653" expanded="true" signature="1888:2194" ph="..." />
+            <marker date="1464717051653" expanded="true" signature="1920:2183" ph="..." />
+            <marker date="1464717051653" expanded="true" signature="1986:2168" ph="..." />
+            <marker date="1464717051653" expanded="true" signature="2226:2321" ph="..." />
+            <marker date="1464717051653" expanded="false" signature="2245:2258" ph="..." />
+            <marker date="1464717051653" expanded="true" signature="2259:2314" ph="..." />
+            <marker date="1464717051653" expanded="true" signature="2345:2692" ph="..." />
+            <marker date="1464717051653" expanded="true" signature="2388:2685" ph="..." />
+            <marker date="1464717051653" expanded="true" signature="2404:2624" ph="..." />
+            <marker date="1464717051653" expanded="true" signature="2417:2607" ph="..." />
+            <marker date="1464717051653" expanded="true" signature="2653:2671" ph="..." />
+            <marker date="1464717051653" expanded="true" signature="2779:4128" ph="..." />
+            <marker date="1464717051653" expanded="true" signature="2838:4119" ph="{...}" />
+            <marker date="1464717051653" expanded="true" signature="2867:3040" ph="{&quot;url&quot;: &quot;http://&lt;?php echo $base_url ?&gt;/json/get_ndc.php&quot;...}" />
+            <marker date="1464717051653" expanded="true" signature="3077:4032" ph="{...}" />
+            <marker date="1464717051653" expanded="true" signature="3228:3688" ph="{...}" />
+            <marker date="1464717051653" expanded="true" signature="3737:3880" ph="{...}" />
+            <marker date="1464717051653" expanded="true" signature="3944:3987" ph="{...}" />
+            <marker date="1464717051653" expanded="true" signature="4070:4111" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gen_documenti/ndc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="201" column="39" selection-start-line="201" selection-start-column="39" selection-end-line="201" selection-end-column="39" />
+          <folding>
+            <marker date="1464717051500" expanded="true" signature="63:12959" ph="..." />
+            <marker date="1464717051500" expanded="true" signature="70:4030" ph="..." />
+            <marker date="1464717051500" expanded="true" signature="605:1066" ph="..." />
+            <marker date="1464717051500" expanded="true" signature="765:803" ph="{...}" />
+            <marker date="1464717051500" expanded="true" signature="825:863" ph="{...}" />
+            <marker date="1464717051500" expanded="true" signature="955:993" ph="{...}" />
+            <marker date="1464717051500" expanded="true" signature="1015:1053" ph="{...}" />
+            <marker date="1464717051500" expanded="true" signature="1078:4022" ph="..." />
+            <marker date="1464717051500" expanded="true" signature="2454:2492" ph="{...}" />
+            <marker date="1464717051500" expanded="true" signature="2528:2633" ph="{...}" />
+            <marker date="1464717051500" expanded="true" signature="2668:2772" ph="{...}" />
+            <marker date="1464717051500" expanded="true" signature="2805:2849" ph="{...}" />
+            <marker date="1464717051500" expanded="true" signature="2892:2964" ph="{...}" />
+            <marker date="1464717051500" expanded="true" signature="2994:3035" ph="{...}" />
+            <marker date="1464717051500" expanded="true" signature="3072:3154" ph="{...}" />
+            <marker date="1464717051500" expanded="true" signature="3179:3322" ph="{...}" />
+            <marker date="1464717051500" expanded="true" signature="3346:3404" ph="{...}" />
+            <marker date="1464717051500" expanded="true" signature="3427:4009" ph="{...}" />
+            <marker date="1464717051500" expanded="true" signature="3443:3490" ph="{...}" />
+            <marker date="1464717051500" expanded="true" signature="3510:3618" ph="{...}" />
+            <marker date="1464717051500" expanded="true" signature="3646:3745" ph="{...}" />
+            <marker date="1464717051500" expanded="true" signature="3764:3805" ph="{...}" />
+            <marker date="1464717051500" expanded="true" signature="3824:3868" ph="{...}" />
+            <marker date="1464717051500" expanded="true" signature="3887:3931" ph="{...}" />
+            <marker date="1464717051500" expanded="true" signature="3953:3999" ph="{...}" />
+            <marker date="1464717051500" expanded="true" signature="4037:12958" ph="..." />
+            <marker date="1464717051500" expanded="false" signature="4064:4104" ph="..." />
+            <marker date="1464717051500" expanded="true" signature="4129:4348" ph="..." />
+            <marker date="1464717051500" expanded="true" signature="4147:4341" ph="..." />
+            <marker date="1464717051500" expanded="true" signature="4356:10543" ph="..." />
+            <marker date="1464717051500" expanded="false" signature="4374:4390" ph="..." />
+            <marker date="1464717051500" expanded="true" signature="4415:10535" ph="..." />
+            <marker date="1464717051500" expanded="true" signature="4454:10524" ph="..." />
+            <marker date="1464717051500" expanded="true" signature="4518:10509" ph="..." />
+            <marker date="1464717051500" expanded="true" signature="4543:7132" ph="..." />
+            <marker date="1464717051500" expanded="true" signature="4607:7106" ph="..." />
+            <marker date="1464717051500" expanded="false" signature="4653:4663" ph="..." />
+            <marker date="1464717051500" expanded="true" signature="4664:5748" ph="..." />
+            <marker date="1464717051500" expanded="true" signature="4710:4735" ph="..." />
+            <marker date="1464717051500" expanded="true" signature="4739:5397" ph="..." />
+            <marker date="1464717051500" expanded="true" signature="4776:5367" ph="..." />
+            <marker date="1464717051500" expanded="false" signature="4858:4901" ph="..." />
+            <marker date="1464717051500" expanded="true" signature="4902:4992" ph="..." />
+            <marker date="1464717051500" expanded="true" signature="5056:5156" ph="..." />
+            <marker date="1464717051500" expanded="true" signature="5246:5329" ph="..." />
+            <marker date="1464717051500" expanded="false" signature="5303:5328" ph="..." />
+            <marker date="1464717051500" expanded="true" signature="5438:5579" ph="..." />
+            <marker date="1464717051500" expanded="false" signature="5485:5510" ph="..." />
+            <marker date="1464717051500" expanded="true" signature="5511:5572" ph="..." />
+            <marker date="1464717051500" expanded="true" signature="5608:5722" ph="..." />
+            <marker date="1464717051500" expanded="true" signature="5786:7083" ph="..." />
+            <marker date="1464717051500" expanded="true" signature="5834:7057" ph="..." />
+            <marker date="1464717051500" expanded="true" signature="5962:6036" ph="..." />
+            <marker date="1464717051500" expanded="true" signature="6278:6322" ph="..." />
+            <marker date="1464717051500" expanded="false" signature="6416:6442" ph="..." />
+            <marker date="1464717051500" expanded="true" signature="6443:6512" ph="..." />
+            <marker date="1464717051500" expanded="false" signature="6555:6564" ph="..." />
+            <marker date="1464717051500" expanded="false" signature="6664:6690" ph="..." />
+            <marker date="1464717051500" expanded="true" signature="6691:6754" ph="..." />
+            <marker date="1464717051500" expanded="false" signature="6797:6806" ph="..." />
+            <marker date="1464717051500" expanded="true" signature="6924:7026" ph="..." />
+            <marker date="1464717051500" expanded="false" signature="6967:6993" ph="..." />
+            <marker date="1464717051500" expanded="true" signature="7157:10487" ph="..." />
+            <marker date="1464717051500" expanded="true" signature="7179:7480" ph="..." />
+            <marker date="1464717051500" expanded="true" signature="7529:8488" ph="..." />
+            <marker date="1464717051500" expanded="true" signature="7578:7779" ph="..." />
+            <marker date="1464717051500" expanded="false" signature="7656:7673" ph="..." />
+            <marker date="1464717051500" expanded="true" signature="7674:7753" ph="..." />
+            <marker date="1464717051500" expanded="true" signature="7840:7984" ph="..." />
+            <marker date="1464717051500" expanded="true" signature="8031:8222" ph="..." />
+            <marker date="1464717051500" expanded="false" signature="8099:8116" ph="..." />
+            <marker date="1464717051500" expanded="true" signature="8129:8196" ph="..." />
+            <marker date="1464717051500" expanded="true" signature="8272:8465" ph="..." />
+            <marker date="1464717051500" expanded="false" signature="8340:8357" ph="..." />
+            <marker date="1464717051500" expanded="true" signature="8370:8439" ph="..." />
+            <marker date="1464717051500" expanded="true" signature="8510:8942" ph="..." />
+            <marker date="1464717051500" expanded="false" signature="8543:8560" ph="..." />
+            <marker date="1464717051500" expanded="false" signature="8659:8675" ph="..." />
+            <marker date="1464717051500" expanded="true" signature="8723:8920" ph="..." />
+            <marker date="1464717051500" expanded="false" signature="8791:8807" ph="..." />
+            <marker date="1464717051500" expanded="true" signature="8822:8894" ph="..." />
+            <marker date="1464717051500" expanded="true" signature="8964:9275" ph="..." />
+            <marker date="1464717051500" expanded="false" signature="8997:9013" ph="..." />
+            <marker date="1464717051500" expanded="true" signature="9049:9253" ph="..." />
+            <marker date="1464717051500" expanded="false" signature="9086:9102" ph="..." />
+            <marker date="1464717051500" expanded="true" signature="9103:9248" ph="..." />
+            <marker date="1464717051500" expanded="true" signature="9297:9628" ph="..." />
+            <marker date="1464717051500" expanded="false" signature="9330:9346" ph="..." />
+            <marker date="1464717051500" expanded="true" signature="9409:9606" ph="..." />
+            <marker date="1464717051500" expanded="false" signature="9477:9493" ph="..." />
+            <marker date="1464717051500" expanded="true" signature="9508:9580" ph="..." />
+            <marker date="1464717051500" expanded="true" signature="9650:10461" ph="..." />
+            <marker date="1464717051500" expanded="true" signature="9687:10379" ph="..." />
+            <marker date="1464717051500" expanded="true" signature="9770:10158" ph="..." />
+            <marker date="1464717051500" expanded="false" signature="10009:10033" ph="..." />
+            <marker date="1464717051500" expanded="false" signature="10242:10267" ph="..." />
+            <marker date="1464717051500" expanded="true" signature="10279:10374" ph="..." />
+            <marker date="1464717051500" expanded="false" signature="10348:10373" ph="..." />
+            <marker date="1464717051500" expanded="false" signature="10570:10610" ph="..." />
+            <marker date="1464717051500" expanded="true" signature="10635:10855" ph="..." />
+            <marker date="1464717051500" expanded="true" signature="10653:10848" ph="..." />
+            <marker date="1464717051500" expanded="true" signature="10918:12950" ph="..." />
+            <marker date="1464717051500" expanded="true" signature="10986:12471" ph="{&quot;dataType&quot;: &quot;json&quot;...}" />
+            <marker date="1464717051500" expanded="true" signature="11176:11295" ph="{...}" />
+            <marker date="1464717051500" expanded="true" signature="11337:12465" ph="{...}" />
+            <marker date="1464717051500" expanded="true" signature="11365:12249" ph="{...}" />
+            <marker date="1464717051500" expanded="true" signature="12300:12351" ph="{...}" />
+            <marker date="1464717051500" expanded="true" signature="12402:12453" ph="{...}" />
+            <marker date="1464717051500" expanded="true" signature="12507:12941" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gen_documenti/preventivo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="203" column="91" selection-start-line="203" selection-start-column="91" selection-end-line="203" selection-end-column="91" />
+          <folding>
+            <marker date="1464717051439" expanded="true" signature="63:12981" ph="..." />
+            <marker date="1464717051439" expanded="true" signature="70:4037" ph="..." />
+            <marker date="1464717051439" expanded="true" signature="612:1073" ph="..." />
+            <marker date="1464717051439" expanded="true" signature="772:810" ph="{...}" />
+            <marker date="1464717051439" expanded="true" signature="832:870" ph="{...}" />
+            <marker date="1464717051439" expanded="true" signature="962:1000" ph="{...}" />
+            <marker date="1464717051439" expanded="true" signature="1022:1060" ph="{...}" />
+            <marker date="1464717051439" expanded="true" signature="1085:4029" ph="..." />
+            <marker date="1464717051439" expanded="true" signature="2461:2499" ph="{...}" />
+            <marker date="1464717051439" expanded="true" signature="2535:2640" ph="{...}" />
+            <marker date="1464717051439" expanded="true" signature="2675:2779" ph="{...}" />
+            <marker date="1464717051439" expanded="true" signature="2812:2856" ph="{...}" />
+            <marker date="1464717051439" expanded="true" signature="2899:2971" ph="{...}" />
+            <marker date="1464717051439" expanded="true" signature="3001:3042" ph="{...}" />
+            <marker date="1464717051439" expanded="true" signature="3079:3161" ph="{...}" />
+            <marker date="1464717051439" expanded="true" signature="3186:3329" ph="{...}" />
+            <marker date="1464717051439" expanded="true" signature="3353:3411" ph="{...}" />
+            <marker date="1464717051439" expanded="true" signature="3434:4016" ph="{...}" />
+            <marker date="1464717051439" expanded="true" signature="3450:3497" ph="{...}" />
+            <marker date="1464717051439" expanded="true" signature="3517:3625" ph="{...}" />
+            <marker date="1464717051439" expanded="true" signature="3653:3752" ph="{...}" />
+            <marker date="1464717051439" expanded="true" signature="3771:3812" ph="{...}" />
+            <marker date="1464717051439" expanded="true" signature="3831:3875" ph="{...}" />
+            <marker date="1464717051439" expanded="true" signature="3894:3938" ph="{...}" />
+            <marker date="1464717051439" expanded="true" signature="3960:4006" ph="{...}" />
+            <marker date="1464717051439" expanded="true" signature="4044:12980" ph="..." />
+            <marker date="1464717051439" expanded="false" signature="4071:4111" ph="..." />
+            <marker date="1464717051439" expanded="true" signature="4136:4362" ph="..." />
+            <marker date="1464717051439" expanded="true" signature="4154:4355" ph="..." />
+            <marker date="1464717051439" expanded="true" signature="4370:10558" ph="..." />
+            <marker date="1464717051439" expanded="false" signature="4388:4404" ph="..." />
+            <marker date="1464717051439" expanded="true" signature="4429:10550" ph="..." />
+            <marker date="1464717051439" expanded="true" signature="4468:10539" ph="..." />
+            <marker date="1464717051439" expanded="true" signature="4532:10524" ph="..." />
+            <marker date="1464717051439" expanded="true" signature="4557:7147" ph="..." />
+            <marker date="1464717051439" expanded="true" signature="4621:7121" ph="..." />
+            <marker date="1464717051439" expanded="false" signature="4667:4677" ph="..." />
+            <marker date="1464717051439" expanded="true" signature="4678:5763" ph="..." />
+            <marker date="1464717051439" expanded="true" signature="4724:4749" ph="..." />
+            <marker date="1464717051439" expanded="true" signature="4753:5412" ph="..." />
+            <marker date="1464717051439" expanded="true" signature="4790:5382" ph="..." />
+            <marker date="1464717051439" expanded="false" signature="4873:4916" ph="..." />
+            <marker date="1464717051439" expanded="true" signature="4917:5007" ph="..." />
+            <marker date="1464717051439" expanded="true" signature="5071:5171" ph="..." />
+            <marker date="1464717051439" expanded="true" signature="5261:5344" ph="..." />
+            <marker date="1464717051439" expanded="false" signature="5318:5343" ph="..." />
+            <marker date="1464717051439" expanded="true" signature="5453:5594" ph="..." />
+            <marker date="1464717051439" expanded="false" signature="5500:5525" ph="..." />
+            <marker date="1464717051439" expanded="true" signature="5526:5587" ph="..." />
+            <marker date="1464717051439" expanded="true" signature="5623:5737" ph="..." />
+            <marker date="1464717051439" expanded="true" signature="5801:7098" ph="..." />
+            <marker date="1464717051439" expanded="true" signature="5849:7072" ph="..." />
+            <marker date="1464717051439" expanded="true" signature="5977:6051" ph="..." />
+            <marker date="1464717051439" expanded="true" signature="6293:6337" ph="..." />
+            <marker date="1464717051439" expanded="false" signature="6431:6457" ph="..." />
+            <marker date="1464717051439" expanded="true" signature="6458:6527" ph="..." />
+            <marker date="1464717051439" expanded="false" signature="6570:6579" ph="..." />
+            <marker date="1464717051439" expanded="false" signature="6679:6705" ph="..." />
+            <marker date="1464717051439" expanded="true" signature="6706:6769" ph="..." />
+            <marker date="1464717051439" expanded="false" signature="6812:6821" ph="..." />
+            <marker date="1464717051439" expanded="true" signature="6939:7041" ph="..." />
+            <marker date="1464717051439" expanded="false" signature="6982:7008" ph="..." />
+            <marker date="1464717051439" expanded="true" signature="7172:10502" ph="..." />
+            <marker date="1464717051439" expanded="true" signature="7194:7495" ph="..." />
+            <marker date="1464717051439" expanded="true" signature="7544:8503" ph="..." />
+            <marker date="1464717051439" expanded="true" signature="7593:7794" ph="..." />
+            <marker date="1464717051439" expanded="false" signature="7671:7688" ph="..." />
+            <marker date="1464717051439" expanded="true" signature="7689:7768" ph="..." />
+            <marker date="1464717051439" expanded="true" signature="7855:7999" ph="..." />
+            <marker date="1464717051439" expanded="true" signature="8046:8237" ph="..." />
+            <marker date="1464717051439" expanded="false" signature="8114:8131" ph="..." />
+            <marker date="1464717051439" expanded="true" signature="8144:8211" ph="..." />
+            <marker date="1464717051439" expanded="true" signature="8287:8480" ph="..." />
+            <marker date="1464717051439" expanded="false" signature="8355:8372" ph="..." />
+            <marker date="1464717051439" expanded="true" signature="8385:8454" ph="..." />
+            <marker date="1464717051439" expanded="true" signature="8525:8957" ph="..." />
+            <marker date="1464717051439" expanded="false" signature="8558:8575" ph="..." />
+            <marker date="1464717051439" expanded="false" signature="8674:8690" ph="..." />
+            <marker date="1464717051439" expanded="true" signature="8738:8935" ph="..." />
+            <marker date="1464717051439" expanded="false" signature="8806:8822" ph="..." />
+            <marker date="1464717051439" expanded="true" signature="8837:8909" ph="..." />
+            <marker date="1464717051439" expanded="true" signature="8979:9290" ph="..." />
+            <marker date="1464717051439" expanded="false" signature="9012:9028" ph="..." />
+            <marker date="1464717051439" expanded="true" signature="9064:9268" ph="..." />
+            <marker date="1464717051439" expanded="false" signature="9101:9117" ph="..." />
+            <marker date="1464717051439" expanded="true" signature="9118:9263" ph="..." />
+            <marker date="1464717051439" expanded="true" signature="9312:9643" ph="..." />
+            <marker date="1464717051439" expanded="false" signature="9345:9361" ph="..." />
+            <marker date="1464717051439" expanded="true" signature="9424:9621" ph="..." />
+            <marker date="1464717051439" expanded="false" signature="9492:9508" ph="..." />
+            <marker date="1464717051439" expanded="true" signature="9523:9595" ph="..." />
+            <marker date="1464717051439" expanded="true" signature="9665:10476" ph="..." />
+            <marker date="1464717051439" expanded="true" signature="9702:10394" ph="..." />
+            <marker date="1464717051439" expanded="true" signature="9785:10173" ph="..." />
+            <marker date="1464717051439" expanded="false" signature="10024:10048" ph="..." />
+            <marker date="1464717051439" expanded="false" signature="10257:10282" ph="..." />
+            <marker date="1464717051439" expanded="true" signature="10294:10389" ph="..." />
+            <marker date="1464717051439" expanded="false" signature="10363:10388" ph="..." />
+            <marker date="1464717051439" expanded="false" signature="10585:10625" ph="..." />
+            <marker date="1464717051439" expanded="true" signature="10650:10877" ph="..." />
+            <marker date="1464717051439" expanded="true" signature="10668:10870" ph="..." />
+            <marker date="1464717051439" expanded="true" signature="10940:12972" ph="..." />
+            <marker date="1464717051439" expanded="true" signature="11008:12493" ph="{&quot;dataType&quot;: &quot;json&quot;...}" />
+            <marker date="1464717051439" expanded="true" signature="11198:11317" ph="{...}" />
+            <marker date="1464717051439" expanded="true" signature="11359:12487" ph="{...}" />
+            <marker date="1464717051439" expanded="true" signature="11387:12271" ph="{...}" />
+            <marker date="1464717051439" expanded="true" signature="12322:12373" ph="{...}" />
+            <marker date="1464717051439" expanded="true" signature="12424:12475" ph="{...}" />
+            <marker date="1464717051439" expanded="true" signature="12529:12963" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/fatture.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="150" column="146" selection-start-line="150" selection-start-column="146" selection-end-line="150" selection-end-column="146" />
+        <state relative-caret-position="187">
+          <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
           <folding>
-            <marker date="1464709375512" expanded="true" signature="81:372" ph="SELECT fatt.... fatt" />
-            <marker date="1464709375512" expanded="true" signature="783:830" ph="SELECT num F... numerazione_ftt" />
+            <marker date="1464717051542" expanded="true" signature="81:373" ph="SELECT fatt.... fatt" />
+            <marker date="1464717051542" expanded="true" signature="784:831" ph="SELECT num F... numerazione_ftt" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/8bd68956/196bd43d-5ada-4cd3-92cc-085293f786a1/zazzarot.fatt">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="2" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/json/get_fornitori.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="35" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="35" />
+          <folding>
+            <marker date="1464283948045" expanded="true" signature="238:290" ph="SELECT * FRO... fornitori" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/json/get_fatture.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-339">
+          <caret line="14" column="50" selection-start-line="14" selection-start-column="50" selection-end-line="14" selection-end-column="50" />
+          <folding>
+            <marker date="1464715690519" expanded="true" signature="216:223" ph="SELECT * FRO... articoli" />
+            <marker date="1464715690519" expanded="true" signature="216:520" ph="SELECT fatt.... fatt" />
+            <marker date="1464715690519" expanded="true" signature="216:598" ph="SELECT fatt.... fatt" />
+            <marker date="1464715690519" expanded="true" signature="216:600" ph="SELECT fatt.... fatt" />
+            <marker date="1464715690519" expanded="true" signature="798:820" ph="/* check con... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/8bd68956/196bd43d-5ada-4cd3-92cc-085293f786a1/zazzarot.clienti">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ddt.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="144" column="0" selection-start-line="144" selection-start-column="0" selection-end-line="183" selection-end-column="5" />
+          <folding>
+            <marker date="1464717051592" expanded="true" signature="81:369" ph="SELECT ddt.*... ddt" />
+            <marker date="1464717051592" expanded="true" signature="778:825" ph="SELECT num F... numerazione_ddt" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/json/get_ddt.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="34" column="59" selection-start-line="34" selection-start-column="59" selection-end-line="34" selection-end-column="59" />
+          <folding>
+            <marker date="1464717051630" expanded="true" signature="295:503" ph="SELECT ddt.*... ddt" />
+            <marker date="1464717051630" expanded="true" signature="295:514" ph="SELECT ddt.*... ddt" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preventivi.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1464717051470" expanded="true" signature="53:336" ph="SELECT prev.... prev" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/8bd68956/196bd43d-5ada-4cd3-92cc-085293f786a1/zazzarot.numerazione_ddt">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/196bd43d-5ada-4cd3-92cc-085293f786a1/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="85" selection-start-line="0" selection-start-column="80" selection-end-line="0" selection-end-column="85" />
+          <folding />
         </state>
       </provider>
     </entry>

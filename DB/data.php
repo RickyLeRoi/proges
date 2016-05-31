@@ -1,8 +1,8 @@
 <?php
 $host = "localhost";
 $userDB = "root";
-$pswdDB = "0808";
-$database = "zazzarot";
+$pswdDB = "mysql";
+$database = "gestionale_db";
 
 $debug = true;
 ?>

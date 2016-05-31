@@ -9,14 +9,14 @@ if (isset($_GET["check"])) $check = mysqli_real_escape_string($conndb, $_GET["ch
 
 else $check = false;
 
-$query = "SELECT fatt.*, numerazione_ftt.*, clienti.nomeC, clienti.cognomeC, clienti.codC, pagam.descr
-                FROM fatt
-                  LEFT JOIN numerazione_ftt
-                    ON fatt.id=numerazione_ftt.num
+$query = "SELECT ndc.*, numerazione_ndc.*, clienti.nomeC, clienti.cognomeC, clienti.codC, pagam.descr
+                FROM ndc
+                  LEFT JOIN numerazione_ndc
+                    ON ndc.id=numerazione_ndc.id
                   LEFT JOIN clienti
-                    ON numerazione_ftt.dest=clienti.id
+                    ON numerazione_ndc.dest=clienti.id
                   LEFT JOIN pagam
-                    ON fatt.id_pag=pagam.id";
+                    ON ndc.id_pag=pagam.id";
 
 
 //echo $query;
@@ -41,18 +41,18 @@ if ($conndb->connect_errno) {
 
 $newKey = array();
 
-while ($fattura = $result->fetch_object()) {
-//echo $fattura->id;
+while ($ndc = $result->fetch_object()) {
+//echo $ndc->id;
     array_push($newKey, [
-        "value" => $fattura->id,
+        "value" => $ndc->id,
         "data" => [
-            "num" => $fattura->num,
-            "codC" => $fattura->codC,
-            "nomeC" => $fattura->nomeC,
-            "cognomeC" => $fattura->cognomeC,
-            "note" => $fattura->note,
-            "reg_date" => $fattura->reg_date,
-            "pagamDescr" => $fattura->descr
+            "num" => $ndc->num,
+            "codC" => $ndc->codC,
+            "nomeC" => $ndc->nomeC,
+            "cognomeC" => $ndc->cognomeC,
+            "note" => $ndc->note,
+            "reg_date" => $ndc->reg_date,
+            "pagamDescr" => $ndc->descr
         ]
     ]);
 }

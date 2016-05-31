@@ -5,7 +5,7 @@ include("DB/config.php");
 $query = "SELECT fatt.*, numerazione_ftt.*, clienti.nomeC, clienti.cognomeC, clienti.codC
                 FROM fatt
                   INNER JOIN numerazione_ftt
-                    ON fatt.id=numerazione_ftt.id
+                    ON fatt.id=numerazione_ftt.num
                   LEFT JOIN clienti
                     ON numerazione_ftt.dest=clienti.id";
 
@@ -108,7 +108,8 @@ if ($conndb->connect_errno) {
         <div class="container">
             Lista Fatture
             <form method="post" action="#">
-                <input id="filtro" class="form-control" type="text" placeholder="Filtra per utente">
+                <input onkeyup="suggerimento($(this).val())" id="filtro" class="form-control" type="text"
+                       placeholder="Filtra per utente">
             </form>
         </div>
     </div>
@@ -138,32 +139,53 @@ if ($conndb->connect_errno) {
 
     </table>
 </div>
+
 <?php $result->close(); ?>
 <?php include_once("template/parrot/foot.php") ?>
 
 <script>
-    $('#filtro').devbridgeAutocomplete({
-        dataType: "json",
-        paramName: "check",
-        serviceUrl: 'http://<?php echo $base_url ?>/json/get_fatture.php',
-        formatResult: function (suggestion, currentValue) {
-            console.log(suggestion);
-            $("#records").append(suggestion.value + ' - ' + suggestion.data.codC + ' - ' + suggestion.data.nomeC + " " + suggestion.data.cognomeC);
-        },
-        onSelect: function (suggestion) {
+    suggerimento("");
+    function suggerimento(runsVar) {
+
+        var call = $.ajax({
+            url: "http://<?php echo $base_url ?>/json/get_fatture.php",
+            method: "GET",
+            data: "check=" + runsVar,
+            dataType: "json"
+        });
+
+        call.done(function (msg) {
+
+            var records = msg.suggestions;
+            console.log(records);
             $("#records").html("");
-            console.log(suggestion);
-            var records = "" +
-                "<td>" + suggestion.data.num + "</td>" +
-                "<td>" + suggestion.data.codC + "</td>" +
-                "<td>" + suggestion.data.nomeC + " " + suggestion.data.cognomeC + "</td>" +
-                "<td>" + suggestion.data.note + "</td>" +
-                "<td>" + suggestion.data.reg_date + "</td>" +
-                "<td>" + suggestion.data.pagamDescr + "</td>";
-            $("#records").append("<tr>" + records + "</tr>");
-            $("#voci").text();
-        }
-    });
+            for (var x in records) {
+                var record = "" +
+                    "<td>" + records[x].data.num + "</td>" +
+                    "<td>" + records[x].data.codC + "</td>" +
+                    "<td>" + records[x].data.nomeC + " " + records[x].data.cognomeC + "</td>" +
+                    "<td>" + records[x].data.note + "</td>" +
+                    "<td>" + records[x].data.reg_date + "</td>" +
+                    "<td>" + records[x].data.pagamDescr + "</td>";
+                $("#records").append("<tr>" + record + "</tr>");
+            }
+
+            if (jQuery.isEmptyObject(records)) {
+                record = "<tr><td>" + "Non è presente alcun record" + "</td></tr>";
+                $("#records").html(record);
+            }
+            var voci = parseInt(x) + 1;
+            if (!voci) {
+                voci = "0";
+            }
+            $("#voci").text(voci);
+        });
+
+        call.error(function (msg) {
+            console.log(msg);
+        });
+    }
+
 </script>
 
 <?php include_once("template/parrot/foot.php") ?>

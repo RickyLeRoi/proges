@@ -41,66 +41,110 @@
 <body>
         <!-- #### Navbars #### -->
         <?php include_once("template/parrot/navbar.php") ?>
-<!---->
-<!--        <div class="masthead">-->
-<!--            <div class="masthead-title">-->
-<!--                <div class="container">-->
-<!--                    <img src="images/logob.png" width="80%" alt=""><br/>-->
-<!--                    Preventivi-->
-<!--                    <small>Gestionale & Fatturazione</small>-->
-<!--                    -->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
+
+        <div class="masthead">
+            <div class="masthead-title">
+                <div class="container">
+                    Genera Preventivo
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <form class="form-horizontal" method="post" action="gen_documenti/preventivo.php">
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-default">Genera</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="masthead">
+            <div class="masthead-title">
+                <div class="container">
+                    Lista Preventivi
+                    <form method="post" action="#">
+                        <input onkeyup="suggerimento($(this).val())" id="filtro" class="form-control" type="text"
+                               placeholder="Filtra per utente">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+    <span style="color:#EA640C">
+    Totale voci n. <span id="voci"></span>
+    </span>
+        </div>
 
         <div class="container">
             <table class="table table-responsive">
+                <thead>
                 <tr>
                     <th>Preventivo n°</th>
                     <th>Codice Cliente</th>
                     <th>Cliente</th>
-                    <th>Cod. Mezzo</th>
-                    <th>Cod. Causale</th>
-                    <th>Cod. Imballaggio</th>
                     <th>Note</th>
                     <th>Data</th>
+                    <th>Pagamento</th>
                 </tr>
-                <tr>
-                <?php
-                    if (isset($norows)) : ?>
-                <tr>
-                    <td colspan="8"><?php echo $norows ?></td>
-                </tr>
-                <?php
+                </thead>
+                <tbody id="records">
 
-                endif; // Se non restituisce alcuna riga
-
-                    if ($oggetto_prev === 1) :
-                        while ($oggetto_prev = $result->fetch_object()) :
-                    //print_r($oggetto_prev);
-                    ?>
-                <tr>
-                    <td><?php echo $oggetto_prev->num ?></td>
-                    <td><?php echo $oggetto_prev->codC ?></td>
-                    <td><?php echo $oggetto_prev->nomeC." ".$oggetto_prev->nomeC ?></td>
-                    <td><?php echo $oggetto_prev->id_mezzo ?></td>
-                    <td><?php echo $oggetto_prev->id_caus ?></td>
-                    <td><?php echo $oggetto_prev->id_imb ?></td>
-                    <td><?php echo $oggetto_prev->note ?></td>
-                    <td><?php echo $oggetto_prev->reg_date ?></td>
-
-                </tr>
-
-
-                    <?php
-                            endwhile;
-                    endif;
-                    ?>
+                </tbody>
 
             </table>
         </div>
-        <?php $result->close(); ?>
-	    <?php include_once("template/parrot/foot.php") ?>
 
+        <?php $result->close(); ?>
+        <?php include_once("template/parrot/foot.php") ?>
+
+        <script>
+            suggerimento("");
+            function suggerimento(runsVar) {
+
+                var call = $.ajax({
+                    url: "http://<?php echo $base_url ?>/json/get_preventivi.php",
+                    method: "GET",
+                    data: "check=" + runsVar,
+                    dataType: "json"
+                });
+
+                call.done(function (msg) {
+
+                    var records = msg.suggestions;
+                    console.log(records);
+                    $("#records").html("");
+                    for (var x in records) {
+                        var record = "" +
+                            "<td>" + records[x].data.num + "</td>" +
+                            "<td>" + records[x].data.codC + "</td>" +
+                            "<td>" + records[x].data.nomeC + " " + records[x].data.cognomeC + "</td>" +
+                            "<td>" + records[x].data.note + "</td>" +
+                            "<td>" + records[x].data.reg_date + "</td>" +
+                            "<td>" + records[x].data.pagamDescr + "</td>";
+                        $("#records").append("<tr>" + record + "</tr>");
+                    }
+
+                    if (jQuery.isEmptyObject(records)) {
+                        record = "<tr><td>" + "Non è presente alcun record" + "</td></tr>";
+                        $("#records").html(record);
+                    }
+                    var voci = parseInt(x) + 1;
+                    if (!voci) {
+                        voci = "0";
+                    }
+                    $("#voci").text(voci);
+                });
+
+                call.error(function (msg) {
+                    console.log(msg);
+                });
+            }
+
+        </script>
 	</body>
 </html>
