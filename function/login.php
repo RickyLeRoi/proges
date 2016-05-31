@@ -29,7 +29,7 @@
           </div>
           ";
       } else {
-         $ck = "
+          $ck = "
          <div class=\"alert alert-danger alert-dismissable\">
          Login <strong>errato.</strong> Riprova!
          </div>
@@ -113,6 +113,7 @@
                              <div class="clearfix"></div>
                     </form>
                     </div>
-                    </div></div>
+                </div>
+                </div>
 	</body>
 </html>

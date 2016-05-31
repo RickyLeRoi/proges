@@ -6,4 +6,5 @@ window.onload=function(){
         var father = Navid.parentNode,
             grandFather = father.parentNode;
         grandFather.setAttribute('class','active');
-    } }
+    }
+};

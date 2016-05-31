@@ -197,7 +197,7 @@
     .done(function(html) {
       jQuery('body').append(html);
     });*/
-  }
+  };
 
   /*
    * Global sweetAlert function
@@ -455,7 +455,7 @@
    */
   window.swal.close = function() {
     closeModal();
-  }
+  };
 
   /*
    * Set type, text and actions on modal

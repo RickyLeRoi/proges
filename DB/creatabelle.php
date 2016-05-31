@@ -200,12 +200,19 @@ if (mysqli_query($conndb, $sql_log)) {
 }
 
 //creo tabella numerazione fattura
-$sql_nf = "CREATE TABLE numerazione_ftt (
-id INT(5) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-num INT(5) NOT NULL,
-dest VARCHAR(50) NOT NULL,
-link VARCHAR(250) NULL,
-reg_date TIMESTAMP
+$sql_nf = "CREATE TABLE `fatt` (
+  `id` int(8) unsigned NOT NULL AUTO_INCREMENT,
+  `id_doc` int(5) NOT NULL,
+  `id_art` int(5) NOT NULL,
+  `qta` int(5) NOT NULL,
+  `id_iva` int(3) NOT NULL,
+  `id_mezzo` int(3) DEFAULT NULL,
+  `id_caus` int(3) DEFAULT NULL,
+  `id_imb` int(3) DEFAULT NULL,
+  `note` varchar(100) DEFAULT NULL,
+  `reg_date` timestamp NULL DEFAULT NULL,
+  `id_pag` int(5) NOT NULL,
+  PRIMARY KEY (`id`)
 )";
 
 if (mysqli_query($conndb, $sql_nf)) {

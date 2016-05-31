@@ -124,7 +124,7 @@
 
 <div class="container">
     <small>
-        <?php echo $ck;  ?>
+        <?php echo $ck; ?>
     </small>
     <br/>
     <span style="color:#EA640C">

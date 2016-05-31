@@ -9,7 +9,7 @@ if (isset($_GET["check"])) $check = mysqli_real_escape_string($conndb,$_GET["che
 
     else $check = "Nessuna query";
 
-$query = "SELECT * FROM articoli WHERE misura LIKE \"%".$check."%\" OR descr LIKE \"%".$check."%\" OR cod_barre LIKE \"%".$check."%\" OR prezzo LIKE \"%".$check."%\" OR cod_int LIKE \"%".$check."%\"";
+$query = "SELECT * FROM articoli WHERE misura LIKE \"%" . $check . "%\" OR descr LIKE \"%" . $check . "%\" OR cod_barre LIKE \"%" . $check . "%\" OR prezzo LIKE \"%" . $check . "%\" OR cod_int LIKE \"%" . $check . "%\"";
 
 /* check connection */
 
