@@ -107,22 +107,23 @@ if ($conndb->connect_errno) {
         <div class="masthead-title">
             <div class="container">
                 Lista DDT
+                <form method="post" action="#">
+                    <input onkeyup="suggerimento($(this).val())" id="filtro" class="form-control" type="text"
+                           placeholder="Filtra per utente">
+                </form>
             </div>
         </div>
     </div>
 
 <div class="container">
     <span style="color:#EA640C">
-    Totale voci n.
-    <?php
-    $sql_rows = "SELECT * FROM numerazione_ddt";
-    echo mysqli_num_rows(mysqli_query($conndb, $sql_rows));
-    ?>
+    Totale voci n. <span id="voci"></span>
     </span>
 </div>
 
 <div class="container">
     <table class="table table-responsive">
+        <thead>
         <tr>
             <th>DDT n°</th>
             <th>Codice Cliente</th>
@@ -130,33 +131,10 @@ if ($conndb->connect_errno) {
             <th>Note</th>
             <th>Data</th>
         </tr>
-        <tr>
-        <?php
-            if (isset($norows)) : ?>
-        <tr>
-            <td colspan="8"><?php echo $norows ?></td>
-        </tr>
-        <?php
+        </thead>
+        <tbody id="records">
 
-        endif; // Se non restituisce alcuna riga
-            if ($oggett_ddt === 1) :
-            while ($oggett_ddt = $result->fetch_object()) :
-            //print_r($oggett_ddt);
-            ?>
-        <tr>
-            <td><?php echo $oggett_ddt->num ?></td>
-            <td><?php echo $oggett_ddt->codC ?></td>
-            <td><?php echo $oggett_ddt->nomeC." ".$oggett_ddt->nomeC ?></td>
-            <td><?php echo $oggett_ddt->note ?></td>
-            <td><?php echo $oggett_ddt->reg_date ?></td>
-
-        </tr>
-
-
-        <?php
-        endwhile;
-        endif;
-        ?>
+        </tbody>
 
     </table>
 </div>
@@ -164,19 +142,46 @@ if ($conndb->connect_errno) {
 <?php include_once("template/parrot/foot.php") ?>
 
 <script>
-    $('.idCliente').devbridgeAutocomplete({
-        dataType: "json",
-        paramName: "check",
-        serviceUrl: 'get_clienti.php',
-        formatResult: function(suggestion, currentValue){
-            return suggestion.value + ' - ' +suggestion.data.cognome+' '+suggestion.data.nome;
-        },
-        onSelect: function (suggestion) {
-            $("#idCliente")
-                .val(suggestion.value);
-            $("#nomeCognome").val(suggestion.data.nome + " " + suggestion.data.cognome);
-        }
-    });
+    suggerimento("");
+    function suggerimento(runsVar) {
+
+        var call = $.ajax({
+            url: "http://<?php echo $base_url ?>/json/get_ddt.php",
+            method: "GET",
+            data: "check=" + runsVar,
+            dataType: "json"
+        });
+
+        call.done(function (msg) {
+
+            var records = msg.suggestions;
+            console.log(records);
+            $("#records").html("");
+            for (var x in records) {
+                var record = "" +
+                    "<td>" + records[x].data.num + "</td>" +
+                    "<td>" + records[x].data.codC + "</td>" +
+                    "<td>" + records[x].data.nomeC + " " + records[x].data.cognomeC + "</td>" +
+                    "<td>" + records[x].data.note + "</td>" +
+                    "<td>" + records[x].data.reg_date + "</td>";
+                $("#records").append("<tr>" + record + "</tr>");
+            }
+
+            if (jQuery.isEmptyObject(records)) {
+                record = "<tr><td>" + "Non è presente alcun record" + "</td></tr>";
+                $("#records").html(record);
+            }
+            var voci = parseInt(x) + 1;
+            if (!voci) {
+                voci = "0";
+            }
+            $("#voci").text(voci);
+        });
+
+        call.error(function (msg) {
+            console.log(msg);
+        });
+    }
 </script>
 
     <?php include_once("template/parrot/foot.php") ?>

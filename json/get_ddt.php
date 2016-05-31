@@ -9,31 +9,28 @@ if (isset($_GET["check"])) $check = mysqli_real_escape_string($conndb, $_GET["ch
 
 else $check = false;
 
-$query = "SELECT fatt.*, numerazione_ftt.*, clienti.nomeC, clienti.cognomeC, clienti.codC, pagam.descr
-                FROM fatt
-                  LEFT JOIN numerazione_ftt
-                    ON fatt.id=numerazione_ftt.num
+$query = "SELECT ddt.*, numerazione_ddt.*, clienti.nomeC, clienti.cognomeC, clienti.codC
+                FROM ddt
+                  LEFT JOIN numerazione_ddt
+                    ON ddt.id=numerazione_ddt.id
                   LEFT JOIN clienti
-                    ON numerazione_ftt.dest=clienti.id
-                  LEFT JOIN pagam
-                    ON fatt.id_pag=pagam.id";
-
+                    ON numerazione_ddt.dest=clienti.id";
 
 //echo $query;
 if ($check != false) {
     $query .= " WHERE clienti.nomeC LIKE \"%" . $check . "%\" OR clienti.cognomeC LIKE \"%" . $check . "%\" OR  clienti.codC LIKE \"%" . $check . "%\"";
-
 }
 
 /* check connection */
 
 
-if ($result = $conndb->query($query)) {
+if ($conndb->query($query)) {
     //if ($debug === true) printf("/* Select returned %d rows. */\n", $result->num_rows);
-    //echo $query;
-
     $result = $conndb->query($query);
+} else {
+    echo $conndb->connect_errno;
 }
+
 if ($conndb->connect_errno) {
     printf("Connect failed: %s\n", $conndb->connect_error);
 
@@ -41,18 +38,18 @@ if ($conndb->connect_errno) {
 
 $newKey = array();
 
-while ($fattura = $result->fetch_object()) {
-//echo $fattura->id;
+
+while ($ddt = $result->fetch_object()) {
+//echo $ddt->id;
     array_push($newKey, [
-        "value" => $fattura->id,
+        "value" => $ddt->id,
         "data" => [
-            "num" => $fattura->num,
-            "codC" => $fattura->codC,
-            "nomeC" => $fattura->nomeC,
-            "cognomeC" => $fattura->cognomeC,
-            "note" => $fattura->note,
-            "reg_date" => $fattura->reg_date,
-            "pagamDescr" => $fattura->descr
+            "num" => $ddt->num,
+            "codC" => $ddt->codC,
+            "nomeC" => $ddt->nomeC,
+            "cognomeC" => $ddt->cognomeC,
+            "note" => $ddt->note,
+            "reg_date" => $ddt->reg_date
         ]
     ]);
 }
