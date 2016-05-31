@@ -23,14 +23,13 @@
         $_SESSION['login_user'] = $userFORM;
         $_SESSION['id_user'] = $row["id"];
          header('Refresh: 3; URL= ../home.php');
-          $ok = "
+          $ck = "
           <div class=\"alert alert-success alert-dismissable\">
           Login eseguito con <strong>successo.</strong>
           </div>
           ";
       } else {
-          //header('Refresh: 3'); onestamente? ho fatto copia e incolla da quello sopra e mi scurdai a togliere il refresh xD comunque <button type=\"button\" class=\"close fa-times fa\"></button> posso anche toglierlo. non me ne fotte niente di poterlo chiudere
-         $no = "
+         $ck = "
          <div class=\"alert alert-danger alert-dismissable\">
          Login <strong>errato.</strong> Riprova!
          </div>
@@ -108,12 +107,12 @@
                                          <input type="password" name="pswdFORM" class="form-control" placeholder="Password">
                                      </div>
                                      <input class="btn btn-block btn-primary btn-embossed" type="submit" value="Login"><br>
-                                     <?php echo @$ok; echo @$no; ?>
+                                     <?php echo @$ck; ?>
                                  </div>
 
                              <div class="clearfix"></div>
                     </form>
                     </div>
-                </div>
+                    </div></div>
 	</body>
 </html>

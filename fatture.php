@@ -107,6 +107,9 @@ if ($conndb->connect_errno) {
         <div class="masthead-title">
             <div class="container">
                 Lista Fatture
+                <form method="post" action="#">
+                    <input class="form-control" type="text" placeholder="Filtra per utente">
+                </form>
             </div>
         </div>
     </div>
@@ -129,6 +132,7 @@ if ($conndb->connect_errno) {
             <th>Cliente</th>
             <th>Note</th>
             <th>Data</th>
+            <th>Pagamento</th>
         </tr>
         <tr>
         <?php
@@ -149,6 +153,7 @@ if ($conndb->connect_errno) {
             <td><?php echo $oggett_fatt->nomeC." ".$oggett_fatt->nomeC ?></td>
             <td><?php echo $oggett_fatt->note ?></td>
             <td><?php echo $oggett_fatt->reg_date ?></td>
+            <td>da DB</td>
 
         </tr>
 

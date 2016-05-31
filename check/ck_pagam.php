@@ -12,13 +12,13 @@
 
                //controllo inserimento
                if ($conndb->query($sql_ins) === TRUE) {
-                   $ok_ins = "
+                   $ck = "
                    <div class=\"alert alert-success alert-dismissable\">
                    Inserimento effettuato con <strong>successo.</strong>
                    </div>
                    ";
                } else {
-                   $no_ins = "
+                   $ck = "
                    <div class=\"alert alert-danger alert-dismissable\">
                    Errore durante l'inserimento <br/> $conndb->error;
                    </div>
@@ -34,13 +34,13 @@
 
                 //controllo inserimento
                 if ($conndb->query($sql_edit) === TRUE) {
-                    $ok_edit = "
+                    $ck = "
                     <div class=\"alert alert-success alert-dismissable\">
                     Modifica effettuata con <strong>successo.</strong>
                     </div>
                     ";
                 } else {
-                    $no_edit = "
+                    $ck = "
                     <div class=\"alert alert-danger alert-dismissable\">
                     Errore durante la modifica $conndb->error;
                     </div>
@@ -55,13 +55,13 @@
 
                 //controllo inserimento
                 if ($conndb->query($sql_del) === TRUE) {
-                    $ok_del = "
+                    $ck = "
                     <div class=\"alert alert-success alert-dismissable\">
                     Record eliminato con <strong>successo.</strong>
                     </div>
                     ";
                 } else {
-                    $no_del = "
+                    $ck = "
                     <div class=\"alert alert-danger alert-dismissable\">
                     Errore durante l'eliminazione $conndb->error;
                     </div>
@@ -122,13 +122,13 @@
 
 <div class="container">
     <small>
-        <?php echo $ok_ins; echo $no_ins; echo $ok_edit; echo $no_edit; echo $ok_del; echo $no_del; ?>
+        <?php echo $ck;  ?>
     </small>
     <br/>
     <span style="color:#EA640C">
     Totale voci n.
     <?php
-    $sql_rows = "SELECT * FROM mezzo";
+    $sql_rows = "SELECT * FROM pagam";
     echo mysqli_num_rows(mysqli_query($conndb, $sql_rows));
     ?>
     </span>
