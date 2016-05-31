@@ -29,7 +29,7 @@ $queryb = "SELECT num
 
 /* check connection */
 if ($resultb = $conndb->query($queryb)) {
-    if ($debugb === true) printf("<!-- Select returned %d rows.\n -->", $resultb->num_rows);
+    if ($debug === true) printf("<!-- Select returned %d rows.\n -->", $resultb->num_rows);
     $oggetto_fatt = 1;
     if ($resultb->num_rows === 0) {
         $numerazione_fatt = 1;
@@ -82,50 +82,47 @@ if ($conndb->connect_errno) {
 <!-- #### Navbars #### -->
 <?php include_once("template/parrot/navbar.php") ?>
 
-    <div class="masthead">
-        <div class="masthead-title">
-            <div class="container">
-                Genera Fattura
-            </div>
+<div class="masthead">
+    <div class="masthead-title">
+        <div class="container">
+            Genera Fattura
         </div>
     </div>
+</div>
 
-    <div class="container">
-        <div class="row">
-            <form class="form-horizontal" method="post" action="gen_documenti/fattura.php">
-                <input type="hidden" value="<?php echo $numerazione_fatt ?>">
-                <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="btn btn-default">Genera</button>
-                    </div>
+<div class="container">
+    <div class="row">
+        <form class="form-horizontal" method="post" action="gen_documenti/fattura.php">
+            <input type="hidden" value="<?php echo $numerazione_fatt ?>">
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default">Genera</button>
                 </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="masthead">
+    <div class="masthead-title">
+        <div class="container">
+            Lista Fatture
+            <form method="post" action="#">
+                <input id="filtro" class="form-control" type="text" placeholder="Filtra per utente">
             </form>
         </div>
     </div>
-
-    <div class="masthead">
-        <div class="masthead-title">
-            <div class="container">
-                Lista Fatture
-                <form method="post" action="#">
-                    <input class="form-control" type="text" placeholder="Filtra per utente">
-                </form>
-            </div>
-        </div>
-    </div>
+</div>
 
 <div class="container">
     <span style="color:#EA640C">
-    Totale voci n.
-    <?php
-    $sql_rows = "SELECT * FROM numerazione_ftt";
-    echo mysqli_num_rows(mysqli_query($conndb, $sql_rows));
-    ?>
+    Totale voci n. <span id="voci"></span>
     </span>
 </div>
 
 <div class="container">
     <table class="table table-responsive">
+        <thead>
         <tr>
             <th>Fattura n°</th>
             <th>Codice Cliente</th>
@@ -134,34 +131,10 @@ if ($conndb->connect_errno) {
             <th>Data</th>
             <th>Pagamento</th>
         </tr>
-        <tr>
-        <?php
-            if (isset($norows)) : ?>
-        <tr>
-            <td colspan="8"><?php echo $norows ?></td>
-        </tr>
-        <?php
+        </thead>
+        <tbody id="records">
 
-        endif; // Se non restituisce alcuna riga
-            if ($oggett_fatt === 1) :
-            while ($oggett_fatt = $result->fetch_object()) :
-            //print_r($oggett_fatt);
-            ?>
-        <tr>
-            <td><?php echo $oggett_fatt->num ?></td>
-            <td><?php echo $oggett_fatt->codC ?></td>
-            <td><?php echo $oggett_fatt->nomeC." ".$oggett_fatt->nomeC ?></td>
-            <td><?php echo $oggett_fatt->note ?></td>
-            <td><?php echo $oggett_fatt->reg_date ?></td>
-            <td>da DB</td>
-
-        </tr>
-
-
-        <?php
-        endwhile;
-        endif;
-        ?>
+        </tbody>
 
     </table>
 </div>
@@ -169,22 +142,31 @@ if ($conndb->connect_errno) {
 <?php include_once("template/parrot/foot.php") ?>
 
 <script>
-    $('.idCliente').devbridgeAutocomplete({
+    $('#filtro').devbridgeAutocomplete({
         dataType: "json",
         paramName: "check",
-        serviceUrl: 'get_clienti.php',
-        formatResult: function(suggestion, currentValue){
-            return suggestion.value + ' - ' +suggestion.data.cognome+' '+suggestion.data.nome;
+        serviceUrl: 'http://<?php echo $base_url ?>/json/get_fatture.php',
+        formatResult: function (suggestion, currentValue) {
+            console.log(suggestion);
+            $("#records").append(suggestion.value + ' - ' + suggestion.data.codC + ' - ' + suggestion.data.nomeC + " " + suggestion.data.cognomeC);
         },
         onSelect: function (suggestion) {
-            $("#idCliente")
-                .val(suggestion.value);
-            $("#nomeCognome").val(suggestion.data.nome + " " + suggestion.data.cognome);
+            $("#records").html("");
+            console.log(suggestion);
+            var records = "" +
+                "<td>" + suggestion.data.num + "</td>" +
+                "<td>" + suggestion.data.codC + "</td>" +
+                "<td>" + suggestion.data.nomeC + " " + suggestion.data.cognomeC + "</td>" +
+                "<td>" + suggestion.data.note + "</td>" +
+                "<td>" + suggestion.data.reg_date + "</td>" +
+                "<td>" + suggestion.data.pagamDescr + "</td>";
+            $("#records").append("<tr>" + records + "</tr>");
+            $("#voci").text();
         }
     });
 </script>
 
-    <?php include_once("template/parrot/foot.php") ?>
+<?php include_once("template/parrot/foot.php") ?>
 
 </body>
 </html>

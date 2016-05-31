@@ -29,7 +29,7 @@ $queryb = "SELECT num
 
 /* check connection */
 if ($resultb = $conndb->query($queryb)) {
-    if ($debugb === true) printf("<!-- Select returned %d rows.\n -->", $resultb->num_rows);
+    if ($debug === true) printf("<!-- Select returned %d rows.\n -->", $resultb->num_rows);
     $oggetto_ddt = 1;
     if ($resultb->num_rows === 0) {
         $numerazione_ddt = 1;

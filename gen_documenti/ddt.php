@@ -9,26 +9,26 @@
 <link rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" >
 <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
-<script language="JavaScript">
-    data = new Date();
-    var aaaa = data.getFullYear();
-    var MM = data.getMonth() + 1;
-    var gg = data.getDate();
-    if (gg<10) {
-        gg = "0" + gg;
-    }
-    if (MM<10) {
-        MM = "0" + MM;
-    }
-    var hh = data.getHours();
-    var mm = data.getMinutes();
-    if (hh<10) {
-        hh = "0" + hh;
-    }
-    if (mm<10) {
-        mm = "0" + mm;
-    }
-</script>
+    <script language="JavaScript">
+        data = new Date();
+        var aaaa = data.getFullYear();
+        var MM = data.getMonth() + 1;
+        var gg = data.getDate();
+        if (gg < 10) {
+            gg = "0" + gg;
+        }
+        if (MM < 10) {
+            MM = "0" + MM;
+        }
+        var hh = data.getHours();
+        var mm = data.getMinutes();
+        if (hh < 10) {
+            hh = "0" + hh;
+        }
+        if (mm < 10) {
+            mm = "0" + mm;
+        }
+    </script>
 <style>
 .autocomplete-suggestions {color: #000000}
 .autocomplete-suggestions { border: 1px solid #999; background: #FFF; overflow: auto; }
@@ -116,18 +116,24 @@ font-size: 14px;
 <table class="table-bordered table table-striped">
 <thead>
 <tr colspan="2">
-<td><div class="col-md-12"><img style="float:left" src="../images/logos.png" alt="Tipografia Provenzano"><p id="nomin">Tipografia <br/> Provenzano s.r.l.</p>
+    <td>
+        <div class="col-md-12"><img style="float:left" src="../images/logos.png" alt="Tipografia Provenzano">
+            <p id="nomin">Tipografia <br/> Provenzano s.r.l.</p>
 </div></td>
 <td colspan="2">
 
-<p class="col-md-12"><h5 class="text-center"><strong>DOCUMENTO DI TRASPORTO DPR 476/96</strong></h5></p>
+    <p class="col-md-12"><h5 class="text-center"><strong>DOCUMENTO DI TRASPORTO DPR 476/96</strong></h5></p>
 <div class="text-left">
 <p class="col-xs-4"><input type="checkbox"> Mittente </p>
 <p class="col-xs-4"><input type="checkbox"> Destinatario </p>
 <p class="col-xs-4"><input type="checkbox"> Vettore</p>
-<strong><p class="col-md-12 text-center">Bagheria, <script language="javascript">
+    <strong>
+        <p class="col-md-12 text-center">Bagheria,
+            <script language="javascript">
                 document.write(" " + gg + "/" + MM + "/" + aaaa + "  ");
-            </script> N° <input type="number" readonly placeholder="0000"></p></strong>
+            </script>
+            N° <input type="number" readonly placeholder="0000"></p>
+    </strong>
 </div>
 
 </td>
@@ -137,12 +143,18 @@ font-size: 14px;
 <tr>
 <td colspan="3">
 <p class="col-sm-4">Destinatario</p>
-<p class="col-sm-8"><input class="form-control" style="width:50%; display:inline" type="text" placeholder="Nome cliente"><input class="form-control" style="width:50%; display:inline" type="text" readonly placeholder="auto P.IVA"></p>
+    <p class="col-sm-8"><input class="form-control" style="width:50%; display:inline" type="text"
+                               placeholder="Nome cliente"><input class="form-control" style="width:50%; display:inline"
+                                                                 type="text" readonly placeholder="auto P.IVA"></p>
 </td>
 </tr>
 
 <tr>
-<td colspan="3"><p class="col-sm-4">Domicilio o residenza</p><p class="col-sm-8"><input class="form-control" style="width:50%; display:inline" type="text" readonly placeholder="auto Indirizzo"><input class="form-control" style="width:50%; display:inline" type="text" readonly placeholder="auto Citta'"></p></td>
+    <td colspan="3"><p class="col-sm-4">Domicilio o residenza</p>
+        <p class="col-sm-8"><input class="form-control" style="width:50%; display:inline" type="text" readonly
+                                   placeholder="auto Indirizzo"><input class="form-control"
+                                                                       style="width:50%; display:inline" type="text"
+                                                                       readonly placeholder="auto Citta'"></p></td>
 </tr>
 <tr>
 <td colspan="3"><p class="col-sm-4">Causale del trasporto</p><p class="col-sm-8"><select class="form-control">
@@ -163,11 +175,11 @@ font-size: 14px;
 </td>
 <td>
 <p class="col-md-12">N. Colli</p>
-<p class="col-md-12"><input type="number" class="form-control" min="0"></p>
+    <p class="col-md-12"><input type="number" class="form-control" min="0"></p>
 </td>
 <td>
 <p class="col-md-12">Peso Kg.</p>
-<p class="col-md-12"><input type="number" class="form-control" min="0"></p>
+    <p class="col-md-12"><input type="number" class="form-control" min="0"></p>
 </td>
 
 
@@ -177,16 +189,17 @@ font-size: 14px;
 <p class="col-md-12">Consegna o inizio trasporto a mezzo mittente o destinatario</p>
 </td>
 <td>
-<p class="col-md-12">Data e ora</p>
+    <p class="col-md-12">Data e ora</p>
     <p class="col-md-12">
-    <input class="form-control text-center" style="width:50%; display:inline" type="date"><input class="form-control text-center" style="width:50%; display:inline" type="time"></p>
+        <input class="form-control text-center" style="width:50%; display:inline" type="date"><input
+            class="form-control text-center" style="width:50%; display:inline" type="time"></p>
 <td>
 <p class="col-md-12">Firma del Conducente</p>
 </td>
 </tr>
 <tr>
-<td><p class="col-md-12">Q.tà'</p></td>
-<td colspan="2"><p class="col-md-12">Descrizione dei beni</p></td>
+    <td><p class="col-md-12">Q.tà'</p></td>
+    <td colspan="2"><p class="col-md-12">Descrizione dei beni</p></td>
 </tr>
 <tr class="qnt" height="400">
 
@@ -194,15 +207,15 @@ font-size: 14px;
 <input id="idQuantita-default" type="number" class="stampa form-control arrQuantita" min="0">
 </td>
 
-<td id="incolonnaArticoli" colspan="2">
-    <p><input id="incolonnatore" type="text" class="stampa form-control" placeholder="Descrizione articolo"></p>
-</td>
+    <td id="incolonnaArticoli" colspan="2">
+        <p><input id="incolonnatore" type="text" class="stampa form-control" placeholder="Descrizione articolo"></p>
+    </td>
 
 </tr>
 <tr>
 <td>
 <p class="col-md-12">Vettori, domicilio o residenza</p>
-<p class="col-md-12"><input type="text" readonly placeholder="auto da mezzo trasporto"></p>
+    <p class="col-md-12"><input type="text" readonly placeholder="auto da mezzo trasporto"></p>
 </td>
 <td>
 <p class="col-md-12">Data e ora di ritiro</p>
@@ -218,7 +231,7 @@ font-size: 14px;
 </tr>
 <tr height="400" class="var">
 <td><p  class="col-md-12">Annotazioni - Variazioni</p>
-    <p class="col-md-12"><textarea class="form-control" cols="50" rows="10">Nessuna nota</textarea> </p></td>
+    <p class="col-md-12"><textarea class="form-control" cols="50" rows="10">Nessuna nota</textarea></p></td>
 <td colspan="2"><p class="col-md-12">Firma del destinatario</p></td>
 
 </tr>

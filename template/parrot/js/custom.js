@@ -1,12 +1,29 @@
-function associativeModal(arr) {
-    for (var id in arr) {
-
-        if (arr[id] === null) {
-            arr[id] = "N/D";
-        }
-
-        $(id).html(arr[id]);
-
-    }
+function clientModal(arr) {
+    $("#nomeC").html(arr[0]);
+    $("#cognomeC").html(arr[1]);
+    $("#cC").html(arr[2]);
+    $("#descC").html(arr[3]);
+    $("#noteC").html(arr[4]);
+    $("#indirizzoL").html(arr[5]);
+    $("#cittaL").html(arr[6]);
+    $("#capL").html(arr[7]);
+    $("#provinciaL").html(arr[8]);
+    $("#telL").html(arr[9]);
+    $("#faxL").html(arr[10]);
+    $("#provL").html(arr[11]);
+    $("#emailL").html(arr[12]);
+    $("#sitoWebL").html(arr[13]);
+    $("#cittaAc").html(arr[14]);
+    $("#capAc").html(arr[15]);
+    $("#provinciaAc").html(arr[16]);
+    $("#telefonoAc").html(arr[17]);
+    $("#cellulareAc").html(arr[18]);
+    $("#statoAc").html(arr[19]);
+    $("#emailAc").html(arr[20]);
+    $("#sitoAc").html(arr[21]);
+    $("#pivaAc").html(arr[22]);
+    $("#cfiscAc").html(arr[23]);
+    $("#ibanAc").html(arr[24]);
+    $("#bancaAc").html(arr[25]);
     $('#clientModal').modal('toggle')
 }

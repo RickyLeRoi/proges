@@ -36,7 +36,7 @@
         <mandatory>1</mandatory>
         <data-type>varchar(6)</data-type>
       </column>
-      <column id="23" parent="2" name="nome">
+      <column id="23" parent="2" name="misura">
         <mandatory>1</mandatory>
         <data-type>varchar(50)</data-type>
       </column>
@@ -327,75 +327,79 @@ CFC</columns>
       <column id="100" parent="7" name="reg_date">
         <data-type>timestamp</data-type>
       </column>
-      <key id="101" parent="7" name="PRIMARY">
+      <column id="101" parent="7" name="id_pag">
+        <mandatory>1</mandatory>
+        <data-type>int(5)</data-type>
+      </column>
+      <key id="102" parent="7" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="102" parent="8" name="id">
+      <column id="103" parent="8" name="id">
         <mandatory>1</mandatory>
         <data-type>int(3) unsigned</data-type>
         <sequence-identity>1</sequence-identity>
       </column>
-      <column id="103" parent="8" name="nomeF">
+      <column id="104" parent="8" name="nomeF">
         <mandatory>1</mandatory>
         <data-type>varchar(40)</data-type>
       </column>
-      <column id="104" parent="8" name="cognomeF">
+      <column id="105" parent="8" name="cognomeF">
         <data-type>varchar(20)</data-type>
       </column>
-      <column id="105" parent="8" name="codF">
+      <column id="106" parent="8" name="codF">
         <mandatory>1</mandatory>
         <data-type>varchar(4)</data-type>
       </column>
-      <column id="106" parent="8" name="descrF">
+      <column id="107" parent="8" name="descrF">
         <data-type>varchar(100)</data-type>
       </column>
-      <column id="107" parent="8" name="noteF">
+      <column id="108" parent="8" name="noteF">
         <data-type>varchar(100)</data-type>
       </column>
-      <column id="108" parent="8" name="indirizzoLF">
+      <column id="109" parent="8" name="indirizzoLF">
         <data-type>varchar(50)</data-type>
       </column>
-      <column id="109" parent="8" name="cittaLF">
+      <column id="110" parent="8" name="cittaLF">
         <data-type>varchar(20)</data-type>
       </column>
-      <column id="110" parent="8" name="capLF">
+      <column id="111" parent="8" name="capLF">
         <data-type>int(5)</data-type>
       </column>
-      <column id="111" parent="8" name="provLF">
+      <column id="112" parent="8" name="provLF">
         <data-type>varchar(2)</data-type>
       </column>
-      <column id="112" parent="8" name="telLF">
+      <column id="113" parent="8" name="telLF">
         <data-type>varchar(16)</data-type>
       </column>
-      <column id="113" parent="8" name="faxLF">
+      <column id="114" parent="8" name="faxLF">
         <data-type>varchar(16)</data-type>
       </column>
-      <column id="114" parent="8" name="statoLF">
+      <column id="115" parent="8" name="statoLF">
         <data-type>varchar(30)</data-type>
       </column>
-      <column id="115" parent="8" name="emailLF">
+      <column id="116" parent="8" name="emailLF">
         <data-type>varchar(40)</data-type>
       </column>
-      <column id="116" parent="8" name="urlLF">
+      <column id="117" parent="8" name="urlLF">
         <data-type>varchar(100)</data-type>
       </column>
-      <column id="117" parent="8" name="PIVAF">
+      <column id="118" parent="8" name="PIVAF">
         <data-type>int(11)</data-type>
       </column>
-      <column id="118" parent="8" name="CFF">
+      <column id="119" parent="8" name="CFF">
         <data-type>varchar(16)</data-type>
       </column>
-      <column id="119" parent="8" name="IBANF">
+      <column id="120" parent="8" name="IBANF">
         <data-type>varchar(27)</data-type>
       </column>
-      <column id="120" parent="8" name="bancaF">
+      <column id="121" parent="8" name="bancaF">
         <data-type>varchar(100)</data-type>
       </column>
-      <column id="121" parent="8" name="reg_date">
+      <column id="122" parent="8" name="reg_date">
         <data-type>timestamp</data-type>
       </column>
-      <index id="122" parent="8" name="codF">
+      <index id="123" parent="8" name="codF">
         <columns>codF
 emailLF
 PIVAF
@@ -403,359 +407,359 @@ CFF</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
       </index>
-      <key id="123" parent="8" name="codF">
+      <key id="124" parent="8" name="codF">
         <columns>codF
 emailLF
 PIVAF
 CFF</columns>
         <underlying-index>codF</underlying-index>
       </key>
-      <key id="124" parent="8" name="PRIMARY">
+      <key id="125" parent="8" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="125" parent="9" name="id">
+      <column id="126" parent="9" name="id">
         <mandatory>1</mandatory>
         <data-type>int(3) unsigned</data-type>
         <sequence-identity>1</sequence-identity>
       </column>
-      <column id="126" parent="9" name="tipo">
+      <column id="127" parent="9" name="tipo">
         <mandatory>1</mandatory>
         <data-type>varchar(20)</data-type>
       </column>
-      <column id="127" parent="9" name="descr">
+      <column id="128" parent="9" name="descr">
         <data-type>varchar(100)</data-type>
       </column>
-      <column id="128" parent="9" name="reg_date">
+      <column id="129" parent="9" name="reg_date">
         <data-type>timestamp</data-type>
       </column>
-      <index id="129" parent="9" name="tipo">
+      <index id="130" parent="9" name="tipo">
         <columns>tipo</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
       </index>
-      <key id="130" parent="9" name="PRIMARY">
+      <key id="131" parent="9" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <key id="131" parent="9" name="tipo">
+      <key id="132" parent="9" name="tipo">
         <columns>tipo</columns>
         <underlying-index>tipo</underlying-index>
       </key>
-      <column id="132" parent="10" name="id">
+      <column id="133" parent="10" name="id">
         <mandatory>1</mandatory>
         <data-type>int(3) unsigned</data-type>
         <sequence-identity>1</sequence-identity>
       </column>
-      <column id="133" parent="10" name="aliquota">
+      <column id="134" parent="10" name="aliquota">
         <mandatory>1</mandatory>
         <data-type>int(3)</data-type>
       </column>
-      <column id="134" parent="10" name="descr">
+      <column id="135" parent="10" name="descr">
         <data-type>varchar(100)</data-type>
       </column>
-      <column id="135" parent="10" name="reg_date">
+      <column id="136" parent="10" name="reg_date">
         <data-type>timestamp</data-type>
       </column>
-      <index id="136" parent="10" name="id">
+      <index id="137" parent="10" name="id">
         <columns>id</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
       </index>
-      <key id="137" parent="10" name="id">
+      <key id="138" parent="10" name="id">
         <columns>id</columns>
         <underlying-index>id</underlying-index>
       </key>
-      <key id="138" parent="10" name="PRIMARY">
+      <key id="139" parent="10" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="139" parent="11" name="id">
+      <column id="140" parent="11" name="id">
         <mandatory>1</mandatory>
         <data-type>int(3) unsigned</data-type>
         <sequence-identity>1</sequence-identity>
       </column>
-      <column id="140" parent="11" name="tipoLOG">
+      <column id="141" parent="11" name="tipoLOG">
         <mandatory>1</mandatory>
         <data-type>varchar(9)</data-type>
       </column>
-      <column id="141" parent="11" name="userLOG">
+      <column id="142" parent="11" name="userLOG">
         <mandatory>1</mandatory>
         <data-type>varchar(20)</data-type>
       </column>
-      <column id="142" parent="11" name="pswdLOG">
-        <data-type>varchar(10)</data-type>
+      <column id="143" parent="11" name="pswdLOG">
+        <data-type>varchar(50)</data-type>
       </column>
-      <column id="143" parent="11" name="reg_date">
+      <column id="144" parent="11" name="reg_date">
         <data-type>timestamp</data-type>
       </column>
-      <index id="144" parent="11" name="userLOG">
+      <index id="145" parent="11" name="userLOG">
         <columns>userLOG</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
       </index>
-      <key id="145" parent="11" name="PRIMARY">
+      <key id="146" parent="11" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <key id="146" parent="11" name="userLOG">
+      <key id="147" parent="11" name="userLOG">
         <columns>userLOG</columns>
         <underlying-index>userLOG</underlying-index>
       </key>
-      <column id="147" parent="12" name="id">
+      <column id="148" parent="12" name="id">
         <mandatory>1</mandatory>
         <data-type>int(3) unsigned</data-type>
         <sequence-identity>1</sequence-identity>
       </column>
-      <column id="148" parent="12" name="tipo">
+      <column id="149" parent="12" name="tipo">
         <mandatory>1</mandatory>
         <data-type>varchar(20)</data-type>
       </column>
-      <column id="149" parent="12" name="descr">
+      <column id="150" parent="12" name="descr">
         <data-type>varchar(100)</data-type>
       </column>
-      <column id="150" parent="12" name="reg_date">
+      <column id="151" parent="12" name="reg_date">
         <data-type>timestamp</data-type>
       </column>
-      <index id="151" parent="12" name="tipo">
+      <index id="152" parent="12" name="tipo">
         <columns>tipo</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
       </index>
-      <key id="152" parent="12" name="PRIMARY">
+      <key id="153" parent="12" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <key id="153" parent="12" name="tipo">
+      <key id="154" parent="12" name="tipo">
         <columns>tipo</columns>
         <underlying-index>tipo</underlying-index>
       </key>
-      <column id="154" parent="13" name="id">
+      <column id="155" parent="13" name="id">
         <mandatory>1</mandatory>
         <data-type>int(8) unsigned</data-type>
         <sequence-identity>1</sequence-identity>
       </column>
-      <column id="155" parent="13" name="id_doc">
+      <column id="156" parent="13" name="id_doc">
         <mandatory>1</mandatory>
         <data-type>int(5)</data-type>
       </column>
-      <column id="156" parent="13" name="id_art">
+      <column id="157" parent="13" name="id_art">
         <mandatory>1</mandatory>
         <data-type>int(5)</data-type>
       </column>
-      <column id="157" parent="13" name="qta">
+      <column id="158" parent="13" name="qta">
         <mandatory>1</mandatory>
         <data-type>int(5)</data-type>
       </column>
-      <column id="158" parent="13" name="id_iva">
+      <column id="159" parent="13" name="id_iva">
         <mandatory>1</mandatory>
         <data-type>int(3)</data-type>
       </column>
-      <column id="159" parent="13" name="id_mezzo">
+      <column id="160" parent="13" name="id_mezzo">
         <data-type>int(3)</data-type>
       </column>
-      <column id="160" parent="13" name="id_caus">
+      <column id="161" parent="13" name="id_caus">
         <data-type>int(3)</data-type>
       </column>
-      <column id="161" parent="13" name="id_imb">
+      <column id="162" parent="13" name="id_imb">
         <data-type>int(3)</data-type>
       </column>
-      <column id="162" parent="13" name="note">
+      <column id="163" parent="13" name="note">
         <data-type>varchar(100)</data-type>
       </column>
-      <column id="163" parent="13" name="reg_date">
+      <column id="164" parent="13" name="reg_date">
         <data-type>timestamp</data-type>
       </column>
-      <key id="164" parent="13" name="PRIMARY">
+      <key id="165" parent="13" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="165" parent="14" name="id">
+      <column id="166" parent="14" name="id">
         <mandatory>1</mandatory>
         <data-type>int(5) unsigned</data-type>
         <sequence-identity>1</sequence-identity>
       </column>
-      <column id="166" parent="14" name="num">
+      <column id="167" parent="14" name="num">
         <mandatory>1</mandatory>
         <data-type>int(5)</data-type>
       </column>
-      <column id="167" parent="14" name="dest">
+      <column id="168" parent="14" name="dest">
         <mandatory>1</mandatory>
         <data-type>varchar(50)</data-type>
       </column>
-      <column id="168" parent="14" name="link">
+      <column id="169" parent="14" name="link">
         <data-type>varchar(250)</data-type>
       </column>
-      <column id="169" parent="14" name="reg_date">
+      <column id="170" parent="14" name="reg_date">
         <data-type>timestamp</data-type>
       </column>
-      <key id="170" parent="14" name="PRIMARY">
+      <key id="171" parent="14" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="171" parent="15" name="id">
+      <column id="172" parent="15" name="id">
         <mandatory>1</mandatory>
         <data-type>int(5) unsigned</data-type>
         <sequence-identity>1</sequence-identity>
       </column>
-      <column id="172" parent="15" name="num">
+      <column id="173" parent="15" name="num">
         <mandatory>1</mandatory>
         <data-type>int(5)</data-type>
       </column>
-      <column id="173" parent="15" name="dest">
+      <column id="174" parent="15" name="dest">
         <mandatory>1</mandatory>
         <data-type>varchar(50)</data-type>
       </column>
-      <column id="174" parent="15" name="link">
+      <column id="175" parent="15" name="link">
         <data-type>varchar(250)</data-type>
       </column>
-      <column id="175" parent="15" name="reg_date">
+      <column id="176" parent="15" name="reg_date">
         <data-type>timestamp</data-type>
       </column>
-      <key id="176" parent="15" name="PRIMARY">
+      <key id="177" parent="15" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="177" parent="16" name="id">
+      <column id="178" parent="16" name="id">
         <mandatory>1</mandatory>
         <data-type>int(5) unsigned</data-type>
         <sequence-identity>1</sequence-identity>
       </column>
-      <column id="178" parent="16" name="num">
+      <column id="179" parent="16" name="num">
         <mandatory>1</mandatory>
         <data-type>int(5)</data-type>
       </column>
-      <column id="179" parent="16" name="dest">
+      <column id="180" parent="16" name="dest">
         <mandatory>1</mandatory>
         <data-type>varchar(50)</data-type>
       </column>
-      <column id="180" parent="16" name="link">
+      <column id="181" parent="16" name="link">
         <data-type>varchar(250)</data-type>
       </column>
-      <column id="181" parent="16" name="reg_date">
+      <column id="182" parent="16" name="reg_date">
         <data-type>timestamp</data-type>
       </column>
-      <key id="182" parent="16" name="PRIMARY">
+      <key id="183" parent="16" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="183" parent="17" name="id">
+      <column id="184" parent="17" name="id">
         <mandatory>1</mandatory>
         <data-type>int(5) unsigned</data-type>
         <sequence-identity>1</sequence-identity>
       </column>
-      <column id="184" parent="17" name="num">
+      <column id="185" parent="17" name="num">
         <mandatory>1</mandatory>
         <data-type>int(5)</data-type>
       </column>
-      <column id="185" parent="17" name="dest">
+      <column id="186" parent="17" name="dest">
         <mandatory>1</mandatory>
         <data-type>int(5)</data-type>
       </column>
-      <column id="186" parent="17" name="link">
+      <column id="187" parent="17" name="link">
         <data-type>varchar(250)</data-type>
       </column>
-      <column id="187" parent="17" name="reg_date">
+      <column id="188" parent="17" name="reg_date">
         <data-type>timestamp</data-type>
       </column>
-      <key id="188" parent="17" name="PRIMARY">
+      <key id="189" parent="17" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="189" parent="18" name="id">
+      <column id="190" parent="18" name="id">
         <mandatory>1</mandatory>
         <data-type>int(3) unsigned</data-type>
         <sequence-identity>1</sequence-identity>
       </column>
-      <column id="190" parent="18" name="tipo">
+      <column id="191" parent="18" name="tipo">
         <mandatory>1</mandatory>
         <data-type>varchar(20)</data-type>
       </column>
-      <column id="191" parent="18" name="descr">
+      <column id="192" parent="18" name="descr">
         <data-type>varchar(100)</data-type>
       </column>
-      <index id="192" parent="18" name="tipo">
+      <index id="193" parent="18" name="tipo">
         <columns>tipo</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
       </index>
-      <key id="193" parent="18" name="PRIMARY">
+      <key id="194" parent="18" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <key id="194" parent="18" name="tipo">
+      <key id="195" parent="18" name="tipo">
         <columns>tipo</columns>
         <underlying-index>tipo</underlying-index>
       </key>
-      <column id="195" parent="19" name="id">
+      <column id="196" parent="19" name="id">
         <mandatory>1</mandatory>
         <data-type>int(8) unsigned</data-type>
         <sequence-identity>1</sequence-identity>
       </column>
-      <column id="196" parent="19" name="id_doc">
+      <column id="197" parent="19" name="id_doc">
         <mandatory>1</mandatory>
         <data-type>int(5)</data-type>
       </column>
-      <column id="197" parent="19" name="id_art">
+      <column id="198" parent="19" name="id_art">
         <mandatory>1</mandatory>
         <data-type>int(5)</data-type>
       </column>
-      <column id="198" parent="19" name="qta">
+      <column id="199" parent="19" name="qta">
         <mandatory>1</mandatory>
         <data-type>int(5)</data-type>
       </column>
-      <column id="199" parent="19" name="id_iva">
+      <column id="200" parent="19" name="id_iva">
         <mandatory>1</mandatory>
         <data-type>int(3)</data-type>
       </column>
-      <column id="200" parent="19" name="id_mezzo">
+      <column id="201" parent="19" name="id_mezzo">
         <data-type>int(3)</data-type>
       </column>
-      <column id="201" parent="19" name="id_caus">
+      <column id="202" parent="19" name="id_caus">
         <data-type>int(3)</data-type>
       </column>
-      <column id="202" parent="19" name="id_imb">
+      <column id="203" parent="19" name="id_imb">
         <data-type>int(3)</data-type>
       </column>
-      <column id="203" parent="19" name="note">
+      <column id="204" parent="19" name="note">
         <data-type>varchar(100)</data-type>
       </column>
-      <column id="204" parent="19" name="reg_date">
+      <column id="205" parent="19" name="reg_date">
         <data-type>timestamp</data-type>
       </column>
-      <column id="205" parent="19" name="id_cliente">
+      <column id="206" parent="19" name="id_cliente">
         <data-type>int(100)</data-type>
       </column>
-      <key id="206" parent="19" name="PRIMARY">
+      <key id="207" parent="19" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="207" parent="20" name="id">
+      <column id="208" parent="20" name="id">
         <mandatory>1</mandatory>
         <data-type>int(3) unsigned</data-type>
         <sequence-identity>1</sequence-identity>
       </column>
-      <column id="208" parent="20" name="tipo">
+      <column id="209" parent="20" name="tipo">
         <mandatory>1</mandatory>
         <data-type>varchar(20)</data-type>
       </column>
-      <column id="209" parent="20" name="prezzo">
+      <column id="210" parent="20" name="prezzo">
         <mandatory>1</mandatory>
         <data-type>int(5)</data-type>
       </column>
-      <column id="210" parent="20" name="descr">
+      <column id="211" parent="20" name="descr">
         <data-type>varchar(100)</data-type>
       </column>
-      <index id="211" parent="20" name="tipo">
+      <index id="212" parent="20" name="tipo">
         <columns>tipo</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
       </index>
-      <key id="212" parent="20" name="PRIMARY">
+      <key id="213" parent="20" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <key id="213" parent="20" name="tipo">
+      <key id="214" parent="20" name="tipo">
         <columns>tipo</columns>
         <underlying-index>tipo</underlying-index>
       </key>
