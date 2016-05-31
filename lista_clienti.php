@@ -88,7 +88,10 @@
                         <tr><td><b>Email Legale: </b></td><td><span id="emailL"></span></td></tr>
                         <tr><td><b>Sito web legale: </b></td><td><span id="sitoWebL"></span></td></tr>
                         <tr><td><h4>Sede Amministrativa</h4></b></td><td></td></tr>
-                        <tr><td><b>Indirizzo:</b></td><td><span id="indrizzoAc"></span></td></tr>
+                        <tr>
+                            <td><b>Indirizzo:</b></td>
+                            <td><span id="indirizzoAC"></span></td>
+                        </tr>
                         <tr><td><b>Città: </b></td><td><span id="cittaAc"></span></td></tr>
                         <tr><td><b>Cap: </b></td><td><span id="capAc"></span></td></tr>
                         <tr><td><b>Provincia: </b></td><td><span id="provinciaAc"></span></td></tr>
@@ -117,7 +120,7 @@
         limit = 30;
     function loadPage(page, limit){
         $.ajax({
-            url: "function/get_listaclienti.php",
+            url: "json/get_listaclienti.php",
             dataType: "JSON",
             type: "GET",
             error: function(){
@@ -131,7 +134,7 @@
                 limit = limit * 2;
             }
         });
-    };
+    }
 
 
 </script>
@@ -147,8 +150,7 @@
         prevNext();
         document.getElementById("records").innerHTML = "";
         for (var id in records ) {
-            var texts = new Array( //inizializza i dati che ti servono
-                records[id].id,
+            var texts = [records[id].id,
                 records[id].nomeC,
                 records[id].cognomeC,
                 records[id].codC,
@@ -157,8 +159,7 @@
                 records[id].telLC,
                 records[id].cellAC,
                 records[id].PIVAC,
-                records[id].CFC
-            );
+                records[id].CFC];
             rowsReturned++;
             newTds = generateTd(texts);
             for ( var td in newTds) {
@@ -170,8 +171,8 @@
             info.type = "button";
             //info.id = records[id].id;
 
-            att = document.createAttribute("data-row");        // Create a "href" attribute
-            att.value = records[id][28];                            // Set the value of the href attribute
+            att = document.createAttribute("data-row");             // Create a "href" attribute
+            att.value = records[id]["count"];                       // Set the value of the href attribute
 
             info.setAttributeNode(att);
 
@@ -179,35 +180,36 @@
             info.onclick = function(num) {
                 var num = this.getAttribute("data-row");
                 console.log(num);
-                clientModal([
-                        records[num].nomeC,
-                        records[num].cognomeC,
-                        records[num].codC,
-                        records[num].descrC,
-                        records[num].noteC,
-                        records[num].indirizzoLC,
-                        records[num].cittaLC,
-                        records[num].capLC,
-                        records[num].provLC,
-                        records[num].telLC,
-                        records[num].faxLC,
-                        records[num].statoLC,
-                        records[num].emailLC,
-                        records[num].urlLC,
-                        records[num].indirizzoAC,
-                        records[num].cittaAC,
-                        records[num].capAC,
-                        records[num].provAC,
-                        records[num].telAC,
-                        records[num].cellAC,
-                        records[num].statoAC,
-                        records[num].emailAC,
-                        records[num].urlAC,
-                        records[num].PIVAC,
-                        records[num].CFC,
-                        records[num].IBANC,
-                        records[num].bancaC
-                    ]
+                associativeModal(
+                    {
+                        "#nomeC": records[num].nomeC,
+                        "#cognomeC": records[num].cognomeC,
+                        "#cC": records[num].codC,
+                        "#descC": records[num].descrC,
+                        "#noteC": records[num].noteC,
+                        "#indirizzoL": records[num].indirizzoLC,
+                        "#cittaL": records[num].cittaLC,
+                        "#capL": records[num].capLC,
+                        "#provinciaL": records[num].provLC,
+                        "#telL": records[num].telLC,
+                        "#faxL": records[num].faxLC,
+                        "#provL": records[num].statoLC,
+                        "#emailL": records[num].emailLC,
+                        "#sitoWebL": records[num].urlLC,
+                        "#cittaAc": records[num].cittaAC,
+                        "#capAc": records[num].capAC,
+                        "#provinciaAc": records[num].provAC,
+                        "#indirizzoAC": records[num].indirizzoAC,
+                        "#telefonoAc": records[num].provAC,
+                        "#cellulareAc": records[num].telAC,
+                        "#statoAc": records[num].cellAC,
+                        "#emailAc": records[num].statoAC,
+                        "#sitoAc": records[num].emailAC,
+                        "#cfiscAc": records[num].urlAC,
+                        "#pivaAc": records[num].PIVAC,
+                        "#ibanAc": records[num].IBANC,
+                        "#bancaAc": records[num].bancaC
+                    }
                 )};
             td = document.createElement("td");
             td.appendChild(info);
@@ -218,10 +220,11 @@
         function generateTd(arr) {
             var newTd,
                 text;
-            obj = new Array();
+            obj = [];
             newTr = document.createElement("tr");
-            newTr.id = "row-" + records[id][28]; // per capire: 28 è l'ultimo record che indica su quale array siamo
+            newTr.id = "row-" + records[id]["count"]; // per capire: count è l'ultimo record che indica su quale array siamo
             for (key in arr) {
+                arr[key] == null ? arr[key] = "N/D" : arr[key];
                 newTd = document.createElement("td");
                 text = document.createTextNode(arr[key]);
                 newTd.appendChild(text);
@@ -249,14 +252,14 @@
     function prevNext() {
         var prev = document.getElementById("prec").parentNode;
         if (page < 0 || page == 0) {
-            prev.className = "previous disabled";
+            prev.className = "hide";
         }
         else {
             prev.className = "previous";
         }
         var succ = document.getElementById("succ").parentNode;
         if (rowsReturned != 29) {
-            succ.className = "next disabled";
+            succ.className = "hide";
         }
         else {
             succ.className = "next";
