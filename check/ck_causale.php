@@ -1,14 +1,12 @@
 <?php
    include("../DB/config.php");
-   session_start();
-
+$ck = "";
    if($_SERVER["REQUEST_METHOD"] == "POST") {
        switch ($_POST['case']) {
            case "add":
-               $tipo = mysqli_real_escape_string($conndb,$_POST['tipo']);
                $descr = mysqli_real_escape_string($conndb,$_POST['descr']);
 
-               $sql_ins = "INSERT INTO causale (tipo, descr) VALUES ('$tipo', '$descr')";
+               $sql_ins = "INSERT INTO causale (descr) VALUES ('$descr')";
 
                //controllo inserimento
                if ($conndb->query($sql_ins) === TRUE) {
@@ -27,10 +25,9 @@
 
            case "edit":
                $id = mysqli_real_escape_string($conndb,$_POST['id']);
-               $tipo = mysqli_real_escape_string($conndb,$_POST['tipo']);
                $descr = mysqli_real_escape_string($conndb,$_POST['descr']);
 
-               $sql_edit = "UPDATE causale SET tipo='$tipo', descr='$descr' WHERE id='$id';";
+               $sql_edit = "UPDATE causale SET descr='$descr' WHERE id='$id';";
 
                 //controllo inserimento
                 if ($conndb->query($sql_edit) === TRUE) {
@@ -139,7 +136,6 @@
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Tipo</th>
                 <th>Descrizione</th>
                 <th>Azioni</th>
             </tr>
@@ -151,13 +147,17 @@
             $result = mysqli_query($conndb, $sql);
             while($row = mysqli_fetch_array($result)) {
                 $id = $row['id'];
-                $tipo = $row['tipo'];
                 $descr = $row['descr'];
                 echo "<tr>
-                <td>".$id."</td>
-                <td>".$tipo."</td>
-                <td>".$descr."</td>
-                <td></td>
+                <td class='valore-" . $id . "'>" . $id . "</td>
+                <td class='valore-" . $id . "'>" . $descr . "</td>
+                <td>
+                   <form class='form-inline' action='#' method='POST'>
+                        <button class='form-control' type='submit' name='case' value='del'>Elimina</button>
+                        <input class='form-control' type='button' value='Modifica' data-toggle=\"tab\" onClick='modifica(\"valore-" . $id . "\")'>
+                        <input type='hidden' name='id' value='" . $id . "'>
+                    </form>
+                </td>
                 </tr>";
             }
             mysqli_close($conndb);
@@ -165,63 +165,75 @@
         </tbody>
     </table>
 
-    <form method="POST">
-        <table class="table table-inp">
-            <thead>
-            <tr>
-                <td></td>
-                <td>
-                <input type="text" class="form-control widthAuto" name="tipo" placeholder="Tipo">
-                </td>
-                <td>
-                <input type="text" class="form-control widthAuto" name="descr" placeholder="Descrizione">
-                </td>
-                <td>
-                <input type="image" name="case" value="add" src="../images/add.png" alt="Submit" width="20px">
-                </td>
-            </tr>
-            </thead>
-        </table>
-    </form>
+    <div>
 
-    <form method="POST">
-        <table class="table table-inp">
-            <thead>
-            <tr>
-                <td>
-                <input type="text" class="form-control widthAuto" name="id" placeholder="ID da modificare">
-                </td>
-                <td>
-                <input type="text" class="form-control widthAuto" name="tipo" placeholder="Tipo">
-                </td>
-                <td>
-                <input type="text" class="form-control widthAuto" name="descr" placeholder="Descrizione">
-                </td>
-                <td>
-                <input type="image" name="case" value="edit" src="../images/edit.png" alt="Submit" width="20px">
-                </td>
-            </tr>
-            </thead>
-        </table>
-    </form>
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#new" aria-controls="home" role="tab" data-toggle="tab">Aggiungi
+                    nuovo</a></li>
+            <li role="presentation"><a id="openModTab" href="#mod" aria-controls="profile" role="tab" data-toggle="tab">Modifica</a>
+            </li>
 
-    <form method="POST">
-        <table class="table table-bot table-inp">
-            <thead>
-            <tr>
-                <td>
-                <input class="form-control widthAuto" type="text" name="id" placeholder="ID da eliminare"></td>
-                <td></td>
-                <td></td>
-                <td>
-                <input type="image" name="case" value="del" src="../images/del.png" alt="Submit" width="20px">
-                </td>
-            </tr>
-            </thead>
-        </table>
-    </form>
+        </ul>
+
+        <!-- Tab panes -->
+        <div id="tabs" class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="new">
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Descrizione</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="descr" placeholder="Descrizione">
+                        </div>
+                    </div>
+                    <div class="col-sm-2 col-sm-offset-10">
+                        <input type="hidden" name="case" value="add">
+                        <input class="form-control" type="submit" value="Aggiungi">
+                    </div>
+                    <div class="clearfix"></div>
+                </form>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="mod">
+                <form action="#" method="POST">
+                    <div class="col-sm-12">
+                        <div class="row" style="margin-top: 15px">
+                            <label class="col-sm-2 control-label">ID</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control autoWidth modifica" name="id" placeholder="ID">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <label class="col-sm-2 control-label">Descrizione</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control modifica" name="descr" placeholder="Descrizione">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="col-sm-2 col-sm-offset-10">
+                        <input type="hidden" name="case" value="edit">
+                        <input class="form-control " type="submit" value="Salva">
+                    </div>
+                    <div class="clearfix"></div>
+                </form>
+            </div>
+
+        </div>
+
     </div>
-	<?php include_once("./../template/parrot/foot.php") ?>
 
+</div>
+	<?php include_once("./../template/parrot/foot.php") ?>
+        <script>
+            function modifica(val) {
+                var obj = ($("." + val));
+                $("#openModTab").click();
+                console.log(obj[0].textContent);
+                $(".modifica[name=id]").val(obj[0].textContent);
+                $(".modifica[name=descr]").val(obj[1].textContent);
+            }
+        </script>
 	</body>
 </html>
