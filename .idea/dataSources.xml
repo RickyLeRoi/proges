@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="2122382479">
-    <data-source source="LOCAL" name="MySQL - zazzarot@localhost" uuid="196bd43d-5ada-4cd3-92cc-085293f786a1">
+  <component name="DataSourceManagerImpl" format="xml" hash="2036633749">
+    <data-source source="LOCAL" name="MySQL - gestionale_db@localhost" uuid="196bd43d-5ada-4cd3-92cc-085293f786a1">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/zazzarot</jdbc-url>
+      <jdbc-url>jdbc:mysql://localhost:3306/gestionale_db</jdbc-url>
       <driver-properties>
         <property name="autoReconnect" value="true" />
         <property name="zeroDateTimeBehavior" value="convertToNull" />
