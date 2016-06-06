@@ -1,7 +1,5 @@
 <?php
-   include("../DB/config.php");
-   session_start();
-
+require_once("../DB/config.php");
    if($_SERVER["REQUEST_METHOD"] == "POST") {
        switch ($_POST['case']) {
            case "add":
@@ -157,7 +155,12 @@
                 <td>".$id."</td>
                 <td>".$tipo."</td>
                 <td>".$descr."</td>
-                <td></td>
+                <td>
+                    <form action='#' method='POST'>
+                        <input width='20' type='image' src='../images/del.png' name='case' value='del'>
+                        <input type='hidden' name='id' value='" . $id . "'>
+                    </form>
+                </td>
                 </tr>";
             }
             mysqli_close($conndb);

@@ -255,7 +255,7 @@
 
                     <td id="incolonnaQuantita">
                         <input id="idQuantita-default" type="number" style="text-align:right;"
-                               class="stampa form-control arrQuantita" min="0">
+                               class="stampa form-control arrQuantita" min="1">
                     </td>
 
                     <td id="incolonnaArticoli" colspan="4">
