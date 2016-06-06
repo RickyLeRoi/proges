@@ -196,7 +196,7 @@
 
                 <tr>
 
-                    <td colspan="4" style="width:600;">
+                    <td colspan="2" style="width:600;">
                         <p class="col-md-12">
                         <h5>
                             <strong>FATT N.
@@ -219,7 +219,7 @@
 <p>IBAN: <strong>IT 69 F 03019 43070 000008380468</strong></p></span>
                     </td>
 
-                    <td colspan="3">
+                    <td colspan="2">
                         <div class="col-md-12">
                             Spett.le<br/><br/>
                             <input type="text" class="text-center form-control"
@@ -246,7 +246,7 @@
 
                 <tr>
                     <td><p class="col-md-12">Quantità</p></td>
-                    <td colspan="4"><p class="col-md-12">Descrizione della merce</p></td>
+                    <td width="300px"><p class="col-md-12">Descrizione della merce</p></td>
                     <td><p class="col-md-12">Imp.unit.</p></td>
                     <td><p class="col-md-12">Importo</p></td>
                 </tr>
@@ -258,7 +258,7 @@
                                class="stampa form-control arrQuantita" min="0">
                     </td>
 
-                    <td id="incolonnaArticoli" colspan="4">
+                    <td id="incolonnaArticoli">
                         <input class="stampa form-control" type="text" placeholder="Descrizione articolo automatica">
                     </td>
 
@@ -275,7 +275,7 @@
                 </tr>
 
                 <tr>
-                    <td style="text-align:center" colspan="5" rowspan="3">Contributo CONAI assolto ove dovuto.</td>
+                    <td style="text-align:center" colspan="2" rowspan="3">Contributo CONAI assolto ove dovuto.</td>
                     <td style="text-align:right">Totale parziale €</td>
                     <td>
                         <input class="form-control stampa" style="text-align:right" type="number"
@@ -300,7 +300,7 @@
                 </tr>
 
                 <tr>
-                    <td colspan="6">Esente IVA ai sensi dell’art.8 del D.P.R. 633/72. Documento n°<input type="number"
+                    <td colspan="3">Esente IVA ai sensi dell’art.8 del D.P.R. 633/72. Documento n°<input type="number"
                                                                                                          class="form-control"
                                                                                                          style="width:5%; display:inline"
                                                                                                          placeholder="0000">

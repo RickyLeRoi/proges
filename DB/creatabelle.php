@@ -36,7 +36,7 @@ $sql_art = "CREATE TABLE articoli (
 id INT(3) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 cod_int VARCHAR(6) NOT NULL,
 descr VARCHAR(200) NOT NULL,
-misure VARCHAR(50) NULL,
+misura VARCHAR(50) NULL,
 cod_barre BIGINT(30) NULL,
 prezzo INT(5) NULL,
 note VARCHAR(200) NULL,
