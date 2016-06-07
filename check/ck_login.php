@@ -159,90 +159,137 @@
                     $userLOG = $row['userLOG'];
                     $pswdLOG = $row['pswdLOG'];
                     echo "<tr>
-                    <td>".$id."</td>
-                    <td>".$tipoLOG."</td>
-                    <td>".$userLOG."</td>
-                    <td>".$pswdLOG."</td>
-                    <td></td>
-                    </tr>";
+                    <td class='valore-" . $id . "'>" . $id . "</td>
+                    <td class='valore-" . $id . "'>" . $tipoLOG . "</td>
+                    <td class='valore-" . $id . "'>" . $userLOG . "</td>
+                    <td class='valore-" . $id . "'>" . $pswdLOG . "</td>
+                    <td class='form-inline'>
+
+                    <form  action='#' method='POST'>
+                        <button class='form-control' type='submit' name='case' value='del'>Elimina</button>
+                        <input class='form-control' type='button' value='Modifica' data-toggle=\"tab\" onClick='modifica(\"valore-" . $id . "\")'>
+                        <input type='hidden' name='id' value='" . $id . "'>
+                    </form>
+                </td>
+                </tr>";
                 }
                 mysqli_close($conndb);
                 ?>
             </tbody>
         </table>
 
-    <form method="POST">
-        <table class="table table-inp">
-            <thead>
-            <tr>
-                <td></td>
-                <td>
-                    <select name="tipoLOG" class="form-control widthAuto">
-                        <option value="Titolare">Titolare</option>
-                        <option value="Operatore" selected>Operatore</option>
-                        <option value="Tecnico">Tecnico</option>
-                    </select>
-                </td>
-                <td>
-                    <input type="text" class="form-control widthAuto" name="userLOG" placeholder="Username">
-                </td>
-                <td>
-                    <input type="text" class="form-control widthAuto" name="pswdLOG" placeholder="Password">
-                </td>
-                <td>
-                <input type="image" name="case" value="add" src="../images/add.png" alt="Submit" width="20px">
-                </td>
-            </tr>
-            </thead>
-        </table>
-    </form>
+        <div>
 
-    <form method="POST"  style="background: #EA640C;">
-        <table class="table table-inp">
-            <thead>
-            <tr>
-                <td>
-                <input type="text" class="form-control widthAuto" name="id" placeholder="ID da modificare">
-                </td>
-                <td>
-                    <select name="tipoLOG" class="form-control widthAuto">
-                        <option value="Titolare">Titolare</option>
-                        <option value="Operatore" selected>Operatore</option>
-                        <option value="Tecnico">Tecnico</option>
-                    </select>
-                </td>
-                <td>
-                    <input type="text" class="form-control widthAuto" name="userLOG" placeholder="Username">
-                </td>
-                <td>
-                    <input type="text" class="form-control widthAuto" name="pswdLOG" placeholder="Password">
-                </td>
-                <td>
-                <input type="image" name="case" value="edit" src="../images/edit.png" alt="Submit" width="20px">
-                </td>
-            </tr>
-            </thead>
-        </table>
-    </form>
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#new" aria-controls="home" role="tab" data-toggle="tab">Aggiungi
+                    nuovo</a></li>
+            <li role="presentation"><a id="openModTab" href="#mod" aria-controls="profile" role="tab" data-toggle="tab">Modifica</a>
+            </li>
 
-    <form method="POST">
-        <table class="table table-bot table-inp">
-            <thead>
-            <tr>
-                <td>
-                <input class="form-control widthAuto" type="text" name="id" placeholder="ID da eliminare"></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>
-                <input type="image" name="case" value="del" src="../images/del.png" alt="Submit" width="20px">
-                </td>
-            </tr>
-            </thead>
-        </table>
-    </form>
+        </ul>
+
+ <!-- Tab panes -->
+        <div id="tabs" class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="new">
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Tipo</label>
+                        <div class="col-sm-10">
+                            <select name="tipoLOG" class="form-control widthAuto">
+                                <option value="Titolare">Titolare</option>
+                                <option value="Operatore" selected>Operatore</option>
+                                <option value="Tecnico">Tecnico</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <label class="control-label">Username</label>
+                            </div>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="userLOG" placeholder="Username">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <label class="control-label">Password</label>
+                            </div>
+                            <div class="col-sm-10">
+                                <input type="password" class="form-control" name="pswdLOG" placeholder="Password">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-2 col-sm-offset-10">
+                        <input type="hidden" name="case" value="add">
+                        <input class="form-control" type="submit" value="Aggiungi">
+                    </div>
+                    <div class="clearfix"></div>
+                </form>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="mod">
+                <form action="#" method="POST">
+                    <div class="col-sm-12">
+                        <div class="row" style="margin-top: 15px">
+                            <label class="col-sm-2 control-label">ID</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control autoWidth modifica" name="id" placeholder="ID">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Tipo</label>
+                        <div class="col-sm-10">
+                            <select name="tipoLOG" class="form-control widthAuto">
+                                <option value="Titolare">Titolare</option>
+                                <option value="Operatore" selected>Operatore</option>
+                                <option value="Tecnico">Tecnico</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <label class="col-sm-2 control-label">Username</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control modifica" name="userLOG" placeholder="Username">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <label class="col-sm-2 control-label">Password</label>
+                            <div class="col-sm-10">
+                                <input type="password" class="form-control modifica" name="pswdLOG" placeholder="Password">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="col-sm-2 col-sm-offset-10">
+                        <input type="hidden" name="case" value="edit">
+                        <input class="form-control " type="submit" value="Salva">
+                    </div>
+                    <div class="clearfix"></div>
+                </form>
+            </div>
+
+        </div>
+        </div>
     </div>
-	<?php include_once("./../template/parrot/foot.php") ?>
 
+    <?php include_once("./../template/parrot/foot.php") ?>
+    <script>
+        function modifica(val) {
+            var obj = ($("." + val));
+            $("#openModTab").click();
+            console.log(obj[0].textContent);
+            $(".modifica[name=id]").val(obj[0].textContent);
+            $(".modifica[name=tipoLOG]").val(obj[1].textContent);
+            $(".modifica[name=userLOG]").val(obj[2].textContent);
+            $(".modifica[name=pswdLOG]").val(obj[3].textContent);
+        }
+    </script>
 	</body>
 </html>

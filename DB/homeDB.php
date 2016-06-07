@@ -10,7 +10,12 @@
 
     <?php include("../template/parrot/style.php") // Carica gli stili del tema in uso ?>
 
-    <?php include("../function/session.php"); ?>
+    <?php 	//header('Content-Type: text/plain');
+	session_start();
+	$user = $_SESSION['login_user'];
+	$userID = $_SESSION['id_user'];
+    ?>
+
     <style>
         label {
             color: #FFF;

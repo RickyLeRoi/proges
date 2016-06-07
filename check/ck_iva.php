@@ -243,7 +243,7 @@ $ck = "";
             </div>
 
         </div>
-
+    </div>
     </div>
 
     <?php include_once("./../template/parrot/foot.php") ?>

@@ -36,13 +36,13 @@ if(isset($_POST["fatt"])) {
     $config = mysqli_real_escape_string($conndb,$_POST['config']);
 
     if ($config === "false") {
-        $query = "  INSERT INTO custom_settings (max_fatt,max_ndc,max_ddt,max_prev, max_listini, max_clienti, max_fornitori, id_user)
+        $query = "  INSERT INTO settings (max_fatt,max_ndc,max_ddt,max_prev, max_listini, max_clienti, max_fornitori, id_user)
                     VALUES ($fatt, $ndc, $ddt, $prev, $listini, $clienti, $fornitori, $userID)";
         $msg = "inseriti";
     }
 
     if ($config === "true") {
-        $query = "  UPDATE custom_settings
+        $query = "  UPDATE settings
                     SET max_fatt=".$fatt.", max_ndc=".$ndc.",max_ddt=".$ddt.", max_prev=".$prev.",max_listini=".$listini.", max_clienti=".$clienti.", max_fornitori=".$fornitori."
                     WHERE id_user = ".$userID;
         $msg = "aggiornati";
@@ -57,7 +57,7 @@ if(isset($_POST["fatt"])) {
 }
 
 
-$query = "SELECT * FROM custom_settings WHERE id_user LIKE ".$userID;
+$query = "SELECT * FROM settings WHERE id_user LIKE ".$userID;
 
 
 /* check connection */

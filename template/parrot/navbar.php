@@ -34,6 +34,17 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Controllo <span class="fa-chevron-down fa"></span></a>
                         <ul class="dropdown-menu">
                             <div class="arrow top"></div>
+<?php
+include("DB/config.php");
+$query = ("SELECT * FROM login WHERE userLOG='$user' AND tipoLOG='Tecnico'");
+$result = mysqli_query($conndb, $query);
+if(mysqli_num_rows($result)==1)
+    {
+    echo ("<li id=\"ck_causale\"><a href=\"http://$base_url/check/ck_login.php\">Login</a></li>");
+    }else{
+    echo '';
+    }
+?>
                             <li id="ck_causale"><a href="http://<?php echo $base_url ?>/check/ck_causale.php">Causale</a></li>
                             <li id="ck_mezzo"><a href="http://<?php echo $base_url ?>/check/ck_mezzo.php">Mezzo Trasporto</a></li>
                             <li id="ck_iva"><a href="http://<?php echo $base_url ?>/check/ck_iva.php">IVA</a></li>
@@ -52,7 +63,17 @@
                         <ul class="dropdown-menu">
                             <div class="arrow top"></div>
                             <li id="settings"><a href="http://<?php echo $base_url ?>/settings.php"><span class="fa-cog fa"></span> Impostazioni</a></li>
-                            <li id="homeDB"><a href="http://<?php echo $base_url ?>/DB/homeDB.php"><span class="fa-cog fa"></span> Avanzate DB</a></li>
+<?php
+include("DB/config.php");
+$query = ("SELECT * FROM login WHERE userLOG='$user' AND tipoLOG='Tecnico'");
+$result = mysqli_query($conndb, $query);
+if(mysqli_num_rows($result)==1)
+    {
+    echo ("<li id=\"homeDB\"><a href=\"http://$base_url/DB/homeDB.php\"><span class=\"fa-cog fa\"></span> Avanzate DB</a></li>");
+    }else{
+    echo '';
+    }
+?>
                             <li id="logout"><li><a href="http://<?php echo $base_url ?>/function/logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
                         </ul>
                     </li>
