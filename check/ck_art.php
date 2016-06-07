@@ -1,7 +1,6 @@
 <?php
    include("../DB/config.php");
-   session_start();
-
+$ck = "";
    if($_SERVER["REQUEST_METHOD"] == "POST") {
        switch ($_POST['case']) {
            case "add":
@@ -11,8 +10,9 @@
                $cod_barre = mysqli_real_escape_string($conndb,$_POST['cod_barre']);
                $prezzo = mysqli_real_escape_string($conndb,$_POST['prezzo']);
                $note = mysqli_real_escape_string($conndb,$_POST['note']);
+               $misura = mysqli_real_escape_string($conndb, $_POST['misura']);
 
-               $sql_ins = "INSERT INTO articoli (cod_int, nome, descr, cod_barre, prezzo, note) VALUES ('$cod_int', '$nome', '$descr', '$cod_barre', '$prezzo', '$note')";
+               $sql_ins = "INSERT INTO articoli (cod_int, descr, misura, cod_barre, prezzo, note) VALUES ('$cod_int', '$descr', '$misura', '$cod_barre', '$prezzo', '$note')";
 
                //controllo inserimento
                if ($conndb->query($sql_ins) === TRUE) {
@@ -32,13 +32,13 @@
            case "edit":
                 $id = mysqli_real_escape_string($conndb,$_POST['id']);
                 $cod_int = mysqli_real_escape_string($conndb,$_POST['cod_int']);
-                $nome = mysqli_real_escape_string($conndb,$_POST['nome']);
                 $descr = mysqli_real_escape_string($conndb,$_POST['descr']);
                 $cod_barre = mysqli_real_escape_string($conndb,$_POST['cod_barre']);
                 $prezzo = mysqli_real_escape_string($conndb,$_POST['prezzo']);
                 $note = mysqli_real_escape_string($conndb,$_POST['note']);
+               $misura = mysqli_real_escape_string($conndb, $_POST['misura']);
 
-               $sql_edit = "UPDATE articoli SET cod_int='$cod_int', nome='$nome', descr='$descr', cod_barre='$cod_barre', prezzo='$prezzo', note='$note' WHERE id='$id';";
+               $sql_edit = "UPDATE articoli SET cod_int='$cod_int', descr='$descr', misura='$misura',cod_barre='$cod_barre', prezzo='$prezzo', note='$note' WHERE id='$id';";
 
                 //controllo inserimento
                 if ($conndb->query($sql_edit) === TRUE) {
@@ -148,12 +148,12 @@
             <tr>
                 <th>ID</th>
                 <th>Codice interno</th>
-                <th>Nome</th>
                 <th>Descrizione</th>
+                <th>Misura</th>
                 <th>Codice a barre</th>
                 <th>Prezzo</th>
                 <th>Note</th>
-                <th>Azioni</th>
+                <th colspan="2">Azioni</th>
             </tr>
         </thead>
         <tbody>
@@ -164,111 +164,201 @@
             while($row = mysqli_fetch_array($result)) {
                 $id = $row['id'];
                 $cod_int = $row['cod_int'];
-                $nome = $row['nome'];
+                $misura = $row['misura'];
                 $descr = $row['descr'];
+
                 $cod_barre = $row['cod_barre'];
                 $prezzo = $row['prezzo'];
                 $note = $row['note'];
+
                 echo "<tr>
-                <td>".$id."</td>
-                <td>".$cod_int."</td>
-                <td>".$nome."</td>
-                <td>".$descr."</td>
-                <td>".$cod_barre."</td>
-                <td>".$prezzo."</td>
-                <td>".$note."</td>
-                <td></td>
+                <td class='valore-" . $id . "'>" . $id . "</td>
+                <td class='valore-" . $id . "'>" . $cod_int . "</td>
+                <td class='valore-" . $id . "'>" . $misura . "</td>
+                <td class='valore-" . $id . "'>" . $descr . "</td>
+                
+                <td class='valore-" . $id . "'>" . $cod_barre . "</td>
+                <td class='valore-" . $id . "'>" . $prezzo . "</td>
+                <td class='valore-" . $id . "'>" . $note . "</td>
+                <td colspan=2 class='form-inline'>
+                    
+                    <form  action='#' method='POST'>
+                        <button class='form-control' type='submit' name='case' value='del'>Elimina</button>
+                        <input class='form-control' type='button' value='Modifica' data-toggle=\"tab\" onClick='modifica(\"valore-" . $id . "\")'>
+                        <input type='hidden' name='id' value='" . $id . "'>
+                    </form>
+                </td>
                 </tr>";
             }
             mysqli_close($conndb);
             ?>
         </tbody>
     </table>
+    <div>
 
-    <form method="POST">
-        <table class="table table-inp">
-            <thead>
-            <tr>
-                <td></td>
-                <td>
-                <input type="text" class="form-control" name="cod_int" placeholder="Codice interno">
-                </td>
-                <td>
-                <input type="text" class="form-control" name="nome" placeholder="Nome">
-                </td>
-                <td>
-                <input type="text" class="form-control" name="descr" placeholder="Descrizione">
-                </td>
-                <td>
-                <input type="text" class="form-control" name="cod_barre" placeholder="Codice a barre">
-                </td>
-                <td>
-                <input type="text" class="form-control" name="prezzo" placeholder="Prezzo">
-                </td>
-                <td>
-                <input type="text" class="form-control" name="note" placeholder="Note">
-                </td>
-                <td>
-                <input type="image" name="case" value="add" src="../images/add.png" alt="Submit" width="20px">
-                </td>
-            </tr>
-            </thead>
-        </table>
-    </form>
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#new" aria-controls="home" role="tab" data-toggle="tab">Aggiungi
+                    nuovo</a></li>
+            <li role="presentation"><a id="openModTab" href="#mod" aria-controls="profile" role="tab" data-toggle="tab">Modifica</a>
+            </li>
 
-    <form method="POST">
-        <table class="table table-inp">
-            <thead>
-            <tr>
-                <td>
-                <input type="text" class="form-control" name="id" placeholder="ID da modificare">
-                </td>
-                <td>
-                <input type="text" class="form-control" name="cod_int" placeholder="Codice interno">
-                </td>
-                <td>
-                <input type="text" class="form-control" name="nome" placeholder="Nome">
-                </td>
-                <td>
-                <input type="text" class="form-control" name="descr" placeholder="Descrizione">
-                </td>
-                <td>
-                <input type="text" class="form-control" name="cod_barre" placeholder="Codice a barre">
-                </td>
-                <td>
-                <input type="text" class="form-control" name="prezzo" placeholder="Prezzo">
-                </td>
-                <td>
-                <input type="text" class="form-control" name="note" placeholder="Note">
-                </td>
-                <td>
-                <input type="image" name="case" value="edit" src="../images/edit.png" alt="Submit" width="20px">
-                </td>
-            </tr>
-            </thead>
-        </table>
-    </form>
+        </ul>
 
-    <form method="POST">
-        <table class="table table-bot table-inp">
-            <thead>
-            <tr>
-                <td>
-                <input class="form-control" type="text" name="id" placeholder="ID da eliminare"></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>
-                <input type="image" name="case" value="del" src="../images/del.png" alt="Submit" width="20px">
-                </td>
-            </tr>
-            </thead>
-        </table>
-    </form>
+        <!-- Tab panes -->
+        <div id="tabs" class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="new">
+                <form action="#" method="POST">
+                    <div class="col-sm-12">
+                        <div class="row" style="margin-top: 15px">
+                            <label class="col-sm-2 control-label">Codice interno</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="cod_int" placeholder="Codice interno">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <label class="col-sm-2 control-label">Misura</label>
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" name="misura" placeholder="Misura">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <label class="col-sm-2 control-label">Descrizione</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="descr" placeholder="Descrizione">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <label class="col-sm-2 control-label">Codice a barre</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="cod_barre" placeholder="Codice a barre">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <label class="control-label">Prezzo</label>
+                            </div>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="prezzo" placeholder="Prezzo">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <label class="control-label">Note</label>
+                            </div>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="note" placeholder="Note">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-2 col-sm-offset-10">
+                        <input type="hidden" name="case" value="add">
+                        <input class="form-control" type="submit" value="Aggiungi">
+                    </div>
+                    <div class="clearfix"></div>
+                </form>
+            </div>
+            <!-- EDIT  ///////////////////////////////////////// -->
+            <div role="tabpanel" class="tab-pane" id="mod">
+                <form action="#" method="POST">
+                    <div class="col-sm-12">
+                        <div class="row" style="margin-top: 15px">
+                            <label class="col-sm-2 control-label">ID</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control modifica" name="id" placeholder="ID">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <label class="col-sm-2 control-label">Codice interno</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control modifica" name="cod_int"
+                                       placeholder="Codice interno">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <label class="col-sm-2 control-label">Misura</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control modifica" name="misura" placeholder="Misura">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <label class="col-sm-2 control-label">Descrizione</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control modifica" name="descr" placeholder="Descrizione">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <label class="col-sm-2 control-label">Codice a barre</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control modifica" name="cod_barre"
+                                       placeholder="Codice a barre">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <label class="control-label">Prezzo</label>
+                            </div>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control modifica" name="prezzo" placeholder="Prezzo">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <label class="control-label">Note</label>
+                            </div>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control modifica" name="note" placeholder="Note">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-2 col-sm-offset-10">
+                        <input type="hidden" name="case" value="edit">
+                        <input class="form-control" type="submit" value="Aggiungi">
+                    </div>
+                    <div class="clearfix"></div>
+                </form>
+            </div>
+
+        </div>
+
     </div>
+</div>
 	<?php include_once("./../template/parrot/foot.php") ?>
-
+        <script>
+            function modifica(val) {
+                var obj = ($("." + val));
+                $("#openModTab").click();
+                console.log(obj[0].textContent);
+                $(".modifica[name=id]").val(obj[0].textContent);
+                $(".modifica[name=cod_int]").val(obj[1].textContent);
+                $(".modifica[name=misura]").val(obj[2].textContent);
+                $(".modifica[name=descr]").val(obj[3].textContent);
+                $(".modifica[name=cod_barre]").val(obj[4].textContent);
+                $(".modifica[name=prezzo]").val(obj[5].textContent);
+                $(".modifica[name=note]").val(obj[6].textContent);
+            }
+        </script>
 	</body>
 </html>
