@@ -6,7 +6,7 @@
 	$userID = $_SESSION['id_user'];
 
 	if(!isset($_SESSION['login_user'])){
-  		header("location:function/login.php");
+		header("location:http://" . $_SERVER["SERVER_NAME"] . "/proges/function/login.php");
 
    }
 ?>
