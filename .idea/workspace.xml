@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="262bcaf4-44d1-46db-b05b-0150860b8c78" name="Default" comment="Modifica dell'interfaccia di tutti i CK">
+    <list default="true" id="262bcaf4-44d1-46db-b05b-0150860b8c78" name="Default" comment="Grafica fattura ultimata, fixato l'errore della sessione.">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gen_documenti/post.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/plugins/jQuery-Autocomplete" afterPath="$PROJECT_DIR$/template/parrot/plugins/jQuery-Autocomplete" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DB/data.php" afterPath="$PROJECT_DIR$/DB/data.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/function/session.php" afterPath="$PROJECT_DIR$/function/session.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen_documenti/fattura.php" afterPath="$PROJECT_DIR$/gen_documenti/fattura.php" />
     </list>
     <ignored path="proges.iws" />
@@ -123,32 +122,11 @@
               <file leaf-file-name="fattura.php" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/gen_documenti/fattura.php">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="260">
-                      <caret line="91" column="24" selection-start-line="91" selection-start-column="24" selection-end-line="91" selection-end-column="24" />
+                    <state relative-caret-position="210">
+                      <caret line="225" column="0" selection-start-line="225" selection-start-column="0" selection-end-line="225" selection-end-column="0" />
                       <folding>
-                        <element signature="n#style#0;n#td#0;n#tr#1;n#thead#0;n#table#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                        <element signature="n#style#0;n#input#0;n#strong#0;n#p#1;n#td#0;n#tr#1;n#thead#0;n#table#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                        <element signature="n#style#0;n#input#1;n#strong#0;n#p#1;n#td#0;n#tr#1;n#thead#0;n#table#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                        <element signature="n#style#0;n#select#0;n#span#0;n#td#0;n#tr#1;n#thead#0;n#table#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                        <element signature="n#style#0;n#input#3;n#div#0;n#td#1;n#tr#1;n#thead#0;n#table#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                        <element signature="n#style#0;n#span#0;n#div#0;n#td#1;n#tr#1;n#thead#0;n#table#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                        <element signature="n#style#0;n#input#4;n#div#0;n#td#1;n#tr#1;n#thead#0;n#table#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                        <element signature="n#style#0;n#span#1;n#div#0;n#td#1;n#tr#1;n#thead#0;n#table#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                        <element signature="n#style#0;n#input#5;n#div#0;n#td#1;n#tr#1;n#thead#0;n#table#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                        <element signature="n#style#0;n#input#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                        <element signature="n#style#0;n#input#0;n#td#2;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                        <element signature="n#style#0;n#input#0;n#td#3;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                        <element signature="n#style#0;n#td#0;n#tr#2;n#tbody#0;n#table#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                        <element signature="n#style#0;n#td#1;n#tr#2;n#tbody#0;n#table#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                        <element signature="n#style#0;n#input#0;n#td#2;n#tr#2;n#tbody#0;n#table#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                        <element signature="n#style#0;n#td#0;n#tr#3;n#tbody#0;n#table#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                        <element signature="n#style#0;n#select#0;n#td#1;n#tr#3;n#tbody#0;n#table#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                        <element signature="n#style#0;n#td#0;n#tr#4;n#tbody#0;n#table#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                        <element signature="n#style#0;n#input#0;n#td#1;n#tr#4;n#tbody#0;n#table#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                        <element signature="n#style#0;n#input#1;n#p#0;n#td#0;n#tr#5;n#tbody#0;n#table#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                        <element signature="n#style#0;n#input#2;n#p#0;n#td#0;n#tr#5;n#tbody#0;n#table#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                        <marker date="1465406499570" expanded="true" signature="159:182" ph="SELECT descr... pagam" />
-                        <marker date="1465406499570" expanded="true" signature="384:408" ph="SELECT aliqu... iva" />
+                        <marker date="1465495057858" expanded="true" signature="143:166" ph="SELECT descr... pagam" />
+                        <marker date="1465495057858" expanded="true" signature="340:364" ph="SELECT aliqu... iva" />
                       </folding>
                     </state>
                   </provider>
@@ -157,7 +135,7 @@
               <file leaf-file-name="get_clienti.php" pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/json/get_clienti.php">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="234">
+                    <state relative-caret-position="-156">
                       <caret line="34" column="18" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="18" />
                       <folding>
                         <marker date="1465209814078" expanded="true" signature="226:535" ph="SELECT id, n... clienti" />
@@ -170,7 +148,7 @@
                 <entry file="file://$PROJECT_DIR$/function/session.php">
                   <provider selected="true" editor-type-id="text-editor">
                     <state relative-caret-position="136">
-                      <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="88" />
+                      <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="92" />
                       <folding />
                     </state>
                   </provider>
@@ -181,12 +159,6 @@
                   <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
                     <state>
                       <filtering enabled="true" />
-                    </state>
-                  </provider>
-                  <provider editor-type-id="text-editor">
-                    <state relative-caret-position="0">
-                      <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                      <folding />
                     </state>
                   </provider>
                 </entry>
@@ -205,15 +177,15 @@
               </file>
               <file leaf-file-name="gestionale_db.pagam" pinned="false" current-in-tab="false">
                 <entry file="dbDummy://dbtable:/8bd68956/196bd43d-5ada-4cd3-92cc-085293f786a1/gestionale_db.pagam">
-                  <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-                    <state>
-                      <filtering enabled="true" />
-                    </state>
-                  </provider>
                   <provider editor-type-id="text-editor">
                     <state relative-caret-position="0">
                       <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                       <folding />
+                    </state>
+                  </provider>
+                  <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+                    <state>
+                      <filtering enabled="true" />
                     </state>
                   </provider>
                 </entry>
@@ -241,16 +213,47 @@
             </leaf>
           </split-first>
           <split-second>
-            <leaf>
-              <file leaf-file-name="fattura.php" pinned="false" current-in-tab="true">
+            <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+              <file leaf-file-name="fattura.php" pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/gen_documenti/fattura.php">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="157">
-                      <caret line="294" column="25" selection-start-line="294" selection-start-column="25" selection-end-line="294" selection-end-column="25" />
+                    <state relative-caret-position="228">
+                      <caret line="509" column="22" selection-start-line="509" selection-start-column="22" selection-end-line="509" selection-end-column="22" />
                       <folding>
-                        <element signature="n#style#0;n#input#1;n#p#0;n#td#0;n#tr#5;n#tbody#0;n#table#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                        <marker date="1465406499570" expanded="true" signature="159:182" ph="SELECT descr... pagam" />
-                        <marker date="1465406499570" expanded="true" signature="384:408" ph="SELECT aliqu... iva" />
+                        <marker date="1465495057858" expanded="true" signature="143:166" ph="SELECT descr... pagam" />
+                        <marker date="1465495057858" expanded="true" signature="340:364" ph="SELECT aliqu... iva" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="post.php" pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/gen_documenti/post.php">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="191">
+                      <caret line="22" column="17" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="ddt.php" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/gen_documenti/ddt.php">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="-4379">
+                      <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="ndc.php" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/ndc.php">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="61">
+                      <caret line="113" column="31" selection-start-line="113" selection-start-column="8" selection-end-line="113" selection-end-column="32" />
+                      <folding>
+                        <marker date="1465209814194" expanded="true" signature="45:333" ph="SELECT ndc.*... ndc" />
                       </folding>
                     </state>
                   </provider>
@@ -265,7 +268,7 @@
           <file leaf-file-name="ck_mezzo.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/check/ck_mezzo.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
+                <state relative-caret-position="2924">
                   <caret line="172" column="1" selection-start-line="172" selection-start-column="1" selection-end-line="260" selection-end-column="7" />
                   <folding>
                     <marker date="1465230848951" expanded="true" signature="328:386" ph="INSERT INTO mezzo... " />
@@ -318,29 +321,17 @@
                 <state relative-caret-position="4658">
                   <caret line="274" column="10" selection-start-line="274" selection-start-column="10" selection-end-line="274" selection-end-column="10" />
                   <folding>
-                    <marker date="1465395817465" expanded="true" signature="94:2846" ph="..." />
-                    <marker date="1465395817465" expanded="true" signature="127:2844" ph="..." />
-                    <marker date="1465395817465" expanded="true" signature="150:1071" ph="..." />
                     <marker date="1465395817465" expanded="true" signature="410:487" ph="INSERT INTO sp_agg... " />
-                    <marker date="1465395817465" expanded="true" signature="585:822" ph="..." />
                     <marker date="1465395817465" expanded="true" signature="684:783" ph="..." />
-                    <marker date="1465395817465" expanded="true" signature="830:1063" ph="..." />
                     <marker date="1465395817465" expanded="true" signature="928:1024" ph="..." />
-                    <marker date="1465395817465" expanded="true" signature="1096:2092" ph="..." />
                     <marker date="1465395817465" expanded="true" signature="1424:1503" ph="UPDATE sp_ag... " />
-                    <marker date="1465395817465" expanded="true" signature="1605:1845" ph="..." />
                     <marker date="1465395817465" expanded="true" signature="1706:1804" ph="..." />
-                    <marker date="1465395817465" expanded="true" signature="1853:2084" ph="..." />
                     <marker date="1465395817465" expanded="true" signature="1953:2043" ph="..." />
-                    <marker date="1465395817465" expanded="true" signature="2116:2836" ph="..." />
                     <marker date="1465395817465" expanded="true" signature="2216:2249" ph="DELETE FROM " />
-                    <marker date="1465395817465" expanded="true" signature="2349:2586" ph="..." />
                     <marker date="1465395817465" expanded="true" signature="2450:2545" ph="..." />
-                    <marker date="1465395817465" expanded="true" signature="2594:2828" ph="..." />
                     <marker date="1465395817465" expanded="true" signature="2694:2787" ph="..." />
                     <marker date="1465395817465" expanded="true" signature="4299:4319" ph="SELECT * FRO... sp_agg" />
                     <marker date="1465395817465" expanded="true" signature="4781:4801" ph="SELECT * FRO... sp_agg" />
-                    <marker date="1465395817465" expanded="true" signature="4910:5890" ph="..." />
                     <marker date="1465395817465" expanded="true" signature="5090:5874" ph="..." />
                     <marker date="1465395817465" expanded="true" signature="5138:5154" ph="..." />
                     <marker date="1465395817465" expanded="true" signature="5397:5852" ph="..." />
@@ -353,8 +344,8 @@
           <file leaf-file-name="ck_pagam.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/check/ck_pagam.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-29">
-                  <caret line="204" column="47" selection-start-line="204" selection-start-column="47" selection-end-line="204" selection-end-column="47" />
+                <state relative-caret-position="748">
+                  <caret line="247" column="7" selection-start-line="247" selection-start-column="7" selection-end-line="247" selection-end-column="7" />
                   <folding>
                     <marker date="1465314759452" expanded="true" signature="255:298" ph="INSERT INTO pagam... " />
                     <marker date="1465314759452" expanded="true" signature="495:594" ph="..." />
@@ -397,9 +388,6 @@
     <option name="CREATE_PULL_REQUEST_DEFAULT_REPO_USER" value="danieleX" />
     <option name="CREATE_PULL_REQUEST_DEFAULT_REPO_NAME" value="proges" />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="dummy://restClient/response7.html" root0="SKIP_INSPECTION" />
-  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -439,6 +427,7 @@
         <option value="$PROJECT_DIR$/DB/data.php" />
         <option value="dbtable:/8bd68956/196bd43d-5ada-4cd3-92cc-085293f786a1/gestionale_db.pagam" />
         <option value="$PROJECT_DIR$/function/session.php" />
+        <option value="$PROJECT_DIR$/gen_documenti/post.php" />
         <option value="$PROJECT_DIR$/gen_documenti/fattura.php" />
       </list>
     </option>
@@ -483,7 +472,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -606,7 +595,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -617,11 +606,11 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\wamp64\www\proges\json" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\wamp64\www\proges\gen_documenti" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\wamp64\www\proges\json" />
     </key>
   </component>
   <component name="RestClientSettings">
@@ -758,7 +747,8 @@
       <workItem from="1465210853992" duration="15221000" />
       <workItem from="1465250936419" duration="1468000" />
       <workItem from="1465306519322" duration="8102000" />
-      <workItem from="1465392278595" duration="12507000" />
+      <workItem from="1465392278595" duration="13232000" />
+      <workItem from="1465483973620" duration="9762000" />
     </task>
     <task id="LOCAL-00004" summary="JSON ordinati, funzione ridotta, lista clienti e lista fornitori non visualizzano la navbar di scorrimento se non ci sono record in più pagine.">
       <created>1464283951639</created>
@@ -816,11 +806,18 @@
       <option name="project" value="LOCAL" />
       <updated>1465314762279</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Grafica fattura ultimata, fixato l'errore della sessione.">
+      <created>1465407240951</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1465407240951</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104658000" />
+    <option name="totallyTimeSpent" value="115145000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -835,11 +832,10 @@
     <frame x="-8" y="0" width="1924" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26770386" sideWeight="0.49562362" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27038628" sideWeight="0.49562362" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.49356222" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5064378" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1475322" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.4978678" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44420367" sideWeight="0.472103" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3261105" sideWeight="0.49356222" order="9" side_tool="false" content_ui="tabs" />
@@ -849,6 +845,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.4978678" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -898,7 +895,8 @@
     <MESSAGE value="fattura e cose" />
     <MESSAGE value="Update" />
     <MESSAGE value="Modifica dell'interfaccia di tutti i CK" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modifica dell'interfaccia di tutti i CK" />
+    <MESSAGE value="Grafica fattura ultimata, fixato l'errore della sessione." />
+    <option name="LAST_COMMIT_MESSAGE" value="Grafica fattura ultimata, fixato l'errore della sessione." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="UPDATE_GROUP_BY_PACKAGES" value="true" />
   </component>
@@ -907,20 +905,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lista_fornitori.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="564">
-          <caret line="151" column="30" selection-start-line="151" selection-start-column="30" selection-end-line="151" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DB/creatabelle.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="130" column="13" selection-start-line="130" selection-start-column="13" selection-end-line="130" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lista_clienti.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2853">
@@ -936,50 +920,50 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/8bd68956/196bd43d-5ada-4cd3-92cc-085293f786a1/zazzarot.pagam">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/8bd68956/196bd43d-5ada-4cd3-92cc-085293f786a1/zazzarot.ddt">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/8bd68956/196bd43d-5ada-4cd3-92cc-085293f786a1/zazzarot.prev">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/8bd68956/196bd43d-5ada-4cd3-92cc-085293f786a1/zazzarot.numerazione_p">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -991,33 +975,26 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/8bd68956/196bd43d-5ada-4cd3-92cc-085293f786a1/zazzarot.ndc">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/8bd68956/196bd43d-5ada-4cd3-92cc-085293f786a1/zazzarot.numerazione_ftt">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ndc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="54" column="83" selection-start-line="54" selection-start-column="83" selection-end-line="54" selection-end-column="83" />
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -1043,14 +1020,14 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/8bd68956/196bd43d-5ada-4cd3-92cc-085293f786a1/zazzarot.fatt">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="2" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -1069,14 +1046,14 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/8bd68956/196bd43d-5ada-4cd3-92cc-085293f786a1/zazzarot.clienti">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -1102,26 +1079,26 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/8bd68956/196bd43d-5ada-4cd3-92cc-085293f786a1/zazzarot.numerazione_ddt">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/8bd68956/196bd43d-5ada-4cd3-92cc-085293f786a1/zazzarot.login">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -1256,7 +1233,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/check/ck_mezzo.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="2924">
           <caret line="172" column="1" selection-start-line="172" selection-start-column="1" selection-end-line="260" selection-end-column="7" />
           <folding>
             <marker date="1465230848951" expanded="true" signature="328:386" ph="INSERT INTO mezzo... " />
@@ -1305,75 +1282,22 @@
         <state relative-caret-position="4658">
           <caret line="274" column="10" selection-start-line="274" selection-start-column="10" selection-end-line="274" selection-end-column="10" />
           <folding>
-            <marker date="1465395817465" expanded="true" signature="94:2846" ph="..." />
-            <marker date="1465395817465" expanded="true" signature="127:2844" ph="..." />
-            <marker date="1465395817465" expanded="true" signature="150:1071" ph="..." />
             <marker date="1465395817465" expanded="true" signature="410:487" ph="INSERT INTO sp_agg... " />
-            <marker date="1465395817465" expanded="true" signature="585:822" ph="..." />
             <marker date="1465395817465" expanded="true" signature="684:783" ph="..." />
-            <marker date="1465395817465" expanded="true" signature="830:1063" ph="..." />
             <marker date="1465395817465" expanded="true" signature="928:1024" ph="..." />
-            <marker date="1465395817465" expanded="true" signature="1096:2092" ph="..." />
             <marker date="1465395817465" expanded="true" signature="1424:1503" ph="UPDATE sp_ag... " />
-            <marker date="1465395817465" expanded="true" signature="1605:1845" ph="..." />
             <marker date="1465395817465" expanded="true" signature="1706:1804" ph="..." />
-            <marker date="1465395817465" expanded="true" signature="1853:2084" ph="..." />
             <marker date="1465395817465" expanded="true" signature="1953:2043" ph="..." />
-            <marker date="1465395817465" expanded="true" signature="2116:2836" ph="..." />
             <marker date="1465395817465" expanded="true" signature="2216:2249" ph="DELETE FROM " />
-            <marker date="1465395817465" expanded="true" signature="2349:2586" ph="..." />
             <marker date="1465395817465" expanded="true" signature="2450:2545" ph="..." />
-            <marker date="1465395817465" expanded="true" signature="2594:2828" ph="..." />
             <marker date="1465395817465" expanded="true" signature="2694:2787" ph="..." />
             <marker date="1465395817465" expanded="true" signature="4299:4319" ph="SELECT * FRO... sp_agg" />
             <marker date="1465395817465" expanded="true" signature="4781:4801" ph="SELECT * FRO... sp_agg" />
-            <marker date="1465395817465" expanded="true" signature="4910:5890" ph="..." />
             <marker date="1465395817465" expanded="true" signature="5090:5874" ph="..." />
             <marker date="1465395817465" expanded="true" signature="5138:5154" ph="..." />
             <marker date="1465395817465" expanded="true" signature="5397:5852" ph="..." />
             <marker date="1465395817465" expanded="true" signature="5471:5830" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/check/ck_pagam.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-29">
-          <caret line="204" column="47" selection-start-line="204" selection-start-column="47" selection-end-line="204" selection-end-column="47" />
-          <folding>
-            <marker date="1465314759452" expanded="true" signature="255:298" ph="INSERT INTO pagam... " />
-            <marker date="1465314759452" expanded="true" signature="495:594" ph="..." />
-            <marker date="1465314759452" expanded="true" signature="739:835" ph="..." />
-            <marker date="1465314759452" expanded="true" signature="1083:1129" ph="UPDATE pagam... " />
-            <marker date="1465314759452" expanded="true" signature="1332:1430" ph="..." />
-            <marker date="1465314759452" expanded="true" signature="1579:1669" ph="..." />
-            <marker date="1465314759452" expanded="true" signature="1842:1874" ph="DELETE FROM " />
-            <marker date="1465314759452" expanded="true" signature="2075:2170" ph="..." />
-            <marker date="1465314759452" expanded="true" signature="2319:2412" ph="..." />
-            <marker date="1465314759452" expanded="true" signature="3911:3930" ph="SELECT * FRO... pagam" />
-            <marker date="1465314759452" expanded="true" signature="4330:4349" ph="SELECT * FRO... pagam" />
-            <marker date="1465314759452" expanded="true" signature="4558:5207" ph="..." />
-            <marker date="1465314759452" expanded="true" signature="4730:5185" ph="..." />
-            <marker date="1465314759452" expanded="true" signature="4804:5163" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/function/get_clienti.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1465209814009" expanded="true" signature="171:340" ph="SELECT id, n... clienti" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DB/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1386,28 +1310,38 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/8bd68956/196bd43d-5ada-4cd3-92cc-085293f786a1/gestionale_db.pagam">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/8bd68956/196bd43d-5ada-4cd3-92cc-085293f786a1/gestionale_db.iva">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
         </state>
       </provider>
-      <provider editor-type-id="text-editor">
+    </entry>
+    <entry file="file://$PROJECT_DIR$/function/get_clienti.php">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1465209814009" expanded="true" signature="171:340" ph="SELECT id, n... clienti" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1438,17 +1372,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/DB/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/function/session.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="88" />
+          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="92" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/json/get_clienti.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
+        <state relative-caret-position="-156">
           <caret line="34" column="18" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="18" />
           <folding>
             <marker date="1465209814078" expanded="true" signature="226:535" ph="SELECT id, n... clienti" />
@@ -1456,34 +1398,62 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/gen_documenti/ddt.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4379">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ndc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="61">
+          <caret line="113" column="31" selection-start-line="113" selection-start-column="8" selection-end-line="113" selection-end-column="32" />
+          <folding>
+            <marker date="1465209814194" expanded="true" signature="45:333" ph="SELECT ndc.*... ndc" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/check/ck_pagam.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="247" column="7" selection-start-line="247" selection-start-column="7" selection-end-line="247" selection-end-column="7" />
+          <folding>
+            <marker date="1465314759452" expanded="true" signature="255:298" ph="INSERT INTO pagam... " />
+            <marker date="1465314759452" expanded="true" signature="495:594" ph="..." />
+            <marker date="1465314759452" expanded="true" signature="739:835" ph="..." />
+            <marker date="1465314759452" expanded="true" signature="1083:1129" ph="UPDATE pagam... " />
+            <marker date="1465314759452" expanded="true" signature="1332:1430" ph="..." />
+            <marker date="1465314759452" expanded="true" signature="1579:1669" ph="..." />
+            <marker date="1465314759452" expanded="true" signature="1842:1874" ph="DELETE FROM " />
+            <marker date="1465314759452" expanded="true" signature="2075:2170" ph="..." />
+            <marker date="1465314759452" expanded="true" signature="2319:2412" ph="..." />
+            <marker date="1465314759452" expanded="true" signature="3911:3930" ph="SELECT * FRO... pagam" />
+            <marker date="1465314759452" expanded="true" signature="4330:4349" ph="SELECT * FRO... pagam" />
+            <marker date="1465314759452" expanded="true" signature="4558:5207" ph="..." />
+            <marker date="1465314759452" expanded="true" signature="4730:5185" ph="..." />
+            <marker date="1465314759452" expanded="true" signature="4804:5163" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gen_documenti/post.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="22" column="17" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/gen_documenti/fattura.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="91" column="24" selection-start-line="91" selection-start-column="24" selection-end-line="91" selection-end-column="24" />
+        <state relative-caret-position="210">
+          <caret line="225" column="0" selection-start-line="225" selection-start-column="0" selection-end-line="225" selection-end-column="0" />
           <folding>
-            <element signature="n#style#0;n#td#0;n#tr#1;n#thead#0;n#table#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#strong#0;n#p#1;n#td#0;n#tr#1;n#thead#0;n#table#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#1;n#strong#0;n#p#1;n#td#0;n#tr#1;n#thead#0;n#table#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#span#0;n#td#0;n#tr#1;n#thead#0;n#table#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#3;n#div#0;n#td#1;n#tr#1;n#thead#0;n#table#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#0;n#td#1;n#tr#1;n#thead#0;n#table#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#4;n#div#0;n#td#1;n#tr#1;n#thead#0;n#table#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#1;n#div#0;n#td#1;n#tr#1;n#thead#0;n#table#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#5;n#div#0;n#td#1;n#tr#1;n#thead#0;n#table#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#2;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#3;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#2;n#tbody#0;n#table#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#1;n#tr#2;n#tbody#0;n#table#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#2;n#tr#2;n#tbody#0;n#table#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#3;n#tbody#0;n#table#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#td#1;n#tr#3;n#tbody#0;n#table#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#4;n#tbody#0;n#table#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#1;n#tr#4;n#tbody#0;n#table#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#1;n#p#0;n#td#0;n#tr#5;n#tbody#0;n#table#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#2;n#p#0;n#td#0;n#tr#5;n#tbody#0;n#table#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1465406499570" expanded="true" signature="159:182" ph="SELECT descr... pagam" />
-            <marker date="1465406499570" expanded="true" signature="384:408" ph="SELECT aliqu... iva" />
+            <marker date="1465495057858" expanded="true" signature="143:166" ph="SELECT descr... pagam" />
+            <marker date="1465495057858" expanded="true" signature="340:364" ph="SELECT aliqu... iva" />
           </folding>
         </state>
       </provider>

@@ -214,7 +214,7 @@ if ($result = $conndb->query($query)) {
 <div id="stampa" style="padding-top: 10px; padding-bottom: 10px;" class="container-fluid">
 <span class="h1">
 <a href="../fatture.php"> <span class="glyphicon glyphicon-chevron-left"></span>Indietro</a>
-<a href="#" onclick="window.print()"> <span class="glyphicon glyphicon-print"></span> Stampa</a>
+<a href="#" onclick="window.print(); save()"> <span class="glyphicon glyphicon-print"></span> Stampa</a>
 </span>
 </div>
 
@@ -239,13 +239,13 @@ if ($result = $conndb->query($query)) {
                                 <script language="javascript">
                                     document.write(aaaa);
                                 </script>
-                                <br/> del <input type="date" class="stampa form-control"
+                                <br/> del <input id="data" type="date" class="stampa form-control"
                                                  style="width:30%; display:inline">
                             </strong></p>
                         </h5>
                         </p><br/>
 <span>Pagamento
-<select class="form-control" name="pagamento" style="width:50%; display:inline">
+<select id="pagamento" class="form-control" name="pagamento" style="width:50%; display:inline">
     <?php foreach ($pagamenti as $pagamento) : ?>
         <option value="<?php echo $pagamento ?>"><?php echo $pagamento ?></option>
     <?php endforeach ?>
@@ -343,11 +343,11 @@ if ($result = $conndb->query($query)) {
 
                 <tr>
                     <td colspan="3"><p class="smaller">Esente IVA ai sensi dell’art.8 del D.P.R. 633/72. Documento
-                            n°<input type="number"
+                            n°<input id="esIvaDal" type="number"
                                      class="smaller form-control"
                                      style="width:5%; display:inline"
                                      placeholder="0000">
-                            valido dal <input type="date" class="smaller form-control"
+                            valido dal <input id="esIvaAl" type="date" class="smaller form-control"
                                               style="display:inline; width:20%"> al <input
                                 type="date" class="smaller form-control" style="display:inline; width:20%"></p></td>
                     <td class="text-center"><p>S. E. & O.</p></td>
@@ -460,5 +460,54 @@ if ($result = $conndb->query($query)) {
 
         }
     });
+
+    function save() {
+        var dati = {
+            data: $("#data").val(),
+            pagamento: $("#pagamento").val(),
+            cliente: $("#cliente").val(),
+            ivaCliente: $("#ivaCliente").val(),
+            indirizzoCliente: $("#indirizzo").val(),
+            cittaCliente: $("#citta").val(),
+            pr: $("#pr").val(),
+            cap: $("#cap").val(),
+            arrayQuantita: ciclaArray($("p[id*=idQuantita-]")),
+            arrayProdotti: ciclaArray($("p[id*=idArticoli-]")),
+            arrayPrezziCad: ciclaArray($("p[id*=prezzo-]")),
+            arrayPrezzi: ciclaArray($("p[id*=prezzoTOT-]")),
+            parziale: $("#parziale").val(),
+            iva: $("#iva").val(),
+            totaleDovuto: $("#totaleDovuto").val(),
+            esIvaDal: $("#esIvaDal").val(),
+            esIvaAl: $("#esIvaAl").val()
+        };
+
+        var call = $.ajax({
+            url: "http://<?php echo $base_url ?>/gen_documenti/post.php",
+            method: "POST",
+            data: {data: dati},
+            dataType: "json"
+        });
+        call.done(function (msg) {
+            console.log(msg);
+        });
+        console.log(dati);
+        return true;
+    }
+
+    function ciclaArray(variabile) {
+        var i = 0,
+            ritorna = "";
+        for (i = 0; i < variabile.length; i++) {
+            if ((i + 1) < variabile.length) {
+                ritorna += variabile[i].textContent + "||";
+            }
+            else {
+                ritorna += variabile[i].textContent;
+            }
+        }
+
+        return ritorna;
+    }
 </script>
 </body>
