@@ -370,7 +370,35 @@ if (mysqli_query($conndb, $sql_settings)) {
     echo "C'e' stato un errore creando la tabella settaggi: " . mysqli_error($conndb) . "<br/>";
 }
 
+// creo tabella db fatture
 
+$sql_fatt_db = "CREATE TABLE `stampa_fattura` (
+  `id` int(11) NOT NULL,
+  `pagamento` varchar(200) NOT NULL,
+  `cliente` varchar(100) NOT NULL,
+  `iva` varchar(200) NOT NULL,
+  `indirizzo` varchar(200) NOT NULL,
+  `citta` varchar(100) NOT NULL,
+  `prov` varchar(5) NOT NULL,
+  `cap` varchar(10) DEFAULT NULL,
+  `quantita` longtext NOT NULL,
+  `prodotti` longtext NOT NULL,
+  `prezziCad` longtext NOT NULL,
+  `prezzi` longtext NOT NULL,
+  `parziale` int(11) NOT NULL,
+  `totale` int(11) NOT NULL,
+  `iva_dal` date DEFAULT NULL,
+  `iva_al` date DEFAULT NULL,
+  PRIMARY KEY (`fattura`),
+  UNIQUE KEY `stampa_fattura_fattura_uindex` (`fattura`)
+) DEFAULT CHARACTER SET utf8";
+
+if (mysqli_query($conndb, $sql_fatt_db)) {
+    echo "Tabella db fatture creata con successo <br/>";
+    header('Refresh: 3; URL = homeDB.php');
+} else {
+    echo "C'e' stato un errore creando la tabella db fatture: " . mysqli_error($conndb) . "<br/>";
+}
 mysqli_close($conndb);
 
 ?>
