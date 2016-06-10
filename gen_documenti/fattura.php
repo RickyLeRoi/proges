@@ -52,6 +52,10 @@ if ($result = $conndb->query($query)) {
         }
     </script>
     <style>
+        .arrArticoli:hover {
+            cursor: pointer;
+            color: firebrick;
+        }
         .hiddenElement {
             visibility: hidden;
         }
@@ -382,7 +386,7 @@ if ($result = $conndb->query($query)) {
             var execute = false;
             $(function () {
                 for (var prodotto in memory) {
-                    if (suggestion.value == memory[prodotto]) {
+                    if (suggestion.data.descr == memory[prodotto]) {
                         console.log(prodotto);
                         alert("Hai già inserito questo prodotto");
                         execute = false;
@@ -401,7 +405,7 @@ if ($result = $conndb->query($query)) {
                     $("#incolonnaPrezzi").append(prezzo);
                     $("#incolonnaPrezziTot").append(prezzoTOT);
                     prezziTot($("#idQuantita-" + idRiga));
-                    memory.push(suggestion.value);
+                    memory.push(suggestion.data.descr);
                     idRiga++;
 
                     $(".arrQuantita, #iva").keyup(function () {
@@ -410,6 +414,11 @@ if ($result = $conndb->query($query)) {
                     $(".arrQuantita, #iva").click(function () {
                         prezziTot($(this));
                     });
+
+                    $(".arrArticoli").click(function () {
+                        cancella($(this));
+                        prezziTot($(this));
+                    })
                 }
 
 
@@ -508,6 +517,16 @@ if ($result = $conndb->query($query)) {
         }
 
         return ritorna;
+    }
+
+    function cancella(elemento) {
+        id = elemento.attr("id");
+        id = id.split("-");
+        index = memory.indexOf(elemento.text());
+        console.log(elemento.text());
+        console.log("array - " + index);
+        delete memory[index];
+        $("#prezzo-" + id[1] + ",#idArticoli-" + id[1] + ",#idQuantita-" + id[1] + ",#prezzo-" + id[1] + ",#prezzoTOT-" + id[1]).remove();
     }
 </script>
 </body>

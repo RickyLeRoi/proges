@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="262bcaf4-44d1-46db-b05b-0150860b8c78" name="Default" comment="">
+    <list default="true" id="262bcaf4-44d1-46db-b05b-0150860b8c78" name="Default" comment="Creazione dalla tabella per tenere a memoria i dati delle fatture.">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/plugins/jQuery-Autocomplete" afterPath="$PROJECT_DIR$/template/parrot/plugins/jQuery-Autocomplete" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DB/creatabelle.php" afterPath="$PROJECT_DIR$/DB/creatabelle.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen_documenti/fattura.php" afterPath="$PROJECT_DIR$/gen_documenti/fattura.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen_documenti/post.php" afterPath="$PROJECT_DIR$/gen_documenti/post.php" />
     </list>
     <ignored path="proges.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,14 +37,14 @@
         <splitter split-orientation="vertical" split-proportion="0.5030769">
           <split-first>
             <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-              <file leaf-file-name="fattura.php" pinned="false" current-in-tab="false">
+              <file leaf-file-name="fattura.php" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/gen_documenti/fattura.php">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="221">
-                      <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+                    <state relative-caret-position="190">
+                      <caret line="52" column="13" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
                       <folding>
-                        <marker date="1465573379613" expanded="true" signature="143:166" ph="SELECT descr... pagam" />
-                        <marker date="1465573379613" expanded="true" signature="340:364" ph="SELECT aliqu... iva" />
+                        <marker date="1465579244460" expanded="true" signature="143:166" ph="SELECT descr... pagam" />
+                        <marker date="1465579244460" expanded="true" signature="340:364" ph="SELECT aliqu... iva" />
                       </folding>
                     </state>
                   </provider>
@@ -68,7 +65,7 @@
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="creatabelle.php" pinned="false" current-in-tab="true">
+              <file leaf-file-name="creatabelle.php" pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/DB/creatabelle.php">
                   <provider selected="true" editor-type-id="text-editor">
                     <state relative-caret-position="286">
@@ -187,10 +184,10 @@
                     <state relative-caret-position="17">
                       <caret line="7" column="36" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="36" />
                       <folding>
-                        <marker date="1465573379613" expanded="true" signature="143:166" ph="SELECT descr... pagam" />
-                        <marker date="1465573379613" expanded="true" signature="340:364" ph="SELECT aliqu... iva" />
-                        <marker date="1465573379613" expanded="true" signature="16315:17542" ph="{...}" />
-                        <marker date="1465573379613" expanded="true" signature="16336:17206" ph="{...}" />
+                        <marker date="1465579244460" expanded="true" signature="143:166" ph="SELECT descr... pagam" />
+                        <marker date="1465579244460" expanded="true" signature="340:364" ph="SELECT aliqu... iva" />
+                        <marker date="1465579244460" expanded="true" signature="16592:17819" ph="{...}" />
+                        <marker date="1465579244460" expanded="true" signature="16613:17483" ph="{...}" />
                       </folding>
                     </state>
                   </provider>
@@ -436,9 +433,9 @@
         <option value="dbtable:/8bd68956/196bd43d-5ada-4cd3-92cc-085293f786a1/gestionale_db.pagam" />
         <option value="$PROJECT_DIR$/function/session.php" />
         <option value="dbtable:/8bd68956/196bd43d-5ada-4cd3-92cc-085293f786a1/gestionale_db.stampa_fattura" />
-        <option value="$PROJECT_DIR$/gen_documenti/fattura.php" />
         <option value="$PROJECT_DIR$/gen_documenti/post.php" />
         <option value="$PROJECT_DIR$/DB/creatabelle.php" />
+        <option value="$PROJECT_DIR$/gen_documenti/fattura.php" />
       </list>
     </option>
   </component>
@@ -671,7 +668,7 @@
       <workItem from="1465306519322" duration="8102000" />
       <workItem from="1465392278595" duration="13232000" />
       <workItem from="1465483973620" duration="10277000" />
-      <workItem from="1465566994991" duration="8764000" />
+      <workItem from="1465566994991" duration="11789000" />
     </task>
     <task id="LOCAL-00004" summary="JSON ordinati, funzione ridotta, lista clienti e lista fornitori non visualizzano la navbar di scorrimento se non ci sono record in più pagine.">
       <created>1464283951639</created>
@@ -743,11 +740,18 @@
       <option name="project" value="LOCAL" />
       <updated>1465495150982</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Creazione dalla tabella per tenere a memoria i dati delle fatture.">
+      <created>1465576191873</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1465576191873</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="124424000" />
+    <option name="totallyTimeSpent" value="127449000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -831,7 +835,8 @@
     <MESSAGE value="Modifica dell'interfaccia di tutti i CK" />
     <MESSAGE value="Grafica fattura ultimata, fixato l'errore della sessione." />
     <MESSAGE value="Parte delicata: Finché non la finisco non modificarla" />
-    <option name="LAST_COMMIT_MESSAGE" value="Parte delicata: Finché non la finisco non modificarla" />
+    <MESSAGE value="Creazione dalla tabella per tenere a memoria i dati delle fatture." />
+    <option name="LAST_COMMIT_MESSAGE" value="Creazione dalla tabella per tenere a memoria i dati delle fatture." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="UPDATE_GROUP_BY_PACKAGES" value="true" />
   </component>
@@ -1342,17 +1347,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gen_documenti/fattura.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
-          <folding>
-            <marker date="1465573379613" expanded="true" signature="143:166" ph="SELECT descr... pagam" />
-            <marker date="1465573379613" expanded="true" signature="340:364" ph="SELECT aliqu... iva" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DB/data.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -1443,6 +1437,17 @@
             <marker date="1465576123584" expanded="true" signature="9348:9685" ph="CREATE TABLE... prev" />
             <marker date="1465576123584" expanded="true" signature="9982:10373" ph="CREATE TABLE... settings" />
             <marker date="1465576123584" expanded="true" signature="10673:11327" ph="CREATE TABLE... stampa_fattura" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gen_documenti/fattura.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="52" column="13" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
+          <folding>
+            <marker date="1465579244460" expanded="true" signature="143:166" ph="SELECT descr... pagam" />
+            <marker date="1465579244460" expanded="true" signature="340:364" ph="SELECT aliqu... iva" />
           </folding>
         </state>
       </provider>
