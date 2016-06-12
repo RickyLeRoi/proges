@@ -233,7 +233,7 @@ if ($result = $conndb->query($query)) {
                     <td colspan="2" style="width:600;">
                         <p class="col-md-12">
                         <h5>
-                        <p><strong>FATT N.
+                        <p><strong>FATTURA N.
                                 <input class="stampa form-control" style="width:15%; text-align:right; display:inline"
                                        type="number" size="4" placeholder="0000" readonly>/
                                 <script language="javascript">

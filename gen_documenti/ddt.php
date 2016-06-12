@@ -1,14 +1,20 @@
-<?php $base_url = $_SERVER["SERVER_NAME"]."/proges"; ?>
+<?php
+$base_url = $_SERVER["SERVER_NAME"] . "/proges";
+include_once("../DB/config.php");
+include_once("./../function/session.php");
+?>
+
 <!doctype html>
 <html>
 <head>
-<title>Carta Intestata</title>
-<meta charset="utf-8">
-<meta name="image" content="../images/logos.png">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="shortcut icon" href="favicon.ico">
-<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" >
-<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+<title>DDT</title>
+    <meta charset="utf-8">
+    <meta name="image" content="../images/logos.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
     <script language="JavaScript">
         data = new Date();
         var aaaa = data.getFullYear();
@@ -16,7 +22,7 @@
         var gg = data.getDate();
         if (gg < 10) {
             gg = "0" + gg;
-        }
+    }
         if (MM < 10) {
             MM = "0" + MM;
         }
@@ -29,87 +35,171 @@
             mm = "0" + mm;
         }
     </script>
-<style>
-.autocomplete-suggestions {color: #000000}
-.autocomplete-suggestions { border: 1px solid #999; background: #FFF; overflow: auto; }
-.autocomplete-suggestion { padding: 2px 5px; white-space: nowrap; overflow: hidden; }
-.autocomplete-selected { background: #F0F0F0; }
-.autocomplete-suggestions strong { font-weight: normal; color: #3399FF; }
-.autocomplete-group { padding: 2px 5px; }
-.autocomplete-group strong { display: block; border-bottom: 1px solid #000; }
-</style>
-<style>
-    #nomin {
-        letter-spacing: 10px;
-        font-family: "Georgia", serif;
-        font-size: 70px;
-    }
-@media screen {
-.noMargin {
-padding: 6px 12px;
-margin: 0;
-line-height: 1.42857143;
-height: 34px;
-}
-}
-@media print {
-.noMargin {
-margin: 0 0 0;
-}
-input[type=number],
-input[type=text],
-input[type=date],
-input[type=datetime]{
-border: none;
-background: transparent;
-box-shadow: none;
-height: 13px;
-/ / padding: 0;
-margin: 0 0 0;
-font-size: 7pt;
-}
-p {
-font-size: 7pt;
-height: 13px;
-}
-.logo {
-max-width: 100%;
-width: 100px;
-height: auto;
-}
-#sottotabella {
-border: none !important;
-border-collapse: collapse;
-}
+    <style>
+        .hiddenElement {
+            visibility: hidden;
+        }
 
-page {
-size: a4;
-}
+        @media screen {
+        .noMargin {
+        padding: 6px 12px;
+        margin: 0;
+        line-height: 1.42857143;
+        height: 34px;
+        }
 
-.qnt {
-height: 6cm;
-}
+            body {
+                max-width: 1400px;
+                margin: auto;
+            }
+        }
+        @media print {
+        .noMargin {
+        margin: 0 0 0;
+        }
+        .form-control {
+        display: inline-block;
+        width: auto;
+        }
+        select.form-control {
+        position: relative !important;
+        top: -1px !important;
+        z-index: 1;
+        }
+        input[type=number],
+        input[type=text],
+        input[type=date],
+        select.form-control,
+        input[type=datetime] {
+        border: none;
+        background: transparent;
+        box-shadow: none;
+        height: 13px;
+        padding-left: 0;
+        padding-right: 0;
+        margin: 0 0 0;
+        font-size: 7pt;
+        position: relative;
+        top: -1px;
+        width: auto;
+        }
+        p {
+        font-size: 7pt;
+        height: 13px;
+        }
+        .logo {
+        max-width: 100%;
+        width: 100px;
+        height: auto;
+        }
+        #sottotabella {
+        border: none !important;
+        border-collapse: collapse;
+        }
+        page {
+        size: a4;
+        }
+        .qnt {
+        height: 6cm;
+        }
+        .var {
+        height: 3cm;
+        }
+        .stampa {
+        display: none;
+        }
+        }
+        .autocomplete-suggestions {
+            color: #000000
+        }
 
-.var {
-height: 3cm;
-}
-.stampa {
-display: none;
-}
-}
-.typo {
-font-family: monospace, monospace;
-padding-left: 5px;
-font-size: 14px;
-}
+        .autocomplete-suggestions {
+            border: 1px solid #999;
+            background: #FFF;
+            overflow: auto;
+        }
 
-</style>
+        .autocomplete-suggestion {
+            padding: 2px 5px;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .autocomplete-selected {
+            background: #F0F0F0;
+        }
+
+        .autocomplete-suggestions strong {
+            font-weight: normal;
+            color: #3399FF;
+        }
+
+        .autocomplete-group {
+            padding: 2px 5px;
+        }
+
+        .autocomplete-group strong {
+            display: block;
+            border-bottom: 1px solid #000;
+        }
+
+        .valuta:before {
+            content: "\f153 ";
+            font-family: FontAwesome;
+            position: relative;
+            margin-right: 5px;
+        }
+
+        .form-control {
+            margin: 0;
+            padding: 0;
+        }
+
+        @media print {
+            p {
+                font-size: 7pt;
+            }
+
+            .smaller {
+                font-size: 5pt;
+            }
+            .logo {
+                max-width: 100%;
+                width: 100px;
+                height: auto;
+            }
+
+            #sottotabella {
+                border: none !important;
+                border-collapse: collapse;
+            }
+
+            page {
+                size: a4;
+            }
+
+            .qnt {
+                height: 6cm;
+            }
+
+            .var {
+                height: 3cm;
+            }
+
+            #stampa {
+                display: none;
+            }
+        }
+
+    </style>
 </head>
+
 <body>
 <div style="padding-top: 10px; padding-bottom: 10px;" class="stampa container-fluid text-center">        <span class="h1">
 <a href="../ddt.php"> <span class="glyphicon glyphicon-chevron-left"></span>Indietro</a>
 <a href="#" onclick="window.print()"> <span class="glyphicon glyphicon-print"></span> Stampa</a>
 </span></div>
+
 <page>
 <div style="background: #FFF" class="container-fluid">
 <div class="table-responsive">
@@ -117,8 +207,7 @@ font-size: 14px;
 <thead>
 <tr colspan="2">
     <td>
-        <div class="col-md-12"><img style="float:left" src="../images/logos.png" alt="Tipografia Provenzano">
-            <p id="nomin">Tipografia <br/> Provenzano s.r.l.</p>
+        <div class="col-md-12"><img width="550px" src="../images/logobb.png" alt="Tipografia Provenzano">
 </div></td>
 <td colspan="2">
 

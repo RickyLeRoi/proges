@@ -29,7 +29,7 @@ if ($conndb->connect_errno) {
 <head>
     <!-- blu #071E3F arancione #EA640C -->
     <meta charset="utf-8">
-    <title>Lista Clienti - Gestionale Provenzano</title>
+    <title>NoteDiCredito - Gestionale Provenzano</title>
     <meta name="description" content="Gestionale per etichettificio Provenzano"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 

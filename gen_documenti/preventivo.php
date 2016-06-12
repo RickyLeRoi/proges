@@ -1,4 +1,26 @@
-<?php $base_url = $_SERVER["SERVER_NAME"] . "/proges"; ?>
+<?php
+$base_url = $_SERVER["SERVER_NAME"] . "/proges";
+include_once("../DB/config.php");
+include_once("./../function/session.php");
+
+$query = "SELECT descr FROM pagam";
+
+if ($result = $conndb->query($query)) {
+    $pagamenti = [];
+    while ($row = $result->fetch_object()) {
+        array_push($pagamenti, $row->descr);
+    }
+}
+
+$query = "SELECT aliquota FROM iva";
+if ($result = $conndb->query($query)) {
+    $iva = [];
+    while ($row = $result->fetch_object()) {
+        array_push($iva, $row->aliquota);
+    }
+}
+?>
+
 <html>
 <head>
     <title>Preventivo</title>
@@ -16,7 +38,7 @@
         var gg = data.getDate();
         if (gg < 10) {
             gg = "0" + gg;
-        }
+    }
         if (MM < 10) {
             MM = "0" + MM;
         }
@@ -30,13 +52,22 @@
         }
     </script>
     <style>
-        /*@media screen {
+        .hiddenElement {
+            visibility: hidden;
+        }
+
+        @media screen {
         .noMargin {
         padding: 6px 12px;
         margin: 0;
         line-height: 1.42857143;
         height: 34px;
         }
+
+            body {
+                max-width: 1400px;
+                margin: auto;
+            }
         }
         @media print {
         .noMargin {
@@ -93,7 +124,7 @@
         .stampa {
         display: none;
         }
-        }*/
+        }
         .autocomplete-suggestions {
             color: #000000
         }
@@ -145,6 +176,9 @@
                 font-size: 7pt;
             }
 
+            .smaller {
+                font-size: 5pt;
+            }
             .logo {
                 max-width: 100%;
                 width: 100px;
@@ -175,12 +209,12 @@
 
     </style>
 </head>
-<body>
 
+<body>
 <div id="stampa" style="padding-top: 10px; padding-bottom: 10px;" class="container-fluid">
 <span class="h1">
 <a href="../preventivi.php"> <span class="glyphicon glyphicon-chevron-left"></span>Indietro</a>
-<a href="#" onclick="window.print()"> <span class="glyphicon glyphicon-print"></span> Stampa</a>
+<a href="#" onclick="window.print(); save()"> <span class="glyphicon glyphicon-print"></span> Stampa</a>
 </span>
 </div>
 
@@ -192,48 +226,50 @@
 
                 <thead>
 
-                <tr height="150px"></tr>
+                <tr><img height="50px" src="../images/logobb.png"></tr>
 
                 <tr>
-
-                    <td colspan="4" style="width:600;">
+                    <td colspan="2" style="width:600;">
                         <p class="col-md-12">
                         <h5>
-                            <strong>PREV N.
+                        <p><strong>PREVENTIVO N.
                                 <input class="stampa form-control" style="width:15%; text-align:right; display:inline"
                                        type="number" size="4" placeholder="0000" readonly>/
                                 <script language="javascript">
                                     document.write(aaaa);
                                 </script>
-                                <br/> del <input type="date" class="stampa form-control"
+                                <br/> del <input id="data" type="date" class="stampa form-control"
                                                  style="width:30%; display:inline">
-                            </strong>
+                            </strong></p>
                         </h5>
                         </p><br/>
 <span>Pagamento
-<select class="form-control" style="width:50%; display:inline">
-<option>LO PRENDE</option>
-<option>DAL DB</option>
+<select id="pagamento" class="form-control" name="pagamento" style="width:50%; display:inline">
+    <?php foreach ($pagamenti as $pagamento) : ?>
+        <option value="<?php echo $pagamento ?>"><?php echo $pagamento ?></option>
+    <?php endforeach ?>
 </select></span><br/><br/>
-<span class="row"><p>CREDITO SICILIANO - AG. BAGHERIA</p><br/>
-<p>IBAN: <strong>IT 69 F 03019 43070 000008380468</strong></p></span>
                     </td>
 
-                    <td colspan="3">
+                    <td colspan="2">
                         <div class="col-md-12">
                             Spett.le<br/><br/>
-                            <input type="text" class="text-center form-control"
+                            <input id="cliente" type="text" class="text-center form-control"
                                    placeholder="Cliente con suggerimento"><br/>
-                            <input type="text" class="text-center form-control" placeholder="auto P.IVA" readonly><br/>
-                            <input type="text" class="text-center form-control" placeholder="auto Indirizzo legale"
+                            <input id="ivaCliente" type="text" class="text-center form-control" placeholder="auto P.IVA"
                                    readonly><br/>
-                            <input class="text-center form-control" type="text" style="width:45%; display:inline;"
+                            <input id="indirizzo" type="text" class="text-center form-control"
+                                   placeholder="auto Indirizzo legale"
+                                   readonly><br/>
+                            <input id="citta" class="text-center form-control" type="text"
+                                   style="width:45%; display:inline;"
                                    placeholder="auto Città" readonly>
                             <span style="width:7%;"> - </span>
-                            <input class="text-center form-control" type="text" style="width:15%; display:inline;"
+                            <input id="pr" class="text-center form-control" type="text"
+                                   style="width:15%; display:inline;"
                                    placeholder="(PR)" readonly>
                             <span style="width:7%;"> - </span>
-                            <input class="text-center form-control" type="number" min="00010" max="98199"
+                            <input id="cap" class="text-center form-control" type="number" min="00010" max="98199"
                                    style="width:25%; display:inline;" placeholder="auto CAP" readonly>
                         </div>
                     </td>
@@ -246,7 +282,7 @@
 
                 <tr>
                     <td><p class="col-md-12">Quantità</p></td>
-                    <td colspan="4"><p class="col-md-12">Descrizione della merce</p></td>
+                    <td width="300px"><p class="col-md-12">Descrizione della merce</p></td>
                     <td><p class="col-md-12">Imp.unit.</p></td>
                     <td><p class="col-md-12">Importo</p></td>
                 </tr>
@@ -255,62 +291,54 @@
 
                     <td id="incolonnaQuantita">
                         <input id="idQuantita-default" type="number" style="text-align:right;"
-                               class="stampa form-control arrQuantita" min="0">
+                               class="stampa hiddenElement form-control arrQuantita" min="1">
                     </td>
 
-                    <td id="incolonnaArticoli" colspan="4">
-                        <input class="stampa form-control" type="text" placeholder="Descrizione articolo automatica">
+                    <td id="incolonnaArticoli">
+                        <input class="stampa form-control incolonnatore" type="text"
+                               placeholder="Descrizione articolo automatica">
                     </td>
 
                     <td id="incolonnaPrezzi">
-                        <input class="form-control stampa" style="text-align:right;" type="text"
+                        <input class="hiddenElement form-control stampa" style="text-align:right;" type="text"
                                placeholder="auto da DB €" readonly>
                     </td>
 
                     <td id="incolonnaPrezziTot">
-                        <input class="form-control stampa" style="text-align:right;" type="text"
+                        <input class="hiddenElement form-control stampa" style="text-align:right;" type="text"
                                placeholder="auto da riga €" readonly>
                     </td>
 
                 </tr>
 
                 <tr>
-                    <td style="text-align:center" colspan="5" rowspan="3">Contributo CONAI assolto ove dovuto.</td>
-                    <td style="text-align:right">Totale parziale €</td>
+                    <td style="text-align:center" colspan="2" rowspan="3"><p>Contributo CONAI assolto ove dovuto.</p>
+                    </td>
+                    <td style="text-align:right"><p>Totale parziale €</p></td>
                     <td>
-                        <input class="form-control stampa" style="text-align:right" type="number"
+                        <input id="parziale" class="form-control stampa" style="text-align:right" type="number"
                                placeholder="auto da colonna €" readonly>
                     </td>
                 </tr>
 
                 <tr>
-                    <td style="text-align:right">IVA %</td>
-                    <td><select class="form-control" style="text-align:right">
-                            <option>LA PRENDE %</option>
-                            <option>DAL DB %</option>
+                    <td style="text-align:right"><p>IVA %</p></td>
+                    <td><select id="iva" class="form-control" style="text-align:right">
+                            <?php foreach ($iva as $aliquota) : ?>
+                                <option value="<?php echo $aliquota ?>">
+                                    <?php echo $aliquota ?></option>
+                            <?php endforeach ?>
                         </select></td>
                 </tr>
 
                 <tr>
-                    <td style="text-align:right"><strong>Totale dovuto €</strong></td>
+                    <td style="text-align:right"><p><strong>Totale dovuto €</strong></p></td>
                     <td>
-                        <input class="form-control stampa" style="text-align:right" type="number"
+                        <input id="totaleDovuto" class="form-control stampa" style="text-align:right" type="number"
                                placeholder="auto da colonna €" readonly>
                     </td>
                 </tr>
-
-                <tr>
-                    <td colspan="6">Esente IVA ai sensi dell’art.8 del D.P.R. 633/72. Documento n°<input type="number"
-                                                                                                         class="form-control"
-                                                                                                         style="width:5%; display:inline"
-                                                                                                         placeholder="0000">
-                        valido dal <input type="date" class="form-control" style="display:inline; width:20%"> al <input
-                            type="date" class="form-control" style="display:inline; width:20%"></td>
-                    <td class="text-center">S. E. & O.</td>
-                </tr>
-
                 </tbody>
-
             </table>
         </div>
     </div>
@@ -318,13 +346,14 @@
 
 <div id="stampa" style="padding-top: 10px; padding-bottom: 10px;" class="container-fluid">
 <span class="h1">
-<a href="../preventivi.php."> <span class="glyphicon glyphicon-chevron-left"></span>Indietro</a>
+<a href="../preventivi.php"> <span class="glyphicon glyphicon-chevron-left"></span>Indietro</a>
 <a href="#" onclick="window.print()"> <span class="glyphicon glyphicon-print"></span> Stampa</a>
 </span>
 </div>
 <?php include_once("../template/parrot/foot.php") ?>
 
 <script>
+    var memory = ["default"];
     var idRiga = 1;
     $('.incolonnatore').devbridgeAutocomplete({
         dataType: "json",
@@ -333,36 +362,134 @@
         formatResult: function (suggestion, currentValue) {
             return suggestion.value + ' - ' + suggestion.data.descr + " - " + suggestion.data.prezzo + "€";
         },
+
         onSelect: function (suggestion) {
+            var execute = false;
             $(function () {
-                var articoli = "<p class=\"col-xs-12 arrArticoli noMargin\" id=\"idArticoli-" + idRiga + "\" >" + suggestion.value + " - " + suggestion.data.descr + "</p>";
-                $("#incolonnaArticoli").append(articoli);
-                var quantita = "<input id=\"idQuantita-" + idRiga + "\" type=\"number\" class=\"form-control arrQuantita\" min=\"1\" value=\"1\">";
-                $("#incolonnaQuantita").append(quantita);
-                var prezzo = "<p class=\"valuta col-xs-10 noMargin\" id=\"prezzo-" + idRiga + "\">" + suggestion.data.prezzo + "</p> ";
-                var prezzoTOT = "<p class=\"valuta col-xs-10 noMargin\" id=\"prezzoTOT-" + idRiga + "\">" + parseFloat(suggestion.data.prezzo, 2) + "</p>";
-                $("#incolonnaPrezzi").append(prezzo);
-                $("#incolonnaPrezziTot").append(prezzoTOT);
-                idRiga++;
-            });
-            $(".arrQuantita").keyup(function () {
-                prezziTot($(this));
-            });
-            $(".arrQuantita").click(function () {
-                prezziTot($(this));
+                for (var prodotto in memory) {
+                    if (suggestion.value == memory[prodotto]) {
+                        console.log(prodotto);
+                        alert("Hai già inserito questo prodotto");
+                        execute = false;
+                    }
+                    else {
+                        execute = true;
+                    }
+                }
+                if (execute === true) {
+                    var articoli = "<p class=\"col-xs-12 arrArticoli noMargin\" id=\"idArticoli-" + idRiga + "\" >" + suggestion.data.descr + "</p>";
+                    $("#incolonnaArticoli").append(articoli);
+                    var quantita = "<input id=\"idQuantita-" + idRiga + "\" type=\"number\" class=\"form-control arrQuantita\" min=\"1\" value=\"1\">";
+                    $("#incolonnaQuantita").append(quantita);
+                    var prezzo = "<p class=\"valuta col-xs-10 noMargin\" id=\"prezzo-" + idRiga + "\">" + parseFloat(suggestion.data.prezzo).toFixed(2) + "</p> ";
+                    var prezzoTOT = "<p class=\"valuta col-xs-10 noMargin\" id=\"prezzoTOT-" + idRiga + "\">" + parseFloat(suggestion.data.prezzo).toFixed(2) + "</p>";
+                    $("#incolonnaPrezzi").append(prezzo);
+                    $("#incolonnaPrezziTot").append(prezzoTOT);
+                    prezziTot($("#idQuantita-" + idRiga));
+                    memory.push(suggestion.value);
+                    idRiga++;
+                    $(".arrQuantita, #iva").keyup(function () {
+                        prezziTot($(this));
+                    });
+                    $(".arrQuantita, #iva").click(function () {
+                        prezziTot($(this));
+                    });
+                }
             });
         }
     });
+
     function prezziTot(quantita) {
-        console.log(quantita);
         quantitaScelta = quantita.val();
         quantitaId = quantita.attr("id");
         quantitaId = quantitaId.split("-");
         prezzoUnitario = $("#prezzo-" + quantitaId[1]).text();
-        prezzoTotale = quantitaScelta * (parseInt(prezzoUnitario));
+        prezzoTotale = quantitaScelta * (parseFloat(prezzoUnitario));
         prezzoTotID = $("#prezzoTOT-" + quantitaId[1]);
-        prezzoTotID.text(prezzoTotale);
-        //console.log(prezzoUnitario[1]);
+        prezzoTotID.text(prezzoTotale.toFixed(2));
+
+        var selectPrezzi = $("p[id*=prezzoTOT-]");
+        //console.log(selectPrezzi.length);
+        //console.log(selectPrezzi);
+        var somma = 0;
+        for (var i = 0; i < selectPrezzi.length; i++) {
+            //console.log(selectPrezzi[i]);
+            prezzoDaSommare = parseFloat(selectPrezzi[i].textContent);
+            //console.log(prezzoDaSommare);
+            somma += prezzoDaSommare;
+        }
+
+        $("#parziale").val(somma.toFixed(2));
+        var iva = $("#iva").val();
+        iva = somma * (iva / 100);
+        $("#totaleDovuto").val((somma + iva).toFixed(2));
+    }
+
+    $('#cliente').devbridgeAutocomplete({
+        dataType: "json",
+        paramName: "check",
+        serviceUrl: 'http://<?php echo $base_url ?>/json/get_clienti.php',
+        formatResult: function (suggestion, currentValue) {
+            return suggestion.data.PIVAC + " - " + suggestion.data.nomeC + "  " + suggestion.data.cognomeC;
+        },
+        onSelect: function (suggestion) {
+            $("#cliente").val(suggestion.data.nomeC + "  " + suggestion.data.cognomeC);
+            $("#ivaCliente").val(suggestion.data.PIVAC);
+            $("#indirizzo").val(suggestion.data.indirizzoLC);
+            $("#citta").val(suggestion.data.cittaLC);
+            $("#pr").val(suggestion.data.provLC);
+            $("#cap").val(suggestion.data.capLC);
+
+        }
+    });
+
+    function save() {
+        var dati = {
+            data: $("#data").val(),
+            pagamento: $("#pagamento").val(),
+            cliente: $("#cliente").val(),
+            ivaCliente: $("#ivaCliente").val(),
+            indirizzoCliente: $("#indirizzo").val(),
+            cittaCliente: $("#citta").val(),
+            pr: $("#pr").val(),
+            cap: $("#cap").val(),
+            arrayQuantita: ciclaArray($("p[id*=idQuantita-]")),
+            arrayProdotti: ciclaArray($("p[id*=idArticoli-]")),
+            arrayPrezziCad: ciclaArray($("p[id*=prezzo-]")),
+            arrayPrezzi: ciclaArray($("p[id*=prezzoTOT-]")),
+            parziale: $("#parziale").val(),
+            iva: $("#iva").val(),
+            totaleDovuto: $("#totaleDovuto").val(),
+            esIvaDal: $("#esIvaDal").val(),
+            esIvaAl: $("#esIvaAl").val()
+        };
+
+        var call = $.ajax({
+            url: "http://<?php echo $base_url ?>/gen_documenti/post.php",
+            method: "POST",
+            data: {data: dati},
+            dataType: "json"
+        });
+        call.done(function (msg) {
+            console.log(msg);
+        });
+        console.log(dati);
+        return true;
+    }
+
+    function ciclaArray(variabile) {
+        var i = 0,
+            ritorna = "";
+        for (i = 0; i < variabile.length; i++) {
+            if ((i + 1) < variabile.length) {
+                ritorna += variabile[i].textContent + "||";
+            }
+            else {
+                ritorna += variabile[i].textContent;
+            }
+        }
+
+        return ritorna;
     }
 </script>
 </body>
