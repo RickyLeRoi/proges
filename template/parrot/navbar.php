@@ -35,12 +35,12 @@
                         <ul class="dropdown-menu">
                             <div class="arrow top"></div>
 <?php
-include("DB/config.php");
+include_once("DB/config.php");
 $query = ("SELECT * FROM login WHERE userLOG='$user' AND tipoLOG='Tecnico'");
 $result = mysqli_query($conndb, $query);
 if(mysqli_num_rows($result)==1)
     {
-    echo ("<li id=\"ck_causale\"><a href=\"http://$base_url/check/ck_login.php\">Login</a></li>");
+    echo ("<li id=\"ck_login\"><a href=\"http://$base_url/check/ck_login.php\">Login</a></li>");
     }else{
     echo '';
     }
@@ -64,7 +64,7 @@ if(mysqli_num_rows($result)==1)
                             <div class="arrow top"></div>
                             <li id="settings"><a href="http://<?php echo $base_url ?>/settings.php"><span class="fa-cog fa"></span> Impostazioni</a></li>
 <?php
-include("DB/config.php");
+include_once("DB/config.php");
 $query = ("SELECT * FROM login WHERE userLOG='$user' AND tipoLOG='Tecnico'");
 $result = mysqli_query($conndb, $query);
 if(mysqli_num_rows($result)==1)
