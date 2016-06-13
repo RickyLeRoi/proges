@@ -9,7 +9,7 @@ $ck = "";
                 $prezzo = mysqli_real_escape_string($conndb,$_POST['prezzo']);
                 $descr = mysqli_real_escape_string($conndb,$_POST['descr']);
 
-               $sql_ins = "INSERT INTO ck_sp_agg (tipo, prezzo, descr) VALUES ('$tipo', '$prezzo','$descr')";
+               $sql_ins = "INSERT INTO ck_spese (tipo, prezzo, descr) VALUES ('$tipo', '$prezzo','$descr')";
 
                //controllo inserimento
                if ($conndb->query($sql_ins) === TRUE) {
@@ -32,7 +32,7 @@ $ck = "";
                $prezzo = mysqli_real_escape_string($conndb,$_POST['prezzo']);
                $descr = mysqli_real_escape_string($conndb,$_POST['descr']);
 
-               $sql_edit = "UPDATE ck_sp_agg SET tipo='$tipo', prezzo='$prezzo', descr='$descr' WHERE id='$id';";
+               $sql_edit = "UPDATE ck_spese SET tipo='$tipo', prezzo='$prezzo', descr='$descr' WHERE id='$id';";
 
                 //controllo inserimento
                 if ($conndb->query($sql_edit) === TRUE) {
@@ -53,7 +53,7 @@ $ck = "";
 
                $id = mysqli_real_escape_string($conndb,$_POST['id']);
 
-               $sql_del = "DELETE FROM ck_sp_agg WHERE id='$id'";
+               $sql_del = "DELETE FROM ck_spese WHERE id='$id'";
 
                 //controllo inserimento
                 if ($conndb->query($sql_del) === TRUE) {
@@ -130,7 +130,7 @@ $ck = "";
     <span style="color:#EA640C">
     Totale voci n.
     <?php
-    $sql_rows = "SELECT * FROM ck_sp_agg";
+    $sql_rows = "SELECT * FROM ck_spese";
     echo mysqli_num_rows(mysqli_query($conndb, $sql_rows));
     ?>
     </span>
@@ -150,7 +150,7 @@ $ck = "";
         <tbody>
             <?php
             include("../DB/config.php");
-            $sql = "SELECT * FROM ck_sp_agg";
+            $sql = "SELECT * FROM ck_spese";
             $result = mysqli_query($conndb, $sql);
             while($row = mysqli_fetch_array($result)) {
                 $id = $row['id'];
