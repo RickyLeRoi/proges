@@ -52,6 +52,10 @@ if ($result = $conndb->query($query)) {
         }
     </script>
     <style>
+        .arrArticoli:hover {
+            cursor: pointer;
+            color: firebrick;
+        }
         .hiddenElement {
             visibility: hidden;
         }
@@ -293,7 +297,7 @@ if ($result = $conndb->query($query)) {
                 <tr class="qnt" height="800px">
 
                     <td id="incolonnaQuantita">
-                        <input id="idQuantita-default" type="number" style="text-align:right;"
+                        <input id="idQuantitadefault" type="number" style="text-align:right;"
                                class="stampa hiddenElement form-control arrQuantita" min="1">
                     </td>
 
@@ -343,12 +347,12 @@ if ($result = $conndb->query($query)) {
 
                 <tr>
                     <td colspan="3"><p class="smaller">Esente IVA ai sensi dell’art.8 del D.P.R. 633/72. Documento
-                            n°<input id="esIvaDal" type="number"
+                            n°<input id="" type="number"
                                      class="smaller form-control"
                                      style="width:5%; display:inline"
                                      placeholder="0000">
-                            valido dal <input id="esIvaAl" type="date" class="smaller form-control"
-                                              style="display:inline; width:20%"> al <input
+                            valido dal <input id="esIvaDal" type="date" class="smaller form-control"
+                                              style="display:inline; width:20%"> al <input id="esIvaAl"
                                 type="date" class="smaller form-control" style="display:inline; width:20%"></p></td>
                     <td class="text-center"><p>S. E. & O.</p></td>
                 </tr>
@@ -382,7 +386,7 @@ if ($result = $conndb->query($query)) {
             var execute = false;
             $(function () {
                 for (var prodotto in memory) {
-                    if (suggestion.value == memory[prodotto]) {
+                    if (suggestion.data.descr == memory[prodotto]) {
                         console.log(prodotto);
                         alert("Hai già inserito questo prodotto");
                         execute = false;
@@ -401,7 +405,7 @@ if ($result = $conndb->query($query)) {
                     $("#incolonnaPrezzi").append(prezzo);
                     $("#incolonnaPrezziTot").append(prezzoTOT);
                     prezziTot($("#idQuantita-" + idRiga));
-                    memory.push(suggestion.value);
+                    memory.push(suggestion.data.descr);
                     idRiga++;
 
                     $(".arrQuantita, #iva").keyup(function () {
@@ -410,6 +414,11 @@ if ($result = $conndb->query($query)) {
                     $(".arrQuantita, #iva").click(function () {
                         prezziTot($(this));
                     });
+
+                    $(".arrArticoli").click(function () {
+                        cancella($(this));
+                        prezziTot($(this));
+                    })
                 }
 
 
@@ -471,10 +480,10 @@ if ($result = $conndb->query($query)) {
             cittaCliente: $("#citta").val(),
             pr: $("#pr").val(),
             cap: $("#cap").val(),
-            arrayQuantita: ciclaArray($("p[id*=idQuantita-]")),
-            arrayProdotti: ciclaArray($("p[id*=idArticoli-]")),
-            arrayPrezziCad: ciclaArray($("p[id*=prezzo-]")),
-            arrayPrezzi: ciclaArray($("p[id*=prezzoTOT-]")),
+            arrayQuantita: ciclaArray($("input[id*=idQuantita-]"), "value"),
+            arrayProdotti: ciclaArray($("p[id*=idArticoli-]"), "textContent"),
+            arrayPrezziCad: ciclaArray($("p[id*=prezzo-]"), "textContent"),
+            arrayPrezzi: ciclaArray($("p[id*=prezzoTOT-]"), "textContent"),
             parziale: $("#parziale").val(),
             iva: $("#iva").val(),
             totaleDovuto: $("#totaleDovuto").val(),
@@ -495,19 +504,29 @@ if ($result = $conndb->query($query)) {
         return true;
     }
 
-    function ciclaArray(variabile) {
+    function ciclaArray(variabile, nodo) {
         var i = 0,
             ritorna = "";
         for (i = 0; i < variabile.length; i++) {
             if ((i + 1) < variabile.length) {
-                ritorna += variabile[i].textContent + "||";
+                ritorna += variabile[i][nodo] + "||";
             }
             else {
-                ritorna += variabile[i].textContent;
+                ritorna += variabile[i][nodo];
             }
         }
 
         return ritorna;
+    }
+
+    function cancella(elemento) {
+        id = elemento.attr("id");
+        id = id.split("-");
+        index = memory.indexOf(elemento.text());
+        console.log(elemento.text());
+        console.log("array - " + index);
+        delete memory[index];
+        $("#prezzo-" + id[1] + ",#idArticoli-" + id[1] + ",#idQuantita-" + id[1] + ",#prezzo-" + id[1] + ",#prezzoTOT-" + id[1]).remove();
     }
 </script>
 </body>
