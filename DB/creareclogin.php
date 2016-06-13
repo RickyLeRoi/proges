@@ -10,7 +10,7 @@ $userFORM = $_POST["userFORM"];
 $pswdFORM = $_POST["pswdFORM"];
 
 //inserisci dati in tabella login
-$sql = "INSERT INTO login (tipoLOG, userLOG, pswdLOG) VALUES ('$tipoFORM', '$userFORM', '$pswdFORM')";
+$sql = "INSERT INTO users (tipoLOG, userLOG, pswdLOG) VALUES ('$tipoFORM', '$userFORM', '$pswdFORM')";
 
 //controllo inserimento
 if ($conndb->query($sql) === TRUE) {

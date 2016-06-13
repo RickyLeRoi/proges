@@ -9,14 +9,14 @@ if (isset($_GET["check"])) $check = mysqli_real_escape_string($conndb, $_GET["ch
 
 else $check = false;
 
-$query = "SELECT prev.*, numerazione_pre.*, clienti.nomeC, clienti.cognomeC, clienti.codC, pagam.descr
-                FROM prev
-                  LEFT JOIN numerazione_pre
-                    ON prev.id=numerazione_pre.num
+$query = "SELECT doc_prev.*, doc_prev_num.*, clienti.nomeC, clienti.cognomeC, clienti.codC, ck_pagam.descr
+                FROM doc_prev
+                  LEFT JOIN doc_prev_num
+                    ON doc_prev.id=doc_prev_num.num
                   LEFT JOIN clienti
-                    ON numerazione_pre.dest=clienti.id
-                  LEFT JOIN pagam
-                    ON prev.id_pag=pagam.id";
+                    ON doc_prev_num.dest=clienti.id
+                  LEFT JOIN ck_pagam
+                    ON doc_prev.id_pag=ck_pagam.id";
 
 
 //echo $query;

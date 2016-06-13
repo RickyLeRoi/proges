@@ -2,12 +2,12 @@
 include_once("function/session.php");
 include("DB/config.php");
 
-$query = "SELECT ddt.*, numerazione_ddt.*, clienti.nomeC, clienti.cognomeC, clienti.codC
-                FROM ddt
-                  INNER JOIN numerazione_ddt
-                    ON ddt.id=numerazione_ddt.id
+$query = "SELECT doc_ddt.*, doc_ddt_num.*, clienti.nomeC, clienti.cognomeC, clienti.codC
+                FROM doc_ddt
+                  INNER JOIN doc_ddt_num
+                    ON doc_ddt.id=doc_ddt_num.id
                   LEFT JOIN clienti
-                    ON numerazione_ddt.dest=clienti.id";
+                    ON doc_ddt_num.dest=clienti.id";
 
 /* check connection */
 if ($result = $conndb->query($query)) {
@@ -25,18 +25,18 @@ if ($conndb->connect_errno) {
 }
 
 $queryb = "SELECT num
-                FROM numerazione_ddt";
+                FROM doc_ddt_num";
 
 /* check connection */
 if ($resultb = $conndb->query($queryb)) {
     if ($debug === true) printf("<!-- Select returned %d rows.\n -->", $resultb->num_rows);
     $oggetto_ddt = 1;
     if ($resultb->num_rows === 0) {
-        $numerazione_ddt = 1;
+        $doc_ddt_num = 1;
     }
     if ($resultb->num_rows > 0) {
         $last_row = $resultb->fetch_object();
-        $numerazione_ddt = $last_row->num + 1;
+        $doc_ddt_num = $last_row->num + 1;
     }
 
 

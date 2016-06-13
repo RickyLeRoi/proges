@@ -7,7 +7,7 @@ $ck = "";
            case "add":
                $descr = mysqli_real_escape_string($conndb,$_POST['descr']);
 
-               $sql_ins = "INSERT INTO pagam (descr) VALUES ('$descr')";
+               $sql_ins = "INSERT INTO ck_pagam (descr) VALUES ('$descr')";
 
                //controllo inserimento
                if ($conndb->query($sql_ins) === TRUE) {
@@ -28,7 +28,7 @@ $ck = "";
                $id = mysqli_real_escape_string($conndb,$_POST['id']);
                $descr = mysqli_real_escape_string($conndb,$_POST['descr']);
 
-               $sql_edit = "UPDATE pagam SET descr='$descr' WHERE id='$id';";
+               $sql_edit = "UPDATE ck_pagam SET descr='$descr' WHERE id='$id';";
 
                 //controllo inserimento
                 if ($conndb->query($sql_edit) === TRUE) {
@@ -49,7 +49,7 @@ $ck = "";
 
                $id = mysqli_real_escape_string($conndb,$_POST['id']);
 
-               $sql_del = "DELETE FROM pagam WHERE id='$id'";
+               $sql_del = "DELETE FROM ck_pagam WHERE id='$id'";
 
                 //controllo inserimento
                 if ($conndb->query($sql_del) === TRUE) {
@@ -126,7 +126,7 @@ $ck = "";
     <span style="color:#EA640C">
     Totale voci n.
     <?php
-    $sql_rows = "SELECT * FROM pagam";
+    $sql_rows = "SELECT * FROM ck_pagam";
     echo mysqli_num_rows(mysqli_query($conndb, $sql_rows));
     ?>
     </span>
@@ -144,7 +144,7 @@ $ck = "";
         <tbody>
             <?php
             include("../DB/config.php");
-            $sql = "SELECT * FROM pagam";
+            $sql = "SELECT * FROM ck_pagam";
             $result = mysqli_query($conndb, $sql);
             while($row = mysqli_fetch_array($result)) {
                 $id = $row['id'];

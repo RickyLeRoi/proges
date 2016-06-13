@@ -9,7 +9,7 @@
                $userLOG = mysqli_real_escape_string($conndb,$_POST['userLOG']);
                $pswdLOG = mysqli_real_escape_string($conndb,$_POST['pswdLOG']);
 
-               $sql_ins = "INSERT INTO login (tipoLOG, userLOG, pswdLOG) VALUES ('$tipoLOG', '$userLOG', '$pswdLOG')";
+               $sql_ins = "INSERT INTO users (tipoLOG, userLOG, pswdLOG) VALUES ('$tipoLOG', '$userLOG', '$pswdLOG')";
 
                //controllo inserimento
                if ($conndb->query($sql_ins) === TRUE) {
@@ -33,7 +33,7 @@
                $userLOG = mysqli_real_escape_string($conndb,$_POST['userLOG']);
                $pswdLOG = mysqli_real_escape_string($conndb,$_POST['pswdLOG']);
 
-               $sql_edit = "UPDATE login SET tipoLOG='$tipoLOG', userLOG='$userLOG', pswdLOG='$pswdLOG' WHERE id='$id';";
+               $sql_edit = "UPDATE users SET tipoLOG='$tipoLOG', userLOG='$userLOG', pswdLOG='$pswdLOG' WHERE id='$id';";
 
                 //controllo inserimento
                 if ($conndb->query($sql_edit) === TRUE) {
@@ -54,7 +54,7 @@
                // tipo, username e password da form
                $id = mysqli_real_escape_string($conndb,$_POST['id']);
 
-               $sql_del = "DELETE FROM login WHERE id='$id'";
+               $sql_del = "DELETE FROM users WHERE id='$id'";
 
                 //controllo inserimento
                 if ($conndb->query($sql_del) === TRUE) {
@@ -131,7 +131,7 @@
     <span style="color:#EA640C">
     Totale voci n.
     <?php
-    $sql_rows = "SELECT * FROM login";
+    $sql_rows = "SELECT * FROM users";
     echo mysqli_num_rows(mysqli_query($conndb, $sql_rows));
     ?>
     </span>
@@ -151,7 +151,7 @@
             <tbody>
                 <?php
                 include("../DB/config.php");
-                $sql = "SELECT * FROM login";
+                $sql = "SELECT * FROM users";
                 $result = mysqli_query($conndb, $sql);
                 while($row = mysqli_fetch_array($result)) {
                     $id = $row['id'];

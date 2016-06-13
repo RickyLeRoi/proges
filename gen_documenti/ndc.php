@@ -3,7 +3,7 @@ $base_url = $_SERVER["SERVER_NAME"] . "/proges";
 include_once("../DB/config.php");
 include_once("./../function/session.php");
 
-$query = "SELECT descr FROM pagam";
+$query = "SELECT descr FROM ck_pagam";
 
 if ($result = $conndb->query($query)) {
     $pagamenti = [];
@@ -12,7 +12,7 @@ if ($result = $conndb->query($query)) {
     }
 }
 
-$query = "SELECT aliquota FROM iva";
+$query = "SELECT aliquota FROM ck_iva";
 if ($result = $conndb->query($query)) {
     $iva = [];
     while ($row = $result->fetch_object()) {

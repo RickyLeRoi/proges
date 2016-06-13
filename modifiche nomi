@@ -1,0 +1,19 @@
+articoli
+causale -> ck_causale
+clienti
+ddt -> doc_ddt
+fatt -> doc_fatt
+fornitori
+imballo -> ck_imballo
+iva -> ck_iva
+login -> users
+mezzo -> ck_mezzo
+ndc -> doc_ndc
+numerazione_ddt -> doc_ddt_num
+numerazione_ftt -> doc_fatt_num
+numerazione_ndc -> doc_ndc_num
+numerazione_pre -> doc_prev_num
+pagam -> ck_pagam
+prev -> doc_prev
+settings
+sp_agg -> ck_spese

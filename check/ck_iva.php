@@ -7,7 +7,7 @@ $ck = "";
                $aliquota = mysqli_real_escape_string($conndb,$_POST['aliquota']);
                $descr = mysqli_real_escape_string($conndb,$_POST['descr']);
 
-               $sql_ins = "INSERT INTO iva (aliquota, descr) VALUES ('$aliquota', '$descr')";
+               $sql_ins = "INSERT INTO ck_iva (aliquota, descr) VALUES ('$aliquota', '$descr')";
 
                //controllo inserimento
                if ($conndb->query($sql_ins) === TRUE) {
@@ -29,7 +29,7 @@ $ck = "";
                $aliquota = mysqli_real_escape_string($conndb,$_POST['aliquota']);
                $descr = mysqli_real_escape_string($conndb,$_POST['descr']);
 
-               $sql_edit = "UPDATE iva SET aliquota='$aliquota', descr='$descr' WHERE id='$id';";
+               $sql_edit = "UPDATE ck_iva SET aliquota='$aliquota', descr='$descr' WHERE id='$id';";
 
                 //controllo inserimento
                 if ($conndb->query($sql_edit) === TRUE) {
@@ -50,7 +50,7 @@ $ck = "";
 
                $id = mysqli_real_escape_string($conndb,$_POST['id']);
 
-               $sql_del = "DELETE FROM iva WHERE id='$id'";
+               $sql_del = "DELETE FROM ck_iva WHERE id='$id'";
 
                 //controllo inserimento
                 if ($conndb->query($sql_del) === TRUE) {
@@ -127,7 +127,7 @@ $ck = "";
     <span style="color:#EA640C">
     Totale voci n.
     <?php
-    $sql_rows = "SELECT * FROM iva";
+    $sql_rows = "SELECT * FROM ck_iva";
     echo mysqli_num_rows(mysqli_query($conndb, $sql_rows));
     ?>
     </span>
@@ -146,7 +146,7 @@ $ck = "";
         <tbody>
             <?php
             include("../DB/config.php");
-            $sql = "SELECT * FROM iva";
+            $sql = "SELECT * FROM ck_iva";
             $result = mysqli_query($conndb, $sql);
             while($row = mysqli_fetch_array($result)) {
                 $id = $row['id'];

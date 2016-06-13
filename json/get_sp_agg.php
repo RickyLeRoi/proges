@@ -9,7 +9,7 @@ if (isset($_GET["check"])) $check = mysqli_real_escape_string($conndb,$_GET["che
 
     else $check = "Nessuna query";
 
-$query = "SELECT * FROM sp_agg WHERE tipo LIKE \"%" . $check . "%\" OR descr LIKE \"%" . $check . "%\"";
+$query = "SELECT * FROM ck_sp_agg WHERE tipo LIKE \"%" . $check . "%\" OR descr LIKE \"%" . $check . "%\"";
 
 /* check connection */
 

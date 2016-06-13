@@ -1,12 +1,12 @@
 <?php
 include("./DB/config.php");
 
-$query = "SELECT ndc.*, numerazione_ndc.*, clienti.nomeC, clienti.cognomeC, clienti.codC
-                FROM ndc
-                  INNER JOIN numerazione_ndc
-                    ON ndc.id=numerazione_ndc.id
+$query = "SELECT doc_ndc.*, doc_ndc_num.*, clienti.nomeC, clienti.cognomeC, clienti.codC
+                FROM doc_ndc
+                  INNER JOIN doc_ndc_num
+                    ON doc_ndc.id=doc_ndc_num.id
                   LEFT JOIN clienti
-                    ON numerazione_ndc.dest=clienti.id";
+                    ON doc_ndc_num.dest=clienti.id";
 
 /* check connection */
 if ($result = $conndb->query($query)) {

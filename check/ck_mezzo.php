@@ -7,7 +7,7 @@ $ck = "";
                $tipo = mysqli_real_escape_string($conndb,$_POST['tipo']);
                $descr = mysqli_real_escape_string($conndb,$_POST['descr']);
 
-               $sql_ins = "INSERT INTO mezzo (tipo, descr) VALUES ('$tipo', '$descr')";
+               $sql_ins = "INSERT INTO ck_mezzo (tipo, descr) VALUES ('$tipo', '$descr')";
 
                //controllo inserimento
                if ($conndb->query($sql_ins) === TRUE) {
@@ -29,7 +29,7 @@ $ck = "";
                $tipo = mysqli_real_escape_string($conndb,$_POST['tipo']);
                $descr = mysqli_real_escape_string($conndb,$_POST['descr']);
 
-               $sql_edit = "UPDATE mezzo SET tipo='$tipo', descr='$descr' WHERE id='$id';";
+               $sql_edit = "UPDATE ck_mezzo SET tipo='$tipo', descr='$descr' WHERE id='$id';";
 
                 //controllo inserimento
                 if ($conndb->query($sql_edit) === TRUE) {
@@ -50,7 +50,7 @@ $ck = "";
 
                $id = mysqli_real_escape_string($conndb,$_POST['id']);
 
-               $sql_del = "DELETE FROM mezzo WHERE id='$id'";
+               $sql_del = "DELETE FROM ck_mezzo WHERE id='$id'";
 
                 //controllo inserimento
                 if ($conndb->query($sql_del) === TRUE) {
@@ -127,7 +127,7 @@ $ck = "";
     <span style="color:#EA640C">
     Totale voci n.
     <?php
-    $sql_rows = "SELECT * FROM mezzo";
+    $sql_rows = "SELECT * FROM ck_mezzo";
     echo mysqli_num_rows(mysqli_query($conndb, $sql_rows));
     ?>
     </span>
@@ -146,7 +146,7 @@ $ck = "";
         <tbody>
             <?php
             include("../DB/config.php");
-            $sql = "SELECT * FROM mezzo";
+            $sql = "SELECT * FROM ck_mezzo";
             $result = mysqli_query($conndb, $sql);
             while($row = mysqli_fetch_array($result)) {
                 $id = $row['id'];

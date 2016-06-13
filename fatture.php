@@ -2,12 +2,12 @@
 include_once("function/session.php");
 include("DB/config.php");
 
-$query = "SELECT fatt.*, numerazione_ftt.*, clienti.nomeC, clienti.cognomeC, clienti.codC
-                FROM fatt
-                  INNER JOIN numerazione_ftt
-                    ON fatt.id=numerazione_ftt.num
+$query = "SELECT doc_fatt.*, doc_fatt_num.*, clienti.nomeC, clienti.cognomeC, clienti.codC
+                FROM doc_fatt
+                  INNER JOIN doc_fatt_num
+                    ON doc_fatt.id=doc_fatt_num.num
                   LEFT JOIN clienti
-                    ON numerazione_ftt.dest=clienti.id";
+                    ON doc_fatt_num.dest=clienti.id";
 
 /* check connection */
 if ($result = $conndb->query($query)) {
@@ -25,7 +25,7 @@ if ($conndb->connect_errno) {
 }
 
 $queryb = "SELECT num
-                FROM numerazione_ftt";
+                FROM doc_fatt_num";
 
 /* check connection */
 if ($resultb = $conndb->query($queryb)) {

@@ -6,7 +6,7 @@ $ck = "";
            case "add":
                $descr = mysqli_real_escape_string($conndb,$_POST['descr']);
 
-               $sql_ins = "INSERT INTO imballo (descr) VALUES ('$descr')";
+               $sql_ins = "INSERT INTO ck_imballo (descr) VALUES ('$descr')";
 
                //controllo inserimento
                if ($conndb->query($sql_ins) === TRUE) {
@@ -27,7 +27,7 @@ $ck = "";
                $id = mysqli_real_escape_string($conndb,$_POST['id']);
                $descr = mysqli_real_escape_string($conndb,$_POST['descr']);
 
-               $sql_edit = "UPDATE imballo SET descr='$descr' WHERE id='$id';";
+               $sql_edit = "UPDATE ck_imballo SET descr='$descr' WHERE id='$id';";
 
                 //controllo inserimento
                 if ($conndb->query($sql_edit) === TRUE) {
@@ -48,7 +48,7 @@ $ck = "";
 
                $id = mysqli_real_escape_string($conndb,$_POST['id']);
 
-               $sql_del = "DELETE FROM imballo WHERE id='$id'";
+               $sql_del = "DELETE FROM ck_imballo WHERE id='$id'";
 
                 //controllo inserimento
                 if ($conndb->query($sql_del) === TRUE) {
@@ -129,7 +129,7 @@ $ck = "";
     <span style="color:#EA640C">
     Totale voci n.
     <?php
-    $sql_rows = "SELECT * FROM imballo";
+    $sql_rows = "SELECT * FROM ck_imballo";
     echo mysqli_num_rows(mysqli_query($conndb, $sql_rows));
     ?>
     </span>
@@ -147,7 +147,7 @@ $ck = "";
         <tbody>
             <?php
             include("../DB/config.php");
-            $sql = "SELECT * FROM imballo";
+            $sql = "SELECT * FROM ck_imballo";
             $result = mysqli_query($conndb, $sql);
             while($row = mysqli_fetch_array($result)) {
                 $id = $row['id'];

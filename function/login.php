@@ -9,7 +9,7 @@
       $userFORM = mysqli_real_escape_string($conndb,$_POST['userFORM']);
       $pswdFORM = mysqli_real_escape_string($conndb,$_POST['pswdFORM']);
 
-      $sql = "SELECT id FROM login WHERE tipoLOG = '$tipoFORM' AND userLOG = '$userFORM' AND pswdLOG = '$pswdFORM'";
+      $sql = "SELECT id FROM users WHERE tipoLOG = '$tipoFORM' AND userLOG = '$userFORM' AND pswdLOG = '$pswdFORM'";
       $ris = mysqli_query($conndb,$sql);
        $row = mysqli_fetch_assoc($ris);
 
