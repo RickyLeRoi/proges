@@ -243,7 +243,8 @@ if ($result = $conndb->query($query)) {
                                 <script language="javascript">
                                     document.write(aaaa);
                                 </script>
-                                <br/> del <input id="data" type="date" class="stampa form-control"
+                                <br/> del <input id="data" type="date" value="<?php echo date('Y-m-d'); ?>"
+                                                 class="stampa form-control"
                                                  style="width:30%; display:inline">
                             </strong></p>
                         </h5>
@@ -323,7 +324,7 @@ if ($result = $conndb->query($query)) {
                     </td>
                     <td style="text-align:right"><p>Totale parziale €</p></td>
                     <td>
-                        <input id="parziale" class="form-control stampa" style="text-align:right" type="number"
+                        <input id="parziale" class="form-control " style="text-align:right" type="number"
                                placeholder="auto da colonna €" readonly>
                     </td>
                 </tr>
@@ -340,14 +341,15 @@ if ($result = $conndb->query($query)) {
                 <tr>
                     <td style="text-align:right"><p><strong>Totale dovuto €</strong></p></td>
                     <td>
-                        <input id="totaleDovuto" class="form-control stampa" style="text-align:right" type="number"
+                        <input id="totaleDovuto" class="form-control" style="text-align:right" type="number"
                                placeholder="auto da colonna €" readonly>
                     </td>
                 </tr>
 
                 <tr>
-                    <td colspan="3"><p class="smaller">Esente IVA ai sensi dell’art.8 del D.P.R. 633/72. Documento
-                            n°<input id="" type="number"
+                    <td id="ifIva0" colspan="3"><p class="smaller">Esente IVA ai sensi dell’art.8 del D.P.R. 633/72.
+                            Documento
+                            n°<input id="esenteNum" min=1 type="number"
                                      class="smaller form-control"
                                      style="width:5%; display:inline"
                                      placeholder="0000">
@@ -385,16 +387,16 @@ if ($result = $conndb->query($query)) {
         onSelect: function (suggestion) {
             var execute = false;
             $(function () {
-                for (var prodotto in memory) {
-                    if (suggestion.data.descr == memory[prodotto]) {
-                        console.log(prodotto);
+                var checkIfExists = memory.indexOf(suggestion.data.descr);
+                console.log(checkIfExists);
+                if (checkIfExists !== -1) {
                         alert("Hai già inserito questo prodotto");
                         execute = false;
                     }
                     else {
                         execute = true;
                     }
-                }
+
                 if (execute === true) {
                     var articoli = "<p class=\"col-xs-12 arrArticoli noMargin\" id=\"idArticoli-" + idRiga + "\" >" + suggestion.data.descr + "</p>";
                     $("#incolonnaArticoli").append(articoli);
@@ -487,6 +489,7 @@ if ($result = $conndb->query($query)) {
             parziale: $("#parziale").val(),
             iva: $("#iva").val(),
             totaleDovuto: $("#totaleDovuto").val(),
+            esenteNum: $("#esenteNum").val(),
             esIvaDal: $("#esIvaDal").val(),
             esIvaAl: $("#esIvaAl").val()
         };
@@ -498,9 +501,13 @@ if ($result = $conndb->query($query)) {
             dataType: "json"
         });
         call.done(function (msg) {
-            console.log(msg);
+            console.log(msg.vai);
+            if (msg.vai == "ok") {
+                window.location.href = "http://<?php echo $base_url ?>/gen_documenti/post.php/gen_documenti/post.php?" + msg.cosa + "=" + msg.dove;
+            }
         });
-        console.log(dati);
+
+        //console.log(dati);
         return true;
     }
 
@@ -528,5 +535,17 @@ if ($result = $conndb->query($query)) {
         delete memory[index];
         $("#prezzo-" + id[1] + ",#idArticoli-" + id[1] + ",#idQuantita-" + id[1] + ",#prezzo-" + id[1] + ",#prezzoTOT-" + id[1]).remove();
     }
+
+    $("#iva").click(function () {
+        var ammIva = $("#iva").val();
+        if (ammIva == 0) {
+            console.log($("#iva").val());
+            $("#ifIva0 p").hide();
+        }
+
+        else {
+            $("#ifIva0 p").show();
+        }
+    });
 </script>
 </body>
