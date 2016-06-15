@@ -3,6 +3,8 @@ $base_url = $_SERVER["SERVER_NAME"] . "/proges";
 include_once("../DB/config.php");
 include_once("./../function/session.php");
 
+
+//prendi i tipi di pagamento
 $query = "SELECT descr FROM ck_pagam";
 
 if ($result = $conndb->query($query)) {
@@ -11,7 +13,7 @@ if ($result = $conndb->query($query)) {
         array_push($pagamenti, $row->descr);
     }
 }
-
+// Prendi le aliquote
 $query = "SELECT aliquota FROM ck_iva";
 if ($result = $conndb->query($query)) {
     $iva = [];
@@ -19,6 +21,21 @@ if ($result = $conndb->query($query)) {
         array_push($iva, $row->aliquota);
     }
 }
+
+//Checka se si tratta della pagina output di post.php
+
+if ((isset($post)) == true) {
+
+    $idRiga = count($quantita) + 1;
+    $modifica = true;
+
+} else {
+    $data = date('Y-m-d');
+    $anno = date("Y");
+    $idRiga = 1;
+    $memory = '["default"]';
+}
+
 ?>
 
 <html>
@@ -31,26 +48,6 @@ if ($result = $conndb->query($query)) {
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
     <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script language="JavaScript">
-        data = new Date();
-        var aaaa = data.getFullYear();
-        var MM = data.getMonth() + 1;
-        var gg = data.getDate();
-        if (gg < 10) {
-            gg = "0" + gg;
-    }
-        if (MM < 10) {
-            MM = "0" + MM;
-        }
-        var hh = data.getHours();
-        var mm = data.getMinutes();
-        if (hh < 10) {
-            hh = "0" + hh;
-        }
-        if (mm < 10) {
-            mm = "0" + mm;
-        }
-    </script>
     <style>
         .arrArticoli:hover {
             cursor: pointer;
@@ -218,7 +215,10 @@ if ($result = $conndb->query($query)) {
 <div id="stampa" style="padding-top: 10px; padding-bottom: 10px;" class="container-fluid">
 <span class="h1">
 <a href="../fatture.php"> <span class="glyphicon glyphicon-chevron-left"></span>Indietro</a>
-<a href="#" onclick="window.print(); save()"> <span class="glyphicon glyphicon-print"></span> Stampa</a>
+<a href="#" onclick=save()> <span class="glyphicon glyphicon-print"></span> Salva</a>
+    <?php if (isset($post)) : ?>
+        <a href="#" onclick="window.print()"> <span class="glyphicon glyphicon-print"></span> Stampa</a>
+    <?php endif; ?>
 </span>
 </div>
 
@@ -238,12 +238,12 @@ if ($result = $conndb->query($query)) {
                         <p class="col-md-12">
                         <h5>
                         <p><strong>FATTURA N.
-                                <input class="stampa form-control" style="width:15%; text-align:right; display:inline"
-                                       type="number" size="4" placeholder="0000" readonly>/
-                                <script language="javascript">
-                                    document.write(aaaa);
-                                </script>
-                                <br/> del <input id="data" type="date" value="<?php echo date('Y-m-d'); ?>"
+                                <input id="fattId" class="stampa form-control"
+                                       style="width:15%; text-align:right; display:inline"
+                                       type="number" size="4"
+                                       placeholder="0000" <?php if (isset($id)) echo "value='" . $id . "'" ?> readonly>/
+                                <?php echo $anno ?>
+                                <br/> del <input id="data" type="date" value="<?php echo $data ?>"
                                                  class="stampa form-control"
                                                  style="width:30%; display:inline">
                             </strong></p>
@@ -251,8 +251,19 @@ if ($result = $conndb->query($query)) {
                         </p><br/>
 <span>Pagamento
 <select id="pagamento" class="form-control" name="pagamento" style="width:50%; display:inline">
-    <?php foreach ($pagamenti as $pagamento) : ?>
-        <option value="<?php echo $pagamento ?>"><?php echo $pagamento ?></option>
+
+    <?php $selected = "";
+    foreach ($pagamenti as $pagamento) : ?>
+        <?php
+        if (isset($pagamento_scelto)) {
+            if ($pagamento_scelto == $pagamento) {
+                $selected = "selected";
+            } else {
+                $selected = "";
+            }
+        }
+        ?>
+        <option <?php echo $selected ?> value="<?php echo $pagamento ?>"><?php echo $pagamento ?></option>
     <?php endforeach ?>
 </select></span><br/><br/>
 <span class="row"><p>CREDITO SICILIANO - AG. BAGHERIA</p><br/>
@@ -263,22 +274,25 @@ if ($result = $conndb->query($query)) {
                         <div class="col-md-12">
                             Spett.le<br/><br/>
                             <input id="cliente" type="text" class="text-center form-control"
-                                   placeholder="Cliente con suggerimento"><br/>
+                                   placeholder="Cliente con suggerimento" <?php if (isset($cliente)) echo "value='" . $cliente . "'" ?>><br/>
                             <input id="ivaCliente" type="text" class="text-center form-control" placeholder="auto P.IVA"
-                                   readonly><br/>
+                                <?php if (isset($cliente)) echo "value='" . $piva . "'" ?> readonly><br/>
                             <input id="indirizzo" type="text" class="text-center form-control"
                                    placeholder="auto Indirizzo legale"
-                                   readonly><br/>
+                                   readonly <?php if (isset($indirizzo)) echo "value='" . $indirizzo . "'" ?>><br/>
                             <input id="citta" class="text-center form-control" type="text"
                                    style="width:45%; display:inline;"
-                                   placeholder="auto Città" readonly>
+                                   placeholder="auto Città" <?php if (isset($citta)) echo "value='" . $citta . "'" ?>
+                                   readonly>
                             <span style="width:7%;"> - </span>
                             <input id="pr" class="text-center form-control" type="text"
                                    style="width:15%; display:inline;"
-                                   placeholder="(PR)" readonly>
+                                   placeholder="(PR)" <?php if (isset($prov)) echo "value='" . $prov . "'" ?> readonly>
                             <span style="width:7%;"> - </span>
                             <input id="cap" class="text-center form-control" type="number" min="00010" max="98199"
-                                   style="width:25%; display:inline;" placeholder="auto CAP" readonly>
+                                   style="width:25%; display:inline;"
+                                   placeholder="auto CAP" <?php if (isset($cap)) echo "value='" . $cap . "'" ?>
+                                   readonly>
                         </div>
                     </td>
 
@@ -300,21 +314,46 @@ if ($result = $conndb->query($query)) {
                     <td id="incolonnaQuantita">
                         <input id="idQuantitadefault" type="number" style="text-align:right;"
                                class="stampa hiddenElement form-control arrQuantita" min="1">
+                        <?php
+                        if (isset($post)) :
+                            foreach ($quantita as $q_id => $quantitaProdotto) : ?>
+                                <input id="idQuantita-<?php echo $q_id + 1 ?>" type="number"
+                                       class="form-control arrQuantita" min="1" value="<?php echo $quantitaProdotto ?>">
+                            <?php endforeach; endif ?>
+                        <!-- QUI -->
                     </td>
 
                     <td id="incolonnaArticoli">
                         <input class="stampa form-control incolonnatore" type="text"
                                placeholder="Descrizione articolo automatica">
+                        <?php
+                        if (isset($post)) :
+                            foreach ($prodotti as $p_id => $prodotto) : ?>
+                                <p class="col-xs-12 arrArticoli noMargin"
+                                   id="idArticoli-<?php echo $p_id + 1 ?>"><?php echo $prodotto ?></p>
+                            <?php endforeach; endif ?>
                     </td>
 
                     <td id="incolonnaPrezzi">
                         <input class="hiddenElement form-control stampa" style="text-align:right;" type="text"
                                placeholder="auto da DB €" readonly>
+                        <?php
+                        if (isset($post)) :
+                            foreach ($prezzi_cad as $prezzo_cad_id => $prezzo_cad) : ?>
+                                <p class="valuta col-xs-10 noMargin"
+                                   id="prezzo-<?php echo $prezzo_cad_id + 1 ?>"><?php echo $prezzo_cad ?></p>
+                            <?php endforeach; endif ?>
                     </td>
 
                     <td id="incolonnaPrezziTot">
                         <input class="hiddenElement form-control stampa" style="text-align:right;" type="text"
                                placeholder="auto da riga €" readonly>
+                        <?php
+                        if (isset($post)) :
+                            foreach ($prezzi as $prezzo_id => $prezzo) : ?>
+                                <p class="valuta col-xs-10 noMargin"
+                                   id="prezzoTOT-<?php echo $prezzo_id + 1 ?>"><?php echo $prezzo_cad ?></p>
+                            <?php endforeach; endif ?>
                     </td>
 
                 </tr>
@@ -325,7 +364,8 @@ if ($result = $conndb->query($query)) {
                     <td style="text-align:right"><p>Totale parziale €</p></td>
                     <td>
                         <input id="parziale" class="form-control " style="text-align:right" type="number"
-                               placeholder="auto da colonna €" readonly>
+                               placeholder="auto da colonna €" <?php if (isset($parziale)) echo "value='" . $parziale . "'" ?>
+                               readonly>
                     </td>
                 </tr>
 
@@ -342,7 +382,8 @@ if ($result = $conndb->query($query)) {
                     <td style="text-align:right"><p><strong>Totale dovuto €</strong></p></td>
                     <td>
                         <input id="totaleDovuto" class="form-control" style="text-align:right" type="number"
-                               placeholder="auto da colonna €" readonly>
+                               placeholder="auto da colonna €" <?php if (isset($totale)) echo "value='" . $totale . "'" ?>
+                               readonly>
                     </td>
                 </tr>
 
@@ -352,10 +393,12 @@ if ($result = $conndb->query($query)) {
                             n°<input id="esenteNum" min=1 type="number"
                                      class="smaller form-control"
                                      style="width:5%; display:inline"
-                                     placeholder="0000">
+                                     placeholder="0000" <?php if (isset($esente_num)) echo "value='" . $esente_num . "'" ?>>
                             valido dal <input id="esIvaDal" type="date" class="smaller form-control"
-                                              style="display:inline; width:20%"> al <input id="esIvaAl"
-                                type="date" class="smaller form-control" style="display:inline; width:20%"></p></td>
+                                              style="display:inline; width:20%" <?php if (isset($esente_dal)) echo "value='" . $esente_dal . "'" ?>>
+                            al <input id="esIvaAl"
+                                      type="date" <?php if (isset($esente_al)) echo "value='" . $esente_al . "'" ?>
+                                      class="smaller form-control" style="display:inline; width:20%"></p></td>
                     <td class="text-center"><p>S. E. & O.</p></td>
                 </tr>
 
@@ -375,8 +418,8 @@ if ($result = $conndb->query($query)) {
 <?php include_once("../template/parrot/foot.php") ?>
 
 <script>
-    var memory = ["default"];
-    var idRiga = 1;
+    var memory = <?php echo $memory ?>;
+    var idRiga = <?php echo $idRiga ?>;
     $('.incolonnatore').devbridgeAutocomplete({
         dataType: "json",
         paramName: "check",
@@ -428,6 +471,11 @@ if ($result = $conndb->query($query)) {
             });
         }
     });
+    $(".arrArticoli").click(function () {
+        cancella($(this));
+        prezziTot($(this));
+    });
+
     function prezziTot(quantita) {
         quantitaScelta = quantita.val();
         quantitaId = quantita.attr("id");
@@ -462,6 +510,7 @@ if ($result = $conndb->query($query)) {
             return suggestion.data.PIVAC + " - " + suggestion.data.nomeC + "  " + suggestion.data.cognomeC;
         },
         onSelect: function (suggestion) {
+
             $("#cliente").val(suggestion.data.nomeC + "  " + suggestion.data.cognomeC);
             $("#ivaCliente").val(suggestion.data.PIVAC);
             $("#indirizzo").val(suggestion.data.indirizzoLC);
@@ -474,6 +523,7 @@ if ($result = $conndb->query($query)) {
 
     function save() {
         var dati = {
+            fattId: $("#fattId").val(),
             data: $("#data").val(),
             pagamento: $("#pagamento").val(),
             cliente: $("#cliente").val(),
@@ -503,7 +553,7 @@ if ($result = $conndb->query($query)) {
         call.done(function (msg) {
             console.log(msg.vai);
             if (msg.vai == "ok") {
-                window.location.href = "http://<?php echo $base_url ?>/gen_documenti/post.php/gen_documenti/post.php?" + msg.cosa + "=" + msg.dove;
+                window.location.assign("http://<?php echo $base_url ?>/gen_documenti/post.php?" + msg.cosa + "=" + msg.dove);
             }
         });
 
@@ -536,9 +586,9 @@ if ($result = $conndb->query($query)) {
         $("#prezzo-" + id[1] + ",#idArticoli-" + id[1] + ",#idQuantita-" + id[1] + ",#prezzo-" + id[1] + ",#prezzoTOT-" + id[1]).remove();
     }
 
-    $("#iva").click(function () {
+    function checkIva() {
         var ammIva = $("#iva").val();
-        if (ammIva == 0) {
+        if (ammIva != 0) {
             console.log($("#iva").val());
             $("#ifIva0 p").hide();
         }
@@ -546,6 +596,24 @@ if ($result = $conndb->query($query)) {
         else {
             $("#ifIva0 p").show();
         }
+    }
+    checkIva();
+    $("#iva").click(function () {
+        checkIva();
     });
+    function escapeHtml(text) {
+        var map = {
+            '&': '&amp;',
+            '<': '&lt;',
+            '>': '&gt;',
+            '"': '&quot;',
+            "'": '&#039;'
+        };
+
+        return text.replace(/[&<>"']/g, function (m) {
+            return map[m];
+        });
+    }
+
 </script>
 </body>
