@@ -73,10 +73,11 @@ if (isset($_POST["data"])) {
         );
 
     } else {
-        echo "//" . $conndb->error;
+        //echo "//" . $conndb->error;
         echo json_encode(
             [
-                "vai" => "no"
+                "vai" => "no",
+                "perche" => "Non è stato possibile salvare la fattura, controlla tutti i campi"
             ]
         );
     }

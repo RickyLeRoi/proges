@@ -49,6 +49,10 @@ if ((isset($post)) == true) {
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
     <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
     <style>
+
+        body {
+            padding-bottom: 60px;
+        }
         .arrArticoli:hover {
             cursor: pointer;
             color: firebrick;
@@ -58,6 +62,19 @@ if ((isset($post)) == true) {
         }
 
         @media screen {
+
+            #stampa {
+                position: fixed;
+                z-index: 100;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                background: #FFF;
+                border-top: solid 1px;
+                font-size: 36px;
+            }
         .noMargin {
         padding: 6px 12px;
         margin: 0;
@@ -208,18 +225,35 @@ if ((isset($post)) == true) {
             }
         }
 
+        #controlloQuery {
+            position: fixed;
+            top: 50px;
+            right: 15px;
+            z-index: 100;
+        }
+
     </style>
 </head>
 <body>
 
-<div id="stampa" style="padding-top: 10px; padding-bottom: 10px;" class="container-fluid">
-<span class="h1">
-<a href="../fatture.php"> <span class="glyphicon glyphicon-chevron-left"></span>Indietro</a>
-<a href="#" onclick=save()> <span class="glyphicon glyphicon-print"></span> Salva</a>
-    <?php if (isset($post)) : ?>
-        <a href="#" onclick="window.print()"> <span class="glyphicon glyphicon-print"></span> Stampa</a>
-    <?php endif; ?>
-</span>
+<span id="controlloQuery"></span>
+<div id="stampa" class="row">
+    <div class="container">
+        <div class="row text-right">
+            <div class="col-sm-4">
+                <a href="../fatture.php"> <span class="glyphicon glyphicon-chevron-left"></span>Indietro</a>
+            </div>
+            <div class="col-sm-4">
+                <a href="#" onclick=save()> <i class="fa fa-floppy-o" aria-hidden="true"></i> Salva</a>
+            </div>
+            <div class="col-sm-4">
+                <?php if (isset($post)) : ?>
+                    <a href="#" onclick="window.print()"> <span class="glyphicon glyphicon-print"></span> Stampa</a>
+                <?php endif; ?>
+            </div>
+            </span>
+        </div>
+    </div>
 </div>
 
 <page>
@@ -248,8 +282,9 @@ if ((isset($post)) == true) {
                                                  style="width:30%; display:inline">
                             </strong></p>
                         </h5>
-                        </p><br/>
-<span>Pagamento
+                        </p>
+                        <p>
+                        <p>Pagamento
 <select id="pagamento" class="form-control" name="pagamento" style="width:50%; display:inline">
 
     <?php $selected = "";
@@ -265,32 +300,32 @@ if ((isset($post)) == true) {
         ?>
         <option <?php echo $selected ?> value="<?php echo $pagamento ?>"><?php echo $pagamento ?></option>
     <?php endforeach ?>
-</select></span><br/><br/>
-<span class="row"><p>CREDITO SICILIANO - AG. BAGHERIA</p><br/>
-<p>IBAN: <strong>IT 69 F 03019 43070 000008380468</strong></p></span>
+</select></p>
+                        <p>CREDITO SICILIANO - AG. BAGHERIA</p>
+                        <p>IBAN: <strong>IT 69 F 03019 43070 000008380468</strong></p>
                     </td>
 
                     <td colspan="2">
                         <div class="col-md-12">
                             Spett.le<br/><br/>
-                            <input id="cliente" type="text" class="text-center form-control"
+                            <input id="cliente" type="text" class="text-left form-control"
                                    placeholder="Cliente con suggerimento" <?php if (isset($cliente)) echo "value='" . $cliente . "'" ?>><br/>
-                            <input id="ivaCliente" type="text" class="text-center form-control" placeholder="auto P.IVA"
+                            <input id="ivaCliente" type="text" class="text-left form-control" placeholder="auto P.IVA"
                                 <?php if (isset($cliente)) echo "value='" . $piva . "'" ?> readonly><br/>
-                            <input id="indirizzo" type="text" class="text-center form-control"
+                            <input id="indirizzo" type="text" class="text-left form-control"
                                    placeholder="auto Indirizzo legale"
                                    readonly <?php if (isset($indirizzo)) echo "value='" . $indirizzo . "'" ?>><br/>
-                            <input id="citta" class="text-center form-control" type="text"
-                                   style="width:45%; display:inline;"
+                            <input id="citta" class="text-left form-control" type="text"
+                                   style="width: auto; max-width:45%; display:inline;"
                                    placeholder="auto Città" <?php if (isset($citta)) echo "value='" . $citta . "'" ?>
                                    readonly>
-                            <span style="width:7%;"> - </span>
-                            <input id="pr" class="text-center form-control" type="text"
-                                   style="width:15%; display:inline;"
+                            <span style="width: auto;"> - </span>
+                            <input id="pr" class="text-left form-control" type="text"
+                                   style="width: auto; max-width:15%; display:inline;"
                                    placeholder="(PR)" <?php if (isset($prov)) echo "value='" . $prov . "'" ?> readonly>
-                            <span style="width:7%;"> - </span>
-                            <input id="cap" class="text-center form-control" type="number" min="00010" max="98199"
-                                   style="width:25%; display:inline;"
+                            <span style="width: auto;"> - </span>
+                            <input id="cap" class="text-left form-control" type="number" min="00010" max="98199"
+                                   style="width: auto; max-width:25%; display:inline;"
                                    placeholder="auto CAP" <?php if (isset($cap)) echo "value='" . $cap . "'" ?>
                                    readonly>
                         </div>
@@ -409,12 +444,6 @@ if ((isset($post)) == true) {
     </div>
 </page>
 
-<div id="stampa" style="padding-top: 10px; padding-bottom: 10px;" class="container-fluid">
-<span class="h1">
-<a href="../fatture.php."> <span class="glyphicon glyphicon-chevron-left"></span>Indietro</a>
-<a href="#" onclick="window.print()"> <span class="glyphicon glyphicon-print"></span> Stampa</a>
-</span>
-</div>
 <?php include_once("../template/parrot/foot.php") ?>
 
 <script>
@@ -554,6 +583,14 @@ if ((isset($post)) == true) {
             console.log(msg.vai);
             if (msg.vai == "ok") {
                 window.location.assign("http://<?php echo $base_url ?>/gen_documenti/post.php?" + msg.cosa + "=" + msg.dove);
+            }
+
+            if (msg.vai == "no") {
+                console.log(msg.perche);
+                var elem = '<div class="alert alert-danger" role="alert"><strong>Errore: </strong><span class="text">' + msg.perche + ' </span> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&nbsp &times;</span></button>';
+
+                $("#controlloQuery").removeClass("hidden");
+                $("#controlloQuery").append(elem);
             }
         });
 
