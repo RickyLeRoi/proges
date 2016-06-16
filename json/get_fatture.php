@@ -51,7 +51,6 @@ while ($fattura = $result->fetch_object()) {
             "nomeC" => $fattura->nomeC,
             "cognomeC" => $fattura->cognomeC,
             "note" => $fattura->note,
-            "reg_date" => $fattura->reg_date,
             "pagamDescr" => $fattura->descr
         ]
     ]);
