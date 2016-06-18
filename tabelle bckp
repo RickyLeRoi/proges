@@ -173,128 +173,155 @@ if (mysqli_query($conndb, $sql_f)) {
     echo "C'e' stato un errore creando la tabella fornitori: " . mysqli_error($conndb) . "<br/>";
 }
 
-// creo tabella db fatture
-$sql_fdb = "CREATE TABLE stampa_fattura (
-id INT UNSIGNED NOT NULL,
-data_doc DATE NOT NULL,
-pagamento VARCHAR(200) NOT NULL,
-cliente VARCHAR(200) NOT NULL,
-Piva VARCHAR(200) NULL,
-cf VARCHAR(200) NULL,
-indirizzo VARCHAR(200) NOT NULL,
-citta VARCHAR(200) NOT NULL,
-prov VARCHAR(5) NOT NULL,
-cap VARCHAR(10) NOT NULL,
-arr_qta LONGTEXT NOT NULL,
-arr_beni LONGTEXT NOT NULL,
-arr_misure LONGTEXT NULL,
-arr_imp_uni LONGTEXT NOT NULL,
-arr_importo LONGTEXT NOT NULL,
-tot_parziale INT NOT NULL,
-iva INT NOT NULL,
-tot_dovuto INT NOT NULL,
-esente_num INT NULL,
-esente_dal DATE DEFAULT NULL,
-esente_al DATE DEFAULT NULL
+//creo tabella ddt
+$sql_ddt = "CREATE TABLE doc_ddt (
+id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+id_doc INT NOT NULL,
+id_art INT NOT NULL,
+qta INT NOT NULL,
+id_mezzo INT NULL,
+id_causale INT NULL,
+id_imballo INT NULL,
+note VARCHAR(200) NULL,
+reg_date TIMESTAMP
 ) DEFAULT CHARACTER SET utf8";
 
-if (mysqli_query($conndb, $sql_fdb)) {
-    echo "Tabella db fatture creata con successo <br/>";
+if (mysqli_query($conndb, $sql_ddt)) {
+    echo "Tabella DdT creata con successo <br/>";
     header('Refresh: 3; URL = homeDB.php');
 } else {
-    echo "C'e' stato un errore creando la tabella db fatture: " . mysqli_error($conndb) . "<br/>";
+    echo "C'e' stato un errore creando la tabella DdT: " . mysqli_error($conndb) . "<br/>";
 }
 
-// creo tabella db ddt
-$sql_ddb = "CREATE TABLE stampa_ddt (
-id INT UNSIGNED NOT NULL,
-data_doc DATE NOT NULL,
-mezzo VARCHAR(200) NOT NULL,
-cliente VARCHAR(200) NOT NULL,
-Piva VARCHAR(200) NULL,
-cf VARCHAR(200) NULL,
-indirizzo VARCHAR(200) NOT NULL,
-citta VARCHAR(200) NOT NULL,
-prov VARCHAR(5) NOT NULL,
-cap VARCHAR(10) NOT NULL,
-causale VARCHAR(200) NOT NULL,
-imballo VARCHAR(200) NOT NULL,
-n_colli INT NULL,
-peso INT NULL,
-data_rit DATE NOT NULL,
-arr_qta LONGTEXT NOT NULL,
-arr_beni LONGTEXT NOT NULL,
-arr_misure LONGTEXT NULL,
-vettore VARCHAR(200) NULL,
-note VARCHAR(255) NULL
+//creo tabella numerazione DocumentoDiTrasporto
+$sql_nd = "CREATE TABLE doc_ddt_num (
+id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+num INT NOT NULL,
+id_cliente INT NOT NULL,
+link VARCHAR(255) NULL,
+reg_date TIMESTAMP,
+UNIQUE (link)
 ) DEFAULT CHARACTER SET utf8";
 
-if (mysqli_query($conndb, $sql_ddb)) {
-    echo "Tabella db DdT creata con successo <br/>";
+if (mysqli_query($conndb, $sql_nd)) {
+    echo "Tabella numerazione DDT creata con successo <br/>";
     header('Refresh: 3; URL = homeDB.php');
 } else {
-    echo "C'e' stato un errore creando la tabella db DdT: " . mysqli_error($conndb) . "<br/>";
+    echo "C'e' stato un errore creando la tabella numerazione DDT: " . mysqli_error($conndb) . "<br/>";
 }
 
-// creo tabella db preventivo
-$sql_pdb = "CREATE TABLE stampa_preventivo (
-id INT UNSIGNED NOT NULL,
-data_doc DATE NOT NULL,
-pagamento VARCHAR(200) NOT NULL,
-cliente VARCHAR(200) NOT NULL,
-Piva VARCHAR(200) NULL,
-cf VARCHAR(200) NULL,
-indirizzo VARCHAR(200) NOT NULL,
-citta VARCHAR(200) NOT NULL,
-prov VARCHAR(5) NOT NULL,
-cap VARCHAR(10) NOT NULL,
-arr_qta LONGTEXT NOT NULL,
-arr_beni LONGTEXT NOT NULL,
-arr_misure LONGTEXT NULL,
-arr_imp_uni LONGTEXT NOT NULL,
-arr_importo LONGTEXT NOT NULL,
-tot_parziale INT NOT NULL,
-iva INT NOT NULL,
-tot_dovuto INT NOT NULL
+//creo tabella fattura
+$sql_fatt = "CREATE TABLE doc_fatt (
+id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+id_doc INT NOT NULL,
+id_art INT NOT NULL,
+qta_art INT NOT NULL,
+id_spese INT NULL,
+qta_spese INT NULL,
+id_pagam INT NULL,
+id_iva INT NULL,
+note VARCHAR(200) NULL,
+reg_date TIMESTAMP
 ) DEFAULT CHARACTER SET utf8";
 
-if (mysqli_query($conndb, $sql_pdb)) {
-    echo "Tabella db preventivo creata con successo <br/>";
+if (mysqli_query($conndb, $sql_fatt)) {
+    echo "Tabella fatture creata con successo <br/>";
     header('Refresh: 3; URL = homeDB.php');
 } else {
-    echo "C'e' stato un errore creando la tabella db preventivo: " . mysqli_error($conndb) . "<br/>";
+    echo "C'e' stato un errore creando la tabella fatture: " . mysqli_error($conndb) . "<br/>";
 }
 
-// creo tabella db ndc
-$sql_ndb = "CREATE TABLE stampa_ndc (
-id INT UNSIGNED NOT NULL,
-data_doc DATE NOT NULL,
-pagamento VARCHAR(200) NOT NULL,
-cliente VARCHAR(200) NOT NULL,
-Piva VARCHAR(200) NULL,
-cf VARCHAR(200) NULL,
-indirizzo VARCHAR(200) NOT NULL,
-citta VARCHAR(200) NOT NULL,
-prov VARCHAR(5) NOT NULL,
-cap VARCHAR(10) NOT NULL,
-arr_qta LONGTEXT NOT NULL,
-arr_beni LONGTEXT NOT NULL,
-arr_misure LONGTEXT NULL,
-arr_imp_uni LONGTEXT NOT NULL,
-arr_importo LONGTEXT NOT NULL,
-tot_parziale INT NOT NULL,
-iva INT NOT NULL,
-tot_dovuto INT NOT NULL,
-esente_num INT NULL,
-esente_dal DATE DEFAULT NULL,
-esente_al DATE DEFAULT NULL
+//creo tabella numerazione fattura
+$sql_nf = "CREATE TABLE doc_fatt_num (
+id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+num INT NOT NULL,
+id_cliente INT NOT NULL,
+link VARCHAR(255) NULL,
+reg_date TIMESTAMP,
+UNIQUE (link)
 ) DEFAULT CHARACTER SET utf8";
 
-if (mysqli_query($conndb, $sql_ndb)) {
-    echo "Tabella db NdC creata con successo <br/>";
+if (mysqli_query($conndb, $sql_nf)) {
+    echo "Tabella numerazione fattura creata con successo <br/>";
     header('Refresh: 3; URL = homeDB.php');
 } else {
-    echo "C'e' stato un errore creando la tabella db NdC: " . mysqli_error($conndb) . "<br/>";
+    echo "C'e' stato un errore creando la tabella numerazione fattura: " . mysqli_error($conndb) . "<br/>";
+}
+
+//creo tabella NdC
+$sql_ndc = "CREATE TABLE doc_ndc (
+id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+id_doc INT NOT NULL,
+id_art INT NOT NULL,
+qta_art INT NOT NULL,
+id_spese INT NULL,
+qta_spese INT NULL,
+id_pagam INT NULL,
+id_iva INT NULL,
+note VARCHAR(200) NULL,
+reg_date TIMESTAMP
+) DEFAULT CHARACTER SET utf8";
+
+if (mysqli_query($conndb, $sql_ndc)) {
+    echo "Tabella NdC creata con successo <br/>";
+    header('Refresh: 3; URL = homeDB.php');
+} else {
+    echo "C'e' stato un errore creando la tabella NdC: " . mysqli_error($conndb) . "<br/>";
+}
+
+//creo tabella numerazione NdC
+$sql_nn = "CREATE TABLE doc_ndc_num (
+id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+num INT NOT NULL,
+id_cliente INT NOT NULL,
+link VARCHAR(255) NULL,
+reg_date TIMESTAMP,
+UNIQUE (link)
+) DEFAULT CHARACTER SET utf8";
+
+if (mysqli_query($conndb, $sql_nn)) {
+    echo "Tabella numerazione NdC creata con successo <br/>";
+    header('Refresh: 3; URL = homeDB.php');
+} else {
+    echo "C'e' stato un errore creando la tabella numerazione NdC: " . mysqli_error($conndb) . "<br/>";
+}
+
+//creo tabella preventivi
+$sql_prev = "CREATE TABLE doc_prev (
+id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+id_doc INT NOT NULL,
+id_art INT NOT NULL,
+qta_art INT NOT NULL,
+id_spese INT NULL,
+qta_spese INT NULL,
+id_pagam INT NULL,
+id_iva INT NULL,
+note VARCHAR(200) NULL,
+reg_date TIMESTAMP
+) DEFAULT CHARACTER SET utf8";
+
+if (mysqli_query($conndb, $sql_prev)) {
+    echo "Tabella preventivi creata con successo <br/>";
+    header('Refresh: 3; URL = homeDB.php');
+} else {
+    echo "C'e' stato un errore creando la tabella preventivi: " . mysqli_error($conndb) . "<br/>";
+}
+
+//creo tabella numerazione preventivi
+$sql_np = "CREATE TABLE doc_prev_num (
+id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+num INT NOT NULL,
+id_cliente INT NOT NULL,
+link VARCHAR(255) NULL,
+reg_date TIMESTAMP,
+UNIQUE (link)
+) DEFAULT CHARACTER SET utf8";
+
+if (mysqli_query($conndb, $sql_np)) {
+    echo "Tabella numerazione preventivi creata con successo <br/>";
+    header('Refresh: 3; URL = homeDB.php');
+} else {
+    echo "C'e' stato un errore creando la tabella numerazione preventivi: " . mysqli_error($conndb) . "<br/>";
 }
 
 //creo tabella settaggi
@@ -331,6 +358,34 @@ if (mysqli_query($conndb, $sql_us)) {
     header('Refresh: 3; URL = homeDB.php');
 } else {
     echo "C'e' stato un errore creando la tabella users: " . mysqli_error($conndb) . "<br/>";
+}
+
+// creo tabella db fatture
+$sql_fdb = "CREATE TABLE stampa_fattura (
+id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+pagamento VARCHAR(200) NOT NULL,
+cliente VARCHAR(100) NOT NULL,
+iva VARCHAR(200) NOT NULL,
+indirizzo VARCHAR(200) NOT NULL,
+citta VARCHAR(100) NOT NULL,
+prov VARCHAR(5) NOT NULL,
+cap VARCHAR(10) NULL,
+quantita LONGTEXT NOT NULL,
+prodotti LONGTEXT NOT NULL,
+prezziCad LONGTEXT NOT NULL,
+prezzi LONGTEXT NOT NULL,
+parziale INT NOT NULL,
+totale INT NOT NULL,
+esente_num INT NULL,
+esente_dal DATE DEFAULT NULL,
+esente_al DATE DEFAULT NULL
+) DEFAULT CHARACTER SET utf8";
+
+if (mysqli_query($conndb, $sql_fdb)) {
+    echo "Tabella db fatture creata con successo <br/>";
+    header('Refresh: 3; URL = homeDB.php');
+} else {
+    echo "C'e' stato un errore creando la tabella db fatture: " . mysqli_error($conndb) . "<br/>";
 }
 
 mysqli_close($conndb);

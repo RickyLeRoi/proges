@@ -25,6 +25,7 @@ $modifica = false;
     [esIvaAl] =>
 
 */
+
 $stampa = "fattura";
 
 if (isset($_POST["data"])) {

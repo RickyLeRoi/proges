@@ -82,9 +82,10 @@ $ck = "";
 	<meta name="description" content="Gestionale per etichettificio Provenzano"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-	<?php include_once("./../template/parrot/style.php") // Carica gli stili del tema in uso ?>
-
-    <?php include_once("../function/session.php"); ?>
+    <?php
+    include_once("../template/parrot/style.php");
+    include_once("../function/session.php");
+    ?>
 
     <style>
         .table-inp {
@@ -141,9 +142,8 @@ $ck = "";
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Tipo</th>
-                <th>Prezzo</th>
                 <th>Descrizione</th>
+                <th>Prezzo</th>
                 <th>Azioni</th>
             </tr>
         </thead>
@@ -154,14 +154,12 @@ $ck = "";
             $result = mysqli_query($conndb, $sql);
             while($row = mysqli_fetch_array($result)) {
                 $id = $row['id'];
-                $tipo = $row['tipo'];
-                $prezzo = $row['prezzo'];
                 $descr = $row['descr'];
+                $prezzo = $row['prezzo'];
                 echo "<tr>
                 <td class='valore-" . $id . "'>" . $id . "</td>
-                <td class='valore-" . $id . "'>" . $tipo . "</td>
-                <td class='valore-" . $id . "'>" . $prezzo . "</td>
                 <td class='valore-" . $id . "'>" . $descr . "</td>
+                <td class='valore-" . $id . "'>" . $prezzo . "</td>
                  <td class='form-inline'>
                     
                     <form  action='#' method='POST'>

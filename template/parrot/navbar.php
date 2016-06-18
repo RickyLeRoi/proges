@@ -29,13 +29,11 @@
                     <li id="ddt"><a href="http://<?php echo $base_url ?>/ddt.php">DDT</a></li>
                     <li id="preventivi"><a href="http://<?php echo $base_url ?>/preventivi.php">Preventivi</a></li>
                     <li id="ndc"><a href="http://<?php echo $base_url ?>/ndc.php">NDC</a></li>
-                    <li id="listini"><a href="http://<?php echo $base_url ?>/listini.php">Listini</a></li>
                     <li class="ck_login ck_causale ck_mezzo ck_iva ck_imb ck_art ck_spagg ck_pagam dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Controllo <span class="fa-chevron-down fa"></span></a>
                         <ul class="dropdown-menu">
                             <div class="arrow top"></div>
 <?php
-include_once("http://<?php echo $base_url/DB/config.php");
 $query = ("SELECT * FROM users WHERE userLOG='$user' AND tipoLOG='Tecnico'");
 $result = mysqli_query($conndb, $query);
 if(mysqli_num_rows($result)==1)
@@ -77,7 +75,7 @@ if(mysqli_num_rows($result)==1)
                         </ul>
                     </li>
                 </ul>
-            </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
+            </div>
+        </div>
     </nav>
 </div>
