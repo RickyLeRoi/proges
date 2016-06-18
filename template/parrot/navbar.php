@@ -35,7 +35,7 @@
                         <ul class="dropdown-menu">
                             <div class="arrow top"></div>
 <?php
-include_once("DB/config.php");
+include_once("http://<?php echo $base_url ?>/DB/config.php");
 $query = ("SELECT * FROM users WHERE userLOG='$user' AND tipoLOG='Tecnico'");
 $result = mysqli_query($conndb, $query);
 if(mysqli_num_rows($result)==1)
@@ -64,7 +64,6 @@ if(mysqli_num_rows($result)==1)
                             <div class="arrow top"></div>
                             <li id="settings"><a href="http://<?php echo $base_url ?>/settings.php"><span class="fa-cog fa"></span> Impostazioni</a></li>
 <?php
-include_once("DB/config.php");
 $query = ("SELECT * FROM users WHERE userLOG='$user' AND tipoLOG='Tecnico'");
 $result = mysqli_query($conndb, $query);
 if(mysqli_num_rows($result)==1)
