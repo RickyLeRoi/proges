@@ -35,7 +35,7 @@
                         <ul class="dropdown-menu">
                             <div class="arrow top"></div>
 <?php
-include_once("http://<?php echo $base_url ?>/DB/config.php");
+include_once("http://<?php echo $base_url/DB/config.php");
 $query = ("SELECT * FROM users WHERE userLOG='$user' AND tipoLOG='Tecnico'");
 $result = mysqli_query($conndb, $query);
 if(mysqli_num_rows($result)==1)
