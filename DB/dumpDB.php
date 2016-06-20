@@ -5,13 +5,12 @@ backup_tables('localhost', 'root', 'mysql', 'gestionale_db');
 function backup_tables($host, $userDB, $pswdDB, $database, $tables = '*')
 {
 
-    $link = mysql_connect($host, $userDB, $pswdDB);
-    mysql_select_db($database, $link);
+    $link = mysqli_connect($host, $userDB, $pswdDB, $database);
 
     if ($tables == '*') {
         $tables = array();
-        $result = mysql_query('SHOW TABLES');
-        while ($row = mysql_fetch_row($result)) {
+        $result = mysqli_query($link, 'SHOW TABLES');
+        while ($row = mysqli_fetch_row($result)) {
             $tables[] = $row[0];
         }
     } else {
@@ -20,15 +19,15 @@ function backup_tables($host, $userDB, $pswdDB, $database, $tables = '*')
 
     //cycle through
     foreach ($tables as $table) {
-        $result = mysql_query('SELECT * FROM ' . $table);
-        $num_fields = mysql_num_fields($result);
+        $result = mysqli_query($link, 'SELECT * FROM ' . $table);
+        $num_fields = mysqli_num_fields($result);
 
         $return .= 'DROP TABLE ' . $table . ';';
-        $row2 = mysql_fetch_row(mysql_query('SHOW CREATE TABLE ' . $table));
-        $return .= "\n\n" . $row2[1] . ";\n\n";
+        $row2 = mysqli_fetch_row(mysqli_query($link, 'SHOW CREATE TABLE ' . $table));
+        $return .= "\n/**/\n" . $row2[1] . ";\n/**/\n";
 
         for ($i = 0; $i < $num_fields; $i++) {
-            while ($row = mysql_fetch_row($result)) {
+            while ($row = mysqli_fetch_row($result)) {
                 $return .= 'INSERT INTO ' . $table . ' VALUES(';
                 for ($j = 0; $j < $num_fields; $j++) {
                     $row[$j] = addslashes($row[$j]);
@@ -42,16 +41,17 @@ function backup_tables($host, $userDB, $pswdDB, $database, $tables = '*')
                         $return .= ',';
                     }
                 }
-                $return .= ");\n";
+                $return .= ");\n/**/\n";
             }
         }
-        $return .= "\n\n";
     }
 
     //salva file
     date_default_timezone_set('Europe/Rome');
-    $handle = fopen('backup/gestionale_db-' . date('d-m-Y_H.i.s') . '.sql', 'w+');
-    fwrite($handle, $return);
-    fclose($handle);
+    $dump = fopen('backup/gestionale_db-' . date('d-m-Y_H.i.s') . '.sql', 'w+');
+    fwrite($dump, $return);
+    fclose($dump);
+    echo "File <strong>backup</strong> scritto correttamente";
+    echo "<textarea cols='100' rows='50'>" . $return . "</textarea>";
 }
 ?>

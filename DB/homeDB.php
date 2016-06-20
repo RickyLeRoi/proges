@@ -98,7 +98,7 @@ include_once("../template/parrot/navbar.php") ?>
             <label class="col-sm-2 control-label">Query rapida</label>
             <div class="col-sm-10">
                 <textarea class="form-control" cols="100" name="query"
-                          placeholder="Query esempio: CREATE, DROP, INSERT INTO, TRUNCATE"></textarea>
+                          placeholder="Esempio: CREATE, DROP, INSERT INTO, TRUNCATE. Usa /**/ per separare più query."></textarea>
                 <input class="btn btn-default" type="submit" value="Invia">
             </div>
         </div>
