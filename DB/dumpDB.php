@@ -51,7 +51,7 @@ function backup_tables($host, $userDB, $pswdDB, $database, $tables = '*')
     $dump = fopen('backup/gestionale_db-' . date('d-m-Y_H.i.s') . '.sql', 'w+');
     fwrite($dump, $return);
     fclose($dump);
-    echo "File <strong>backup</strong> scritto correttamente";
-    echo "<textarea cols='100' rows='50'>" . $return . "</textarea>";
+    echo "<h2>File di backup scritto correttamente.</h2><h4><a href=\"javascript:history.back()\">Torna indietro</a></h4>";
+    echo "<div><textarea cols='100' rows='50'>" . $return . "</textarea></div>";
 }
 ?>

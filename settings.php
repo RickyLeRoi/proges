@@ -188,10 +188,20 @@ if ($conndb->connect_errno) {
             </div>
         </div>
     </form>
-    <div class="alert alert-info" role="alert">
-        <span><b>Nota bene:</b><br>
-        Impostare un numero alto potrebbe incidere negativamente sulle prestazioni del server</span>
-    </div>
+    <!--    <div class="alert alert-info" role="alert">
+            <span><b>Nota bene:</b><br>
+            Impostare un numero alto potrebbe incidere negativamente sulle prestazioni del server</span>
+        </div>-->
+
+    <h2 style="color: #FFF">Backup DB</h2>
+    <form class="form-horizontal" action="DB/dumpDB.php" method="POST">
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Dump</label>
+            <div class="col-sm-10">
+                <input class="btn btn-default" type="submit" value="Backup">
+            </div>
+        </div>
+    </form>
 </div>
 
 <?php include_once("template/parrot/foot.php") ?>
