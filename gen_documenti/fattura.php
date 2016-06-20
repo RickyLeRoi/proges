@@ -274,8 +274,7 @@ if ((isset($post)) == true) {
                         <h5>
                         <p><strong>FATTURA N.
                                 <input id="fattId" class="stampa form-control"
-                                       style="width:15%; text-align:right; display:inline"
-                                       type="number" size="4"
+                                       style="width:15%; text-align:right; display:inline" type="number" size="4"
                                        placeholder="0000" <?php if (isset($id)) echo "value='" . $id . "'" ?> readonly>/
                                 <?php echo $anno ?>
                                 <br/> del <input id="data" type="date" value="<?php echo $data ?>"
@@ -284,7 +283,6 @@ if ((isset($post)) == true) {
                             </strong></p>
                         </h5>
                         </p>
-                        <p>
                         <p>Pagamento
 <select id="pagamento" class="form-control" name="pagamento" style="width:50%; display:inline">
 
@@ -388,7 +386,7 @@ if ((isset($post)) == true) {
                         if (isset($post)) :
                             foreach ($prezzi as $prezzo_id => $prezzo) : ?>
                                 <p class="valuta col-xs-10 noMargin"
-                                   id="prezzoTOT-<?php echo $prezzo_id + 1 ?>"><?php echo $prezzo_cad ?></p>
+                                   id="prezzoTOT-<?php echo $prezzo_id + 1 ?>"><?php echo $prezzo ?></p>
                             <?php endforeach; endif ?>
                     </td>
 
@@ -532,6 +530,10 @@ if ((isset($post)) == true) {
         $("#totaleDovuto").val((somma + iva).toFixed(2));
     }
 
+    $(".arrQuantita, #iva").click(function () {
+        prezziTot($(this));
+    });
+
     $('#cliente').devbridgeAutocomplete({
         dataType: "json",
         paramName: "check",
@@ -553,7 +555,13 @@ if ((isset($post)) == true) {
 
     function save() {
         var dati = {
-            fattId: $("#fattId").val(),
+            richiesta: "fattura",
+            azione: "<?php if (!isset($azione)) {
+                echo "aggiungi";
+            } else {
+                echo $azione;
+            } ?>",
+            id: $("#fattId").val(),
             data: $("#data").val(),
             pagamento: $("#pagamento").val(),
             cliente: $("#cliente").val(),
@@ -583,7 +591,7 @@ if ((isset($post)) == true) {
         call.done(function (msg) {
             console.log(msg.vai);
             if (msg.vai == "ok") {
-                window.location.assign("http://<?php echo $base_url ?>/gen_documenti/post.php?" + msg.cosa + "=" + msg.dove);
+                window.location.assign("http://<?php echo $base_url ?>/gen_documenti/post.php?" + msg.cosa + "=" + msg.dove + "&documento=" + msg.documento);
             }
 
             if (msg.vai == "no") {
