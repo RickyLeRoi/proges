@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set('Europe/Rome');
 $base_url = $_SERVER["SERVER_NAME"] . "/proges";
 include_once("../DB/config.php");
 include_once("./../function/session.php");

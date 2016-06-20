@@ -8,7 +8,7 @@
     <meta name="description" content="Gestionale per etichettificio Provenzano"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-    <?php include("../template/parrot/style.php");
+    <?php include_once("../template/parrot/style.php");
      ?>
 
     <?php 	//header('Content-Type: text/plain');
@@ -26,7 +26,9 @@
 
 <body>
 <!-- #### Navbars #### -->
-<?php include("../template/parrot/navbar.php") ?>
+<?php
+include_once("config.php");
+include_once("../template/parrot/navbar.php") ?>
 
 <div class="container">
     <h2 style="color: #FFF" >Gestione DB</h2>
@@ -41,7 +43,7 @@
                 <input class="btn btn-default" type="submit" value="Crea DB">
             </div>
         </div>
-    </form><br/>
+    </form>
 
     <form class="form-horizontal" action="creatabelle.php" method="POST">
         <div class="form-group">
@@ -50,7 +52,7 @@
                 <input class="btn btn-default" type="submit" value="Crea tabelle">
             </div>
         </div>
-    </form><br/>
+    </form>
 
     <form class="form-horizontal" action="droptabelle.php" method="POST">
         <div class="form-group">
@@ -59,7 +61,7 @@
                 <input class="btn btn-default" type="submit" value="Cancella tabelle">
             </div>
         </div>
-    </form><br/>
+    </form>
 
     <form class="form-horizontal" action="dropDB.php" method="POST">
         <div class="form-group">
@@ -68,7 +70,39 @@
                 <input class="btn btn-default" type="submit" value="Cancella DB">
             </div>
         </div>
-    </form><br/>
+    </form>
+
+    <!-- Tipo di codifica dei dati -->
+    <form class="form-horizontal" enctype="multipart/form-data" action="file.php" method="POST">
+        <div class="form-group">
+            <label class="col-sm-2 control-label">File backup</label>
+            <div class="col-sm-10">
+                <input type="hidden" name="MAX_FILE_SIZE" value="30000"/>
+                Invia questo file: <input class="btn btn-default" id="bckp" name="bckp" type="file"/>
+                <input class="btn btn-default" type="submit" value="Invia">
+            </div>
+        </div>
+    </form>
+
+    <form class="form-horizontal" action="dumpDB.php" method="POST">
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Backup DB</label>
+            <div class="col-sm-10">
+                <input class="btn btn-default" type="submit" value="Backup">
+            </div>
+        </div>
+    </form>
+
+    <form class="form-horizontal" action="query.php" method="POST">
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Query rapida</label>
+            <div class="col-sm-10">
+                <textarea class="form-control" cols="100" name="query"
+                          placeholder="Query esempio: CREATE, DROP, INSERT INTO, TRUNCATE"></textarea>
+                <input class="btn btn-default" type="submit" value="Invia">
+            </div>
+        </div>
+    </form>
 
     <form class="form-horizontal" action="creareclogin.php" method="POST">
         <div class="form-group">
@@ -84,7 +118,7 @@
                 <input class="btn btn-default" type="submit" value="Crea utente">
             </div>
         </div>
-    </form><br/>
+    </form>
 
 </div>
 

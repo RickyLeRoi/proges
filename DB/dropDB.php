@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <!-- blu #071E3F arancione #EA640C -->
     <meta charset="utf-8">
-    <title>Cancella tabelle</title>
+    <title>Cancella DB</title>
     <meta name="description" content="Gestionale per etichettificio Provenzano"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 

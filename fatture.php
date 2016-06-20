@@ -2,7 +2,7 @@
 include_once("function/session.php");
 include("DB/config.php");
 
-$query = "SELECT doc_fatt.*, doc_fatt_num.*, clienti.nomeC, clienti.cognomeC, clienti.codC
+$query = "SELECT stampa_fatture.*, clienti.nomeC, clienti.cognomeC, clienti.codC
                 FROM doc_fatt
                   INNER JOIN doc_fatt_num
                     ON doc_fatt.id=doc_fatt_num.num
