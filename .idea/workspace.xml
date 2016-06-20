@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="262bcaf4-44d1-46db-b05b-0150860b8c78" name="Default" comment="dump e restore funzionanti, primo backup">
+    <list default="true" id="262bcaf4-44d1-46db-b05b-0150860b8c78" name="Default" comment="update">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DB/dumpDB.php" afterPath="$PROJECT_DIR$/DB/dumpDB.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/settings.php" afterPath="$PROJECT_DIR$/settings.php" />
     </list>
     <ignored path="proges.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,7 +36,23 @@
     <favorites_list name="proges" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="dumpDB.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/DB/dumpDB.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="399">
+              <caret line="56" column="2" selection-start-line="56" selection-start-column="2" selection-end-line="56" selection-end-column="2" />
+              <folding>
+                <marker date="1466458446712" expanded="true" signature="597:611" ph="SELECT * FRO... ${$table}" />
+                <marker date="1466458446712" expanded="true" signature="695:706" ph="DROP TABLE $... " />
+                <marker date="1466458446712" expanded="true" signature="783:796" ph="CREATE TABLE... ${$table}" />
+                <marker date="1466458446712" expanded="true" signature="997:1031" ph="INSERT INTO ${$table}... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
@@ -402,7 +416,7 @@
       <workItem from="1466449072904" duration="3189000" />
       <workItem from="1466453647163" duration="140000" />
       <workItem from="1466453826902" duration="60000" />
-      <workItem from="1466454398760" duration="4103000" />
+      <workItem from="1466454398760" duration="4200000" />
     </task>
     <task id="LOCAL-00004" summary="JSON ordinati, funzione ridotta, lista clienti e lista fornitori non visualizzano la navbar di scorrimento se non ci sono record in più pagine.">
       <created>1464283951639</created>
@@ -523,11 +537,18 @@
       <option name="project" value="LOCAL" />
       <updated>1466457283572</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="update">
+      <created>1466458520742</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1466458520742</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="184149000" />
+    <option name="totallyTimeSpent" value="184246000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -546,7 +567,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32743362" sideWeight="0.49356222" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32713348" sideWeight="0.5064378" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16770834" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16770834" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15098469" sideWeight="0.472103" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -602,7 +623,8 @@
     <MESSAGE value="nuovi file" />
     <MESSAGE value="dump e restore DB" />
     <MESSAGE value="dump e restore funzionanti, primo backup" />
-    <option name="LAST_COMMIT_MESSAGE" value="dump e restore funzionanti, primo backup" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="UPDATE_GROUP_BY_PACKAGES" value="true" />
   </component>
@@ -866,9 +888,9 @@
           <folding>
             <element signature="n#style#0;n#h2#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h2#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1466457830305" expanded="true" signature="1273:1474" ph="INSERT INTO settings... " />
-            <marker date="1466457830305" expanded="true" signature="1561:1792" ph="UPDATE setti... " />
-            <marker date="1466457830305" expanded="true" signature="2084:2126" ph="SELECT * FRO... settings" />
+            <marker date="1466458516615" expanded="true" signature="1273:1474" ph="INSERT INTO settings... " />
+            <marker date="1466458516615" expanded="true" signature="1561:1792" ph="UPDATE setti... " />
+            <marker date="1466458516615" expanded="true" signature="2084:2126" ph="SELECT * FRO... settings" />
           </folding>
         </state>
       </provider>
@@ -884,9 +906,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/DB/homeDB.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="421">
+          <caret line="128" column="0" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/DB/dumpDB.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1232">
+        <state relative-caret-position="399">
           <caret line="56" column="2" selection-start-line="56" selection-start-column="2" selection-end-line="56" selection-end-column="2" />
           <folding>
             <marker date="1466458446712" expanded="true" signature="597:611" ph="SELECT * FRO... ${$table}" />
@@ -894,14 +924,6 @@
             <marker date="1466458446712" expanded="true" signature="783:796" ph="CREATE TABLE... ${$table}" />
             <marker date="1466458446712" expanded="true" signature="997:1031" ph="INSERT INTO ${$table}... " />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DB/homeDB.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="128" column="0" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
