@@ -3,7 +3,7 @@
 $base_url = $_SERVER["SERVER_NAME"] . "/proges";
 include_once("../DB/config.php");
 include_once("./../function/session.php");
-$modifica = false;
+
 /*
 
     [data] =>
@@ -26,68 +26,37 @@ $modifica = false;
 
 */
 
-$stampa = "fattura";
+//$stampa = "fattura";
 
+// INSERIMENTO DATI VIA POST
 if (isset($_POST["data"])) {
-
-    //Parti dalla numerazione attuale
-    //print_r($_POST["data"]);
-    $sql = "SELECT id FROM stampa_" . $stampa . " ORDER BY id DESC";
-
-    if ($result = $conndb->query($sql)) {
-        $obj = $result->fetch_object();
-        $fattura_n = $obj->id + 1;
-    }
-
-    //print_r($_POST["data"]);
-
     $insert = $_POST["data"];
+    $stampa = $insert["richiesta"];
+    //Parti dalla numerazione attuale
 
-    if ($insert["esenteNum"] === "") {
-        $insert["esenteNum"] = 1;
-        $insert["esIvaDal"] = date('Y-m-d');
-        $insert["esIvaAl"] = date('Y-m-d');
+    //Se si tratta di fattura o preventivo
+    if ($stampa == "fattura" || $stampa == "preventivo") {
+        include_once("./postdatas/fatt_prev.php");
     }
 
-    if ($modifica == true) {
-
-        $sql = "UPDATE stampa_" . $stampa . "
-        SET data='" . $insert["data"] . "', pagamento='" . $insert["pagamento"] . "', cliente='" . $insert["cliente"] . "', piva='" . $insert["ivaCliente"] . "', indirizzo='" . $insert["indirizzoCliente"] . "', citta='" . $insert["cittaCliente"] . "', prov='" . $insert["pr"] . "', cap='" . $insert["cap"] . "', quantita='" . $insert["arrayQuantita"] . "', prodotti='" . $insert["arrayProdotti"] . "', prezziCad='" . $insert["arrayPrezziCad"] . "', prezzi='" . $insert["arrayPrezzi"] . "', parziale='" . $insert["parziale"] . "', totale='" . $insert["totaleDovuto"] . "', esente_num='" . $insert["esenteNum"] . "', esente_dal='" . $insert["esIvaDal"] . "', esente_al='" . $insert["esIvaAl"] . "'
-        WHERE id=" . $insert["fattId"];
-
-        $fattura_n = $insert["fattId"];
-    } else {
-
-    $sql = "INSERT INTO stampa_" . $stampa . " 
-    (id, data, pagamento, cliente, piva, indirizzo, citta, prov, cap, quantita, prodotti, prezziCad, prezzi, parziale, totale, iva, esente_num, esente_dal, esente_al) values
-    ('" . $fattura_n . "','" . $insert["data"] . "','" . $insert["pagamento"] . "','" . $insert["cliente"] . "','" . $insert["ivaCliente"] . "','" . $insert["indirizzoCliente"] . "','" . $insert["cittaCliente"] . "','" . $insert["pr"] . "','" . $insert["cap"] . "','" . $insert["arrayQuantita"] . "','" . $insert["arrayProdotti"] . "','" . $insert["arrayPrezziCad"] . "','" . $insert["arrayPrezzi"] . "','" . $insert["parziale"] . "','" . $insert["totaleDovuto"] . "','" . $insert["iva"] . "','" . $insert["esenteNum"] . "','" . $insert["esIvaDal"] . "','" . $insert["esIvaAl"] . "')";
-        //echo "/*".$sql."*/";
-    }
-    if ($result = $conndb->query($sql)) {
-        //echo $sql;
-        echo json_encode(
-            [
-                "vai" => "ok",
-                "dove" => $fattura_n,
-                "cosa" => $stampa . "_n"
-            ]
-        );
-
-    } else {
-        //echo "//" . $conndb->error;
-        echo json_encode(
-            [
-                "vai" => "no",
-                "perche" => "Non è stato possibile salvare la fattura, controlla tutti i campi"
-            ]
-        );
-    }
 }
 
-if (isset($_GET["fattura_n"])) {
-    $id_fattura = $_GET["fattura_n"];
+// RICEZIONE DEI DATI VIA GET
+if (isset($_GET["fattura_n"]) || isset($_GET["fattura_n"]) || isset($_GET["ndc_n"]) && isset($_GET["documento"])) {
+    $stampa = $_GET["documento"];
+    if (isset($_GET["fattura_n"])) {
+        $id_doc = $_GET["fattura_n"];
+    }
+    if (isset($_GET["preventivo_n"])) {
+        $id_doc = $_GET["preventivo_n"];
+    }
 
-    $sql = "SELECT * FROM stampa_" . $stampa . " WHERE id=" . $id_fattura;
+    if (isset($_GET["ndc_n"])) {
+        $id_doc = $_GET["ndc_n"];
+    }
+
+
+    $sql = "SELECT * FROM stampa_" . $stampa . " WHERE id=" . $id_doc;
 
     if ($result = $conndb->query($sql)) {
         $obj = $result->fetch_object();
@@ -121,8 +90,19 @@ if (isset($_GET["fattura_n"])) {
         }
         $memory .= "\"default\"]";
         $post = true;
-        include_once("fattura.php");
-        $modifica = true;
+        $azione = "modifica";
+        if (isset($_GET["fattura_n"])) {
+            include_once("fattura.php");
+        }
+
+        if (isset($_GET["ndc_n"])) {
+            include_once("ndc.php");
+        }
+
+        if (isset($_GET["preventivo_n"])) {
+            include_once("preventivo.php");
+        }
+
     }
 
 }
