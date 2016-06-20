@@ -307,8 +307,9 @@ if ($result) {
 
 <tr>
     <td colspan="3"><p class="col-sm-4">Domicilio o residenza</p>
-        <p class="col-sm-8"><input class="form-control" style="width:50%; display:inline" type="text" readonly
-                                   placeholder="auto Indirizzo"><input class="form-control"
+        <p class="col-sm-8"><input id="indirizzo" class="form-control" style="width:50%; display:inline" type="text"
+                                   readonly
+                                   placeholder="auto Indirizzo"><input id="citta" class="form-control"
                                                                        style="width:50%; display:inline" type="text"
                                                                        readonly placeholder="auto Citta'"></p></td>
 </tr>
@@ -443,6 +444,8 @@ function save() {
             echo $azione;
         } ?>",
         cliente: $("#cliente").val(),
+        indirizzo: $("#indirizzo").val(),
+        citta: $("#citta").val(),
         piva: $("#piva").val(),
         causale: $("#causale").val(),
         aspettoBeni: $("#aspettoBeni").val(),

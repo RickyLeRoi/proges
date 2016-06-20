@@ -107,5 +107,36 @@ if (isset($_GET["fattura_n"]) || isset($_GET["fattura_n"]) || isset($_GET["ndc_n
 
 }
 
+if (isset($_GET["ddt_n"])) {
+    $stampa = $_GET["documento"];
+    $id_doc = $_GET["ddt_n"];
+
+    $sql = "SELECT * FROM stampa_" . $stampa . " WHERE id=" . $id_doc;
+
+    if ($result = $conndb->query($sql)) {
+        $obj = $result->fetch_object();
+
+        print_r($obj);
+
+        $id = $obj->id;
+        $data = $obj->data_doc;
+
+        $cliente = $obj->cliente;
+        $piva = $obj->piva;
+        $indirizzo = $obj->indirizzo;
+        $citta = $obj->citta;
+        $prov = $obj->prov;
+        $cap = $obj->cap;
+        $causale = $obj->causale;
+        $imballo = $obj->imballo;
+
+        $quantita = explode("||", $obj->arr_qta);      //
+        $prodotti = explode("||", $obj->arr_beni);      //  Da ciclare nel foglio fatture stampato.
+
+        $vettore = $obj->vettore;
+
+        include_once("array)./ddt.php");
+    }
+}
 
 ?>
