@@ -2,6 +2,31 @@
 $base_url = $_SERVER["SERVER_NAME"] . "/proges";
 include_once("../DB/config.php");
 include_once("./../function/session.php");
+
+if ((isset($post)) == true) {
+
+    $idRiga = count($quantita) + 1;
+    $modifica = true;
+
+} else {
+    $data = date('Y-m-d');
+    $anno = date("Y");
+    $idRiga = 1;
+    $memory = '["default"]';
+}
+
+// Mezzi
+
+$query = "SELECT * FROM ck_mezzo";
+$result = $conndb->query($query);
+$mezzi = [];
+if ($result) {
+    while ($row = $result->fetch_object()) {
+        array_push($mezzi, $row->descr);
+    }
+}
+
+
 ?>
 
 <!doctype html>
@@ -36,17 +61,40 @@ include_once("./../function/session.php");
         }
     </script>
     <style>
+
+        body {
+            padding-bottom: 60px;
+        }
+
+        .arrArticoli:hover {
+            cursor: pointer;
+            color: firebrick;
+        }
         .hiddenElement {
             visibility: hidden;
         }
 
         @media screen {
-        .noMargin {
-        padding: 6px 12px;
-        margin: 0;
-        line-height: 1.42857143;
-        height: 34px;
-        }
+
+            #stampa {
+                position: fixed;
+                z-index: 100;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                background: #FFF;
+                border-top: solid 1px;
+                font-size: 36px;
+            }
+
+            .noMargin {
+                padding: 6px 12px;
+                margin: 0;
+                line-height: 1.42857143;
+                height: 34px;
+            }
 
             body {
                 max-width: 1400px;
@@ -54,60 +102,70 @@ include_once("./../function/session.php");
             }
         }
         @media print {
-        .noMargin {
-        margin: 0 0 0;
-        }
-        .form-control {
-        display: inline-block;
-        width: auto;
-        }
-        select.form-control {
-        position: relative !important;
-        top: -1px !important;
-        z-index: 1;
-        }
-        input[type=number],
-        input[type=text],
-        input[type=date],
-        select.form-control,
-        input[type=datetime] {
-        border: none;
-        background: transparent;
-        box-shadow: none;
-        height: 13px;
-        padding-left: 0;
-        padding-right: 0;
-        margin: 0 0 0;
-        font-size: 7pt;
-        position: relative;
-        top: -1px;
-        width: auto;
-        }
-        p {
-        font-size: 7pt;
-        height: 13px;
-        }
-        .logo {
-        max-width: 100%;
-        width: 100px;
-        height: auto;
-        }
-        #sottotabella {
-        border: none !important;
-        border-collapse: collapse;
-        }
-        page {
-        size: a4;
-        }
-        .qnt {
-        height: 6cm;
-        }
-        .var {
-        height: 3cm;
-        }
-        .stampa {
-        display: none;
-        }
+            .noMargin {
+                margin: 0 0 0;
+            }
+
+            .form-control {
+                display: inline-block;
+                width: auto;
+            }
+
+            select.form-control {
+                position: relative !important;
+                top: -1px !important;
+                z-index: 1;
+            }
+
+            input[type=number],
+            input[type=text],
+            input[type=date],
+            select.form-control,
+            input[type=datetime] {
+                border: none;
+                background: transparent;
+                box-shadow: none;
+                height: 13px;
+                padding-left: 0;
+                padding-right: 0;
+                margin: 0 0 0;
+                font-size: 7pt;
+                position: relative;
+                top: -1px;
+                width: auto;
+            }
+
+            p {
+                font-size: 7pt;
+                height: 13px;
+            }
+
+            .logo {
+                max-width: 100%;
+                width: 100px;
+                height: auto;
+            }
+
+            #sottotabella {
+                border: none !important;
+                border-collapse: collapse;
+            }
+
+            page {
+                size: a4;
+            }
+
+            .qnt {
+                height: 6cm;
+            }
+
+            .var {
+                height: 3cm;
+            }
+
+            .stampa {
+                display: none;
+            }
         }
         .autocomplete-suggestions {
             color: #000000
@@ -191,10 +249,18 @@ include_once("./../function/session.php");
             }
         }
 
+        #controlloQuery {
+            position: fixed;
+            top: 50px;
+            right: 15px;
+            z-index: 100;
+        }
+
     </style>
 </head>
 
 <body>
+<span id="controlloQuery"></span>
 <div style="padding-top: 10px; padding-bottom: 10px;" class="stampa container-fluid text-center">        <span class="h1">
 <a href="../ddt.php"> <span class="glyphicon glyphicon-chevron-left"></span>Indietro</a>
 <a href="#" onclick="window.print()"> <span class="glyphicon glyphicon-print"></span> Stampa</a>
@@ -217,11 +283,11 @@ include_once("./../function/session.php");
 <p class="col-xs-4"><input type="checkbox"> Destinatario </p>
 <p class="col-xs-4"><input type="checkbox"> Vettore</p>
     <strong>
-        <p class="col-md-12 text-center">Bagheria,
-            <script language="javascript">
-                document.write(" " + gg + "/" + MM + "/" + aaaa + "  ");
-            </script>
-            N° <input type="number" readonly placeholder="0000"></p>
+        <p class="col-md-12 text-center">Bagheria, <input id="data" type="date" value="<?php echo $data ?>"
+                                                          class="stampa form-control" style="width:30%; display:inline">
+    </strong></p>
+
+    N° <input id="idDDT" type="number" readonly placeholder="0000"></p>
     </strong>
 </div>
 
@@ -232,21 +298,24 @@ include_once("./../function/session.php");
 <tr>
 <td colspan="3">
 <p class="col-sm-4">Destinatario</p>
-    <p class="col-sm-8"><input class="form-control" style="width:50%; display:inline" type="text"
-                               placeholder="Nome cliente"><input class="form-control" style="width:50%; display:inline"
+    <p class="col-sm-8"><input id="cliente" class="form-control" style="width:50%; display:inline" type="text"
+                               placeholder="Nome cliente"><input id="piva" class="form-control"
+                                                                 style="width:50%; display:inline"
                                                                  type="text" readonly placeholder="auto P.IVA"></p>
 </td>
 </tr>
 
 <tr>
     <td colspan="3"><p class="col-sm-4">Domicilio o residenza</p>
-        <p class="col-sm-8"><input class="form-control" style="width:50%; display:inline" type="text" readonly
-                                   placeholder="auto Indirizzo"><input class="form-control"
+        <p class="col-sm-8"><input id="indirizzo" class="form-control" style="width:50%; display:inline" type="text"
+                                   readonly
+                                   placeholder="auto Indirizzo"><input id="citta" class="form-control"
                                                                        style="width:50%; display:inline" type="text"
                                                                        readonly placeholder="auto Citta'"></p></td>
 </tr>
 <tr>
-<td colspan="3"><p class="col-sm-4">Causale del trasporto</p><p class="col-sm-8"><select class="form-control">
+    <td colspan="3"><p class="col-sm-4">Causale del trasporto</p>
+        <p class="col-sm-8"><select id="causale" class="form-control">
 <option>Vendita</option>
 <option>Campionatura</option>
 <option>Reso</option>
@@ -255,7 +324,7 @@ include_once("./../function/session.php");
 <tr>
 <td>
 <p class="col-md-12">Aspetto esteriore dei beni</p>
-<p class="col-md-12"><select class="form-control">
+    <p class="col-md-12"><select id="aspettoBeni" class="form-control">
 <option>Pacchi o scatoli</option>
 <option>Pedana</option>
 <option>Proprio dei beni</option>
@@ -264,11 +333,11 @@ include_once("./../function/session.php");
 </td>
 <td>
 <p class="col-md-12">N. Colli</p>
-    <p class="col-md-12"><input type="number" class="form-control" min="0"></p>
+    <p class="col-md-12"><input id="colli" type="number" class="form-control" min="0"></p>
 </td>
 <td>
 <p class="col-md-12">Peso Kg.</p>
-    <p class="col-md-12"><input type="number" class="form-control" min="0"></p>
+    <p class="col-md-12"><input id="peso" type="number" class="form-control" min="0"></p>
 </td>
 
 
@@ -280,8 +349,9 @@ include_once("./../function/session.php");
 <td>
     <p class="col-md-12">Data e ora</p>
     <p class="col-md-12">
-        <input class="form-control text-center" style="width:50%; display:inline" type="date"><input
-            class="form-control text-center" style="width:50%; display:inline" type="time"></p>
+        <input id="consegnaData" required class="form-control text-center" style="width:50%; display:inline"
+               type="date"><input id="consegnaOra"
+                                  class="form-control text-center" style="width:50%; display:inline" type="time"></p>
 <td>
 <p class="col-md-12">Firma del Conducente</p>
 </td>
@@ -293,18 +363,23 @@ include_once("./../function/session.php");
 <tr class="qnt" height="400">
 
 <td id="incolonnaQuantita">
-<input id="idQuantita-default" type="number" class="stampa form-control arrQuantita" min="0">
+    <input id="idQuantita-default" type="number" style="visibility: hidden" class="stampa form-control" min="0">
 </td>
 
     <td id="incolonnaArticoli" colspan="2">
-        <p><input id="incolonnatore" type="text" class="stampa form-control" placeholder="Descrizione articolo"></p>
+        <input id="incolonnatore" type="text" class="stampa form-control" placeholder="Descrizione articolo">
     </td>
 
 </tr>
 <tr>
 <td>
 <p class="col-md-12">Vettori, domicilio o residenza</p>
-    <p class="col-md-12"><input type="text" readonly placeholder="auto da mezzo trasporto"></p>
+    <p class="col-md-12">
+        <select id="mezzo">
+            <?php foreach ($mezzi as $mezzo) : ?>
+                <option value="<?php echo $mezzo ?>"><?php echo $mezzo ?></option>
+            <?php endforeach; ?>
+        </select></p>
 </td>
 <td>
 <p class="col-md-12">Data e ora di ritiro</p>
@@ -320,7 +395,7 @@ include_once("./../function/session.php");
 </tr>
 <tr height="400" class="var">
 <td><p  class="col-md-12">Annotazioni - Variazioni</p>
-    <p class="col-md-12"><textarea class="form-control" cols="50" rows="10">Nessuna nota</textarea></p></td>
+    <p class="col-md-12"><textarea id="nota" class="form-control" cols="50" rows="10">Nessuna nota</textarea></p></td>
 <td colspan="2"><p class="col-md-12">Firma del destinatario</p></td>
 
 </tr>
@@ -349,7 +424,7 @@ return suggestion.value + ' - ' + suggestion.data.descr + " - " + suggestion.dat
 },
 onSelect: function (suggestion) {
 $(function () {
-var articoli = "<p class=\"col-sm-12 arrArticoli noMargin\" id=\"idArticoli-"+ idRiga +"\" >" + suggestion.data.nome + " - " + suggestion.data.note + "</p>";
+    var articoli = "<p class=\"col-sm-12 arrArticoli noMargin\" id=\"idArticoli-" + idRiga + "\" >" + suggestion.data.descr + "</p>";
 $("#incolonnaArticoli").append(articoli);
 
 var quantita = "<input id=\"idQuantita-" + idRiga +"\" type=\"number\" class=\"form-control arrQuantita\" min=\"1\" value=\"1\">";
@@ -358,6 +433,102 @@ idRiga++;
 });
 }
 });
+function save() {
+    var dati = {
+        data: $("#data").val(),
+        idDDT: $("#idDDT").val(),
+        richiesta: "ddt",
+        azione: "<?php if (!isset($azione)) {
+            echo "aggiungi";
+        } else {
+            echo $azione;
+        } ?>",
+        cliente: $("#cliente").val(),
+        indirizzo: $("#indirizzo").val(),
+        citta: $("#citta").val(),
+        piva: $("#piva").val(),
+        causale: $("#causale").val(),
+        aspettoBeni: $("#aspettoBeni").val(),
+        colli: $("#colli").val(),
+        peso: $("#peso").val(),
+        consegnaData: $("#consegnaData").val(),
+        consegnaOra: $("#consegnaOra").val(),
+        quantita: ciclaArray($(".arrQuantita"), "value"),
+        articoli: ciclaArray($(".arrArticoli "), "textContent"),
+        mezzo: $("#mezzo").val(),
+        nota: $("#nota").val()
+
+
+    };
+
+    function err(value) {
+        var mancante = "";
+        var indici = Object.keys(dati);
+        console.log(Object.keys(dati));
+        for (var i = 0; indici.length > i; i++) {
+            if (dati[indici[i]] == "") {
+                mancante += indici[i] + " ";
+            }
+        }
+        var elem = '<div class="alert alert-danger" role="alert"><strong>Campi mancanti: </strong><span class="text">' + mancante + ' </span> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&nbsp &times;</span></button>';
+        $("#controlloQuery").removeClass("hidden");
+        $("#controlloQuery").append(elem);
+    }
+
+    err(dati);
+    var call = $.ajax({
+        url: "http://<?php echo $base_url ?>/gen_documenti/post.php",
+        method: "POST",
+        data: {data: dati},
+        dataType: "json"
+    });
+    call.done(function (msg) {
+        console.log(msg.vai);
+        if (msg.vai == "ok") {
+            window.location.assign("http://<?php echo $base_url ?>/gen_documenti/post.php?" + msg.cosa + "=" + msg.dove + "&documento=" + msg.documento);
+            return true;
+        }
+
+        if (msg.vai == "no") {
+            console.log(msg.perche);
+            var elem = '<div class="alert alert-danger" role="alert"><strong>Errore: </strong><span class="text">' + msg.perche + ' </span> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&nbsp &times;</span></button>';
+
+            $("#controlloQuery").removeClass("hidden");
+            $("#controlloQuery").append(elem);
+            return false;
+        }
+    });
+}
+
+
+function ciclaArray(variabile, nodo) {
+    var i = 0,
+        ritorna = "";
+    for (i = 0; i < variabile.length; i++) {
+        if ((i + 1) < variabile.length) {
+            ritorna += escapeHtml(variabile[i][nodo]) + "||";
+        }
+        else {
+            ritorna += variabile[i][nodo];
+        }
+    }
+
+    return ritorna;
+}
+
+function escapeHtml(text) {
+    var map = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#039;'
+    };
+
+    return text.replace(/[&<>"']/g, function (m) {
+        return map[m];
+    });
+}
 </script>
 
 </body>
