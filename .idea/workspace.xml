@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="262bcaf4-44d1-46db-b05b-0150860b8c78" name="Default" comment="mergino">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gen_documenti/postdatas/ddt.php" />
+    <list default="true" id="262bcaf4-44d1-46db-b05b-0150860b8c78" name="Default" comment="minipush, non completo">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/plugins/jQuery-Autocomplete" afterPath="$PROJECT_DIR$/template/parrot/plugins/jQuery-Autocomplete" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen_documenti/ddt.php" afterPath="$PROJECT_DIR$/gen_documenti/ddt.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen_documenti/post.php" afterPath="$PROJECT_DIR$/gen_documenti/post.php" />
     </list>
     <ignored path="proges.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -106,15 +102,15 @@
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="gestionale_db.stampa_fattura" pinned="false" current-in-tab="true">
             <entry file="dbDummy://dbtable:/8bd68956/196bd43d-5ada-4cd3-92cc-085293f786a1/gestionale_db.stampa_fattura">
+              <provider editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="36" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
               <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
                 <state>
                   <filtering enabled="true" />
-                </state>
-              </provider>
-              <provider editor-type-id="text-editor">
-                <state relative-caret-position="85">
-                  <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
-                  <folding />
                 </state>
               </provider>
             </entry>
@@ -122,29 +118,11 @@
           <file leaf-file-name="ddt.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/gen_documenti/ddt.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="500">
-                  <caret line="311" column="71" selection-start-line="311" selection-start-column="71" selection-end-line="311" selection-end-column="71" />
+                <state relative-caret-position="5304">
+                  <caret line="312" column="71" selection-start-line="312" selection-start-column="71" selection-end-line="312" selection-end-column="71" />
                   <folding>
-                    <element signature="n#script#1;n#head#0;n#html#0;n#!!top" expanded="false" />
-                    <element signature="n#style#0;n#head#0;n#html#0;n#!!top" expanded="false" />
-                    <element signature="n#style#0;n#input#0;n#p#1;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#input#0;n#p#1;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#input#0;n#td#0;n#tr#6;n#tbody#0;n#table#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <marker date="1466451202923" expanded="true" signature="351:373" ph="SELECT * FRO... ck_mezzo" />
-                    <marker date="1466451202923" expanded="true" signature="9633:9953" ph="..." />
-                    <marker date="1466451202923" expanded="true" signature="9662:9781" ph="..." />
-                    <marker date="1466451202923" expanded="true" signature="9826:9946" ph="..." />
-                    <marker date="1466451202923" expanded="true" signature="9958:10372" ph="..." />
-                    <marker date="1466451202923" expanded="true" signature="9963:10267" ph="..." />
-                    <marker date="1466451202923" expanded="true" signature="10272:10324" ph="..." />
-                    <marker date="1466451202923" expanded="true" signature="10329:10366" ph="..." />
-                    <marker date="1466451202923" expanded="true" signature="10377:10518" ph="..." />
-                    <marker date="1466451202923" expanded="true" signature="10548:10798" ph="..." />
-                    <marker date="1466451202923" expanded="true" signature="10553:10722" ph="..." />
-                    <marker date="1466451202923" expanded="true" signature="10841:11204" ph="..." />
-                    <marker date="1466451202923" expanded="true" signature="11270:11487" ph="..." />
-                    <marker date="1466451202923" expanded="true" signature="11287:11481" ph="..." />
-                    <marker date="1466451202923" expanded="true" signature="11550:11569" ph="..." />
+                    <marker date="1466452441219" expanded="true" signature="351:373" ph="SELECT * FRO... ck_mezzo" />
+                    <marker date="1466452441219" expanded="true" signature="11585:11604" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -152,15 +130,15 @@
           </file>
           <file leaf-file-name="gestionale_db.stampa_ddt" pinned="false" current-in-tab="false">
             <entry file="dbDummy://dbtable:/8bd68956/196bd43d-5ada-4cd3-92cc-085293f786a1/gestionale_db.stampa_ddt">
-              <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-                <state>
-                  <filtering enabled="true" />
-                </state>
-              </provider>
               <provider editor-type-id="text-editor">
                 <state relative-caret-position="0">
                   <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                   <folding />
+                </state>
+              </provider>
+              <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+                <state>
+                  <filtering enabled="true" />
                 </state>
               </provider>
             </entry>
@@ -181,10 +159,9 @@
           <file leaf-file-name="preventivo.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/gen_documenti/preventivo.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="52">
+                <state relative-caret-position="4267">
                   <caret line="251" column="0" selection-start-line="251" selection-start-column="0" selection-end-line="251" selection-end-column="33" />
                   <folding>
-                    <element signature="n#style#0;n#head#0;n#html#0;n#!!top" expanded="false" />
                     <marker date="1466448528547" expanded="true" signature="215:241" ph="SELECT descr... ck_pagam" />
                     <marker date="1466448528547" expanded="true" signature="436:463" ph="SELECT aliqu... ck_iva" />
                   </folding>
@@ -195,7 +172,7 @@
           <file leaf-file-name="fatt_prev.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/gen_documenti/postdatas/fatt_prev.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="187">
+                <state relative-caret-position="969">
                   <caret line="62" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="71" selection-end-column="1" />
                   <folding>
                     <element signature="e#6#89#0#PHP" expanded="true" />
@@ -210,7 +187,7 @@
           <file leaf-file-name="ddt.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/gen_documenti/postdatas/ddt.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="238">
+                <state relative-caret-position="510">
                   <caret line="35" column="39" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="39" />
                   <folding>
                     <element signature="e#6#89#0#PHP" expanded="true" />
@@ -225,17 +202,15 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="ddt.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/gen_documenti/ddt.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-82">
-                  <caret line="446" column="25" selection-start-line="446" selection-start-column="25" selection-end-line="446" selection-end-column="25" />
+                <state relative-caret-position="17">
+                  <caret line="447" column="24" selection-start-line="447" selection-start-column="24" selection-end-line="447" selection-end-column="24" />
                   <folding>
-                    <element signature="n#style#0;n#input#0;n#p#0;n#strong#0;n#div#0;n#td#1;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#input#0;n#td#0;n#tr#6;n#tbody#0;n#table#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <marker date="1466451202923" expanded="true" signature="351:373" ph="SELECT * FRO... ck_mezzo" />
-                    <marker date="1466451202923" expanded="true" signature="11550:11569" ph="..." />
+                    <marker date="1466452441219" expanded="true" signature="351:373" ph="SELECT * FRO... ck_mezzo" />
+                    <marker date="1466452441219" expanded="true" signature="11585:11604" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -243,15 +218,15 @@
           </file>
           <file leaf-file-name="gestionale_db.ck_mezzo" pinned="false" current-in-tab="false">
             <entry file="dbDummy://dbtable:/8bd68956/196bd43d-5ada-4cd3-92cc-085293f786a1/gestionale_db.ck_mezzo">
-              <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-                <state>
-                  <filtering enabled="true" />
-                </state>
-              </provider>
               <provider editor-type-id="text-editor">
                 <state relative-caret-position="0">
                   <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                   <folding />
+                </state>
+              </provider>
+              <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+                <state>
+                  <filtering enabled="true" />
                 </state>
               </provider>
             </entry>
@@ -368,6 +343,7 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -434,7 +410,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -598,6 +573,7 @@
       <workItem from="1466179472582" duration="15000" />
       <workItem from="1466258470888" duration="3253000" />
       <workItem from="1466432816042" duration="1415000" />
+      <workItem from="1466452782825" duration="42000" />
     </task>
     <task id="LOCAL-00004" summary="JSON ordinati, funzione ridotta, lista clienti e lista fornitori non visualizzano la navbar di scorrimento se non ci sono record in più pagine.">
       <created>1464283951639</created>
@@ -718,11 +694,18 @@
       <option name="project" value="LOCAL" />
       <updated>1466448531941</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="minipush, non completo">
+      <created>1466452443310</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1466452443310</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="186793000" />
+    <option name="totallyTimeSpent" value="187159000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -737,15 +720,13 @@
     <frame x="-8" y="0" width="1924" height="1047" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15504292" sideWeight="0.49562362" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15665236" sideWeight="0.49562362" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.49356222" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5064378" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14645922" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15098469" sideWeight="0.472103" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32603937" sideWeight="0.49356222" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24947916" sideWeight="0.50437635" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -753,11 +734,13 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.4978678" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33150986" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28884026" sideWeight="0.49785408" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.49356222" order="10" side_tool="false" content_ui="tabs" />
@@ -812,7 +795,8 @@
     <MESSAGE value="Mal di testa" />
     <MESSAGE value="pushatina veloce: ora se la fattura non viene salvata ti avvisa." />
     <MESSAGE value="mergino" />
-    <option name="LAST_COMMIT_MESSAGE" value="mergino" />
+    <MESSAGE value="minipush, non completo" />
+    <option name="LAST_COMMIT_MESSAGE" value="minipush, non completo" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -820,11 +804,95 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="dbDummy://dbtable:/8bd68956/196bd43d-5ada-4cd3-92cc-085293f786a1/gestionale_db.stampa_ddt">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gen_documenti/post.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="45" column="33" selection-start-line="45" selection-start-column="33" selection-end-line="45" selection-end-column="33" />
+          <folding>
+            <marker date="1466452035367" expanded="true" signature="1345:1391" ph="SELECT * FRO... stampa_" />
+            <marker date="1466452035367" expanded="true" signature="2931:2977" ph="SELECT * FRO... stampa_" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gen_documenti/preventivo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4267">
+          <caret line="251" column="0" selection-start-line="251" selection-start-column="0" selection-end-line="251" selection-end-column="33" />
+          <folding>
+            <marker date="1466448528547" expanded="true" signature="215:241" ph="SELECT descr... ck_pagam" />
+            <marker date="1466448528547" expanded="true" signature="436:463" ph="SELECT aliqu... ck_iva" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gen_documenti/postdatas/fatt_prev.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="969">
+          <caret line="62" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="71" selection-end-column="1" />
+          <folding>
+            <element signature="e#6#89#0#PHP" expanded="true" />
+            <marker date="1466448528620" expanded="true" signature="1230:1284" ph="SELECT id FR... stampa_" />
+            <marker date="1466448528620" expanded="true" signature="1476:2281" ph="INSERT INTO stampa_${$stampa}... " />
+            <marker date="1466448528620" expanded="true" signature="2342:3022" ph="INSERT INTO stampa_${$stampa}... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gen_documenti/postdatas/ddt.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="35" column="39" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="39" />
+          <folding>
+            <element signature="e#6#89#0#PHP" expanded="true" />
+            <marker date="1466449872773" expanded="true" signature="1230:1284" ph="SELECT id FR... stampa_" />
+            <marker date="1466449872773" expanded="true" signature="1476:2281" ph="INSERT INTO stampa_${$stampa}... " />
+            <marker date="1466449872773" expanded="true" signature="2342:3022" ph="INSERT INTO stampa_${$stampa}... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gen_documenti/ddt.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5304">
+          <caret line="312" column="71" selection-start-line="312" selection-start-column="71" selection-end-line="312" selection-end-column="71" />
+          <folding>
+            <marker date="1466452441219" expanded="true" signature="351:373" ph="SELECT * FRO... ck_mezzo" />
+            <marker date="1466452441219" expanded="true" signature="11585:11604" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/8bd68956/196bd43d-5ada-4cd3-92cc-085293f786a1/gestionale_db.ck_mezzo">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/196bd43d-5ada-4cd3-92cc-085293f786a1/console.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="46" selection-start-line="0" selection-start-column="46" selection-end-line="0" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -840,15 +908,15 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/8bd68956/196bd43d-5ada-4cd3-92cc-085293f786a1/gestionale_db.stampa_fattura">
-      <provider editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="31" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -856,10 +924,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1122">
           <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
-          <folding>
-            <marker date="1466433010542" expanded="true" signature="216:223" ph="SELECT doc_f... doc_fatt" />
-            <marker date="1466433010542" expanded="true" signature="216:392" ph="SELECT stamp... stampa_fattura" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -867,12 +931,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5457">
           <caret line="321" column="52" selection-start-line="321" selection-start-column="52" selection-end-line="321" selection-end-column="52" />
-          <folding>
-            <element signature="n#style#0;n#input#3;n#div#0;n#td#1;n#tr#1;n#thead#0;n#table#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1466448528487" expanded="true" signature="215:233" ph="SELECT descr... pagam" />
-            <marker date="1466448528487" expanded="true" signature="215:241" ph="SELECT descr... ck_pagam" />
-            <marker date="1466448528487" expanded="true" signature="436:463" ph="SELECT aliqu... ck_iva" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -880,7 +938,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="46" selection-start-line="0" selection-start-column="46" selection-end-line="0" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -896,15 +953,15 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/8bd68956/196bd43d-5ada-4cd3-92cc-085293f786a1/gestionale_db.stampa_fattura">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -912,10 +969,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="884">
           <caret line="52" column="37" selection-start-line="52" selection-start-column="37" selection-end-line="52" selection-end-column="37" />
-          <folding>
-            <marker date="1466433010542" expanded="true" signature="216:223" ph="SELECT doc_f... doc_fatt" />
-            <marker date="1466433010542" expanded="true" signature="216:392" ph="SELECT stamp... stampa_fattura" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -923,12 +976,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5457">
           <caret line="321" column="52" selection-start-line="321" selection-start-column="52" selection-end-line="321" selection-end-column="52" />
-          <folding>
-            <element signature="n#style#0;n#input#3;n#div#0;n#td#1;n#tr#1;n#thead#0;n#table#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1466448528487" expanded="true" signature="215:233" ph="SELECT descr... pagam" />
-            <marker date="1466448528487" expanded="true" signature="215:241" ph="SELECT descr... ck_pagam" />
-            <marker date="1466448528487" expanded="true" signature="436:463" ph="SELECT aliqu... ck_iva" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -947,20 +994,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="46" selection-start-line="0" selection-start-column="46" selection-end-line="0" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/8bd68956/196bd43d-5ada-4cd3-92cc-085293f786a1/gestionale_db.stampa_fattura">
-      <provider editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -968,10 +1014,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1003">
           <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
-          <folding>
-            <marker date="1466433010542" expanded="true" signature="216:223" ph="SELECT doc_f... doc_fatt" />
-            <marker date="1466433010542" expanded="true" signature="216:392" ph="SELECT stamp... stampa_fattura" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -980,12 +1022,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1059">
           <caret line="341" column="51" selection-start-line="341" selection-start-column="51" selection-end-line="341" selection-end-column="51" />
-          <folding>
-            <element signature="n#style#0;n#input#3;n#div#0;n#td#1;n#tr#1;n#thead#0;n#table#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1466448528487" expanded="true" signature="215:233" ph="SELECT descr... pagam" />
-            <marker date="1466448528487" expanded="true" signature="215:241" ph="SELECT descr... ck_pagam" />
-            <marker date="1466448528487" expanded="true" signature="436:463" ph="SELECT aliqu... ck_iva" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -993,7 +1029,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1001,7 +1036,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="46" selection-start-line="0" selection-start-column="46" selection-end-line="0" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1017,15 +1051,15 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/8bd68956/196bd43d-5ada-4cd3-92cc-085293f786a1/gestionale_db.stampa_fattura">
-      <provider editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="31" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -1033,10 +1067,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1122">
           <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
-          <folding>
-            <marker date="1466433010542" expanded="true" signature="216:223" ph="SELECT doc_f... doc_fatt" />
-            <marker date="1466433010542" expanded="true" signature="216:392" ph="SELECT stamp... stampa_fattura" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1044,12 +1074,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5457">
           <caret line="321" column="52" selection-start-line="321" selection-start-column="52" selection-end-line="321" selection-end-column="52" />
-          <folding>
-            <element signature="n#style#0;n#input#3;n#div#0;n#td#1;n#tr#1;n#thead#0;n#table#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1466448528487" expanded="true" signature="215:233" ph="SELECT descr... pagam" />
-            <marker date="1466448528487" expanded="true" signature="215:241" ph="SELECT descr... ck_pagam" />
-            <marker date="1466448528487" expanded="true" signature="436:463" ph="SELECT aliqu... ck_iva" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1057,7 +1081,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="46" selection-start-line="0" selection-start-column="46" selection-end-line="0" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1073,15 +1096,15 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/8bd68956/196bd43d-5ada-4cd3-92cc-085293f786a1/gestionale_db.stampa_fattura">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -1089,10 +1112,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="884">
           <caret line="52" column="37" selection-start-line="52" selection-start-column="37" selection-end-line="52" selection-end-column="37" />
-          <folding>
-            <marker date="1466433010542" expanded="true" signature="216:223" ph="SELECT doc_f... doc_fatt" />
-            <marker date="1466433010542" expanded="true" signature="216:392" ph="SELECT stamp... stampa_fattura" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1100,12 +1119,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5457">
           <caret line="321" column="52" selection-start-line="321" selection-start-column="52" selection-end-line="321" selection-end-column="52" />
-          <folding>
-            <element signature="n#style#0;n#input#3;n#div#0;n#td#1;n#tr#1;n#thead#0;n#table#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1466448528487" expanded="true" signature="215:233" ph="SELECT descr... pagam" />
-            <marker date="1466448528487" expanded="true" signature="215:241" ph="SELECT descr... ck_pagam" />
-            <marker date="1466448528487" expanded="true" signature="436:463" ph="SELECT aliqu... ck_iva" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1114,7 +1127,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1122,10 +1134,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1003">
           <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
-          <folding>
-            <marker date="1466433010542" expanded="true" signature="216:223" ph="SELECT doc_f... doc_fatt" />
-            <marker date="1466433010542" expanded="true" signature="216:392" ph="SELECT stamp... stampa_fattura" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1133,12 +1141,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="587" column="156" selection-start-line="587" selection-start-column="156" selection-end-line="587" selection-end-column="156" />
-          <folding>
-            <element signature="n#style#0;n#input#3;n#div#0;n#td#1;n#tr#1;n#thead#0;n#table#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1466448528487" expanded="true" signature="215:233" ph="SELECT descr... pagam" />
-            <marker date="1466448528487" expanded="true" signature="215:241" ph="SELECT descr... ck_pagam" />
-            <marker date="1466448528487" expanded="true" signature="436:463" ph="SELECT aliqu... ck_iva" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1146,11 +1148,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="587" column="156" selection-start-line="587" selection-start-column="16" selection-end-line="587" selection-end-column="156" />
-          <folding>
-            <element signature="n#style#0;n#input#3;n#div#0;n#td#1;n#tr#1;n#thead#0;n#table#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1466448528639" expanded="true" signature="215:241" ph="SELECT descr... ck_pagam" />
-            <marker date="1466448528639" expanded="true" signature="436:463" ph="SELECT aliqu... ck_iva" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1158,7 +1155,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1166,7 +1162,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1174,7 +1169,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="46" selection-start-line="0" selection-start-column="46" selection-end-line="0" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1187,24 +1181,23 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/8bd68956/196bd43d-5ada-4cd3-92cc-085293f786a1/gestionale_db.ck_mezzo">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gen_documenti/preventivo.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
+        <state relative-caret-position="4267">
           <caret line="251" column="0" selection-start-line="251" selection-start-column="0" selection-end-line="251" selection-end-column="33" />
           <folding>
-            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" expanded="false" />
             <marker date="1466448528547" expanded="true" signature="215:241" ph="SELECT descr... ck_pagam" />
             <marker date="1466448528547" expanded="true" signature="436:463" ph="SELECT aliqu... ck_iva" />
           </folding>
@@ -1213,7 +1206,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gen_documenti/postdatas/fatt_prev.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
+        <state relative-caret-position="969">
           <caret line="62" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="71" selection-end-column="1" />
           <folding>
             <element signature="e#6#89#0#PHP" expanded="true" />
@@ -1225,43 +1218,25 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/8bd68956/196bd43d-5ada-4cd3-92cc-085293f786a1/gestionale_db.stampa_ddt">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gen_documenti/ddt.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="311" column="71" selection-start-line="311" selection-start-column="71" selection-end-line="311" selection-end-column="71" />
+        <state relative-caret-position="17">
+          <caret line="447" column="24" selection-start-line="447" selection-start-column="24" selection-end-line="447" selection-end-column="24" />
           <folding>
-            <element signature="n#script#1;n#head#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#input#0;n#p#1;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#p#1;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#0;n#tr#6;n#tbody#0;n#table#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1466451202923" expanded="true" signature="351:373" ph="SELECT * FRO... ck_mezzo" />
-            <marker date="1466451202923" expanded="true" signature="9633:9953" ph="..." />
-            <marker date="1466451202923" expanded="true" signature="9662:9781" ph="..." />
-            <marker date="1466451202923" expanded="true" signature="9826:9946" ph="..." />
-            <marker date="1466451202923" expanded="true" signature="9958:10372" ph="..." />
-            <marker date="1466451202923" expanded="true" signature="9963:10267" ph="..." />
-            <marker date="1466451202923" expanded="true" signature="10272:10324" ph="..." />
-            <marker date="1466451202923" expanded="true" signature="10329:10366" ph="..." />
-            <marker date="1466451202923" expanded="true" signature="10377:10518" ph="..." />
-            <marker date="1466451202923" expanded="true" signature="10548:10798" ph="..." />
-            <marker date="1466451202923" expanded="true" signature="10553:10722" ph="..." />
-            <marker date="1466451202923" expanded="true" signature="10841:11204" ph="..." />
-            <marker date="1466451202923" expanded="true" signature="11270:11487" ph="..." />
-            <marker date="1466451202923" expanded="true" signature="11287:11481" ph="..." />
-            <marker date="1466451202923" expanded="true" signature="11550:11569" ph="..." />
+            <marker date="1466452441219" expanded="true" signature="351:373" ph="SELECT * FRO... ck_mezzo" />
+            <marker date="1466452441219" expanded="true" signature="11585:11604" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1279,7 +1254,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gen_documenti/postdatas/ddt.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
+        <state relative-caret-position="510">
           <caret line="35" column="39" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="39" />
           <folding>
             <element signature="e#6#89#0#PHP" expanded="true" />
@@ -1291,15 +1266,15 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/8bd68956/196bd43d-5ada-4cd3-92cc-085293f786a1/gestionale_db.stampa_fattura">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="36" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
