@@ -175,7 +175,7 @@ if (mysqli_query($conndb, $sql_f)) {
 
 // creo tabella db fatture
 $sql_fdb = "CREATE TABLE stampa_fattura (
-id INT UNSIGNED NOT NULL,
+id INT UNSIGNED PRIMARY KEY NOT NULL,
 data_doc DATE NOT NULL,
 pagamento VARCHAR(200) NOT NULL,
 cliente VARCHAR(200) NOT NULL,
@@ -207,7 +207,7 @@ if (mysqli_query($conndb, $sql_fdb)) {
 
 // creo tabella db ddt
 $sql_ddb = "CREATE TABLE stampa_ddt (
-id INT UNSIGNED NOT NULL,
+id INT UNSIGNED PRIMARY KEY NOT NULL,
 data_doc DATE NOT NULL,
 mezzo VARCHAR(200) NOT NULL,
 cliente VARCHAR(200) NOT NULL,
@@ -238,7 +238,7 @@ if (mysqli_query($conndb, $sql_ddb)) {
 
 // creo tabella db preventivo
 $sql_pdb = "CREATE TABLE stampa_preventivo (
-id INT UNSIGNED NOT NULL,
+id INT UNSIGNED PRIMARY KEY NOT NULL,
 data_doc DATE NOT NULL,
 pagamento VARCHAR(200) NOT NULL,
 cliente VARCHAR(200) NOT NULL,
@@ -267,7 +267,7 @@ if (mysqli_query($conndb, $sql_pdb)) {
 
 // creo tabella db ndc
 $sql_ndb = "CREATE TABLE stampa_ndc (
-id INT UNSIGNED NOT NULL,
+id INT UNSIGNED PRIMARY KEY NOT NULL,
 data_doc DATE NOT NULL,
 pagamento VARCHAR(200) NOT NULL,
 cliente VARCHAR(200) NOT NULL,
