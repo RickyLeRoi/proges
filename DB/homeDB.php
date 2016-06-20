@@ -75,10 +75,10 @@ include_once("../template/parrot/navbar.php") ?>
     <!-- Tipo di codifica dei dati -->
     <form class="form-horizontal" enctype="multipart/form-data" action="file.php" method="POST">
         <div class="form-group">
-            <label class="col-sm-2 control-label">File backup</label>
+            <label class="col-sm-2 control-label">Invia backup</label>
             <div class="col-sm-10">
                 <input type="hidden" name="MAX_FILE_SIZE" value="30000"/>
-                Invia questo file: <input class="btn btn-default" id="bckp" name="bckp" type="file"/>
+                <input class="btn btn-default" id="bckp" name="bckp" type="file"/>
                 <input class="btn btn-default" type="submit" value="Invia">
             </div>
         </div>

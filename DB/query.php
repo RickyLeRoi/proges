@@ -7,7 +7,7 @@ include_once("config.php");
 $query = $_POST["query"];
 
 // negativo (dal PHP 5.1)
-$elem = explode('/*iugiuseppelucidu*/', $query);
+$elem = explode('\n', $query);
 
 for ($c = 0; $c < count($elem); $c++) {
     //echo $elem[$c]."<br/>";
