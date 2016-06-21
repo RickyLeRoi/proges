@@ -1,21 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="262bcaf4-44d1-46db-b05b-0150860b8c78" name="Default" comment="MINCHIA PUSHONE!&#10;sistemata la chiamata fallita per i fornitori.&#10;corretti i get_*.php&#10;corrette le pagine di elenco dei documenti&#10;">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/DB/backup/gestionale_db-20-06-2016_22.26.15.sql" afterPath="$PROJECT_DIR$/DB/backup/gestionale_db-21-06-2016_23.30.20.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+    <list default="true" id="262bcaf4-44d1-46db-b05b-0150860b8c78" name="Default" comment="MINCHIA PUSHONE!&#10;#sistemata la chiamata fallita per i fornitori.&#10;#corretti i get_*.php&#10;#corrette le pagine di elenco dei documenti&#10;#corrette le tabelle con i totali in FLOAT(10,2)&#10;#aggiunto backup aggiornato del DB&#10;#buh fatto qualcos altro ma non ricordo&#10;&#10;AL MOMENTO FUNZIONA TUTTO!">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DB/creatabelle.php" afterPath="$PROJECT_DIR$/DB/creatabelle.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DB/data.php" afterPath="$PROJECT_DIR$/DB/data.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ddt.php" afterPath="$PROJECT_DIR$/ddt.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fatture.php" afterPath="$PROJECT_DIR$/fatture.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/function/agg_fornitore.php" afterPath="$PROJECT_DIR$/function/agg_fornitore.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/json/get_ddt.php" afterPath="$PROJECT_DIR$/json/get_ddt.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/json/get_fatture.php" afterPath="$PROJECT_DIR$/json/get_fatture.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/json/get_ndc.php" afterPath="$PROJECT_DIR$/json/get_ndc.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/json/get_preventivi.php" afterPath="$PROJECT_DIR$/json/get_preventivi.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ndc.php" afterPath="$PROJECT_DIR$/ndc.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/preventivi.php" afterPath="$PROJECT_DIR$/preventivi.php" />
     </list>
     <ignored path="proges.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -407,7 +394,7 @@
       <workItem from="1466454398760" duration="4305000" />
       <workItem from="1466498663965" duration="598000" />
       <workItem from="1466507841766" duration="10385000" />
-      <workItem from="1466533222539" duration="9185000" />
+      <workItem from="1466533222539" duration="9299000" />
     </task>
     <task id="LOCAL-00004" summary="JSON ordinati, funzione ridotta, lista clienti e lista fornitori non visualizzano la navbar di scorrimento se non ci sono record in più pagine.">
       <created>1464283951639</created>
@@ -570,11 +557,18 @@
       <option name="project" value="LOCAL" />
       <updated>1466526565058</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="MINCHIA PUSHONE!&#10;#sistemata la chiamata fallita per i fornitori.&#10;#corretti i get_*.php&#10;#corrette le pagine di elenco dei documenti&#10;#corrette le tabelle con i totali in FLOAT(10,2)&#10;#aggiunto backup aggiornato del DB&#10;#buh fatto qualcos altro ma non ricordo&#10;&#10;AL MOMENTO FUNZIONA TUTTO!">
+      <created>1466544985428</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1466544985428</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="210891000" />
+    <option name="totallyTimeSpent" value="211005000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -593,6 +587,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.49356222" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32736155" sideWeight="0.5310136" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14114584" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32713348" sideWeight="0.4689864" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -651,7 +646,8 @@
     <MESSAGE value="risolto problema sessione quando manca il DB, migliorato il dump" />
     <MESSAGE value="risolto problema sessione quando manca il DB, migliorato il dump e sistemate le credenziali" />
     <MESSAGE value="Bordello con linux, pardon" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bordello con linux, pardon" />
+    <MESSAGE value="MINCHIA PUSHONE!&#10;#sistemata la chiamata fallita per i fornitori.&#10;#corretti i get_*.php&#10;#corrette le pagine di elenco dei documenti&#10;#corrette le tabelle con i totali in FLOAT(10,2)&#10;#aggiunto backup aggiornato del DB&#10;#buh fatto qualcos altro ma non ricordo&#10;&#10;AL MOMENTO FUNZIONA TUTTO!" />
+    <option name="LAST_COMMIT_MESSAGE" value="MINCHIA PUSHONE!&#10;#sistemata la chiamata fallita per i fornitori.&#10;#corretti i get_*.php&#10;#corrette le pagine di elenco dei documenti&#10;#corrette le tabelle con i totali in FLOAT(10,2)&#10;#aggiunto backup aggiornato del DB&#10;#buh fatto qualcos altro ma non ricordo&#10;&#10;AL MOMENTO FUNZIONA TUTTO!" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="UPDATE_GROUP_BY_PACKAGES" value="true" />
   </component>
@@ -797,6 +793,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -838,9 +835,9 @@
         <state relative-caret-position="330">
           <caret line="93" column="38" selection-start-line="93" selection-start-column="38" selection-end-line="93" selection-end-column="38" />
           <folding>
-            <marker date="1466533769293" expanded="true" signature="1799:2165" ph="INSERT INTO fornitori... " />
-            <marker date="1466533769293" expanded="true" signature="2308:2403" ph="..." />
-            <marker date="1466533769293" expanded="true" signature="2499:2584" ph="..." />
+            <marker date="1466544980077" expanded="true" signature="1799:2165" ph="INSERT INTO fornitori... " />
+            <marker date="1466544980077" expanded="true" signature="2308:2403" ph="..." />
+            <marker date="1466544980077" expanded="true" signature="2499:2584" ph="..." />
           </folding>
         </state>
       </provider>
@@ -959,9 +956,9 @@
         <state relative-caret-position="489">
           <caret line="109" column="27" selection-start-line="109" selection-start-column="27" selection-end-line="109" selection-end-column="27" />
           <folding>
-            <marker date="1466543129271" expanded="true" signature="45:223" ph="SELECT doc_n... doc_ndc" />
-            <marker date="1466543129271" expanded="true" signature="45:281" ph="SELECT stamp... stampa_ndc" />
-            <marker date="1466543129271" expanded="true" signature="680:721" ph="SELECT id FR... stampa_ndc" />
+            <marker date="1466544979996" expanded="true" signature="45:223" ph="SELECT doc_n... doc_ndc" />
+            <marker date="1466544979996" expanded="true" signature="45:281" ph="SELECT stamp... stampa_ndc" />
+            <marker date="1466544979996" expanded="true" signature="680:721" ph="SELECT id FR... stampa_ndc" />
           </folding>
         </state>
       </provider>
@@ -972,8 +969,8 @@
           <caret line="167" column="7" selection-start-line="167" selection-start-column="7" selection-end-line="167" selection-end-column="7" />
           <folding>
             <element signature="n#style#0;n#span#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1466543516746" expanded="true" signature="49:313" ph="SELECT stamp... stampa_preventivo" />
-            <marker date="1466543516746" expanded="true" signature="712:760" ph="SELECT id FR... stampa_preventivo" />
+            <marker date="1466544980117" expanded="true" signature="49:313" ph="SELECT stamp... stampa_preventivo" />
+            <marker date="1466544980117" expanded="true" signature="712:760" ph="SELECT id FR... stampa_preventivo" />
           </folding>
         </state>
       </provider>
