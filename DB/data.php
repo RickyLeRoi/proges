@@ -1,6 +1,6 @@
 <?php
 $host = "localhost";
 $userDB = "root";
-$pswdDB = "";
+$pswdDB = "mysql";
 $database = "gestionale_db";
 ?>

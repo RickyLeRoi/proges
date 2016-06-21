@@ -1,5 +1,5 @@
 DROP TABLE articoli;
-
+/**/
 CREATE TABLE `articoli` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `cod_int` varchar(6) NOT NULL,
@@ -11,44 +11,49 @@ CREATE TABLE `articoli` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `cod_int` (`cod_int`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
-
+/**/
 INSERT INTO articoli VALUES("1","001A1","Articolo ","200cm","52656264644","30","6");
+/**/
 INSERT INTO articoli VALUES("2","002A2","piselli surgelati Findus","5 kg","3215642361523","28","sono duri");
+/**/
 INSERT INTO articoli VALUES("3","003A3","piselli non surgelati","enormi","5453215632556","426","piacciono a Daniele");
+/**/
 INSERT INTO articoli VALUES("4","004A4","etichette sardine 10000pz","120x30 mm","4545616121654","2","fino a 10k pezzi");
+/**/
 INSERT INTO articoli VALUES("5","005A5","etichette sardine 20000pz","120x30 mm","4545616121654","2","fino a 20k pezzi");
-
-
+/**/
 DROP TABLE ck_causale;
-
+/**/
 CREATE TABLE `ck_causale` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `descr` varchar(200) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `descr` (`descr`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
-
+/**/
 INSERT INTO ck_causale VALUES("3","campionatura");
+/**/
 INSERT INTO ck_causale VALUES("1","conto vendita");
+/**/
 INSERT INTO ck_causale VALUES("2","reso");
-
-
+/**/
 DROP TABLE ck_imballo;
-
+/**/
 CREATE TABLE `ck_imballo` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `descr` varchar(200) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `descr` (`descr`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
-
+/**/
 INSERT INTO ck_imballo VALUES("2","articoli in pedana");
+/**/
 INSERT INTO ck_imballo VALUES("3","aspetto proprio");
+/**/
 INSERT INTO ck_imballo VALUES("1","pacchi o scatole");
-
-
+/**/
 DROP TABLE ck_iva;
-
+/**/
 CREATE TABLE `ck_iva` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `aliquota` int(11) NOT NULL,
@@ -56,15 +61,17 @@ CREATE TABLE `ck_iva` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `aliquota` (`aliquota`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
-
+/**/
 INSERT INTO ck_iva VALUES("1","22","aliquota ordinaria");
+/**/
 INSERT INTO ck_iva VALUES("2","10","aliquota ridotta");
+/**/
 INSERT INTO ck_iva VALUES("3","4","aliquota minima");
+/**/
 INSERT INTO ck_iva VALUES("4","0","dichiarazione intenti");
-
-
+/**/
 DROP TABLE ck_mezzo;
-
+/**/
 CREATE TABLE `ck_mezzo` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `tipo` varchar(20) NOT NULL,
@@ -72,33 +79,40 @@ CREATE TABLE `ck_mezzo` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `tipo` (`tipo`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
-
+/**/
 INSERT INTO ck_mezzo VALUES("1","mittente","carico del mittente");
+/**/
 INSERT INTO ck_mezzo VALUES("2","destinatario","carico del destinatario");
+/**/
 INSERT INTO ck_mezzo VALUES("3","vettore","corriere");
+/**/
 INSERT INTO ck_mezzo VALUES("4","corriere italia","SDA, bagheria, cazzucazzu");
-
-
+/**/
 DROP TABLE ck_pagam;
-
+/**/
 CREATE TABLE `ck_pagam` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `descr` varchar(200) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `descr` (`descr`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
-
+/**/
 INSERT INTO ck_pagam VALUES("2","30 giorni data fattura");
+/**/
 INSERT INTO ck_pagam VALUES("5","30 giorni fine mese");
+/**/
 INSERT INTO ck_pagam VALUES("3","60 giorni data fattura");
+/**/
 INSERT INTO ck_pagam VALUES("6","60 giorni fine mese");
+/**/
 INSERT INTO ck_pagam VALUES("4","90 giorni data fattura");
+/**/
 INSERT INTO ck_pagam VALUES("7","90 giorni fine mese");
+/**/
 INSERT INTO ck_pagam VALUES("1","rimessa diretta");
-
-
+/**/
 DROP TABLE ck_spese;
-
+/**/
 CREATE TABLE `ck_spese` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `descr` varchar(200) NOT NULL,
@@ -106,17 +120,21 @@ CREATE TABLE `ck_spese` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `descr` (`descr`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
-
+/**/
 INSERT INTO ck_spese VALUES("1","impianto stampa","10");
+/**/
 INSERT INTO ck_spese VALUES("2","impianto stampa a caldo","15");
+/**/
 INSERT INTO ck_spese VALUES("3","fustella","20");
+/**/
 INSERT INTO ck_spese VALUES("4","telaio serigrafico","25");
+/**/
 INSERT INTO ck_spese VALUES("5","spedizione","5");
+/**/
 INSERT INTO ck_spese VALUES("6","contributo spedizioni","10");
-
-
+/**/
 DROP TABLE clienti;
-
+/**/
 CREATE TABLE `clienti` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `nomeC` varchar(50) NOT NULL,
@@ -150,14 +168,15 @@ CREATE TABLE `clienti` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `codC` (`codC`,`PIVAC`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
-
+/**/
 INSERT INTO clienti VALUES("1","Daniele","Irsuti","001C1","via daniele","Danielopoli","90100","PA","091234567","091234567","Italia","daniele@email.it","","","","0","","","","","","","0","","","Letto","Danielo","","2016-06-06 11:40:36");
+/**/
 INSERT INTO clienti VALUES("2","Riccardo","Giordano","002C2","via riccardo","Riccardopoli","90100","PA","091456789","091456789","Italia","riccardo@email.it","riccardogiordano.space","","","0","","","","","","","0","GRDRCR00A00G273A","IT3A89151651615615615615566","UniCredit Filiale Ficarazzi","Riccardo","","2016-06-06 11:40:36");
+/**/
 INSERT INTO clienti VALUES("3","nome","cognome","003C3","indirizzo","citta\'","12345","PR","091408509","12315151","stato","email@email.dom","urldimunch.it","indirizzo","citta\'","12345","PR","12315151","2147483647","stato","email@email.dom","urldimunch.it","2147483647","fefrgreg45654tgr","235235235345435435","banca","descrizione","note","2016-06-06 11:40:36");
-
-
+/**/
 DROP TABLE fornitori;
-
+/**/
 CREATE TABLE `fornitori` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `nomeF` varchar(50) NOT NULL,
@@ -182,12 +201,11 @@ CREATE TABLE `fornitori` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `codF` (`codF`,`PIVAF`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
-
+/**/
 INSERT INTO fornitori VALUES("1","Fornitore","Di Prova","001F1","via del fornitore","Sua Città","12345","PR","+39091123456","+39091123456","Italia","suaemail@dom.it","url.web.dominio","2147483647","CFFCCF55C155C151","","Banca sua - Palermo","descrizione","","2016-06-06 11:41:43");
-
-
+/**/
 DROP TABLE settings;
-
+/**/
 CREATE TABLE `settings` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `max_fatt` int(11) NOT NULL DEFAULT '20',
@@ -199,12 +217,11 @@ CREATE TABLE `settings` (
   `id_user` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
-
+/**/
 INSERT INTO settings VALUES("1","20","10","20","20","30","30","1");
-
-
+/**/
 DROP TABLE stampa_ddt;
-
+/**/
 CREATE TABLE `stampa_ddt` (
   `id` int(10) unsigned NOT NULL,
   `data_doc` date NOT NULL,
@@ -228,12 +245,11 @@ CREATE TABLE `stampa_ddt` (
   `note` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-INSERT INTO stampa_ddt VALUES("1","0000-00-00","destinatario","Riccardo Giordano","","GRDRCR00A00G273A","via riccardo","Riccardopoli","PA","90010","conto vendita","aspetto proprio","2","5","0000-00-00","125||100","etichette sardine 10000pz||etichette sardine 20000pz","120x30 mm||120x30 mm","","");
-
-
+/**/
+INSERT INTO stampa_ddt VALUES("1","2016-06-21","destinatario","Riccardo Giordano","","GRDRCR00A00G273A","via riccardo","Riccardopoli","PA","90010","conto vendita","aspetto proprio","2","5","2016-06-30","125||100","etichette sardine 10000pz||etichette sardine 20000pz","120x30 mm||120x30 mm","","");
+/**/
 DROP TABLE stampa_fattura;
-
+/**/
 CREATE TABLE `stampa_fattura` (
   `id` int(10) unsigned NOT NULL,
   `data_doc` date NOT NULL,
@@ -250,20 +266,19 @@ CREATE TABLE `stampa_fattura` (
   `arr_misure` longtext,
   `arr_imp_uni` longtext NOT NULL,
   `arr_importo` longtext NOT NULL,
-  `tot_parziale` int(11) NOT NULL,
+  `tot_parziale` float(10,2) NOT NULL,
   `iva` int(11) NOT NULL,
-  `tot_dovuto` int(11) NOT NULL,
+  `tot_dovuto` float(10,2) NOT NULL,
   `esente_num` int(11) DEFAULT NULL,
   `esente_dal` date DEFAULT NULL,
   `esente_al` date DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-INSERT INTO stampa_fattura VALUES("1","0000-00-00","30 giorni data fattura","Riccardo Giordano","","GRDRCR00A00G273A","via riccardo","Riccardopoli","PA","90010","125||100","etichette sardine 10000pz||etichette sardine 20000pz","120x30 mm||120x30 mm","2||2","250||200","450","10","495","0","0000-00-00","0000-00-00");
-
-
+/**/
+INSERT INTO stampa_fattura VALUES("1","2016-06-21","30 giorni data fattura","Riccardo Giordano","","GRDRCR00A00G273A","via riccardo","Riccardopoli","PA","90010","125||100","etichette sardine 10000pz||etichette sardine 20000pz","120x30 mm||120x30 mm","2||2","250||200","450.00","22","549.00","0","0000-00-00","0000-00-00");
+/**/
 DROP TABLE stampa_ndc;
-
+/**/
 CREATE TABLE `stampa_ndc` (
   `id` int(10) unsigned NOT NULL,
   `data_doc` date NOT NULL,
@@ -280,20 +295,19 @@ CREATE TABLE `stampa_ndc` (
   `arr_misure` longtext,
   `arr_imp_uni` longtext NOT NULL,
   `arr_importo` longtext NOT NULL,
-  `tot_parziale` int(11) NOT NULL,
+  `tot_parziale` float(10,2) NOT NULL,
   `iva` int(11) NOT NULL,
-  `tot_dovuto` int(11) NOT NULL,
+  `tot_dovuto` float(10,2) NOT NULL,
   `esente_num` int(11) DEFAULT NULL,
   `esente_dal` date DEFAULT NULL,
   `esente_al` date DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-INSERT INTO stampa_ndc VALUES("1","0000-00-00","30 giorni data fattura","Riccardo Giordano","","GRDRCR00A00G273A","via riccardo","Riccardopoli","PA","90010","125||100","etichette sardine 10000pz||etichette sardine 20000pz","120x30 mm||120x30 mm","2||2","250||200","450","10","495","0","0000-00-00","0000-00-00");
-
-
+/**/
+INSERT INTO stampa_ndc VALUES("1","2016-06-21","30 giorni data fattura","Riccardo Giordano","","GRDRCR00A00G273A","via riccardo","Riccardopoli","PA","90010","125||100","etichette sardine 10000pz||etichette sardine 20000pz","120x30 mm||120x30 mm","2||2","250||200","450.00","0","450.00","258","2015-01-13","2017-01-17");
+/**/
 DROP TABLE stampa_preventivo;
-
+/**/
 CREATE TABLE `stampa_preventivo` (
   `id` int(10) unsigned NOT NULL,
   `data_doc` date NOT NULL,
@@ -310,17 +324,16 @@ CREATE TABLE `stampa_preventivo` (
   `arr_misure` longtext,
   `arr_imp_uni` longtext NOT NULL,
   `arr_importo` longtext NOT NULL,
-  `tot_parziale` int(11) NOT NULL,
+  `tot_parziale` float(10,2) NOT NULL,
   `iva` int(11) NOT NULL,
-  `tot_dovuto` int(11) NOT NULL,
+  `tot_dovuto` float(10,2) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-INSERT INTO stampa_preventivo VALUES("1","0000-00-00","30 giorni data fattura","Riccardo Giordano","","GRDRCR00A00G273A","via riccardo","Riccardopoli","PA","90010","125||100","etichette sardine 10000pz||etichette sardine 20000pz","120x30 mm||120x30 mm","2||2","250||200","450","10","495");
-
-
+/**/
+INSERT INTO stampa_preventivo VALUES("1","2016-06-20","30 giorni data fattura","Riccardo Giordano","","GRDRCR00A00G273A","via riccardo","Riccardopoli","PA","90010","125||100","etichette sardine 10000pz||etichette sardine 20000pz","120x30 mm||120x30 mm","2||2","250||200","450.00","10","495.00");
+/**/
 DROP TABLE users;
-
+/**/
 CREATE TABLE `users` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `tipoLOG` varchar(10) NOT NULL,
@@ -330,9 +343,10 @@ CREATE TABLE `users` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `userLOG` (`userLOG`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
-
+/**/
 INSERT INTO users VALUES("1","Tecnico","Riccardo","diplo","2016-06-06 11:37:37");
+/**/
 INSERT INTO users VALUES("2","Operatore","Mattea","demo","2016-06-06 11:37:46");
+/**/
 INSERT INTO users VALUES("3","Tecnico","Daniele","diplo","2016-06-06 11:37:54");
-
-
+/**/

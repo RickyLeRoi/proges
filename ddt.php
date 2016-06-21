@@ -1,18 +1,16 @@
 <?php
-include_once("function/session.php");
 include("DB/config.php");
 
-$query = "SELECT doc_ddt.*, doc_ddt_num.*, clienti.nomeC, clienti.cognomeC, clienti.codC
-                FROM doc_ddt
-                  INNER JOIN doc_ddt_num
-                    ON doc_ddt.id=doc_ddt_num.id
-                  LEFT JOIN clienti
-                    ON doc_ddt_num.dest=clienti.id";
+$query = "SELECT stampa_ddt.*, clienti.nomeC, clienti.cognomeC, clienti.codC
+                FROM stampa_ddt
+                LEFT JOIN clienti
+                    ON stampa_ddt.cf=clienti.CFC,
+                    AND stampa_ddt.Piva=clienti.PIVAC";
 
 /* check connection */
 if ($result = $conndb->query($query)) {
     if ($debug === true) printf("<!-- Select returned %d rows.\n -->", $result->num_rows);
-    $oggett_ddt = 1;
+    $oggett_fatt = 1;
     if ($result->num_rows === 0) {
         $norows = "Non è presente alcun record";
     }
@@ -20,31 +18,11 @@ if ($result = $conndb->query($query)) {
 }
 if ($conndb->connect_errno) {
     printf("Connect failed: %s\n", $conndb->connect_error);
-    $oggett_ddt = 0;
-    exit();
+    $oggett_fatt = 0;
 }
 
-$queryb = "SELECT num
-                FROM doc_ddt_num";
-
-/* check connection */
-if ($resultb = $conndb->query($queryb)) {
-    if ($debug === true) printf("<!-- Select returned %d rows.\n -->", $resultb->num_rows);
-    $oggetto_ddt = 1;
-    if ($resultb->num_rows === 0) {
-        $doc_ddt_num = 1;
-    }
-    if ($resultb->num_rows > 0) {
-        $last_row = $resultb->fetch_object();
-        $doc_ddt_num = $last_row->num + 1;
-    }
-
-
-}
-if ($conndb->connect_errno) {
-    printf("Connect failed: %s\n", $conndb->connect_error);
-    $numerazione_fatt = "Errore";
-}
+$queryb = "SELECT id
+                FROM stampa_ddt";
 
 ?>
 
@@ -93,7 +71,6 @@ if ($conndb->connect_errno) {
     <div class="container">
         <div class="row">
             <form class="form-horizontal" method="post" action="gen_documenti/ddt.php">
-                <input type="hidden" value="<?php echo $numerazione_ddt ?>">
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
                         <button type="submit" class="btn btn-default">Genera</button>
@@ -128,8 +105,9 @@ if ($conndb->connect_errno) {
             <th>DDT n°</th>
             <th>Codice Cliente</th>
             <th>Cliente</th>
-            <th>Note</th>
             <th>Data</th>
+            <th>Ritiro</th>
+            <th>Note</th>
         </tr>
         </thead>
         <tbody id="records">
@@ -138,6 +116,7 @@ if ($conndb->connect_errno) {
 
     </table>
 </div>
+
 <?php $result->close(); ?>
 <?php include_once("template/parrot/foot.php") ?>
 
@@ -162,8 +141,9 @@ if ($conndb->connect_errno) {
                     "<td>" + records[x].data.num + "</td>" +
                     "<td>" + records[x].data.codC + "</td>" +
                     "<td>" + records[x].data.nomeC + " " + records[x].data.cognomeC + "</td>" +
-                    "<td>" + records[x].data.note + "</td>" +
-                    "<td>" + records[x].data.reg_date + "</td>";
+                    "<td>" + records[x].data.data_doc + "</td>" +
+                    "<td>" + records[x].data.data_rit + "</td>" +
+                    "<td>" + records[x].data.note + "</td>";
                 $("#records").append("<tr>" + record + "</tr>");
             }
 
@@ -183,8 +163,6 @@ if ($conndb->connect_errno) {
         });
     }
 </script>
-
-    <?php include_once("template/parrot/foot.php") ?>
 
 </body>
 </html>

@@ -1,43 +1,87 @@
 <?php
     include("./DB/config.php");
 
-    $query = "SELECT doc_prev.*, doc_prev_num.*, clienti.nomeC, clienti.cognomeC, clienti.codC
-                FROM doc_prev
-                  INNER JOIN doc_prev_num
-                    ON doc_prev.id=doc_prev_num.id
-                  LEFT JOIN clienti
-                    ON doc_prev_num.dest=clienti.id";
+$query = "SELECT stampa_preventivo.*, clienti.nomeC, clienti.cognomeC, clienti.codC
+                FROM stampa_preventivo
+                LEFT JOIN clienti
+                    ON stampa_preventivo.cf=clienti.CFC,
+                    AND stampa_preventivo.Piva=clienti.PIVAC";
 
-    /* check connection */
-    if ($result = $conndb->query($query)) {
-        if ($debug === true) printf("<!-- Select returned %d rows.\n -->", $result->num_rows);
-        $oggetto_prev = 1;
-        if ($result->num_rows === 0) {
-            $norows = "Non è presente alcun record";
-        }
-
-    }
-    if ($conndb->connect_errno) {
-        printf("Connect failed: %s\n", $conndb->connect_error);
-        $oggetto_prev = 0;
-        exit();
+/* check connection */
+if ($result = $conndb->query($query)) {
+    if ($debug === true) printf("<!-- Select returned %d rows.\n -->", $result->num_rows);
+    $oggett_fatt = 1;
+    if ($result->num_rows === 0) {
+        $norows = "Non è presente alcun record";
     }
 
+}
+if ($conndb->connect_errno) {
+    printf("Connect failed: %s\n", $conndb->connect_error);
+    $oggett_fatt = 0;
+}
+
+$queryb = "SELECT id
+                FROM stampa_preventivo";
 
 ?>
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
     <!-- blu #071E3F arancione #EA640C -->
-	<meta charset="utf-8">
-	<title>Preventivi - Gestionale Provenzano</title>
-	<meta name="description" content="Gestionale per etichettificio Provenzano"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta charset="utf-8">
+    <title>Preventivi - Gestionale Provenzano</title>
+    <meta name="description" content="Gestionale per etichettificio Provenzano"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
     <?php include_once("template/parrot/style.php") // Carica gli stili del tema in uso ?>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <![endif]-->
+
     <?php include_once("function/session.php") ?>
 
+    <style>
+        .autocomplete-suggestions {
+            color: #000000
+        }
+
+        .autocomplete-suggestions {
+            border: 1px solid #999;
+            background: #FFF;
+            overflow: auto;
+        }
+
+        .autocomplete-suggestion {
+            padding: 2px 5px;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .autocomplete-selected {
+            background: #F0F0F0;
+        }
+
+        .autocomplete-suggestions strong {
+            font-weight: normal;
+            color: #3399FF;
+        }
+
+        .autocomplete-group {
+            padding: 2px 5px;
+        }
+
+        .autocomplete-group strong {
+            display: block;
+            border-bottom: 1px solid #000;
+        }
+    </style>
+
 </head>
+
 <body>
         <!-- #### Navbars #### -->
         <?php include_once("template/parrot/navbar.php") ?>
@@ -87,9 +131,9 @@
                     <th>Preventivo n°</th>
                     <th>Codice Cliente</th>
                     <th>Cliente</th>
-                    <th>Note</th>
                     <th>Data</th>
                     <th>Pagamento</th>
+                    <th>Totale</th>
                 </tr>
                 </thead>
                 <tbody id="records">
@@ -123,9 +167,9 @@
                             "<td>" + records[x].data.num + "</td>" +
                             "<td>" + records[x].data.codC + "</td>" +
                             "<td>" + records[x].data.nomeC + " " + records[x].data.cognomeC + "</td>" +
-                            "<td>" + records[x].data.note + "</td>" +
-                            "<td>" + records[x].data.reg_date + "</td>" +
-                            "<td>" + records[x].data.pagamDescr + "</td>";
+                            "<td>" + records[x].data.data_doc + "</td>" +
+                            "<td>" + records[x].data.pagamDescr + "</td>" +
+                            "<td>" + records[x].data.totale + " €</td>";
                         $("#records").append("<tr>" + record + "</tr>");
                     }
 
@@ -144,7 +188,7 @@
                     console.log(msg);
                 });
             }
-
         </script>
-	</body>
+
+</body>
 </html>

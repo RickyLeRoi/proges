@@ -11,9 +11,9 @@
        $noteF = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['noteF']));
        $indirizzoLF = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['indirizzoLF']));
        $cittaLF = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['cittaLF']));
-       $capLF = htmlspecialchars(($conndb,$_POST['capLF']));
-        $provLF = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['provLF']));
-        $telLF = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['telLF']));
+       $capLF = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['capLF']));
+       $provLF = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['provLF']));
+       $telLF = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['telLF']));
         $faxLF = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['faxLF']));
         $statoLF = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['statoLF']));
         $emailLF = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['emailLF']));
@@ -28,13 +28,13 @@ $sql_gen = "INSERT INTO fornitori (nomeF, cognomeF, codF, descrF, noteF, indiriz
 
 //controllo inserimento
 if ($conndb->query($sql_gen) === TRUE) {
-    $ok = "
+    $ck = "
           <div class=\"alert alert-success alert-dismissable\">
           Inserimento dati generali effettuato con <strong>successo.</strong>
           </div>
           ";
 } else {
-    $no = "
+    $ck = "
          <div class=\"alert alert-danger alert-dismissable\">
          Errore durante l'inserimento dati generali: $conndb->error;
          </div>
@@ -91,7 +91,7 @@ if ($conndb->query($sql_gen) === TRUE) {
         <?php include_once("./../template/parrot/navbar.php") ?>
 
     <div class="container">
-                <small><?php echo $ok; echo $no; ?></small>
+        <small><?php echo $ck; ?></small>
     </div>
 
         <div class="componant-section">

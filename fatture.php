@@ -1,13 +1,11 @@
 <?php
-include_once("function/session.php");
 include("DB/config.php");
 
-$query = "SELECT stampa_fatture.*, clienti.nomeC, clienti.cognomeC, clienti.codC
-                FROM doc_fatt
-                  INNER JOIN doc_fatt_num
-                    ON doc_fatt.id=doc_fatt_num.num
-                  LEFT JOIN clienti
-                    ON doc_fatt_num.dest=clienti.id";
+$query = "SELECT stampa_fattura.*, clienti.nomeC, clienti.cognomeC, clienti.codC
+                FROM stampa_fattura
+                LEFT JOIN clienti
+                    ON stampa_fattura.cf=clienti.CFC,
+                    AND stampa_fattura.Piva=clienti.PIVAC";
 
 /* check connection */
 if ($result = $conndb->query($query)) {
@@ -21,30 +19,10 @@ if ($result = $conndb->query($query)) {
 if ($conndb->connect_errno) {
     printf("Connect failed: %s\n", $conndb->connect_error);
     $oggett_fatt = 0;
-    exit();
 }
 
-$queryb = "SELECT num
-                FROM doc_fatt_num";
-
-/* check connection */
-if ($resultb = $conndb->query($queryb)) {
-    if ($debug === true) printf("<!-- Select returned %d rows.\n -->", $resultb->num_rows);
-    $oggetto_fatt = 1;
-    if ($resultb->num_rows === 0) {
-        $numerazione_fatt = 1;
-    }
-    if ($resultb->num_rows > 0) {
-        $last_row = $resultb->fetch_object();
-        $numerazione_fatt = $last_row->num + 1;
-    }
-
-
-}
-if ($conndb->connect_errno) {
-    printf("Connect failed: %s\n", $conndb->connect_error);
-    $numerazione_fatt = "Errore";
-}
+$queryb = "SELECT id
+                FROM stampa_fattura";
 
 ?>
 
@@ -93,7 +71,6 @@ if ($conndb->connect_errno) {
 <div class="container">
     <div class="row">
         <form class="form-horizontal" method="post" action="gen_documenti/fattura.php">
-            <input type="hidden" value="<?php echo $numerazione_fatt ?>">
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
                     <button type="submit" class="btn btn-default">Genera</button>
@@ -128,9 +105,9 @@ if ($conndb->connect_errno) {
             <th>Fattura n°</th>
             <th>Codice Cliente</th>
             <th>Cliente</th>
-            <th>Note</th>
             <th>Data</th>
             <th>Pagamento</th>
+            <th>Totale</th>
         </tr>
         </thead>
         <tbody id="records">
@@ -164,9 +141,9 @@ if ($conndb->connect_errno) {
                     "<td>" + records[x].data.num + "</td>" +
                     "<td>" + records[x].data.codC + "</td>" +
                     "<td>" + records[x].data.nomeC + " " + records[x].data.cognomeC + "</td>" +
-                    "<td>" + records[x].data.note + "</td>" +
-                    "<td>" + records[x].data.reg_date + "</td>" +
-                    "<td>" + records[x].data.pagamDescr + "</td>";
+                    "<td>" + records[x].data.data_doc + "</td>" +
+                    "<td>" + records[x].data.pagamDescr + "</td>" +
+                    "<td>" + records[x].data.totale + " €</td>";
                 $("#records").append("<tr>" + record + "</tr>");
             }
 
@@ -185,10 +162,7 @@ if ($conndb->connect_errno) {
             console.log(msg);
         });
     }
-
 </script>
-
-<?php include_once("template/parrot/foot.php") ?>
 
 </body>
 </html>

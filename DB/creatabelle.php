@@ -190,9 +190,9 @@ arr_beni LONGTEXT NOT NULL,
 arr_misure LONGTEXT NULL,
 arr_imp_uni LONGTEXT NOT NULL,
 arr_importo LONGTEXT NOT NULL,
-tot_parziale INT NOT NULL,
+tot_parziale FLOAT(10,2) NOT NULL,
 iva INT NOT NULL,
-tot_dovuto INT NOT NULL,
+tot_dovuto FLOAT(10,2) NOT NULL,
 esente_num INT NULL,
 esente_dal DATE DEFAULT NULL,
 esente_al DATE DEFAULT NULL
@@ -253,9 +253,9 @@ arr_beni LONGTEXT NOT NULL,
 arr_misure LONGTEXT NULL,
 arr_imp_uni LONGTEXT NOT NULL,
 arr_importo LONGTEXT NOT NULL,
-tot_parziale INT NOT NULL,
+tot_parziale FLOAT(10,2) NOT NULL,
 iva INT NOT NULL,
-tot_dovuto INT NOT NULL
+tot_dovuto FLOAT(10,2) NOT NULL
 ) DEFAULT CHARACTER SET utf8";
 
 if (mysqli_query($conndb, $sql_pdb)) {
@@ -282,9 +282,9 @@ arr_beni LONGTEXT NOT NULL,
 arr_misure LONGTEXT NULL,
 arr_imp_uni LONGTEXT NOT NULL,
 arr_importo LONGTEXT NOT NULL,
-tot_parziale INT NOT NULL,
+tot_parziale FLOAT(10,2) NOT NULL,
 iva INT NOT NULL,
-tot_dovuto INT NOT NULL,
+tot_dovuto FLOAT(10,2) NOT NULL,
 esente_num INT NULL,
 esente_dal DATE DEFAULT NULL,
 esente_al DATE DEFAULT NULL
