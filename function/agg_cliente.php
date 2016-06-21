@@ -5,33 +5,33 @@
    if($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // tipo, username e password da form
-        $nomeC = mysqli_real_escape_string($conndb,$_POST['nomeC']);
-        $cognomeC = mysqli_real_escape_string($conndb,$_POST['cognomeC']);
-        $codC = mysqli_real_escape_string($conndb,$_POST['codC']);
-        $descrC = mysqli_real_escape_string($conndb,$_POST['descrC']);
-        $noteC = mysqli_real_escape_string($conndb,$_POST['noteC']);
-        $indirizzoLC = mysqli_real_escape_string($conndb,$_POST['indirizzoLC']);
-        $cittaLC = mysqli_real_escape_string($conndb,$_POST['cittaLC']);
-        $capLC = mysqli_real_escape_string($conndb,$_POST['capLC']);
-        $provLC = mysqli_real_escape_string($conndb,$_POST['provLC']);
-        $telLC = mysqli_real_escape_string($conndb,$_POST['telLC']);
-        $faxLC = mysqli_real_escape_string($conndb,$_POST['faxLC']);
-        $statoLC = mysqli_real_escape_string($conndb,$_POST['statoLC']);
-        $emailLC = mysqli_real_escape_string($conndb,$_POST['emailLC']);
-        $urlLC = mysqli_real_escape_string($conndb,$_POST['urlLC']);
-        $indirizzoAC = mysqli_real_escape_string($conndb,$_POST['indirizzoAC']);
-        $cittaAC = mysqli_real_escape_string($conndb,$_POST['cittaAC']);
-        $capAC = mysqli_real_escape_string($conndb,$_POST['capAC']);
-        $provAC = mysqli_real_escape_string($conndb,$_POST['provAC']);
-        $telAC = mysqli_real_escape_string($conndb,$_POST['telAC']);
-        $cellAC = mysqli_real_escape_string($conndb,$_POST['cellAC']);
-        $statoAC = mysqli_real_escape_string($conndb,$_POST['statoAC']);
-        $emailAC = mysqli_real_escape_string($conndb,$_POST['emailAC']);
-        $urlAC = mysqli_real_escape_string($conndb,$_POST['urlAC']);
-        $PIVAC = mysqli_real_escape_string($conndb,$_POST['PIVAC']);
-        $CFC = mysqli_real_escape_string($conndb,$_POST['CFC']);
-        $IBANC = mysqli_real_escape_string($conndb,$_POST['IBANC']);
-        $bancaC = mysqli_real_escape_string($conndb,$_POST['bancaC']);
+       $nomeC = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['nomeC']));
+       $cognomeC = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['cognomeC']));
+       $codC = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['codC']));
+       $descrC = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['descrC']));
+       $noteC = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['noteC']));
+       $indirizzoLC = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['indirizzoLC']));
+       $cittaLC = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['cittaLC']));
+       $capLC = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['capLC']));
+       $provLC = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['provLC']));
+       $telLC = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['telLC']));
+       $faxLC = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['faxLC']));
+       $statoLC = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['statoLC']));
+       $emailLC = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['emailLC']));
+       $urlLC = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['urlLC']));
+       $indirizzoAC = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['indirizzoAC']));
+       $cittaAC = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['cittaAC']));
+       $capAC = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['capAC']));
+       $provAC = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['provAC']));
+       $telAC = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['telAC']));
+       $cellAC = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['cellAC']));
+       $statoAC = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['statoAC']));
+       $emailAC = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['emailAC']));
+       $urlAC = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['urlAC']));
+       $PIVAC = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['PIVAC']));
+       $CFC = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['CFC']));
+       $IBANC = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['IBANC']));
+       $bancaC = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['bancaC']));
 
       //inserisci dati in tabella clienti generale
 $sql_gen = "INSERT INTO clienti (nomeC, cognomeC, codC, descrC, noteC, indirizzoLC, cittaLC, capLC, provLC, telLC, faxLC, statoLC, emailLC, urlLC, indirizzoAC, cittaAC, capAC, provAC, telAC, cellAC, statoAC, emailAC, urlAC, PIVAC, CFC, IBANC, bancaC) VALUES ('$nomeC', '$cognomeC', '$codC', '$descrC', '$noteC', '$indirizzoLC', '$cittaLC', '$capLC', '$provLC', '$telLC', '$faxLC', '$statoLC', '$emailLC', '$urlLC', '$indirizzoAC', '$cittaAC', '$capAC', '$provAC', '$telAC', '$cellAC', '$statoAC', '$emailAC', '$urlAC', '$PIVAC', '$CFC', '$IBANC', '$bancaC')";

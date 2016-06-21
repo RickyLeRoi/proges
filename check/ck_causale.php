@@ -4,7 +4,7 @@ $ck = "";
    if($_SERVER["REQUEST_METHOD"] == "POST") {
        switch ($_POST['case']) {
            case "add":
-               $descr = mysqli_real_escape_string($conndb,$_POST['descr']);
+               $descr = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['descr']));
 
                $sql_ins = "INSERT INTO ck_causale (descr) VALUES ('$descr')";
 
@@ -24,8 +24,8 @@ $ck = "";
                } break;
 
            case "edit":
-               $id = mysqli_real_escape_string($conndb,$_POST['id']);
-               $descr = mysqli_real_escape_string($conndb,$_POST['descr']);
+               $id = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['id']));
+               $descr = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['descr']));
 
                $sql_edit = "UPDATE ck_causale SET descr='$descr' WHERE id='$id';";
 
@@ -46,7 +46,7 @@ $ck = "";
 
            case "del":
 
-               $id = mysqli_real_escape_string($conndb,$_POST['id']);
+               $id = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['id']));
 
                $sql_del = "DELETE FROM ck_causale WHERE id='$id'";
 

@@ -76,6 +76,28 @@ include_once("../template/parrot/navbar.php") ?>
         </div>
     </form>
 
+    <!--
+<form class="form-horizontal" enctype="multipart/form-data" action="file.php" method="POST">
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Invia backup</label>
+        <div class="col-sm-10">o scegli un file già esistente
+            <input type="hidden" name="MAX_FILE_SIZE" value="30000"/>
+            <select id="bckp2" name="bckp2">
+                <?php
+    /*          $dir = "backup/";
+                $files = scandir($dir);
+                for ($c=0; $c<count($files)-2; $c++) {
+                    $d = $c+2;
+                    echo "<option value=".$files[$d].">".$files[$d]."</option>";
+                }
+            */ ?>
+            </select>
+            <input class="btn btn-default" type="submit" value="Invia">
+        </div>
+    </div>
+</form>-->
+
+
     <form class="form-horizontal" action="dumpDB.php" method="POST">
         <div class="form-group">
             <label class="col-sm-2 control-label">Backup DB</label>

@@ -4,13 +4,13 @@ $ck = "";
    if($_SERVER["REQUEST_METHOD"] == "POST") {
        switch ($_POST['case']) {
            case "add":
-               $cod_int = mysqli_real_escape_string($conndb,$_POST['cod_int']);
-               $nome = mysqli_real_escape_string($conndb,$_POST['nome']);
-               $descr = mysqli_real_escape_string($conndb,$_POST['descr']);
-               $cod_barre = mysqli_real_escape_string($conndb,$_POST['cod_barre']);
-               $prezzo = mysqli_real_escape_string($conndb,$_POST['prezzo']);
-               $note = mysqli_real_escape_string($conndb,$_POST['note']);
-               $misura = mysqli_real_escape_string($conndb, $_POST['misura']);
+               $cod_int = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['cod_int']));
+               $nome = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['nome']));
+               $descr = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['descr']));
+               $cod_barre = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['cod_barre']));
+               $prezzo = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['prezzo']));
+               $note = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['note']));
+               $misura = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['misura']));
 
                $sql_ins = "INSERT INTO articoli (cod_int, descr, misura, cod_barre, prezzo, note) VALUES ('$cod_int', '$descr', '$misura', '$cod_barre', '$prezzo', '$note')";
 
@@ -30,13 +30,13 @@ $ck = "";
                } break;
 
            case "edit":
-                $id = mysqli_real_escape_string($conndb,$_POST['id']);
-                $cod_int = mysqli_real_escape_string($conndb,$_POST['cod_int']);
-                $descr = mysqli_real_escape_string($conndb,$_POST['descr']);
-                $cod_barre = mysqli_real_escape_string($conndb,$_POST['cod_barre']);
-                $prezzo = mysqli_real_escape_string($conndb,$_POST['prezzo']);
-                $note = mysqli_real_escape_string($conndb,$_POST['note']);
-               $misura = mysqli_real_escape_string($conndb, $_POST['misura']);
+               $id = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['id']));
+               $cod_int = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['cod_int']));
+               $descr = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['descr']));
+               $cod_barre = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['cod_barre']));
+               $prezzo = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['prezzo']));
+               $note = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['note']));
+               $misura = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['misura']));
 
                $sql_edit = "UPDATE articoli SET cod_int='$cod_int', descr='$descr', misura='$misura',cod_barre='$cod_barre', prezzo='$prezzo', note='$note' WHERE id='$id';";
 
@@ -57,7 +57,7 @@ $ck = "";
 
            case "del":
 
-               $id = mysqli_real_escape_string($conndb,$_POST['id']);
+               $id = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['id']));
 
                $sql_del = "DELETE FROM articoli WHERE id='$id'";
 

@@ -4,24 +4,24 @@
    if($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // tipo, username e password da form
-        $nomeF = mysqli_real_escape_string($conndb,$_POST['nomeF']);
-        $cognomeF = mysqli_real_escape_string($conndb,$_POST['cognomeF']);
-        $codF = mysqli_real_escape_string($conndb,$_POST['codF']);
-        $descrF = mysqli_real_escape_string($conndb,$_POST['descrF']);
-        $noteF = mysqli_real_escape_string($conndb,$_POST['noteF']);
-        $indirizzoLF = mysqli_real_escape_string($conndb,$_POST['indirizzoLF']);
-        $cittaLF = mysqli_real_escape_string($conndb,$_POST['cittaLF']);
-        $capLF = mysqli_real_escape_string($conndb,$_POST['capLF']);
-        $provLF = mysqli_real_escape_string($conndb,$_POST['provLF']);
-        $telLF = mysqli_real_escape_string($conndb,$_POST['telLF']);
-        $faxLF = mysqli_real_escape_string($conndb,$_POST['faxLF']);
-        $statoLF = mysqli_real_escape_string($conndb,$_POST['statoLF']);
-        $emailLF = mysqli_real_escape_string($conndb,$_POST['emailLF']);
-        $urlLF = mysqli_real_escape_string($conndb,$_POST['urlLF']);
-        $PIVAF = mysqli_real_escape_string($conndb,$_POST['PIVAF']);
-        $CFF = mysqli_real_escape_string($conndb,$_POST['CFF']);
-        $IBANF = mysqli_real_escape_string($conndb,$_POST['IBANF']);
-        $bancaF = mysqli_real_escape_string($conndb,$_POST['bancaF']);
+       $nomeF = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['nomeF']));
+       $cognomeF = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['cognomeF']));
+       $codF = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['codF']));
+       $descrF = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['descrF']));
+       $noteF = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['noteF']));
+       $indirizzoLF = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['indirizzoLF']));
+       $cittaLF = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['cittaLF']));
+       $capLF = htmlspecialchars(($conndb,$_POST['capLF']));
+        $provLF = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['provLF']));
+        $telLF = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['telLF']));
+        $faxLF = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['faxLF']));
+        $statoLF = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['statoLF']));
+        $emailLF = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['emailLF']));
+        $urlLF = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['urlLF']));
+        $PIVAF = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['PIVAF']));
+        $CFF = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['CFF']));
+        $IBANF = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['IBANF']));
+        $bancaF = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['bancaF']));
 
       //inserisci dati in tabella clienti generale
 $sql_gen = "INSERT INTO fornitori (nomeF, cognomeF, codF, descrF, noteF, indirizzoLF, cittaLF, capLF, provLF, telLF, faxLF, statoLF, emailLF, urlLF, PIVAF, CFF, IBANF, bancaF) VALUES ('$nomeF', '$cognomeF', '$codF', '$descrF', '$noteF', '$indirizzoLF', '$cittaLF', '$capLF', '$provLF', '$telLF', '$faxLF', '$statoLF', '$emailLF', '$urlLF', '$PIVAF', '$CFF', '$IBANF', '$bancaF')";

@@ -4,8 +4,8 @@ $ck = "";
    if($_SERVER["REQUEST_METHOD"] == "POST") {
        switch ($_POST['case']) {
            case "add":
-               $tipo = mysqli_real_escape_string($conndb,$_POST['tipo']);
-               $descr = mysqli_real_escape_string($conndb,$_POST['descr']);
+               $tipo = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['tipo']));
+               $descr = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['descr']));
 
                $sql_ins = "INSERT INTO ck_mezzo (tipo, descr) VALUES ('$tipo', '$descr')";
 
@@ -25,9 +25,9 @@ $ck = "";
                } break;
 
            case "edit":
-               $id = mysqli_real_escape_string($conndb,$_POST['id']);
-               $tipo = mysqli_real_escape_string($conndb,$_POST['tipo']);
-               $descr = mysqli_real_escape_string($conndb,$_POST['descr']);
+               $id = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['id']));
+               $tipo = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['tipo']));
+               $descr = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['descr']));
 
                $sql_edit = "UPDATE ck_mezzo SET tipo='$tipo', descr='$descr' WHERE id='$id';";
 
@@ -48,7 +48,7 @@ $ck = "";
 
            case "del":
 
-               $id = mysqli_real_escape_string($conndb,$_POST['id']);
+               $id = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['id']));
 
                $sql_del = "DELETE FROM ck_mezzo WHERE id='$id'";
 

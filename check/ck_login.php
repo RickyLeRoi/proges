@@ -5,9 +5,9 @@
        switch ($_POST['case']) {
            case "add":
                // tipo, username e password da form
-               $tipoLOG = mysqli_real_escape_string($conndb,$_POST['tipoLOG']);
-               $userLOG = mysqli_real_escape_string($conndb,$_POST['userLOG']);
-               $pswdLOG = mysqli_real_escape_string($conndb,$_POST['pswdLOG']);
+               $tipoLOG = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['tipoLOG']));
+               $userLOG = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['userLOG']));
+               $pswdLOG = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['pswdLOG']));
 
                $sql_ins = "INSERT INTO users (tipoLOG, userLOG, pswdLOG) VALUES ('$tipoLOG', '$userLOG', '$pswdLOG')";
 
@@ -28,10 +28,10 @@
 
            case "edit":
                // tipo, username e password da form
-               $id = mysqli_real_escape_string($conndb,$_POST['id']);
-               $tipoLOG = mysqli_real_escape_string($conndb,$_POST['tipoLOG']);
-               $userLOG = mysqli_real_escape_string($conndb,$_POST['userLOG']);
-               $pswdLOG = mysqli_real_escape_string($conndb,$_POST['pswdLOG']);
+               $id = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['id']));
+               $tipoLOG = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['tipoLOG']));
+               $userLOG = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['userLOG']));
+               $pswdLOG = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['pswdLOG']));
 
                $sql_edit = "UPDATE users SET tipoLOG='$tipoLOG', userLOG='$userLOG', pswdLOG='$pswdLOG' WHERE id='$id';";
 
@@ -52,7 +52,7 @@
 
            case "del":
                // tipo, username e password da form
-               $id = mysqli_real_escape_string($conndb,$_POST['id']);
+               $id = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['id']));
 
                $sql_del = "DELETE FROM users WHERE id='$id'";
 

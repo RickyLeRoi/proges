@@ -1,10 +1,10 @@
 <?php
 
 // Credenziali
-$host = $_POST["host"];
-$userDB = $_POST["userDB"];
-$pswdDB = $_POST["pswdDB"];
-$database = $_POST["database"];
+$host = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST["host"]));
+$userDB = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST["userDB"]));
+$pswdDB = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST["pswdDB"]));
+$database = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST["database"]));
 
 // Connetto
 $conn = mysqli_connect($host, $userDB, $pswdDB);
