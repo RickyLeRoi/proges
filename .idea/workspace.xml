@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="262bcaf4-44d1-46db-b05b-0150860b8c78" name="Default" comment="minipush, non completo">
+    <list default="true" id="262bcaf4-44d1-46db-b05b-0150860b8c78" name="Default" comment="Bordello con linux, pardon">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/plugins/jQuery-Autocomplete" afterPath="$PROJECT_DIR$/template/parrot/plugins/jQuery-Autocomplete" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen_documenti/bower.json" afterPath="$PROJECT_DIR$/gen_documenti/bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen_documenti/fattura.php" afterPath="$PROJECT_DIR$/gen_documenti/fattura.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen_documenti/post.php" afterPath="$PROJECT_DIR$/gen_documenti/post.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen_documenti/postdatas/ddt.php" afterPath="$PROJECT_DIR$/gen_documenti/postdatas/ddt.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen_documenti/postdatas/fatt_prev.php" afterPath="$PROJECT_DIR$/gen_documenti/postdatas/fatt_prev.php" />
     </list>
     <ignored path="proges.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -118,9 +112,9 @@
                   <caret line="22" column="589" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="589" />
                   <folding>
                     <element signature="e#6#89#0#PHP" expanded="true" />
-                    <marker date="1466522012633" expanded="true" signature="1249:1303" ph="SELECT id FR... stampa_" />
-                    <marker date="1466522012633" expanded="true" signature="1495:2318" ph="INSERT INTO stampa_${$stampa}... " />
-                    <marker date="1466522012633" expanded="true" signature="2398:3096" ph="INSERT INTO stampa_${$stampa}... " />
+                    <marker date="1466526422771" expanded="true" signature="1249:1303" ph="SELECT id FR... stampa_" />
+                    <marker date="1466526422771" expanded="true" signature="1495:2318" ph="INSERT INTO stampa_${$stampa}... " />
+                    <marker date="1466526422771" expanded="true" signature="2398:3096" ph="INSERT INTO stampa_${$stampa}... " />
                   </folding>
                 </state>
               </provider>
@@ -194,12 +188,14 @@
         <option value="danielex &lt;i_deny@outlook.com&gt;" />
       </list>
     </option>
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="dd108433060a51c0814dd7f62f24a9a2f7af49fd" />
       </map>
     </option>
+    <option name="FORCE_PUSH_ALLOWED" value="true" />
   </component>
   <component name="GithubProjectSettings">
     <option name="CREATE_PULL_REQUEST_DEFAULT_BRANCH" value="master" />
@@ -659,11 +655,18 @@
       <option name="project" value="LOCAL" />
       <updated>1466509380449</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Bordello con linux, pardon">
+      <created>1466526442874</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1466526442875</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="195376000" />
+    <option name="totallyTimeSpent" value="195529000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -762,7 +765,8 @@
     <MESSAGE value="update" />
     <MESSAGE value="risolto problema sessione quando manca il DB, migliorato il dump" />
     <MESSAGE value="risolto problema sessione quando manca il DB, migliorato il dump e sistemate le credenziali" />
-    <option name="LAST_COMMIT_MESSAGE" value="risolto problema sessione quando manca il DB, migliorato il dump e sistemate le credenziali" />
+    <MESSAGE value="Bordello con linux, pardon" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bordello con linux, pardon" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="UPDATE_GROUP_BY_PACKAGES" value="true" />
   </component>
@@ -881,6 +885,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="293">
           <caret line="2103" column="9" selection-start-line="2103" selection-start-column="9" selection-end-line="2103" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
