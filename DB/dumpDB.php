@@ -1,6 +1,6 @@
 <?php
-
-backup_tables('localhost', 'root', 'mysql', 'gestionale_db');
+include_once("data.php");
+backup_tables($host, $userDB, $pswdDB, $database, $tables = '*');
 
 function backup_tables($host, $userDB, $pswdDB, $database, $tables = '*')
 {

@@ -8,16 +8,7 @@
     <meta name="description" content="Gestionale per etichettificio Provenzano"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-    <?php include_once("../template/parrot/style.php");
-     ?>
-
-    <?php 	//header('Content-Type: text/plain');
-	session_start();
-	$user = $_SESSION['login_user'];
-    if (!isset($_SESSION['login_user'])) {
-        session_destroy();
-    }
-    ?>
+    <?php include_once("../template/parrot/style.php"); ?>
 
     <style>
         label {
@@ -29,7 +20,6 @@
 <body>
 <!-- #### Navbars #### -->
 <?php
-include_once("config.php");
 include_once("../template/parrot/navbar.php") ?>
 
 <div class="container">
