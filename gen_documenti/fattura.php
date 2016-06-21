@@ -397,8 +397,8 @@ if ((isset($post)) == true) {
                     </td>
                     <td style="text-align:right"><p>Totale parziale €</p></td>
                     <td>
-                        <input id="parziale" class="form-control " style="text-align:right" type="number"
-                               placeholder="auto da colonna €" <?php if (isset($parziale)) echo "value='" . $parziale . "'" ?>
+                        <input id="parziale" class="form-control " style="text-align:right" type="text"
+                               placeholder="auto da colonna €" <?php if (isset($parziale)) echo "value='" . round($parziale, 2) . "'" ?>
                                readonly>
                     </td>
                 </tr>
@@ -415,8 +415,8 @@ if ((isset($post)) == true) {
                 <tr>
                     <td style="text-align:right"><p><strong>Totale dovuto €</strong></p></td>
                     <td>
-                        <input id="totaleDovuto" class="form-control" style="text-align:right" type="number"
-                               placeholder="auto da colonna €" <?php if (isset($totale)) echo "value='" . $totale . "'" ?>
+                        <input id="totaleDovuto" class="form-control" style="text-align:right" type="text"
+                               placeholder="auto da colonna €" <?php if (isset($totale)) echo "value='" . round($totale, 2) . "'" ?>
                                readonly>
                     </td>
                 </tr>

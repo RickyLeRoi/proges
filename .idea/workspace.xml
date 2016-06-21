@@ -1,23 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="262bcaf4-44d1-46db-b05b-0150860b8c78" name="Default" comment="html">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/function/backup.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/function/dump.php" afterPath="" />
+    <list default="true" id="262bcaf4-44d1-46db-b05b-0150860b8c78" name="Default" comment="Bordello con linux, pardon">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/parrot/plugins/jQuery-Autocomplete" afterPath="$PROJECT_DIR$/template/parrot/plugins/jQuery-Autocomplete" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DB/creadb.php" afterPath="$PROJECT_DIR$/DB/creadb.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DB/creareclogin.php" afterPath="$PROJECT_DIR$/DB/creareclogin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DB/homeDB.php" afterPath="$PROJECT_DIR$/DB/homeDB.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/check/ck_art.php" afterPath="$PROJECT_DIR$/check/ck_art.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/check/ck_causale.php" afterPath="$PROJECT_DIR$/check/ck_causale.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/check/ck_imb.php" afterPath="$PROJECT_DIR$/check/ck_imb.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/check/ck_iva.php" afterPath="$PROJECT_DIR$/check/ck_iva.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/check/ck_login.php" afterPath="$PROJECT_DIR$/check/ck_login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/check/ck_mezzo.php" afterPath="$PROJECT_DIR$/check/ck_mezzo.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/check/ck_pagam.php" afterPath="$PROJECT_DIR$/check/ck_pagam.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/check/ck_spagg.php" afterPath="$PROJECT_DIR$/check/ck_spagg.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/function/agg_cliente.php" afterPath="$PROJECT_DIR$/function/agg_cliente.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/function/agg_fornitore.php" afterPath="$PROJECT_DIR$/function/agg_fornitore.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DB/data.php" afterPath="$PROJECT_DIR$/DB/data.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen_documenti/ddt.php" afterPath="$PROJECT_DIR$/gen_documenti/ddt.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen_documenti/post.php" afterPath="$PROJECT_DIR$/gen_documenti/post.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen_documenti/postdatas/ddt.php" afterPath="$PROJECT_DIR$/gen_documenti/postdatas/ddt.php" />
     </list>
     <ignored path="proges.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,24 +40,170 @@
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
     </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="MySQL - gestionale_db@localhost" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="stampa_ddt" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="proges" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="fattura.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/gen_documenti/fattura.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1192">
-              <caret line="171" column="8" selection-start-line="171" selection-start-column="8" selection-end-line="171" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="vertical" split-proportion="0.4315961">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="ddt.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/gen_documenti/ddt.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="2864">
+                  <caret line="473" column="19" selection-start-line="473" selection-start-column="19" selection-end-line="473" selection-end-column="19" />
+                  <folding>
+                    <marker date="1466530367515" expanded="true" signature="351:373" ph="SELECT * FRO... ck_mezzo" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="post.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/gen_documenti/post.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="378">
+                  <caret line="132" column="23" selection-start-line="132" selection-start-column="23" selection-end-line="132" selection-end-column="23" />
+                  <folding>
+                    <marker date="1466532662090" expanded="true" signature="1428:1474" ph="SELECT * FRO... stampa_" />
+                    <marker date="1466532662090" expanded="true" signature="3179:3225" ph="SELECT * FRO... stampa_" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="gestionale_db.stampa_ddt" pinned="false" current-in-tab="false">
+            <entry file="dbDummy://dbtable:/88b89cae/196bd43d-5ada-4cd3-92cc-085293f786a1/gestionale_db.stampa_ddt">
+              <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+                <state>
+                  <filtering enabled="true" />
+                </state>
+              </provider>
+              <provider editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="preventivo.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/gen_documenti/preventivo.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="633">
+                  <caret line="601" column="11" selection-start-line="601" selection-start-column="11" selection-end-line="601" selection-end-column="11" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="fatt_prev.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/gen_documenti/postdatas/fatt_prev.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-377">
+                  <caret line="12" column="33" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
+                  <folding>
+                    <element signature="e#6#89#0#PHP" expanded="true" />
+                    <marker date="1466525722116" expanded="true" signature="1249:1303" ph="SELECT id FR... stampa_" />
+                    <marker date="1466525722116" expanded="true" signature="1495:2318" ph="INSERT INTO stampa_${$stampa}... " />
+                    <marker date="1466525722116" expanded="true" signature="2379:3077" ph="INSERT INTO stampa_${$stampa}... " />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ddt.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/gen_documenti/postdatas/ddt.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="38">
+                  <caret line="30" column="108" selection-start-line="30" selection-start-column="108" selection-end-line="30" selection-end-column="108" />
+                  <folding>
+                    <element signature="e#6#89#0#PHP" expanded="true" />
+                    <marker date="1466532605694" expanded="true" signature="810:864" ph="SELECT id FR... stampa_" />
+                    <marker date="1466532605694" expanded="true" signature="1032:1081" ph="INSERT INTO stampa_${$stampa}... " />
+                    <marker date="1466532605694" expanded="true" signature="1032:1175" ph="INSERT INTO stampa_${$stampa}... " />
+                    <marker date="1466532605694" expanded="true" signature="1032:1185" ph="INSERT INTO stampa_${$stampa}... " />
+                    <marker date="1466532605694" expanded="true" signature="1032:1496" ph="INSERT INTO stampa_${$stampa}... " />
+                    <marker date="1466532605694" expanded="true" signature="1032:1497" ph="INSERT INTO stampa_${$stampa}... " />
+                    <marker date="1466532605694" expanded="true" signature="1032:1522" ph="INSERT INTO stampa_${$stampa}... " />
+                    <marker date="1466532605694" expanded="true" signature="1032:1523" ph="INSERT INTO stampa_${$stampa}... " />
+                    <marker date="1466532605694" expanded="true" signature="1032:1541" ph="INSERT INTO stampa_${$stampa}... " />
+                    <marker date="1466532605694" expanded="true" signature="1556:1819" ph="INSERT INTO stampa_ddt... " />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="console.sql" pinned="false" current-in-tab="false">
+            <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/196bd43d-5ada-4cd3-92cc-085293f786a1/console.sql">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="gestionale_db.stampa_fattura" pinned="false" current-in-tab="false">
+            <entry file="dbDummy://dbtable:/88b89cae/15ef0d52-b3d6-4ff3-8d8c-32a853f7aaaa/gestionale_db.stampa_fattura">
+              <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+                <state>
+                  <filtering enabled="true" />
+                </state>
+              </provider>
+              <provider editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="data.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/DB/data.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="90">
+                  <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="ddt.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/gen_documenti/ddt.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1164">
+                  <caret line="536" column="34" selection-start-line="536" selection-start-column="34" selection-end-line="536" selection-end-column="34" />
+                  <folding>
+                    <marker date="1466530367515" expanded="true" signature="351:373" ph="SELECT * FRO... ck_mezzo" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
@@ -75,11 +212,19 @@
         <option value="danielex &lt;i_deny@outlook.com&gt;" />
       </list>
     </option>
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="dd108433060a51c0814dd7f62f24a9a2f7af49fd" />
       </map>
+    </option>
+    <option name="FORCE_PUSH_ALLOWED" value="true" />
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--follow-tags" />
+        <option name="title" value="Current Branch" />
+      </GitPushTagMode>
     </option>
   </component>
   <component name="GithubProjectSettings">
@@ -90,8 +235,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/gen_documenti/ddt.php" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/function/get_listaclienti.php" />
         <option value="$PROJECT_DIR$/json/get_listaclienti.php" />
         <option value="$PROJECT_DIR$/json/get_fornitori.php" />
@@ -114,10 +257,8 @@
         <option value="dbtable:/8bd68956/196bd43d-5ada-4cd3-92cc-085293f786a1/gestionale_db.pagam" />
         <option value="$PROJECT_DIR$/function/session.php" />
         <option value="dbtable:/8bd68956/196bd43d-5ada-4cd3-92cc-085293f786a1/gestionale_db.stampa_fattura" />
-        <option value="$PROJECT_DIR$/DB/data.php" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/196bd43d-5ada-4cd3-92cc-085293f786a1/console.sql" />
         <option value="$PROJECT_DIR$/json/get_articoli.php" />
-        <option value="$PROJECT_DIR$/gen_documenti/post.php" />
         <option value="$PROJECT_DIR$/DB/creatabelle.php" />
         <option value="$PROJECT_DIR$/DB/backup/gestionale_db-20-06-2016_19.35.14.sql" />
         <option value="$PROJECT_DIR$/DB/backup/gestionale_db-20-06-2016_19.39.22.sql" />
@@ -141,6 +282,10 @@
         <option value="$PROJECT_DIR$/check/ck_spagg.php" />
         <option value="$PROJECT_DIR$/DB/creareclogin.php" />
         <option value="$PROJECT_DIR$/DB/creadb.php" />
+        <option value="$PROJECT_DIR$/DB/data.php" />
+        <option value="$PROJECT_DIR$/gen_documenti/ddt.php" />
+        <option value="$PROJECT_DIR$/gen_documenti/postdatas/ddt.php" />
+        <option value="$PROJECT_DIR$/gen_documenti/post.php" />
       </list>
     </option>
   </component>
@@ -160,12 +305,11 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1048" />
+    <option name="y" value="30" />
+    <option name="width" value="1366" />
+    <option name="height" value="738" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -218,7 +362,25 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="function" />
+              <option name="myItemId" value="gen_documenti" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="proges" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="proges" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gen_documenti" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="postdatas" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -236,24 +398,10 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="proges" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="proges" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="check" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -262,6 +410,12 @@
     <property name="Console.TableResult.DefaultCopyAction" value="SQL Insert Statements" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="SearchEverywhereHistoryKey" value="sql dialect&#9;null&#9;null" />
+  </component>
+  <component name="Push.Settings">
+    <excluded-roots>
+      <path value="$PROJECT_DIR$/proges" />
+    </excluded-roots>
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -569,11 +723,25 @@
       <option name="project" value="LOCAL" />
       <updated>1466509380449</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Bordello con linux, pardon">
+      <created>1466526442874</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1466526442875</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Bordello con linux, pardon">
+      <created>1466526565058</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1466526565058</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="195334000" />
+    <option name="totallyTimeSpent" value="201706000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -585,33 +753,54 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="false" />
+    <frame x="0" y="30" width="1366" height="738" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13854167" sideWeight="0.49115044" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32743362" sideWeight="0.49356222" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32713348" sideWeight="0.5064378" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16770834" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15098469" sideWeight="0.472103" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.123298034" sideWeight="0.49562362" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.49356222" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32736155" sideWeight="0.5310136" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1505295" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32736155" sideWeight="0.4689864" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32603937" sideWeight="0.49356222" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35177454" sideWeight="0.50884956" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3257329" sideWeight="0.49356222" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24947916" sideWeight="0.50437635" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32964602" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.4978678" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33150986" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.4978678" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33150986" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28871682" sideWeight="0.49785408" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28884026" sideWeight="0.49785408" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.49356222" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5064378" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.4978678" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44420367" sideWeight="0.472103" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32603937" sideWeight="0.49356222" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27306867" sideWeight="0.49562362" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1475322" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28884026" sideWeight="0.49785408" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24947916" sideWeight="0.50437635" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="UpdateCopyrightCheckinHandler">
     <option name="UPDATE_COPYRIGHT" value="true" />
@@ -651,7 +840,8 @@
     <MESSAGE value="update" />
     <MESSAGE value="risolto problema sessione quando manca il DB, migliorato il dump" />
     <MESSAGE value="risolto problema sessione quando manca il DB, migliorato il dump e sistemate le credenziali" />
-    <option name="LAST_COMMIT_MESSAGE" value="risolto problema sessione quando manca il DB, migliorato il dump e sistemate le credenziali" />
+    <MESSAGE value="Bordello con linux, pardon" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bordello con linux, pardon" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="UPDATE_GROUP_BY_PACKAGES" value="true" />
   </component>
@@ -662,20 +852,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/DB/db-backup-1466437428-90cf232442f470402a5478757ae0b4ce.sql" />
-    <entry file="file://$PROJECT_DIR$/DB/db-backup-1466437381-90cf232442f470402a5478757ae0b4ce.sql" />
-    <entry file="file://$PROJECT_DIR$/DB/dropDB.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DB/backup/db-backup-20_06_2016 15-57-16.sql" />
-    <entry file="file://$PROJECT_DIR$/DB/backup/db-backup-20-06-2016_16.00.41.sql" />
-    <entry file="file://$PROJECT_DIR$/DB/backup/db-backup-20-06-2016_16.01.11.sql" />
-    <entry file="file://$PROJECT_DIR$/DB/backup/gestionale_db-20-06-2016_18.17.11.sql" />
-    <entry file="file://$PROJECT_DIR$/DB/backup/db-backup-20_06_2016 16-19-10.sql" />
     <entry file="file://$PROJECT_DIR$/DB/backup/db-backup-20-06-2016_18.05.31.sql" />
     <entry file="file://$PROJECT_DIR$/DB/backup/gestionale_db-20-06-2016_19.31.05.sql" />
     <entry file="file://$PROJECT_DIR$/DB/backup/gestionale_db-20-06-2016_19.35.14.sql" />
@@ -740,31 +916,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DB/data.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DB/listfile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="24" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/DB/listfile.php" />
     <entry file="file://$PROJECT_DIR$/DB/file.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="66">
           <caret line="3" column="36" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -772,12 +931,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="674">
           <caret line="54" column="80" selection-start-line="54" selection-start-column="80" selection-end-line="54" selection-end-column="80" />
-          <folding>
-            <marker date="1466517116144" expanded="true" signature="626:640" ph="SELECT * FRO... ${$table}" />
-            <marker date="1466517116144" expanded="true" signature="724:735" ph="DROP TABLE $... " />
-            <marker date="1466517116144" expanded="true" signature="812:825" ph="CREATE TABLE... ${$table}" />
-            <marker date="1466517116144" expanded="true" signature="1026:1060" ph="INSERT INTO ${$table}... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -793,62 +946,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="506">
           <caret line="23" column="86" selection-start-line="23" selection-start-column="86" selection-end-line="23" selection-end-column="86" />
-          <folding>
-            <marker date="1466518242572" expanded="true" signature="1766:2132" ph="INSERT INTO fornitori... " />
-            <marker date="1466518242572" expanded="true" signature="2275:2370" ph="..." />
-            <marker date="1466518242572" expanded="true" signature="2466:2551" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/function/dump.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/function/backup.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/function/dump.php" />
+    <entry file="file://$PROJECT_DIR$/function/backup.php" />
     <entry file="file://$PROJECT_DIR$/function/agg_cliente.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="30" column="34" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="34" />
-          <folding>
-            <marker date="1466518137700" expanded="true" signature="2629:3174" ph="INSERT INTO clienti... " />
-            <marker date="1466518137700" expanded="true" signature="3317:3403" ph="..." />
-            <marker date="1466518137700" expanded="true" signature="3499:3575" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gen_documenti/postdatas/fatt_prev.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1466453282577" expanded="true" signature="1230:1284" ph="SELECT id FR... stampa_" />
-            <marker date="1466453282577" expanded="true" signature="1476:2281" ph="INSERT INTO stampa_${$stampa}... " />
-            <marker date="1466453282577" expanded="true" signature="2342:3022" ph="INSERT INTO stampa_${$stampa}... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gen_documenti/post.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1386">
-          <caret line="75" column="10" selection-start-line="75" selection-start-column="10" selection-end-line="75" selection-end-column="10" />
-          <folding>
-            <marker date="1466453282514" expanded="true" signature="1345:1391" ph="SELECT * FRO... stampa_" />
-            <marker date="1466453282514" expanded="true" signature="2931:2977" ph="SELECT * FRO... stampa_" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -856,22 +962,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
           <caret line="50" column="85" selection-start-line="50" selection-start-column="85" selection-end-line="50" selection-end-column="85" />
-          <folding>
-            <marker date="1466518708747" expanded="true" signature="364:425" ph="INSERT INTO ck_mezzo... " />
-            <marker date="1466518708747" expanded="true" signature="622:721" ph="..." />
-            <marker date="1466518708747" expanded="true" signature="866:962" ph="..." />
-            <marker date="1466518708747" expanded="true" signature="1338:1401" ph="UPDATE ck_me... " />
-            <marker date="1466518708747" expanded="true" signature="1604:1702" ph="..." />
-            <marker date="1466518708747" expanded="true" signature="1851:1941" ph="..." />
-            <marker date="1466518708747" expanded="true" signature="2132:2167" ph="DELETE FROM " />
-            <marker date="1466518708747" expanded="true" signature="2368:2463" ph="..." />
-            <marker date="1466518708747" expanded="true" signature="2612:2705" ph="..." />
-            <marker date="1466518708747" expanded="true" signature="4217:4239" ph="SELECT * FRO... ck_mezzo" />
-            <marker date="1466518708747" expanded="true" signature="4669:4691" ph="SELECT * FRO... ck_mezzo" />
-            <marker date="1466518708747" expanded="true" signature="4938:5630" ph="..." />
-            <marker date="1466518708747" expanded="true" signature="5156:5608" ph="..." />
-            <marker date="1466518708747" expanded="true" signature="5227:5586" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -879,22 +969,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="528">
           <caret line="54" column="85" selection-start-line="54" selection-start-column="85" selection-end-line="54" selection-end-column="85" />
-          <folding>
-            <marker date="1466518660402" expanded="true" signature="515:604" ph="INSERT INTO users... " />
-            <marker date="1466518660402" expanded="true" signature="801:900" ph="..." />
-            <marker date="1466518660402" expanded="true" signature="1045:1141" ph="..." />
-            <marker date="1466518660402" expanded="true" signature="1677:1767" ph="UPDATE users... " />
-            <marker date="1466518660402" expanded="true" signature="1970:2068" ph="..." />
-            <marker date="1466518660402" expanded="true" signature="2217:2307" ph="..." />
-            <marker date="1466518660402" expanded="true" signature="2549:2581" ph="DELETE FROM " />
-            <marker date="1466518660402" expanded="true" signature="2782:2877" ph="..." />
-            <marker date="1466518660402" expanded="true" signature="3026:3119" ph="..." />
-            <marker date="1466518660402" expanded="true" signature="4581:4600" ph="SELECT * FRO... users" />
-            <marker date="1466518660402" expanded="true" signature="5121:5140" ph="SELECT * FRO... users" />
-            <marker date="1466518660402" expanded="true" signature="5469:6258" ph="..." />
-            <marker date="1466518660402" expanded="true" signature="5801:6236" ph="..." />
-            <marker date="1466518660402" expanded="true" signature="5855:6214" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -902,22 +976,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="550">
           <caret line="49" column="85" selection-start-line="49" selection-start-column="85" selection-end-line="49" selection-end-column="85" />
-          <folding>
-            <marker date="1466518734588" expanded="true" signature="273:319" ph="INSERT INTO ck_pagam... " />
-            <marker date="1466518734588" expanded="true" signature="516:615" ph="..." />
-            <marker date="1466518734588" expanded="true" signature="760:856" ph="..." />
-            <marker date="1466518734588" expanded="true" signature="1140:1189" ph="UPDATE ck_pa... " />
-            <marker date="1466518734588" expanded="true" signature="1392:1490" ph="..." />
-            <marker date="1466518734588" expanded="true" signature="1639:1729" ph="..." />
-            <marker date="1466518734588" expanded="true" signature="1920:1955" ph="DELETE FROM " />
-            <marker date="1466518734588" expanded="true" signature="2156:2251" ph="..." />
-            <marker date="1466518734588" expanded="true" signature="2400:2493" ph="..." />
-            <marker date="1466518734588" expanded="true" signature="3992:4014" ph="SELECT * FRO... ck_pagam" />
-            <marker date="1466518734588" expanded="true" signature="4414:4436" ph="SELECT * FRO... ck_pagam" />
-            <marker date="1466518734588" expanded="true" signature="4645:5294" ph="..." />
-            <marker date="1466518734588" expanded="true" signature="4817:5272" ph="..." />
-            <marker date="1466518734588" expanded="true" signature="4891:5250" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -925,22 +983,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="572">
           <caret line="53" column="86" selection-start-line="53" selection-start-column="86" selection-end-line="53" selection-end-column="86" />
-          <folding>
-            <marker date="1466518776883" expanded="true" signature="464:543" ph="INSERT INTO ck_spese... " />
-            <marker date="1466518776883" expanded="true" signature="740:839" ph="..." />
-            <marker date="1466518776883" expanded="true" signature="984:1080" ph="..." />
-            <marker date="1466518776883" expanded="true" signature="1552:1633" ph="UPDATE ck_sp... " />
-            <marker date="1466518776883" expanded="true" signature="1836:1934" ph="..." />
-            <marker date="1466518776883" expanded="true" signature="2083:2173" ph="..." />
-            <marker date="1466518776883" expanded="true" signature="2364:2399" ph="DELETE FROM " />
-            <marker date="1466518776883" expanded="true" signature="2600:2695" ph="..." />
-            <marker date="1466518776883" expanded="true" signature="2844:2937" ph="..." />
-            <marker date="1466518776883" expanded="true" signature="4413:4435" ph="SELECT * FRO... ck_spese" />
-            <marker date="1466518776883" expanded="true" signature="4867:4889" ph="SELECT * FRO... ck_spese" />
-            <marker date="1466518776883" expanded="true" signature="5140:5858" ph="..." />
-            <marker date="1466518776883" expanded="true" signature="5381:5836" ph="..." />
-            <marker date="1466518776883" expanded="true" signature="5455:5814" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -948,22 +990,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="507">
           <caret line="50" column="85" selection-start-line="50" selection-start-column="85" selection-end-line="50" selection-end-column="85" />
-          <folding>
-            <marker date="1466518571755" expanded="true" signature="372:439" ph="INSERT INTO ck_iva... " />
-            <marker date="1466518571755" expanded="true" signature="636:735" ph="..." />
-            <marker date="1466518571755" expanded="true" signature="880:976" ph="..." />
-            <marker date="1466518571755" expanded="true" signature="1360:1429" ph="UPDATE ck_iv... " />
-            <marker date="1466518571755" expanded="true" signature="1632:1730" ph="..." />
-            <marker date="1466518571755" expanded="true" signature="1879:1969" ph="..." />
-            <marker date="1466518571755" expanded="true" signature="2160:2193" ph="DELETE FROM " />
-            <marker date="1466518571755" expanded="true" signature="2394:2489" ph="..." />
-            <marker date="1466518571755" expanded="true" signature="2638:2731" ph="..." />
-            <marker date="1466518571755" expanded="true" signature="4230:4250" ph="SELECT * FRO... ck_iva" />
-            <marker date="1466518571755" expanded="true" signature="4684:4704" ph="SELECT * FRO... ck_iva" />
-            <marker date="1466518571755" expanded="true" signature="4959:5678" ph="..." />
-            <marker date="1466518571755" expanded="true" signature="5201:5656" ph="..." />
-            <marker date="1466518571755" expanded="true" signature="5275:5634" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -971,22 +997,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
           <caret line="48" column="85" selection-start-line="48" selection-start-column="85" selection-end-line="48" selection-end-column="85" />
-          <folding>
-            <marker date="1466518539855" expanded="true" signature="274:322" ph="INSERT INTO ck_imballo... " />
-            <marker date="1466518539855" expanded="true" signature="519:618" ph="..." />
-            <marker date="1466518539855" expanded="true" signature="763:859" ph="..." />
-            <marker date="1466518539855" expanded="true" signature="1143:1194" ph="UPDATE ck_im... " />
-            <marker date="1466518539855" expanded="true" signature="1397:1495" ph="..." />
-            <marker date="1466518539855" expanded="true" signature="1644:1734" ph="..." />
-            <marker date="1466518539855" expanded="true" signature="1925:1962" ph="DELETE FROM " />
-            <marker date="1466518539855" expanded="true" signature="2163:2258" ph="..." />
-            <marker date="1466518539855" expanded="true" signature="2407:2500" ph="..." />
-            <marker date="1466518539855" expanded="true" signature="4055:4079" ph="SELECT * FRO... ck_imballo" />
-            <marker date="1466518539855" expanded="true" signature="4479:4503" ph="SELECT * FRO... ck_imballo" />
-            <marker date="1466518539855" expanded="true" signature="4752:5402" ph="..." />
-            <marker date="1466518539855" expanded="true" signature="4925:5380" ph="..." />
-            <marker date="1466518539855" expanded="true" signature="4999:5358" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -994,22 +1004,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="48" column="86" selection-start-line="48" selection-start-column="86" selection-end-line="48" selection-end-column="86" />
-          <folding>
-            <marker date="1466518465935" expanded="true" signature="272:320" ph="INSERT INTO ck_causale... " />
-            <marker date="1466518465935" expanded="true" signature="517:616" ph="..." />
-            <marker date="1466518465935" expanded="true" signature="761:857" ph="..." />
-            <marker date="1466518465935" expanded="true" signature="1141:1192" ph="UPDATE ck_ca... " />
-            <marker date="1466518465935" expanded="true" signature="1395:1493" ph="..." />
-            <marker date="1466518465935" expanded="true" signature="1642:1732" ph="..." />
-            <marker date="1466518465935" expanded="true" signature="1923:1960" ph="DELETE FROM " />
-            <marker date="1466518465935" expanded="true" signature="2161:2256" ph="..." />
-            <marker date="1466518465935" expanded="true" signature="2405:2498" ph="..." />
-            <marker date="1466518465935" expanded="true" signature="4000:4024" ph="SELECT * FRO... ck_causale" />
-            <marker date="1466518465935" expanded="true" signature="4424:4448" ph="SELECT * FRO... ck_causale" />
-            <marker date="1466518465935" expanded="true" signature="4657:5283" ph="..." />
-            <marker date="1466518465935" expanded="true" signature="4809:5261" ph="..." />
-            <marker date="1466518465935" expanded="true" signature="4880:5239" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1025,22 +1019,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="66">
           <caret line="6" column="77" selection-start-line="6" selection-start-column="69" selection-end-line="6" selection-end-column="77" />
-          <folding>
-            <marker date="1466518413096" expanded="true" signature="849:994" ph="INSERT INTO articoli... " />
-            <marker date="1466518413096" expanded="true" signature="1191:1290" ph="..." />
-            <marker date="1466518413096" expanded="true" signature="1435:1531" ph="..." />
-            <marker date="1466518413096" expanded="true" signature="2306:2448" ph="UPDATE artic... " />
-            <marker date="1466518413096" expanded="true" signature="2651:2749" ph="..." />
-            <marker date="1466518413096" expanded="true" signature="2898:2988" ph="..." />
-            <marker date="1466518413096" expanded="true" signature="3179:3214" ph="DELETE FROM " />
-            <marker date="1466518413096" expanded="true" signature="3415:3510" ph="..." />
-            <marker date="1466518413096" expanded="true" signature="3659:3752" ph="..." />
-            <marker date="1466518413096" expanded="true" signature="5256:5278" ph="SELECT * FRO... articoli" />
-            <marker date="1466518413096" expanded="true" signature="5864:5886" ph="SELECT * FRO... articoli" />
-            <marker date="1466518413096" expanded="true" signature="6311:7329" ph="..." />
-            <marker date="1466518413096" expanded="true" signature="6852:7307" ph="..." />
-            <marker date="1466518413096" expanded="true" signature="6926:7285" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1048,9 +1026,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="6" column="63" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="63" />
-          <folding>
-            <marker date="1466518960652" expanded="true" signature="450:542" ph="INSERT INTO users... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1058,7 +1033,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="6" column="83" selection-start-line="6" selection-start-column="83" selection-end-line="6" selection-end-column="83" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1066,18 +1040,137 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1466452900022" expanded="true" signature="88:352" ph="CREATE TABLE... articoli" />
-            <marker date="1466452900022" expanded="true" signature="4000:4583" ph="CREATE TABLE... fornitori" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gen_documenti/fattura.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1192">
-          <caret line="171" column="8" selection-start-line="171" selection-start-column="8" selection-end-line="171" selection-end-column="8" />
+        <state relative-caret-position="81">
+          <caret line="418" column="121" selection-start-line="418" selection-start-column="121" selection-end-line="418" selection-end-column="121" />
+          <folding>
+            <marker date="1466524403045" expanded="true" signature="215:241" ph="SELECT descr... ck_pagam" />
+            <marker date="1466524403045" expanded="true" signature="436:463" ph="SELECT aliqu... ck_iva" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DB/data.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/88b89cae/196bd43d-5ada-4cd3-92cc-085293f786a1/gestionale_db.stampa_ndc">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/196bd43d-5ada-4cd3-92cc-085293f786a1/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gen_documenti/postdatas/fatt_prev.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-377">
+          <caret line="12" column="33" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
+          <folding>
+            <element signature="e#6#89#0#PHP" expanded="true" />
+            <marker date="1466525722116" expanded="true" signature="1249:1303" ph="SELECT id FR... stampa_" />
+            <marker date="1466525722116" expanded="true" signature="1495:2318" ph="INSERT INTO stampa_${$stampa}... " />
+            <marker date="1466525722116" expanded="true" signature="2379:3077" ph="INSERT INTO stampa_${$stampa}... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gen_documenti/preventivo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="633">
+          <caret line="601" column="11" selection-start-line="601" selection-start-column="11" selection-end-line="601" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gen_documenti/ddt.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2864">
+          <caret line="473" column="19" selection-start-line="473" selection-start-column="19" selection-end-line="473" selection-end-column="19" />
+          <folding>
+            <marker date="1466530367515" expanded="true" signature="351:373" ph="SELECT * FRO... ck_mezzo" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/interbase.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="930" column="9" selection-start-line="930" selection-start-column="9" selection-end-line="930" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/88b89cae/196bd43d-5ada-4cd3-92cc-085293f786a1/gestionale_db.stampa_ddt">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gen_documenti/postdatas/ddt.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="30" column="108" selection-start-line="30" selection-start-column="108" selection-end-line="30" selection-end-column="108" />
+          <folding>
+            <element signature="e#6#89#0#PHP" expanded="true" />
+            <marker date="1466532605694" expanded="true" signature="810:864" ph="SELECT id FR... stampa_" />
+            <marker date="1466532605694" expanded="true" signature="1032:1081" ph="INSERT INTO stampa_${$stampa}... " />
+            <marker date="1466532605694" expanded="true" signature="1032:1175" ph="INSERT INTO stampa_${$stampa}... " />
+            <marker date="1466532605694" expanded="true" signature="1032:1185" ph="INSERT INTO stampa_${$stampa}... " />
+            <marker date="1466532605694" expanded="true" signature="1032:1496" ph="INSERT INTO stampa_${$stampa}... " />
+            <marker date="1466532605694" expanded="true" signature="1032:1497" ph="INSERT INTO stampa_${$stampa}... " />
+            <marker date="1466532605694" expanded="true" signature="1032:1522" ph="INSERT INTO stampa_${$stampa}... " />
+            <marker date="1466532605694" expanded="true" signature="1032:1523" ph="INSERT INTO stampa_${$stampa}... " />
+            <marker date="1466532605694" expanded="true" signature="1032:1541" ph="INSERT INTO stampa_${$stampa}... " />
+            <marker date="1466532605694" expanded="true" signature="1556:1819" ph="INSERT INTO stampa_ddt... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gen_documenti/post.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="132" column="23" selection-start-line="132" selection-start-column="23" selection-end-line="132" selection-end-column="23" />
+          <folding>
+            <marker date="1466532662090" expanded="true" signature="1428:1474" ph="SELECT * FRO... stampa_" />
+            <marker date="1466532662090" expanded="true" signature="3179:3225" ph="SELECT * FRO... stampa_" />
+          </folding>
         </state>
       </provider>
     </entry>

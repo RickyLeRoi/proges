@@ -10,7 +10,7 @@
 //print_r($_POST["data"]);
 
 
-if ($insert["esenteNum"] === "") {
+if (!isset($insert["esenteNum"])) {
     $insert["esenteNum"] = 1;
     $insert["esIvaDal"] = date('Y-m-d');
     $insert["esIvaAl"] = date('Y-m-d');
@@ -19,7 +19,7 @@ if ($insert["esenteNum"] === "") {
 if ($insert["azione"] === "modifica") {
 
     $sql = "UPDATE stampa_" . $stampa . "
-        SET data='" . $insert["data"] . "', pagamento='" . $insert["pagamento"] . "', cliente='" . $insert["cliente"] . "', piva='" . $insert["ivaCliente"] . "', indirizzo='" . $insert["indirizzoCliente"] . "', citta='" . $insert["cittaCliente"] . "', prov='" . $insert["pr"] . "', cap='" . $insert["cap"] . "', quantita='" . $insert["arrayQuantita"] . "', prodotti='" . $insert["arrayProdotti"] . "', prezziCad='" . $insert["arrayPrezziCad"] . "', prezzi='" . $insert["arrayPrezzi"] . "', parziale='" . $insert["parziale"] . "', totale='" . $insert["totaleDovuto"] . "'";
+        SET data_doc='" . $insert["data"] . "', pagamento='" . $insert["pagamento"] . "', cliente='" . $insert["cliente"] . "', Piva='" . $insert["ivaCliente"] . "', indirizzo='" . $insert["indirizzoCliente"] . "', citta='" . $insert["cittaCliente"] . "', prov='" . $insert["pr"] . "', cap='" . $insert["cap"] . "', arr_qta='" . $insert["arrayQuantita"] . "', arr_beni='" . $insert["arrayProdotti"] . "', arr_imp_uni='" . $insert["arrayPrezziCad"] . "', arr_importo='" . $insert["arrayPrezzi"] . "', tot_parziale='" . $insert["parziale"] . "', tot_dovuto='" . $insert["totaleDovuto"] . "'";
 
 
     if ($stampa == "fattura" || $stampa == "ndc") {
@@ -39,13 +39,13 @@ if ($insert["azione"] === "modifica") {
 
     if ($stampa == "fattura" || $stampa == "ndc") {
         $sql = "INSERT INTO stampa_" . $stampa . " 
-            (id, data, pagamento, cliente, piva, indirizzo, citta, prov, cap, quantita, prodotti, prezziCad, prezzi, parziale, totale, iva, esente_num, esente_dal, esente_al) values
+            (id, data_doc, pagamento, cliente, Piva, indirizzo, citta, prov, cap, arr_qta, arr_beni, arr_imp_uni, arr_importo, tot_parziale, tot_dovuto, iva, esente_num, esente_dal, esente_al) values
             ('" . $doc_n . "','" . $insert["data"] . "','" . $insert["pagamento"] . "','" . $insert["cliente"] . "','" . $insert["ivaCliente"] . "','" . $insert["indirizzoCliente"] . "','" . $insert["cittaCliente"] . "','" . $insert["pr"] . "','" . $insert["cap"] . "','" . $insert["arrayQuantita"] . "','" . $insert["arrayProdotti"] . "','" . $insert["arrayPrezziCad"] . "','" . $insert["arrayPrezzi"] . "','" . $insert["parziale"] . "','" . $insert["totaleDovuto"] . "','" . $insert["iva"] . "','" . $insert["esenteNum"] . "','" . $insert["esIvaDal"] . "','" . $insert["esIvaAl"] . "')";
     }
 
     if ($stampa == "preventivo") {
         $sql = "INSERT INTO stampa_" . $stampa . " 
-            (id, data, pagamento, cliente, piva, indirizzo, citta, prov, cap, quantita, prodotti, prezziCad, prezzi, parziale, totale, iva) values
+            (id, data_doc, pagamento, cliente, Piva, indirizzo, citta, prov, cap, arr_qta, arr_beni, arr_imp_uni, arr_importo, tot_parziale, tot_dovuto, iva) values
             ('" . $doc_n . "','" . $insert["data"] . "','" . $insert["pagamento"] . "','" . $insert["cliente"] . "','" . $insert["ivaCliente"] . "','" . $insert["indirizzoCliente"] . "','" . $insert["cittaCliente"] . "','" . $insert["pr"] . "','" . $insert["cap"] . "','" . $insert["arrayQuantita"] . "','" . $insert["arrayProdotti"] . "','" . $insert["arrayPrezziCad"] . "','" . $insert["arrayPrezzi"] . "','" . $insert["parziale"] . "','" . $insert["totaleDovuto"] . "','" . $insert["iva"] . "')";
     }
     //echo "/*".$sql."*/";

@@ -6,29 +6,18 @@
  * Time: 21:10
  */
 
-
+/*
+ *
+ */
 //print_r($_POST["data"]);
 
 
-if ($insert["esenteNum"] === "") {
-    $insert["esenteNum"] = 1;
-    $insert["esIvaDal"] = date('Y-m-d');
-    $insert["esIvaAl"] = date('Y-m-d');
-}
-
 if ($insert["azione"] === "modifica") {
-
-    $sql = "UPDATE stampa_" . $stampa . "
-        SET data='" . $insert["data"] . "', pagamento='" . $insert["pagamento"] . "', cliente='" . $insert["cliente"] . "', piva='" . $insert["ivaCliente"] . "', indirizzo='" . $insert["indirizzoCliente"] . "', citta='" . $insert["cittaCliente"] . "', prov='" . $insert["pr"] . "', cap='" . $insert["cap"] . "', quantita='" . $insert["arrayQuantita"] . "', prodotti='" . $insert["arrayProdotti"] . "', prezziCad='" . $insert["arrayPrezziCad"] . "', prezzi='" . $insert["arrayPrezzi"] . "', parziale='" . $insert["parziale"] . "', totale='" . $insert["totaleDovuto"] . "'";
-
-
-    if ($stampa == "fattura" || $stampa == "ndc") {
-        $sql .= ", esente_num='" . $insert["esenteNum"] . "', esente_dal='" . $insert["esIvaDal"] . "', esente_al='" . $insert["esIvaAl"] . "'";
-    }
-
-
-    $sql .= 'WHERE id="' . $insert["id"] . '"';
     $doc_n = $insert["id"];
+    $sql = "UPDATE stampa_" . $stampa . "
+        SET data_doc='" . $insert["data"] . "', mezzo='" . $insert["mezzo"] . "', cliente='" . $insert["cliente"] . "', Piva='" . $insert["ivaCliente"] . "', indirizzo='" . $insert["indirizzoCliente"] . "', citta='" . $insert["cittaCliente"] . "', prov='" . $insert["pr"] . "', cap='" . $insert["cap"] . "', causale='" . $insert["causale"] . "', imballo='" . $insert["imballo"] . "', colli='" . $insert["colli"] . "', arr_qta='" . $insert["quantita"] . "', arr_beni='" . $insert["articoli"] . "', nota='" . $insert["nota"] . "' WHERE id=" . $doc_n;
+
+
 } else {
     $sql = "SELECT id FROM stampa_" . $stampa . " ORDER BY id DESC";
 
@@ -37,18 +26,14 @@ if ($insert["azione"] === "modifica") {
         $doc_n = $obj->id + 1;
     }
 
-    if ($stampa == "fattura" || $stampa == "ndc") {
+    if ($stampa == "ddt") {
         $sql = "INSERT INTO stampa_" . $stampa . " 
-            (id, data, pagamento, cliente, piva, indirizzo, citta, prov, cap, quantita, prodotti, prezziCad, prezzi, parziale, totale, iva, esente_num, esente_dal, esente_al) values
-            ('" . $doc_n . "','" . $insert["data"] . "','" . $insert["pagamento"] . "','" . $insert["cliente"] . "','" . $insert["ivaCliente"] . "','" . $insert["indirizzoCliente"] . "','" . $insert["cittaCliente"] . "','" . $insert["pr"] . "','" . $insert["cap"] . "','" . $insert["arrayQuantita"] . "','" . $insert["arrayProdotti"] . "','" . $insert["arrayPrezziCad"] . "','" . $insert["arrayPrezzi"] . "','" . $insert["parziale"] . "','" . $insert["totaleDovuto"] . "','" . $insert["iva"] . "','" . $insert["esenteNum"] . "','" . $insert["esIvaDal"] . "','" . $insert["esIvaAl"] . "')";
+            (id, data_doc, mezzo, cliente, Piva, indirizzo, citta, causale, n_colli, arr_qta, arr_beni, note) values
+            ('" . $doc_n . "','" . $insert["data"] . "','" . $insert["mezzo"] . "','" . $insert["cliente"] . "','" . $insert["piva"] . "','" . $insert["indirizzo"] . "','" . $insert["citta"] . "','" . $insert["causale"] . "','" . $insert["colli"] . "','" . $insert["quantita"] . "','" . $insert["articoli"] . "','" . $insert["nota"] . "')";
+        //echo $sql;
     }
-
-    if ($stampa == "preventivo") {
-        $sql = "INSERT INTO stampa_" . $stampa . " 
-            (id, data, pagamento, cliente, piva, indirizzo, citta, prov, cap, quantita, prodotti, prezziCad, prezzi, parziale, totale, iva) values
-            ('" . $doc_n . "','" . $insert["data"] . "','" . $insert["pagamento"] . "','" . $insert["cliente"] . "','" . $insert["ivaCliente"] . "','" . $insert["indirizzoCliente"] . "','" . $insert["cittaCliente"] . "','" . $insert["pr"] . "','" . $insert["cap"] . "','" . $insert["arrayQuantita"] . "','" . $insert["arrayProdotti"] . "','" . $insert["arrayPrezziCad"] . "','" . $insert["arrayPrezzi"] . "','" . $insert["parziale"] . "','" . $insert["totaleDovuto"] . "','" . $insert["iva"] . "')";
-    }
-    //echo "/*".$sql."*/";
+//"INSERT INTO stampa_ddt (id, data_doc, mezzo, cliente, Piva, indirizzo, citta, causale, colli, arr_qta, arr_beni, nota) values ('2','2016-06-21','carico del mittente','1','ND','via daniele','Danielopoli','Vendita','1','1','etichette sardine 10000pz','Nessuna nota'"
+    //echo "/*" . $sql . "*/";
 }
 if ($result = $conndb->query($sql)) {
     //echo $sql;
@@ -62,11 +47,11 @@ if ($result = $conndb->query($sql)) {
     );
 
 } else {
-    //echo "//" . $conndb->error;
+    echo "//" . $conndb->error;
     echo json_encode(
         [
             "vai" => "no",
-            "perche" => "Non è stato possibile salvare " . $stampa . ", controlla tutti i campi"
+            "perche" => "Non è stato possibile salvare " . $stampa . " \, controlla tutti i campi -" . $sql
         ]
     );
 }
