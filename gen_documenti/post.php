@@ -42,7 +42,7 @@ if (isset($_POST["data"])) {
 }
 
 // RICEZIONE DEI DATI VIA GET
-if (isset($_GET["fattura_n"]) || isset($_GET["fattura_n"]) || isset($_GET["ndc_n"]) && isset($_GET["documento"])) {
+if (isset($_GET["fattura_n"]) || isset($_GET["preventivo_n"]) || isset($_GET["ndc_n"]) && isset($_GET["documento"])) {
     $stampa = $_GET["documento"];
     if (isset($_GET["fattura_n"])) {
         $id_doc = $_GET["fattura_n"];
@@ -62,27 +62,24 @@ if (isset($_GET["fattura_n"]) || isset($_GET["fattura_n"]) || isset($_GET["ndc_n
         $obj = $result->fetch_object();
 
         $id = $obj->id;
-        $data = $obj->data;
-        $anno = explode("-", $obj->data);
+        $data = $obj->data_doc;
+        $anno = explode("-", $obj->data_doc);
         $anno = $anno[0];
         $cliente = $obj->cliente;
-        $piva = $obj->piva;
+        $piva = $obj->Piva;
         $indirizzo = $obj->indirizzo;
         $citta = $obj->citta;
         $prov = $obj->prov;
         $cap = $obj->cap;
 
         $pagamento_scelto = $obj->pagamento;
-        $quantita = explode("||", $obj->quantita);      //
-        $prodotti = explode("||", $obj->prodotti);      //  Da ciclare nel foglio fatture stampato.
-        $prezzi_cad = explode("||", $obj->prezziCad);   //
-        $prezzi = explode("||", $obj->prezzi);          //
+        $quantita = explode("||", $obj->arr_qta);      //
+        $prodotti = explode("||", $obj->arr_beni);      //  Da ciclare nel foglio fatture stampato.
+        $prezzi_cad = explode("||", $obj->arr_imp_uni);   //
+        $prezzi = explode("||", $obj->arr_importo);          //
         $iva = $obj->iva;
-        $parziale = $obj->parziale;
-        $totale = $obj->totale;
-        $esente_num = $obj->esente_num;
-        $esente_dal = $obj->esente_dal;
-        $esente_al = $obj->esente_al;
+        $parziale = $obj->tot_parziale;
+        $totale = $obj->tot_dovuto;
 
         $memory = "[";
         foreach ($prodotti as $prodotto) {
@@ -92,10 +89,17 @@ if (isset($_GET["fattura_n"]) || isset($_GET["fattura_n"]) || isset($_GET["ndc_n
         $post = true;
         $azione = "modifica";
         if (isset($_GET["fattura_n"])) {
+            $esente_num = $obj->esente_num;
+            $esente_dal = $obj->esente_dal;
+            $esente_al = $obj->esente_al;
+
             include_once("fattura.php");
         }
 
         if (isset($_GET["ndc_n"])) {
+            $esente_num = $obj->esente_num;
+            $esente_dal = $obj->esente_dal;
+            $esente_al = $obj->esente_al;
             include_once("ndc.php");
         }
 
