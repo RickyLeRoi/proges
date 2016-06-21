@@ -39,6 +39,10 @@ if (isset($_POST["data"])) {
         include_once("./postdatas/fatt_prev.php");
     }
 
+    if ($stampa == "ddt") {
+        include_once("./postdatas/ddt.php");
+    }
+
 }
 
 // RICEZIONE DEI DATI VIA GET
@@ -126,7 +130,7 @@ if (isset($_GET["ddt_n"])) {
         $data = $obj->data_doc;
 
         $cliente = $obj->cliente;
-        $piva = $obj->piva;
+        $piva = $obj->Piva;
         $indirizzo = $obj->indirizzo;
         $citta = $obj->citta;
         $prov = $obj->prov;
@@ -139,7 +143,7 @@ if (isset($_GET["ddt_n"])) {
 
         $vettore = $obj->vettore;
 
-        include_once("array)./ddt.php");
+        include_once("./ddt.php");
     }
 }
 
