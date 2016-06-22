@@ -6,11 +6,12 @@
  * Time: 17:20
  */
 
+date_default_timezone_set("europe/rome");
 
 //print_r($_POST["data"]);
 
 
-if (!isset($insert["esenteNum"])) {
+if (!isset($insert["esenteNum"]) || @$insert["esenteNum"] == 0) {
     $insert["esenteNum"] = 1;
     $insert["esIvaDal"] = date('Y-m-d');
     $insert["esIvaAl"] = date('Y-m-d');
@@ -19,7 +20,7 @@ if (!isset($insert["esenteNum"])) {
 if ($insert["azione"] === "modifica") {
 
     $sql = "UPDATE stampa_" . $stampa . "
-        SET data_doc='" . $insert["data"] . "', pagamento='" . $insert["pagamento"] . "', cliente='" . $insert["cliente"] . "', Piva='" . $insert["ivaCliente"] . "', indirizzo='" . $insert["indirizzoCliente"] . "', citta='" . $insert["cittaCliente"] . "', prov='" . $insert["pr"] . "', cap='" . $insert["cap"] . "', arr_qta='" . $insert["arrayQuantita"] . "', arr_beni='" . $insert["arrayProdotti"] . "', arr_imp_uni='" . $insert["arrayPrezziCad"] . "', arr_importo='" . $insert["arrayPrezzi"] . "', tot_parziale='" . $insert["parziale"] . "', tot_dovuto='" . $insert["totaleDovuto"] . "'";
+        SET data_doc='" . $insert["data"] . "', pagamento='" . $insert["pagamento"] . "', cliente='" . $insert["cliente"] . "', Piva='" . $insert["ivaCliente"] . "', indirizzo='" . $insert["indirizzoCliente"] . "', citta='" . $insert["cittaCliente"] . "', prov='" . $insert["pr"] . "', cap='" . $insert["cap"] . "', arr_qta='" . $insert["arrayQuantita"] . "', arr_beni='" . $insert["arrayProdotti"] . "', arr_imp_uni='" . $insert["arrayPrezziCad"] . "', arr_importo='" . $insert["arrayPrezzi"] . "', tot_parziale='" . $insert["parziale"] . "', tot_dovuto='" . $insert["totaleDovuto"] . "' , iva='" . $insert["iva"] . "'";
 
 
     if ($stampa == "fattura" || $stampa == "ndc") {
@@ -30,6 +31,8 @@ if ($insert["azione"] === "modifica") {
     $sql .= 'WHERE id="' . $insert["id"] . '"';
     $doc_n = $insert["id"];
 } else {
+
+    // Controlla a che numero siamo
     $sql = "SELECT id FROM stampa_" . $stampa . " ORDER BY id DESC";
 
     if ($result = $conndb->query($sql)) {
@@ -54,6 +57,7 @@ if ($result = $conndb->query($sql)) {
     //echo $sql;
     echo json_encode(
         [
+            //"debug" => "//" . $conndb->error,
             "vai" => "ok",
             "dove" => $doc_n,
             "cosa" => $stampa . "_n",
@@ -62,7 +66,7 @@ if ($result = $conndb->query($sql)) {
     );
 
 } else {
-    //echo "//" . $conndb->error;
+    echo "//" . $conndb->error;
     echo json_encode(
         [
             "vai" => "no",

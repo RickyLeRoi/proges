@@ -9,7 +9,7 @@ if (isset($_GET["check"])) $check = mysqli_real_escape_string($conndb, $_GET["ch
 
 else $check = "Nessuna query";
 
-$query = "SELECT id, nomeC, cognomeC, indirizzoLC, cittaLC, provLC, capLC, PIVAC FROM clienti WHERE nomeC LIKE \"%" . $check . "%\" OR cognomeC LIKE \"%" . $check . "%\" OR indirizzoLC LIKE \"%" . $check . "%\" OR cittaLC LIKE \"%" . $check . "%\" OR PIVAC LIKE \"%" . $check . "%\" OR emailLC LIKE \"%" . $check . "%\"";
+$query = "SELECT id, nomeC, cognomeC, indirizzoLC, cittaLC, provLC, capLC, PIVAC, CFC FROM clienti WHERE nomeC LIKE \"%" . $check . "%\" OR cognomeC LIKE \"%" . $check . "%\" OR indirizzoLC LIKE \"%" . $check . "%\" OR cittaLC LIKE \"%" . $check . "%\" OR PIVAC LIKE \"%" . $check . "%\" OR emailLC LIKE \"%" . $check . "%\"";
 
 /* check connection */
 
@@ -29,6 +29,10 @@ $newKey = array();
 
 while ($clienti = $result->fetch_object()) {
 //echo $clienti->id;
+    if ($clienti->PIVAC == "") {
+        $clienti->PIVAC = $clienti->CFC;
+    }
+
     array_push($newKey, [
         "value" => $clienti->id,
         "data" => [

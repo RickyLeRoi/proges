@@ -10,10 +10,10 @@ if (isset($_GET["check"])) {
     $check = false;
 }
 
-$query = "SELECT stampa_fattura.*, clienti.*
+$query = "SELECT stampa_fattura.*, clienti.codC, clienti.nomeC, clienti.cognomeC, clienti.CFC, clienti.PIVAC
                 FROM stampa_fattura
                   LEFT JOIN clienti
-                    ON stampa_fattura.cf=clienti.CFC";
+                    ON stampa_fattura.cf=clienti.CFC AND stampa_fattura.Piva=clienti.PIVAC";
 
 if ($check != false) {
     $query .= " WHERE clienti.nomeC LIKE \"%" . $check . "%\" OR clienti.cognomeC LIKE \"%" . $check . "%\" OR  clienti.codC LIKE \"%" . $check . "%\"";

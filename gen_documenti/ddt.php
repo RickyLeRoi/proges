@@ -2,6 +2,7 @@
 $base_url = $_SERVER["SERVER_NAME"] . "/proges";
 include_once("../DB/config.php");
 include_once("./../function/session.php");
+date_default_timezone_set("europe/rome");
 
 if ((isset($post)) == true) {
 
@@ -123,7 +124,8 @@ if ($result) {
             input[type=text],
             input[type=date],
             select.form-control,
-            input[type=datetime] {
+            input[type=datetime],
+            #nota, .form-control {
                 border: none;
                 background: transparent;
                 box-shadow: none;
@@ -289,7 +291,7 @@ if ($result) {
                         <div class="text-left">
                             <p class="col-xs-4"><input type="checkbox"> Mittente </p>
                             <p class="col-xs-4"><input type="checkbox"> Destinatario </p>
-                            <p class="col-xs-4"><input type="checkbox"> Vettore</p>
+                            <p class="col-xs-4"><input id="vect" type="checkbox"> Vettore</p>
                             <strong>
                                 <p class="col-md-12 text-center">Bagheria, <input id="data" type="date"
                                                                                   value="<?php echo $data ?>"
@@ -368,9 +370,7 @@ if ($result) {
                         <p class="col-md-12">
                             <input id="consegnaData" required class="form-control text-center"
                                    style="width:50%; display:inline"
-                                   type="date"><input id="consegnaOra"
-                                                      class="form-control text-center" style="width:50%; display:inline"
-                                                      type="time"></p>
+                                   type="datetime-local"></p>
                     <td>
                         <p class="col-md-12">Firma del Conducente</p>
                     </td>
@@ -396,7 +396,7 @@ if ($result) {
                     <td>
                         <p class="col-md-12">Vettori, domicilio o residenza</p>
                         <p class="col-md-12">
-                            <select id="mezzo">
+                            <select id="mezzo" class="form-control">
                                 <?php foreach ($mezzi as $mezzo) : ?>
                                     <option value="<?php echo $mezzo ?>"><?php echo $mezzo ?></option>
                                 <?php endforeach; ?>
@@ -404,6 +404,7 @@ if ($result) {
                     </td>
                     <td>
                         <p class="col-md-12">Data e ora di ritiro</p>
+                        <p class="col-md-12"><input class="form-control" type="datetime-local" id="dataRitiro"></p>
                     </td>
                     <td>
                         <p class="col-md-12">Firme</p>
@@ -468,13 +469,24 @@ if ($result) {
         },
         onSelect: function (suggestion) {
             $(function () {
-                $("#clienti").val(suggestion.data.nomeC + " " + suggestion.data.cognomeC);
+                $("#cliente").val(suggestion.data.nomeC + " " + suggestion.data.cognomeC);
                 $("#piva").val(suggestion.data.PIVAC);
                 $("#citta").val(suggestion.data.cittaLC);
                 $("#indirizzo").val(suggestion.data.indirizzoLC);
             });
         }
     });
+
+    $('#vect').change(function () {
+        if ($(this).is(":checked")) {
+            $("#mezzo").show();
+        }
+
+        else {
+            $("#mezzo").hide();
+        }
+    });
+
     function save() {
         var dati = {
             data: $("#data").val(),
@@ -485,6 +497,7 @@ if ($result) {
             } else {
                 echo $azione;
             } ?>",
+            aspettoBeni: $("#aspettoBeni").val(),
             cliente: $("#cliente").val(),
             indirizzo: $("#indirizzo").val(),
             citta: $("#citta").val(),
@@ -494,7 +507,7 @@ if ($result) {
             colli: $("#colli").val(),
             peso: $("#peso").val(),
             consegnaData: $("#consegnaData").val(),
-            consegnaOra: $("#consegnaOra").val(),
+            ritiroData: $("#dataRitiro").val(),
             quantita: ciclaArray($(".arrQuantita"), "value"),
             articoli: ciclaArray($(".arrArticoli "), "textContent"),
             mezzo: $("#mezzo").val(),

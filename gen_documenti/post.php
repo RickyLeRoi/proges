@@ -81,7 +81,7 @@ if (isset($_GET["fattura_n"]) || isset($_GET["preventivo_n"]) || isset($_GET["nd
         $prodotti = explode("||", $obj->arr_beni);      //  Da ciclare nel foglio fatture stampato.
         $prezzi_cad = explode("||", $obj->arr_imp_uni);   //
         $prezzi = explode("||", $obj->arr_importo);          //
-        $iva = $obj->iva;
+        $iva_scelta = $obj->iva;
         $parziale = $obj->tot_parziale;
         $totale = $obj->tot_dovuto;
 

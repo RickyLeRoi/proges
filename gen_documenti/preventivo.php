@@ -422,8 +422,17 @@ if ((isset($post)) == true) {
                 <tr>
                     <td style="text-align:right"><p>IVA %</p></td>
                     <td><select id="iva" class="form-control" style="text-align:right">
-                            <?php foreach ($iva as $aliquota) : ?>
-                                <option value="<?php echo $aliquota ?>"><?php echo $aliquota ?></option>
+                            <?php foreach ($iva as $aliquota) :
+                                if (isset($iva_scelta)) {
+                                    if ($iva_scelta == $aliquota) {
+                                        $selected = "selected";
+                                    } else {
+                                        $selected = "";
+                                    }
+                                }
+                                ?>
+                                <option <?php echo $selected ?>
+                                    value="<?php echo $aliquota ?>"><?php echo $aliquota ?></option>
                             <?php endforeach ?>
                         </select></td>
                 </tr>
