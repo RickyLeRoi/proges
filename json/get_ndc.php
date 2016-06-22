@@ -10,33 +10,26 @@ if (isset($_GET["check"])) {
     $check = false;
 }
 
-$query = "SELECT stampa_ndc.*, clienti.*
-                FROM stampa_ndc
-                  LEFT JOIN clienti
-                    ON stampa_ndc.cf=clienti.CFC";
+$querya = "SELECT * FROM stampa_ndc";
+$queryb = "SELECT codC, nomeC, cognomeC FROM clienti";
 
 if ($check != false) {
-    $query .= " WHERE clienti.nomeC LIKE \"%" . $check . "%\" OR clienti.cognomeC LIKE \"%" . $check . "%\" OR  clienti.codC LIKE \"%" . $check . "%\"";
+    $queryb .= " WHERE clienti.nomeC LIKE \"%" . $check . "%\" OR clienti.cognomeC LIKE \"%" . $check . "%\" OR  clienti.codC LIKE \"%" . $check . "%\"";
 }
 
-/* check connection */
-if ($result = $conndb->query($query)) {
-    $result = $conndb->query($query);
-}
-if ($conndb->connect_errno) {
-    printf("Connect failed: %s\n", $conndb->connect_error);
-}
+$resulta = $conndb->query($querya);
+$resultb = $conndb->query($queryb);
 
 $newKey = array();
 
-while ($ndc = $result->fetch_object()) {
+while (($ndc = $resulta->fetch_object()) && ($clienti = $resultb->fetch_object())) {
     array_push($newKey, [
         "value" => $ndc->id,
         "data" => [
             "num" => $ndc->id,
-            "codC" => $ndc->codC,
-            "nomeC" => $ndc->nomeC,
-            "cognomeC" => $ndc->cognomeC,
+            "codC" => $clienti->codC,
+            "nomeC" => $clienti->nomeC,
+            "cognomeC" => $clienti->cognomeC,
             "data_doc" => $ndc->data_doc,
             "pagamDescr" => $ndc->pagamento,
             "totale" => $ndc->tot_dovuto

@@ -57,7 +57,7 @@ if ($result = $conndb->query($sql)) {
     //echo $sql;
     echo json_encode(
         [
-            //"debug" => "//" . $conndb->error,
+            "debug" => "//Error:" . $conndb->error,
             "vai" => "ok",
             "dove" => $doc_n,
             "cosa" => $stampa . "_n",
@@ -69,6 +69,7 @@ if ($result = $conndb->query($sql)) {
     echo "//" . $conndb->error;
     echo json_encode(
         [
+            "debug" => "//" . $conndb->error,
             "vai" => "no",
             "perche" => "Non è stato possibile salvare " . $stampa . ", controlla tutti i campi"
         ]

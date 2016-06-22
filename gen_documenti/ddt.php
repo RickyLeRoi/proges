@@ -21,12 +21,23 @@ if ((isset($post)) == true) {
 $query = "SELECT * FROM ck_mezzo";
 $result = $conndb->query($query);
 $mezzi = [];
+
 if ($result) {
     while ($row = $result->fetch_object()) {
         array_push($mezzi, $row->descr);
     }
 }
 
+if ((isset($post)) == true) {
+
+    $idRiga = count($quantita) + 1;
+    $modifica = true;
+
+} else {
+
+    $idRiga = 1;
+    $memory = '["default"]';
+}
 
 ?>
 
@@ -41,26 +52,6 @@ if ($result) {
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
     <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script language="JavaScript">
-        data = new Date();
-        var aaaa = data.getFullYear();
-        var MM = data.getMonth() + 1;
-        var gg = data.getDate();
-        if (gg < 10) {
-            gg = "0" + gg;
-        }
-        if (MM < 10) {
-            MM = "0" + MM;
-        }
-        var hh = data.getHours();
-        var mm = data.getMinutes();
-        if (hh < 10) {
-            hh = "0" + hh;
-        }
-        if (mm < 10) {
-            mm = "0" + mm;
-        }
-    </script>
     <style>
 
         body {
@@ -289,9 +280,10 @@ if ($result) {
                         <p class="col-md-12"><h5 class="text-center"><strong>DOCUMENTO DI TRASPORTO DPR 476/96</strong>
                         </h5></p>
                         <div class="text-left">
-                            <p class="col-xs-4"><input type="checkbox"> Mittente </p>
-                            <p class="col-xs-4"><input type="checkbox"> Destinatario </p>
-                            <p class="col-xs-4"><input id="vect" type="checkbox"> Vettore</p>
+                            <p class="col-xs-4"><input name="sceltaConsegna" type="radio"> Mittente </p>
+                            <p class="col-xs-4"><input name="sceltaConsegna" type="radio"> Destinatario </p>
+                            <p class="col-xs-4"><input name="sceltaConsegna" value="Vettore" id="vect" type="radio">
+                                Vettore</p>
                             <strong>
                                 <p class="col-md-12 text-center">Bagheria, <input id="data" type="date"
                                                                                   value="<?php echo $data ?>"
@@ -299,7 +291,8 @@ if ($result) {
                                                                                   style="width:30%; display:inline">
                             </strong></p>
 
-                            N° <input id="idDDT" type="number" readonly placeholder="0000"></p>
+                            N° <input id="idDDT" type="number" value="<?php echo @$id ?>" readonly
+                                      placeholder="0000"></p>
                             </strong>
                         </div>
 
@@ -310,9 +303,12 @@ if ($result) {
                 <tr>
                     <td colspan="3">
                         <p class="col-sm-4">Destinatario</p>
-                        <p class="col-sm-8"><input id="cliente" class="form-control" style="width:50%; display:inline"
+                        <p class="col-sm-8"><input value="<?php echo @$cliente ?>" id="cliente" class="form-control"
+                                                   style="width:50%; display:inline"
                                                    type="text"
-                                                   placeholder="Nome cliente"><input id="piva" class="form-control"
+                                                   placeholder="Nome cliente"><input id="piva"
+                                                                                     value="<?php echo @$piva ?>"
+                                                                                     class="form-control"
                                                                                      style="width:50%; display:inline"
                                                                                      type="text" readonly
                                                                                      placeholder="auto P.IVA"></p>
@@ -321,10 +317,12 @@ if ($result) {
 
                 <tr>
                     <td colspan="3"><p class="col-sm-4">Domicilio o residenza</p>
-                        <p class="col-sm-8"><input id="indirizzo" class="form-control" style="width:50%; display:inline"
+                        <p class="col-sm-8"><input value="<?php echo @$indirizzo ?>" id="indirizzo" class="form-control"
+                                                   style="width:50%; display:inline"
                                                    type="text"
                                                    readonly
-                                                   placeholder="auto Indirizzo"><input id="citta" class="form-control"
+                                                   placeholder="auto Indirizzo"><input value="<?php echo @$citta ?>"
+                                                                                       id="citta" class="form-control"
                                                                                        style="width:50%; display:inline"
                                                                                        type="text"
                                                                                        readonly
@@ -334,9 +332,12 @@ if ($result) {
                 <tr>
                     <td colspan="3"><p class="col-sm-4">Causale del trasporto</p>
                         <p class="col-sm-8"><select id="causale" class="form-control">
-                                <option>Vendita</option>
-                                <option>Campionatura</option>
-                                <option>Reso</option>
+                                <?php if (isset($causale)) : ?>
+                                    <option selected value="<?php echo $causale ?>"><?php echo $causale ?></option>
+                                <?php endif; ?>
+                                <option value="Vendita">Vendita</option>
+                                <option value="Campionatura">Campionatura</option>
+                                <option value="Reso">Reso</option>
                             </select></p>
                     </td>
                 </tr>
@@ -344,6 +345,9 @@ if ($result) {
                     <td>
                         <p class="col-md-12">Aspetto esteriore dei beni</p>
                         <p class="col-md-12"><select id="aspettoBeni" class="form-control">
+                                <?php if (isset($imballo)) : ?>
+                                    <option selected value="<?php echo $imballo ?>"><?php echo $imballo ?></option>
+                                <?php endif; ?>
                                 <option>Pacchi o scatoli</option>
                                 <option>Pedana</option>
                                 <option>Proprio dei beni</option>
@@ -352,11 +356,13 @@ if ($result) {
                     </td>
                     <td>
                         <p class="col-md-12">N. Colli</p>
-                        <p class="col-md-12"><input id="colli" type="number" class="form-control" min="0"></p>
+                        <p class="col-md-12"><input id="colli" value="<?php echo @$colli ?>" type="number"
+                                                    class="form-control" min="1"></p>
                     </td>
                     <td>
                         <p class="col-md-12">Peso Kg.</p>
-                        <p class="col-md-12"><input id="peso" type="number" class="form-control" min="0"></p>
+                        <p class="col-md-12"><input id="peso" value="<?php echo @$peso ?>" type="number"
+                                                    class="form-control" min="0"></p>
                     </td>
 
 
@@ -370,6 +376,7 @@ if ($result) {
                         <p class="col-md-12">
                             <input id="consegnaData" required class="form-control text-center"
                                    style="width:50%; display:inline"
+                                   value="<?php echo @$data_consegna ?>"
                                    type="datetime-local"></p>
                     <td>
                         <p class="col-md-12">Firma del Conducente</p>
@@ -384,11 +391,23 @@ if ($result) {
                     <td id="incolonnaQuantita">
                         <input id="idQuantita-default" type="number" style="visibility: hidden"
                                class="stampa form-control" min="0">
+                        <?php
+                        if (isset($post)) :
+                            foreach ($quantita as $q_id => $quantitaProdotto) : ?>
+                                <input id="idQuantita-<?php echo $q_id + 1 ?>" type="number"
+                                       class="form-control arrQuantita" min="1" value="<?php echo $quantitaProdotto ?>">
+                            <?php endforeach; endif ?>
                     </td>
 
                     <td id="incolonnaArticoli" colspan="2">
                         <input id="incolonnatore" type="text" class="stampa form-control"
                                placeholder="Descrizione articolo">
+                        <?php
+                        if (isset($post)) :
+                            foreach ($prodotti as $p_id => $prodotto) : ?>
+                                <p class="col-xs-12 arrArticoli noMargin"
+                                   id="idArticoli-<?php echo $p_id + 1 ?>"><?php echo $prodotto ?></p>
+                            <?php endforeach; endif ?>
                     </td>
 
                 </tr>
@@ -396,15 +415,24 @@ if ($result) {
                     <td>
                         <p class="col-md-12">Vettori, domicilio o residenza</p>
                         <p class="col-md-12">
-                            <select id="mezzo" class="form-control">
-                                <?php foreach ($mezzi as $mezzo) : ?>
-                                    <option value="<?php echo $mezzo ?>"><?php echo $mezzo ?></option>
+                            <select style="display: none;" id="mezzo" class="form-control">
+                                <?php foreach ($mezzi as $mezzo) :
+                                    if ($mezzo == $vettore) {
+                                        $selected = "selected";
+                                    } else {
+                                        $selected = "";
+                                    }
+                                    ?>
+
+                                    <option <?php echo $selected ?>
+                                        value="<?php echo $mezzo ?>"><?php echo $mezzo ?></option>
                                 <?php endforeach; ?>
                             </select></p>
                     </td>
                     <td>
                         <p class="col-md-12">Data e ora di ritiro</p>
-                        <p class="col-md-12"><input class="form-control" type="datetime-local" id="dataRitiro"></p>
+                        <p class="col-md-12"><input class="form-control" value="<?php echo @$data_rit ?>"
+                                                    type="datetime-local" id="dataRitiro"></p>
                     </td>
                     <td>
                         <p class="col-md-12">Firme</p>
@@ -417,8 +445,9 @@ if ($result) {
                 </tr>
                 <tr height="400" class="var">
                     <td><p class="col-md-12">Annotazioni - Variazioni</p>
-                        <p class="col-md-12"><textarea id="nota" class="form-control" cols="50"
-                                                       rows="10">Nessuna nota</textarea></p></td>
+                        <p class="col-md-12"><textarea placeholder="Nessuna nota..." id="nota" class="form-control"
+                                                       cols="50"
+                                                       rows="10"><?php echo @$note ?></textarea></p></td>
                     <td colspan="2"><p class="col-md-12">Firma del destinatario</p></td>
 
                 </tr>
@@ -433,33 +462,79 @@ if ($result) {
         </div>
     </div>
 </page>
-<div class=" stampa container-fluid text-center"><span class="h1">
-<a href="../ddt.php"> <span class="glyphicon glyphicon-chevron-left"></span>Indietro</a>
-<a href="#" onclick="window.print()"> <span class="glyphicon glyphicon-print"></span> Stampa</a>
-</span></div>
+<div id="stampa" class="row">
+    <div class="container">
+        <div class="row text-right">
+            <div class="col-sm-4">
+                <a href="../fatture.php"> <span class="glyphicon glyphicon-chevron-left"></span>Indietro</a>
+            </div>
+            <div class="col-sm-4">
+                <a href="#" onclick=save()> <i class="fa fa-floppy-o" aria-hidden="true"></i> Salva</a>
+            </div>
+            <div class="col-sm-4">
+                <?php if (isset($post)) : ?>
+                    <a href="#" onclick="window.print()"> <span class="glyphicon glyphicon-print"></span> Stampa</a>
+                <?php endif; ?>
+            </div>
+            </span>
+        </div>
+    </div>
+</div>
 <?php include_once("../template/parrot/foot.php") ?>
 
 <script>
-    var idRiga = 1;
+    var memory = <?php echo $memory ?>;
+    var idRiga = <?php echo $idRiga ?>;
     $('#incolonnatore').devbridgeAutocomplete({
         dataType: "json",
         paramName: "check",
         serviceUrl: 'http://<?php echo $base_url ?>/json/get_articoli.php',
         formatResult: function (suggestion, currentValue) {
-            return suggestion.value + ' - ' + suggestion.data.descr + " - " + suggestion.data.prezzo + "€";
+            return suggestion.value + ' - ' + suggestion.data.descr + " - " + suggestion.data.misura;
         },
         onSelect: function (suggestion) {
+            var execute = false;
             $(function () {
-                var articoli = "<p class=\"col-sm-12 arrArticoli noMargin\" id=\"idArticoli-" + idRiga + "\" >" + suggestion.data.descr + "</p>";
-                $("#incolonnaArticoli").append(articoli);
+                var checkIfExists = memory.indexOf(suggestion.data.descr);
+                console.log(checkIfExists);
+                if (checkIfExists !== -1) {
+                    alert("Hai già inserito questo prodotto");
+                    execute = false;
+                }
+                else {
+                    execute = true;
+                }
 
-                var quantita = "<input id=\"idQuantita-" + idRiga + "\" type=\"number\" class=\"form-control arrQuantita\" min=\"1\" value=\"1\">";
-                $("#incolonnaQuantita").append(quantita);
-                idRiga++;
+                if (execute === true) {
+                    $(function () {
+                        var articoli = "<p class=\"col-sm-12 arrArticoli noMargin\" id=\"idArticoli-" + idRiga + "\" >" + suggestion.data.descr + " - " + suggestion.data.misura + "</p>";
+                        $("#incolonnaArticoli").append(articoli);
+
+                        var quantita = "<input id=\"idQuantita-" + idRiga + "\" type=\"number\" class=\"form-control arrQuantita\" min=\"1\" value=\"1\">";
+                        $("#incolonnaQuantita").append(quantita);
+                        memory.push(suggestion.data.descr);
+                        idRiga++;
+
+                        $(".arrArticoli").click(function () {
+                            cancella($(this));
+                        });
+                    });
+                }
             });
         }
     });
-
+    $(".arrArticoli").click(function () {
+        cancella($(this));
+    });
+    function cancella(elemento) {
+        id = elemento.attr("id");
+        id = id.split("-");
+        index = memory.indexOf(elemento.text());
+        console.log(elemento.text());
+        console.log("array - " + index);
+        delete memory[index];
+        $("#prezzo-" + id[1] + ",#idArticoli-" + id[1] + ",#idQuantita-" + id[1] + ",#prezzo-" + id[1] + ",#prezzoTOT-" + id[1]).remove();
+    }
     $('#cliente').devbridgeAutocomplete({
         dataType: "json",
         paramName: "check",
@@ -477,14 +552,15 @@ if ($result) {
         }
     });
 
-    $('#vect').change(function () {
-        if ($(this).is(":checked")) {
+    $('input[name=sceltaConsegna]').click(function () {
+        if ($(this).val() == "Vettore") {
             $("#mezzo").show();
         }
-
         else {
             $("#mezzo").hide();
         }
+
+
     });
 
     function save() {

@@ -83,112 +83,114 @@ $queryb = "SELECT id
 </head>
 
 <body>
-        <!-- #### Navbars #### -->
-        <?php include_once("template/parrot/navbar.php") ?>
+<!-- #### Navbars #### -->
+<?php include_once("template/parrot/navbar.php") ?>
 
-        <div class="masthead">
-            <div class="masthead-title">
-                <div class="container">
-                    Genera Preventivo
+<div class="masthead">
+    <div class="masthead-title">
+        <div class="container">
+            Genera Preventivo
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <form class="form-horizontal" method="post" action="gen_documenti/preventivo.php">
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default">Genera</button>
                 </div>
             </div>
-        </div>
+        </form>
+    </div>
+</div>
 
+<div class="masthead">
+    <div class="masthead-title">
         <div class="container">
-            <div class="row">
-                <form class="form-horizontal" method="post" action="gen_documenti/preventivo.php">
-                    <div class="form-group">
-                        <div class="col-sm-offset-2 col-sm-10">
-                            <button type="submit" class="btn btn-default">Genera</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
+            Lista Preventivi
+            <form method="post" action="#">
+                <input onkeyup="suggerimento($(this).val())" id="filtro" class="form-control" type="text"
+                       placeholder="Filtra per utente">
+            </form>
         </div>
+    </div>
+</div>
 
-        <div class="masthead">
-            <div class="masthead-title">
-                <div class="container">
-                    Lista Preventivi
-                    <form method="post" action="#">
-                        <input onkeyup="suggerimento($(this).val())" id="filtro" class="form-control" type="text"
-                               placeholder="Filtra per utente">
-                    </form>
-                </div>
-            </div>
-        </div>
+<div class="container">
+<span style="color:#EA640C">
+Totale voci n. <span id="voci"></span>
+</span>
+</div>
 
-        <div class="container">
-    <span style="color:#EA640C">
-    Totale voci n. <span id="voci"></span>
-    </span>
-        </div>
+<div class="container">
+    <table class="table table-responsive">
+        <thead>
+        <tr>
+            <th>Preventivo n°</th>
+            <th>Codice Cliente</th>
+            <th>Cliente</th>
+            <th>Data</th>
+            <th>Pagamento</th>
+            <th>Totale</th>
+            <th>Link</th>
+        </tr>
+        </thead>
+        <tbody id="records">
 
-        <div class="container">
-            <table class="table table-responsive">
-                <thead>
-                <tr>
-                    <th>Preventivo n°</th>
-                    <th>Codice Cliente</th>
-                    <th>Cliente</th>
-                    <th>Data</th>
-                    <th>Pagamento</th>
-                    <th>Totale</th>
-                </tr>
-                </thead>
-                <tbody id="records">
+        </tbody>
 
-                </tbody>
+    </table>
+</div>
 
-            </table>
-        </div>
+<?php $result->close(); ?>
+<?php include_once("template/parrot/foot.php") ?>
 
-        <?php $result->close(); ?>
-        <?php include_once("template/parrot/foot.php") ?>
+<script>
+    suggerimento("");
+    function suggerimento(runsVar) {
 
-        <script>
-            suggerimento("");
-            function suggerimento(runsVar) {
+        var call = $.ajax({
+            url: "http://<?php echo $base_url ?>/json/get_preventivi.php",
+            method: "GET",
+            data: "check=" + runsVar,
+            dataType: "json"
+        });
 
-                var call = $.ajax({
-                    url: "http://<?php echo $base_url ?>/json/get_preventivi.php",
-                    method: "GET",
-                    data: "check=" + runsVar,
-                    dataType: "json"
-                });
+        call.done(function (msg) {
 
-                call.done(function (msg) {
-
-                    var records = msg.suggestions;
-                    console.log(records);
-                    $("#records").html("");
-                    for (var x in records) {
-                        var record = "" +
-                            "<td>" + records[x].data.num + "</td>" +
-                            "<td>" + records[x].data.codC + "</td>" +
-                            "<td>" + records[x].data.nomeC + " " + records[x].data.cognomeC + "</td>" +
-                            "<td>" + records[x].data.data_doc + "</td>" +
-                            "<td>" + records[x].data.pagamDescr + "</td>" +
-                            "<td>" + records[x].data.totale + " €</td>";
-                        $("#records").append("<tr>" + record + "</tr>");
-                    }
-
-                    if (jQuery.isEmptyObject(records)) {
-                        record = "<tr><td>" + "Non è presente alcun record" + "</td></tr>";
-                        $("#records").html(record);
-                    }
-                    var voci = parseInt(x) + 1;
-                    if (!voci) {
-                        voci = "0";
-                    }
-                    $("#voci").text(voci);
-                });
-
-                call.error(function (msg) {
-                    console.log(msg);
-                });
+            var records = msg.suggestions;
+            console.log(records);
+            $("#records").html("");
+            for (var x in records) {
+                var record = "" +
+                    "<td>" + records[x].data.num + "</td>" +
+                    "<td>" + records[x].data.codC + "</td>" +
+                    "<td>" + records[x].data.nomeC + " " + records[x].data.cognomeC + "</td>" +
+                    "<td>" + records[x].data.data_doc + "</td>" +
+                    "<td>" + records[x].data.pagamDescr + "</td>" +
+                    "<td>" + records[x].data.totale + " €</td>" +
+                    "<td><a href='http://<?php echo $base_url ?>/gen_documenti/post.php?preventivo_n=" + records[x].data.num + "&documento=preventivo'>Link</a></td>";
+                $("#records").append("<tr>" + record + "</tr>");
             }
-        </script>
+
+            if (jQuery.isEmptyObject(records)) {
+                record = "<tr><td>" + "Non è presente alcun record" + "</td></tr>";
+                $("#records").html(record);
+            }
+            var voci = parseInt(x) + 1;
+            if (!voci) {
+                voci = "0";
+            }
+            $("#voci").text(voci);
+        });
+
+        call.error(function (msg) {
+            console.log(msg);
+        });
+    }
+</script>
 
 </body>
 </html>

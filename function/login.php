@@ -22,7 +22,7 @@
       if($count == 1) {
         $_SESSION['login_user'] = $userFORM;
         $_SESSION['id_user'] = $row["id"];
-         header('Refresh: 3; URL= ../home.php');
+          header('Refresh: 1; URL= ../home.php');
           $ck = "
           <div class=\"alert alert-success alert-dismissable\">
           Login eseguito con <strong>successo.</strong>

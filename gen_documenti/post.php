@@ -118,13 +118,18 @@ if (isset($_GET["fattura_n"]) || isset($_GET["preventivo_n"]) || isset($_GET["nd
 if (isset($_GET["ddt_n"])) {
     $stampa = $_GET["documento"];
     $id_doc = $_GET["ddt_n"];
+    $azione = "modifica";
 
     $sql = "SELECT * FROM stampa_" . $stampa . " WHERE id=" . $id_doc;
 
     if ($result = $conndb->query($sql)) {
         $obj = $result->fetch_object();
+        $post = true;
 
-        print_r($obj);
+        //print_r($obj);
+
+
+
 
         $id = $obj->id;
         $data = $obj->data_doc;
@@ -137,12 +142,28 @@ if (isset($_GET["ddt_n"])) {
         $cap = $obj->cap;
         $causale = $obj->causale;
         $imballo = $obj->imballo;
-
+        $colli = $obj->n_colli;
+        $peso = $obj->peso;
         $quantita = explode("||", $obj->arr_qta);      //
         $prodotti = explode("||", $obj->arr_beni);      //  Da ciclare nel foglio fatture stampato.
 
-        $vettore = $obj->vettore;
+        $data_rit = $obj->data_rit;
+        $data_rit = explode(" ", $data_rit);
+        $data_rit = $data_rit[0] . "T" . $data_rit[1];
 
+
+        $data_consegna = $obj->data_consegna;
+        $data_consegna = explode(" ", $data_consegna);
+        $data_consegna = $data_consegna[0] . "T" . $data_consegna[1];
+
+        $vettore = $obj->vettore;
+        $note = $obj->note;
+
+        $memory = "[";
+        foreach ($prodotti as $prodotto) {
+            $memory .= '"' . $prodotto . '",';
+        }
+        $memory .= "\"default\"]";
         include_once("./ddt.php");
     }
 }
