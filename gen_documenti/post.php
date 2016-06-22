@@ -159,6 +159,8 @@ if (isset($_GET["ddt_n"])) {
         $vettore = $obj->vettore;
         $note = $obj->note;
 
+        $vettore = $obj->vettore;
+
         $memory = "[";
         foreach ($prodotti as $prodotto) {
             $memory .= '"' . $prodotto . '",';

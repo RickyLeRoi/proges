@@ -37,7 +37,7 @@
 if ($insert["azione"] === "modifica") {
     $doc_n = $insert["idDDT"];
     $sql = "UPDATE stampa_" . $stampa . "
-        SET data_doc='" . $insert["data"] . "', peso='" . $insert["peso"] . "', data_consegna='" . $insert["consegnaData"] . "',data_rit='" . $insert["ritiroData"] . "', mezzo='" . $insert["mezzo"] . "', cliente='" . $insert["cliente"] . "', Piva='" . $insert["piva"] . "', indirizzo='" . $insert["indirizzo"] . "', citta='" . $insert["citta"] . "', causale='" . $insert["causale"] . "', imballo='" . $insert["aspettoBeni"] . "', n_colli='" . $insert["colli"] . "', arr_qta='" . $insert["quantita"] . "', arr_beni='" . $insert["articoli"] . "', note='" . $insert["nota"] . "' WHERE id=" . $doc_n;
+        SET data_doc='" . $insert["data"] . "', peso='" . $insert["peso"] . "', data_consegna='" . $insert["consegnaData"] . "',data_rit='" . $insert["ritiroData"] . "', mezzo='" . $insert["mezzo"] . "', cliente='" . $insert["cliente"] . "', Piva='" . $insert["piva"] . "', indirizzo='" . $insert["indirizzo"] . "', citta='" . $insert["citta"] . "', causale='" . $insert["causale"] . "', imballo='" . $insert["aspettoBeni"] . "', n_colli='" . $insert["colli"] . "', arr_qta='" . $insert["quantita"] . "', arr_beni='" . $insert["articoli"] . "', vettore='" . $insert["vettore"] . "', note='" . $insert["nota"] . "' WHERE id=" . $doc_n;
 
 
 } else {
@@ -50,8 +50,8 @@ if ($insert["azione"] === "modifica") {
 
     if ($stampa == "ddt") {
         $sql = "INSERT INTO stampa_" . $stampa . " 
-            (id, peso, data_doc, mezzo, cliente, Piva, indirizzo, citta, causale, n_colli, arr_qta, arr_beni, note, imballo, data_consegna, data_rit) values
-            ('" . $doc_n . "','" . $insert["peso"] . "','" . $insert["data"] . "','" . $insert["mezzo"] . "','" . $insert["cliente"] . "','" . $insert["piva"] . "','" . $insert["indirizzo"] . "','" . $insert["citta"] . "','" . $insert["causale"] . "','" . $insert["colli"] . "','" . $insert["quantita"] . "','" . $insert["articoli"] . "','" . $insert["nota"] . "', '" . $insert["aspettoBeni"] . "','" . $insert["consegnaData"] . "','" . $insert["ritiroData"] . "')";
+            (id, peso, data_doc, mezzo, cliente, Piva, indirizzo, citta, causale, n_colli, arr_qta, arr_beni, note, imballo, data_consegna, data_rit, vettore) values
+            ('" . $doc_n . "','" . $insert["peso"] . "','" . $insert["data"] . "','" . $insert["mezzo"] . "','" . $insert["cliente"] . "','" . $insert["piva"] . "','" . $insert["indirizzo"] . "','" . $insert["citta"] . "','" . $insert["causale"] . "','" . $insert["colli"] . "','" . $insert["quantita"] . "','" . $insert["articoli"] . "','" . $insert["nota"] . "', '" . $insert["aspettoBeni"] . "','" . $insert["consegnaData"] . "','" . $insert["ritiroData"] . "', '" . $insert["vettore"] . "')";
         //echo $sql;
     }
 //"INSERT INTO stampa_ddt (id, data_doc, mezzo, cliente, Piva, indirizzo, citta, causale, colli, arr_qta, arr_beni, nota) values ('2','2016-06-21','carico del mittente','1','ND','via daniele','Danielopoli','Vendita','1','1','etichette sardine 10000pz','Nessuna nota'"

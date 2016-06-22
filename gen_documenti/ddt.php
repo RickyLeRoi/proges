@@ -258,11 +258,7 @@ if ((isset($post)) == true) {
 
 <body>
 <span id="controlloQuery"></span>
-<div style="padding-top: 10px; padding-bottom: 10px;" class="stampa container-fluid text-center">        <span
-        class="h1">
-<a href="../ddt.php"> <span class="glyphicon glyphicon-chevron-left"></span>Indietro</a>
-<a href="#" onclick="window.print()"> <span class="glyphicon glyphicon-print"></span> Stampa</a>
-</span></div>
+
 
 <page>
     <div style="background: #FFF" class="container-fluid">
@@ -280,19 +276,26 @@ if ((isset($post)) == true) {
                         <p class="col-md-12"><h5 class="text-center"><strong>DOCUMENTO DI TRASPORTO DPR 476/96</strong>
                         </h5></p>
                         <div class="text-left">
-                            <p class="col-xs-4"><input name="sceltaConsegna" type="radio"> Mittente </p>
-                            <p class="col-xs-4"><input name="sceltaConsegna" type="radio"> Destinatario </p>
-                            <p class="col-xs-4"><input name="sceltaConsegna" value="Vettore" id="vect" type="radio">
+                            <p class="col-xs-4"><input name="sceltaConsegna" <?php if (@$vettore == "Mittente") {
+                                    echo "checked";
+                                } ?> value="Mittente" type="radio"> Mittente </p>
+                            <p class="col-xs-4"><input name="sceltaConsegna" <?php if (@$vettore == "Destinatario") {
+                                    echo "checked";
+                                } ?> value="Destinatario" type="radio"> Destinatario </p>
+                            <p class="col-xs-4"><input name="sceltaConsegna" <?php if (@$vettore == "Vettore") {
+                                    echo "checked";
+                                } ?> value="Vettore" id="vect" type="radio">
                                 Vettore</p>
-                            <strong>
-                                <p class="col-md-12 text-center">Bagheria, <input id="data" type="date"
-                                                                                  value="<?php echo $data ?>"
-                                                                                  class="stampa form-control"
-                                                                                  style="width:30%; display:inline">
-                            </strong></p>
+                            <div class="clearfix"></div>
+                            <p class="col-md-12 text-center"><strong>Bagheria,</strong> <input id="data" type="date"
+                                                                                               value="<?php echo $data ?>"
+                                                                                               class="stampa form-control"
+                                                                                               style="width: auto; display:inline">
+                            </p>
 
-                            N° <input id="idDDT" type="number" value="<?php echo @$id ?>" readonly
-                                      placeholder="0000"></p>
+                            <p class="col-md-12">N° <input class="form-control" style="width: auto; display: inline"
+                                                           id="idDDT" type="number" value="<?php echo @$id ?>" readonly
+                                                           placeholder="0000"></p>
                             </strong>
                         </div>
 
@@ -587,7 +590,8 @@ if ((isset($post)) == true) {
             quantita: ciclaArray($(".arrQuantita"), "value"),
             articoli: ciclaArray($(".arrArticoli "), "textContent"),
             mezzo: $("#mezzo").val(),
-            nota: $("#nota").val()
+            nota: $("#nota").val(),
+            vettore: $("input[name=sceltaConsegna]:checked").val()
 
 
         };
