@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: danielo
- * Date: 20/06/2016
- * Time: 21:10
- */
-
 
 /*
     [id] => 2
