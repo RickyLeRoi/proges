@@ -107,7 +107,7 @@ $queryb = "SELECT id
             <th>Cliente</th>
             <th>Data</th>
             <th>Ritiro</th>
-            <th>Note</th>
+            <th width="300px">Note</th>
             <th>Link</th>
         </tr>
         </thead>
@@ -144,7 +144,7 @@ $queryb = "SELECT id
                     "<td>" + records[x].data.nomeC + " " + records[x].data.cognomeC + "</td>" +
                     "<td>" + records[x].data.data_doc + "</td>" +
                     "<td>" + records[x].data.data_rit + "</td>" +
-                    "<td>" + records[x].data.note + "</td>" +
+                    "<td width='300px'>" + records[x].data.note + "</td>" +
                     "<td><a href='http://<?php echo $base_url ?>/gen_documenti/post.php?ddt_n=" + records[x].data.num + "&documento=ddt'>Link</a></td>"; 
                 $("#records").append("<tr>" + record + "</tr>");
             }

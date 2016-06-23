@@ -6,30 +6,31 @@ include_once("../DB/config.php");
 // Queries
 if (isset($_GET["check"])) {
     $check = mysqli_real_escape_string($conndb, $_GET["check"]);
+    $query = "SELECT stampa_ddt.*, codC, nomeC, cognomeC
+              FROM stampa_ddt
+              LEFT JOIN clienti ON stampa_ddt.Piva=clienti.PIVAC OR stampa_ddt.Piva=CFC
+              WHERE clienti.nomeC LIKE \"%" . $check . "%\" OR clienti.cognomeC LIKE \"%" . $check . "%\" OR  clienti.codC LIKE \"%" . $check . "%\"
+              ORDER BY stampa_ddt.id ASC";
 } else {
-    $check = false;
+    $check = '';
+    $query = "SELECT stampa_ddt.*, codC, nomeC, cognomeC
+              FROM stampa_ddt
+              LEFT JOIN clienti ON stampa_ddt.Piva=clienti.PIVAC OR stampa_ddt.Piva=CFC
+              ORDER BY stampa_ddt.id ASC";
 }
 
-$querya = "SELECT * FROM stampa_ddt";
-$queryb = "SELECT codC, nomeC, cognomeC FROM clienti";
-
-if ($check != false) {
-    $queryb .= " WHERE clienti.nomeC LIKE \"%" . $check . "%\" OR clienti.cognomeC LIKE \"%" . $check . "%\" OR  clienti.codC LIKE \"%" . $check . "%\"";
-}
-
-$resulta = $conndb->query($querya);
-$resultb = $conndb->query($queryb);
+$result = $conndb->query($query);
 
 $newKey = array();
 
-while (($ddt = $resulta->fetch_object()) && ($clienti = $resultb->fetch_object())) {
+while ($ddt = $result->fetch_object()) {
     array_push($newKey, [
         "value" => $ddt->id,
         "data" => [
             "num" => $ddt->id,
-            "codC" => $clienti->codC,
-            "nomeC" => $clienti->nomeC,
-            "cognomeC" => $clienti->cognomeC,
+            "codC" => $ddt->codC,
+            "nomeC" => $ddt->nomeC,
+            "cognomeC" => $ddt->cognomeC,
             "data_doc" => $ddt->data_doc,
             "data_rit" => $ddt->data_rit,
             "note" => $ddt->note

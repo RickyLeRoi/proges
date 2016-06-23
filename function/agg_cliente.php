@@ -1,7 +1,6 @@
 <?php
    include("../DB/config.php");
-    $ok = "";
-    $no = "";
+   $ck = "";
    if($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // tipo, username e password da form
@@ -38,13 +37,13 @@ $sql_gen = "INSERT INTO clienti (nomeC, cognomeC, codC, descrC, noteC, indirizzo
 
 //controllo inserimento
 if ($conndb->query($sql_gen) === TRUE) {
-    $ok = "
+    $ck = "
           <div class=\"alert alert-success alert-dismissable\">
           Inserimento dati effettuato con <strong>successo.</strong>
           </div>
           ";
 } else {
-    $no = "
+    $ck = "
          <div class=\"alert alert-danger alert-dismissable\">
          Errore durante l'inserimento dati: $conndb->error;
          </div>
@@ -101,7 +100,7 @@ if ($conndb->query($sql_gen) === TRUE) {
         <?php include_once("./../template/parrot/navbar.php") ?>
 
 <div class="container">
-                <small><?php echo $ok; echo $no; ?></small>
+                <small><?php echo $ck; ?></small>
 </div>
 
         <div class="componant-section">

@@ -461,7 +461,7 @@ if ((isset($post)) == true) {
     $('.incolonnatore').devbridgeAutocomplete({
         dataType: "json",
         paramName: "check",
-        serviceUrl: 'http://<?php echo $base_url ?>/json/get_articoli_xfatt.php',
+        serviceUrl: 'http://<?php echo $base_url ?>/json/get_articoli.php',
         formatResult: function (suggestion, currentValue) {
             return suggestion.value + ' - ' + suggestion.data.descr + " - " + suggestion.data.prezzo + "€";
         },

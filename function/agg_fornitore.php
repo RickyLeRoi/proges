@@ -1,6 +1,6 @@
 <?php
    include("../DB/config.php");
-
+   $ck = "";
    if($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // tipo, username e password da form

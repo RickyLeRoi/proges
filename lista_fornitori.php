@@ -164,7 +164,7 @@
                 limit = 30;
             function loadPage(page, limit) {
                 $.ajax({
-                    url: "json/get_fornitori.php",
+                    url: "http://<?php echo $base_url ?>/json/get_fornitori.php",
                     dataType: "JSON",
                     type: "GET",
                     error: function () {
