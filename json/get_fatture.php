@@ -22,7 +22,7 @@ $resultb = $conndb->query($queryb);
 
 $newKey = array();
 
-while (($fattura = $resulta->fetch_object()) && ($clienti = $resultb->fetch_object())) {
+while (($fattura = $resulta->fetch_object()) and ($clienti = $resultb->fetch_object())) {
     array_push($newKey, [
         "value" => $fattura->id,
         "data" => [
