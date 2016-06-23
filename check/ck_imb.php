@@ -147,7 +147,7 @@ $ck = "";
         <tbody>
             <?php
             include("../DB/config.php");
-            $sql = "SELECT * FROM ck_imballo";
+            $sql = "SELECT * FROM ck_imballo ORDER BY id";
             $result = mysqli_query($conndb, $sql);
             while($row = mysqli_fetch_array($result)) {
                 $id = $row['id'];

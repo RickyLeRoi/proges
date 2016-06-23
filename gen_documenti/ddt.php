@@ -287,15 +287,10 @@ if ((isset($post)) == true) {
                                 } ?> value="Vettore" id="vect" type="radio">
                                 Vettore</p>
                             <div class="clearfix"></div>
-                            <p class="col-md-12 text-center"><strong>Bagheria,</strong> <input id="data" type="date"
-                                                                                               value="<?php echo $data ?>"
-                                                                                               class="stampa form-control"
-                                                                                               style="width: auto; display:inline">
+                            <p class="col-md-12 text-center"><strong>Bagheria,</strong> <input id="data" type="date" value="<?php echo $data ?>" class="stampa form-control" style="width: auto; display:inline">
                             </p>
 
-                            <p class="col-md-12">N° <input class="form-control" style="width: auto; display: inline"
-                                                           id="idDDT" type="number" value="<?php echo @$id ?>" readonly
-                                                           placeholder="0000"></p>
+                            <p class="col-md-12">DDT N° <input class="form-control" style="width: auto; display: inline" id="idDDT" type="number" value="<?php echo @$id ?>" readonly placeholder="0000"></p>
                             </strong>
                         </div>
 
@@ -306,30 +301,16 @@ if ((isset($post)) == true) {
                 <tr>
                     <td colspan="3">
                         <p class="col-sm-4">Destinatario</p>
-                        <p class="col-sm-8"><input value="<?php echo @$cliente ?>" id="cliente" class="form-control"
-                                                   style="width:50%; display:inline"
-                                                   type="text"
-                                                   placeholder="Nome cliente"><input id="piva"
-                                                                                     value="<?php echo @$piva ?>"
-                                                                                     class="form-control"
-                                                                                     style="width:50%; display:inline"
-                                                                                     type="text" readonly
-                                                                                     placeholder="auto P.IVA"></p>
+                        <p class="col-sm-8"><input value="<?php echo @$cliente ?>" id="cliente" class="form-control" style="width:50%; display:inline" type="text" placeholder="Nome cliente">
+                            <input id="piva" value="<?php echo @$piva ?>" class="form-control" style="width:50%; display:inline" type="text" readonly placeholder="auto P.IVA"></p>
                     </td>
                 </tr>
 
                 <tr>
                     <td colspan="3"><p class="col-sm-4">Domicilio o residenza</p>
-                        <p class="col-sm-8"><input value="<?php echo @$indirizzo ?>" id="indirizzo" class="form-control"
-                                                   style="width:50%; display:inline"
-                                                   type="text"
-                                                   readonly
-                                                   placeholder="auto Indirizzo"><input value="<?php echo @$citta ?>"
-                                                                                       id="citta" class="form-control"
-                                                                                       style="width:50%; display:inline"
-                                                                                       type="text"
-                                                                                       readonly
-                                                                                       placeholder="auto Citta'"></p>
+                        <p class="col-sm-8">
+                            <input value="<?php echo @$indirizzo ?>" id="indirizzo" class="form-control" style="width:50%; display:inline" type="text" readonly placeholder="auto Indirizzo">
+                            <input value="<?php echo @$citta ?>" id="citta" class="form-control" style="width:50%; display:inline" type="text" readonly placeholder="auto Citta'"></p>
                     </td>
                 </tr>
                 <tr>
@@ -359,13 +340,11 @@ if ((isset($post)) == true) {
                     </td>
                     <td>
                         <p class="col-md-12">N. Colli</p>
-                        <p class="col-md-12"><input id="colli" value="<?php echo @$colli ?>" type="number"
-                                                    class="form-control" min="1"></p>
+                        <p class="col-md-12"><input id="colli" value="<?php echo @$colli ?>" type="number" class="form-control" min="1"></p>
                     </td>
                     <td>
                         <p class="col-md-12">Peso Kg.</p>
-                        <p class="col-md-12"><input id="peso" value="<?php echo @$peso ?>" type="number"
-                                                    class="form-control" min="0"></p>
+                        <p class="col-md-12"><input id="peso" value="<?php echo @$peso ?>" type="number" class="form-control" min="0"></p>
                     </td>
 
 
@@ -377,10 +356,7 @@ if ((isset($post)) == true) {
                     <td>
                         <p class="col-md-12">Data e ora</p>
                         <p class="col-md-12">
-                            <input id="consegnaData" required class="form-control text-center"
-                                   style="width:50%; display:inline"
-                                   value="<?php echo @$data_consegna ?>"
-                                   type="datetime-local"></p>
+                            <input id="consegnaData" required class="form-control text-center" style="width:50%; display:inline" value="<?php echo @$data_consegna ?>" type="datetime-local"></p>
                     <td>
                         <p class="col-md-12">Firma del Conducente</p>
                     </td>
@@ -434,8 +410,7 @@ if ((isset($post)) == true) {
                     </td>
                     <td>
                         <p class="col-md-12">Data e ora di ritiro</p>
-                        <p class="col-md-12"><input class="form-control" value="<?php echo @$data_rit ?>"
-                                                    type="datetime-local" id="dataRitiro"></p>
+                        <p class="col-md-12"><input class="form-control" value="<?php echo @$data_rit ?>" type="datetime-local" id="dataRitiro"></p>
                     </td>
                     <td>
                         <p class="col-md-12">Firme</p>
@@ -448,9 +423,7 @@ if ((isset($post)) == true) {
                 </tr>
                 <tr height="400" class="var">
                     <td><p class="col-md-12">Annotazioni - Variazioni</p>
-                        <p class="col-md-12"><textarea placeholder="Nessuna nota..." id="nota" class="form-control"
-                                                       cols="50"
-                                                       rows="10"><?php echo @$note ?></textarea></p></td>
+                        <p class="col-md-12"><textarea placeholder="Nessuna nota..." id="nota" class="form-control" cols="50" rows="10"><?php echo @$note ?></textarea></p></td>
                     <td colspan="2"><p class="col-md-12">Firma del destinatario</p></td>
 
                 </tr>

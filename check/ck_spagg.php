@@ -149,7 +149,7 @@ $ck = "";
         <tbody>
             <?php
             include("../DB/config.php");
-            $sql = "SELECT * FROM ck_spese";
+            $sql = "SELECT * FROM ck_spese ORDER BY id";
             $result = mysqli_query($conndb, $sql);
             while($row = mysqli_fetch_array($result)) {
                 $id = $row['id'];
@@ -190,12 +190,6 @@ $ck = "";
         <div id="tabs" class="tab-content">
             <div role="tabpanel" class="tab-pane active" id="new">
                 <form action="#" method="POST">
-                    <div class="form-group" style="margin-top: 15px">
-                        <label class="col-sm-2 control-label">Tipo</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" name="tipo" placeholder="Tipo">
-                        </div>
-                    </div>
                     <div class="col-sm-12">
                         <div class="row">
                             <div class="col-sm-2">
@@ -231,12 +225,6 @@ $ck = "";
                             <div class="col-sm-10">
                                 <input type="text" class="form-control autoWidth modifica" name="id" placeholder="ID">
                             </div>
-                        </div>
-                    </div>
-                    <div class="form-group" style="margin-top: 15px">
-                        <label class="col-sm-2 control-label">Tipo</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control modifica" name="tipo" placeholder="Tipo">
                         </div>
                     </div>
                     <div class="col-sm-12">

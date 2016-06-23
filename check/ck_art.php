@@ -159,7 +159,7 @@ $ck = "";
         <tbody>
             <?php
             include("../DB/config.php");
-            $sql = "SELECT * FROM articoli";
+            $sql = "SELECT * FROM articoli ORDER BY id";
             $result = mysqli_query($conndb, $sql);
             while($row = mysqli_fetch_array($result)) {
                 $id = $row['id'];
@@ -176,7 +176,6 @@ $ck = "";
                 <td class='valore-" . $id . "'>" . $cod_int . "</td>
                 <td class='valore-" . $id . "'>" . $misura . "</td>
                 <td class='valore-" . $id . "'>" . $descr . "</td>
-                
                 <td class='valore-" . $id . "'>" . $cod_barre . "</td>
                 <td class='valore-" . $id . "'>" . $prezzo . "</td>
                 <td class='valore-" . $id . "'>" . $note . "</td>

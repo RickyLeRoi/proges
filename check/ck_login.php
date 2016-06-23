@@ -1,6 +1,6 @@
 <?php
    include("../DB/config.php");
-
+$ck = "";
    if($_SERVER["REQUEST_METHOD"] == "POST") {
        switch ($_POST['case']) {
            case "add":
@@ -151,7 +151,7 @@
             <tbody>
                 <?php
                 include("../DB/config.php");
-                $sql = "SELECT * FROM users";
+                $sql = "SELECT * FROM users ORDER BY id";
                 $result = mysqli_query($conndb, $sql);
                 while($row = mysqli_fetch_array($result)) {
                     $id = $row['id'];
