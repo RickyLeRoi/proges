@@ -9,7 +9,7 @@ $ck = "";
                $prezzo = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['prezzo']));
                $descr = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['descr']));
 
-               $sql_ins = "INSERT INTO ck_spese (tipo, prezzo, descr) VALUES ('$tipo', '$prezzo','$descr')";
+               $sql_ins = "INSERT INTO ck_spese (descr, prezzo) VALUES ('$descr', '$prezzo')";
 
                //controllo inserimento
                if ($conndb->query($sql_ins) === TRUE) {
@@ -28,11 +28,10 @@ $ck = "";
 
            case "edit":
                $id = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['id']));
-               $tipo = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['tipo']));
-               $prezzo = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['prezzo']));
                $descr = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['descr']));
+               $prezzo = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['prezzo']));
 
-               $sql_edit = "UPDATE ck_spese SET tipo='$tipo', prezzo='$prezzo', descr='$descr' WHERE id='$id';";
+               $sql_edit = "UPDATE ck_spese SET descr='$descr', prezzo='$prezzo' WHERE id='$id';";
 
                 //controllo inserimento
                 if ($conndb->query($sql_edit) === TRUE) {
@@ -278,9 +277,8 @@ $ck = "";
             $("#openModTab").click();
             console.log(obj[0].textContent);
             $(".modifica[name=id]").val(obj[0].textContent);
-            $(".modifica[name=tipo]").val(obj[1].textContent);
+            $(".modifica[name=descr]").val(obj[1].textContent);
             $(".modifica[name=prezzo]").val(obj[2].textContent);
-            $(".modifica[name=descr]").val(obj[3].textContent);
         }
     </script>
 	</body>
