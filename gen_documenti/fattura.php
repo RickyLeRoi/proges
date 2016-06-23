@@ -463,7 +463,7 @@ if ((isset($post)) == true) {
         paramName: "check",
         serviceUrl: 'http://<?php echo $base_url ?>/json/get_articoli.php',
         formatResult: function (suggestion, currentValue) {
-            return suggestion.value + ' - ' + suggestion.data.descr + " - " + suggestion.data.prezzo + "€";
+            return suggestion.value + " - " + suggestion.data.descr + " - " + suggestion.data.misura + " - " + suggestion.data.prezzo + "€";
         },
         onSelect: function (suggestion) {
             var execute = false;
@@ -479,7 +479,7 @@ if ((isset($post)) == true) {
                     }
 
                 if (execute === true) {
-                    var articoli = "<p class=\"col-xs-12 arrArticoli noMargin\" id=\"idArticoli-" + idRiga + "\" >" + suggestion.data.descr + "</p>";
+                    var articoli = "<p class=\"col-xs-12 arrArticoli noMargin\" id=\"idArticoli-" + idRiga + "\" >" + suggestion.data.descr + " - " + suggestion.data.misura + "</p>";
                     $("#incolonnaArticoli").append(articoli);
                     var quantita = "<input id=\"idQuantita-" + idRiga + "\" type=\"number\" class=\"form-control arrQuantita\" min=\"1\" value=\"1\">";
                     $("#incolonnaQuantita").append(quantita);
@@ -669,5 +669,7 @@ if ((isset($post)) == true) {
         });
     }
 
+
 </script>
+
 </body>

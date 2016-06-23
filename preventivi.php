@@ -142,6 +142,14 @@ Totale voci n. <span id="voci"></span>
         </tbody>
 
     </table>
+    <div class="row">
+        <nav class="col-sm-12">
+            <ul class="pager">
+                <li class="previous"><a id="prec" href="#"><span aria-hidden="true">&larr;</span> Precedente</a></li>
+                <li class="next"><a id="succ" href="#">Successivo <span aria-hidden="true">&rarr;</span></a></li>
+            </ul>
+        </nav>
+    </div>
 </div>
 
 <?php $result->close(); ?>
@@ -190,6 +198,39 @@ Totale voci n. <span id="voci"></span>
             console.log(msg);
         });
     }
+    $("#succ").click(function() {
+        if (rowsReturned == 29) {
+            page += +30;
+            limit += +30;
+            loadPage(page, limit);
+        }
+    });
+
+    $("#prec").click(function() {
+        if (page !=0 ) {
+            page += -30;
+            limit += -30;
+            loadPage(page, limit)
+        }
+    });
+    function prevNext() {
+        var prev = document.getElementById("prec").parentNode;
+        if (page < 0 || page == 0) {
+            prev.className = "hide";
+        }
+        else {
+            prev.className = "previous";
+        }
+        var succ = document.getElementById("succ").parentNode;
+        if (rowsReturned != 29) {
+            succ.className = "hide";
+        }
+        else {
+            succ.className = "next";
+        }
+    }
+    loadPage(0, 30);
+
 </script>
 
 </body>

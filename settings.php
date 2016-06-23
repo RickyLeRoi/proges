@@ -30,20 +30,19 @@ if(isset($_POST["fatt"])) {
     $ndc = mysqli_real_escape_string($conndb,$_POST['ndc']);
     $ddt = mysqli_real_escape_string($conndb,$_POST['ddt']);
     $prev = mysqli_real_escape_string($conndb,$_POST['prev']);
-    $listini = mysqli_real_escape_string($conndb,$_POST['listini']);
     $clienti = mysqli_real_escape_string($conndb,$_POST['clienti']);
     $fornitori = mysqli_real_escape_string($conndb,$_POST['fornitori']);
     $config = mysqli_real_escape_string($conndb,$_POST['config']);
 
     if ($config === "false") {
-        $query = "  INSERT INTO settings (max_fatt,max_ndc,max_ddt,max_prev, max_listini, max_clienti, max_fornitori, id_user)
-                    VALUES ($fatt, $ndc, $ddt, $prev, $listini, $clienti, $fornitori, $userID)";
+        $query = "  INSERT INTO settings (max_fatt,max_ndc,max_ddt,max_prev, max_clienti, max_fornitori, id_user)
+                    VALUES ($fatt, $ndc, $ddt, $prev, $clienti, $fornitori, $userID)";
         $msg = "inseriti";
     }
 
     if ($config === "true") {
         $query = "  UPDATE settings
-                    SET max_fatt=".$fatt.", max_ndc=".$ndc.",max_ddt=".$ddt.", max_prev=".$prev.",max_listini=".$listini.", max_clienti=".$clienti.", max_fornitori=".$fornitori."
+                    SET max_fatt=".$fatt.", max_ndc=".$ndc.",max_ddt=".$ddt.", max_prev=".$prev.", max_clienti=".$clienti.", max_fornitori=".$fornitori."
                     WHERE id_user = ".$userID;
         $msg = "aggiornati";
     }
@@ -141,18 +140,6 @@ if ($conndb->connect_errno) {
                     <option value="20">20</option>
                     <option value="30" selected="selected">30</option>
                     <option value="50">50</option>
-                    <option value="100">100</option>
-                </select>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="col-sm-2 control-label">Lista listini</label>
-            <div class="col-sm-10">
-                <select name="listini" class="form-control" value="<?php echo @$row->max_listini ?>">
-                    <option value="10">10</option>
-                    <option value="20">20</option>
-                    <option value="30">30</option>
-                    <option value="50" selected="selected">50</option>
                     <option value="100">100</option>
                 </select>
             </div>

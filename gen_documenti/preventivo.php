@@ -254,7 +254,7 @@ if ((isset($post)) == true) {
     <div class="container">
         <div class="row text-right">
             <div class="col-sm-4">
-                <a href="../fatture.php"> <span class="glyphicon glyphicon-chevron-left"></span>Indietro</a>
+                <a href="../preventivi.php"> <span class="glyphicon glyphicon-chevron-left"></span>Indietro</a>
             </div>
             <div class="col-sm-4">
                 <a href="#" onclick=save()> <i class="fa fa-floppy-o" aria-hidden="true"></i> Salva</a>
@@ -367,26 +367,22 @@ if ((isset($post)) == true) {
                         <?php
                         if (isset($post)) :
                             foreach ($quantita as $q_id => $quantitaProdotto) : ?>
-                                <input id="idQuantita-<?php echo $q_id + 1 ?>" type="number"
-                                       class="form-control arrQuantita" min="1" value="<?php echo $quantitaProdotto ?>">
+                                <input id="idQuantita-<?php echo $q_id + 1 ?>" type="number" class="form-control arrQuantita" min="1" value="<?php echo $quantitaProdotto ?>">
                             <?php endforeach; endif ?>
                         <!-- QUI -->
                     </td>
 
                     <td id="incolonnaArticoli">
-                        <input class="stampa form-control incolonnatore" type="text"
-                               placeholder="Descrizione articolo automatica">
+                        <input class="stampa form-control incolonnatore" type="text" placeholder="Descrizione articolo automatica">
                         <?php
                         if (isset($post)) :
                             foreach ($prodotti as $p_id => $prodotto) : ?>
-                                <p class="col-xs-12 arrArticoli noMargin"
-                                   id="idArticoli-<?php echo $p_id + 1 ?>"><?php echo $prodotto ?></p>
+                                <p class="col-xs-12 arrArticoli noMargin" id="idArticoli-<?php echo $p_id + 1 ?>"><?php echo $prodotto ?></p>
                             <?php endforeach; endif ?>
                     </td>
 
                     <td id="incolonnaPrezzi">
-                        <input class="hiddenElement form-control stampa" style="text-align:right;" type="text"
-                               placeholder="auto da DB €" readonly>
+                        <input class="hiddenElement form-control stampa" style="text-align:right;" type="text" placeholder="auto da DB €" readonly>
                         <?php
                         if (isset($post)) :
                             foreach ($prezzi_cad as $prezzo_cad_id => $prezzo_cad) : ?>
@@ -396,13 +392,11 @@ if ((isset($post)) == true) {
                     </td>
 
                     <td id="incolonnaPrezziTot">
-                        <input class="hiddenElement form-control stampa" style="text-align:right;" type="text"
-                               placeholder="auto da riga €" readonly>
+                        <input class="hiddenElement form-control stampa" style="text-align:right;" type="text" placeholder="auto da riga €" readonly>
                         <?php
                         if (isset($post)) :
                             foreach ($prezzi as $prezzo_id => $prezzo) : ?>
-                                <p class="valuta col-xs-10 noMargin"
-                                   id="prezzoTOT-<?php echo $prezzo_id + 1 ?>"><?php echo $prezzo ?></p>
+                                <p class="valuta col-xs-10 noMargin" id="prezzoTOT-<?php echo $prezzo_id + 1 ?>"><?php echo $prezzo ?></p>
                             <?php endforeach; endif ?>
                     </td>
 
@@ -464,7 +458,7 @@ if ((isset($post)) == true) {
         paramName: "check",
         serviceUrl: 'http://<?php echo $base_url ?>/json/get_articoli.php',
         formatResult: function (suggestion, currentValue) {
-            return suggestion.value + ' - ' + suggestion.data.descr + " - " + suggestion.data.prezzo + "€";
+            return suggestion.value + " - " + suggestion.data.descr + " - " + suggestion.data.misura + " - " + suggestion.data.prezzo + "€";
         },
         onSelect: function (suggestion) {
             var execute = false;
@@ -480,7 +474,7 @@ if ((isset($post)) == true) {
                 }
 
                 if (execute === true) {
-                    var articoli = "<p class=\"col-xs-12 arrArticoli noMargin\" id=\"idArticoli-" + idRiga + "\" >" + suggestion.data.descr + "</p>";
+                    var articoli = "<p class=\"col-xs-12 arrArticoli noMargin\" id=\"idArticoli-" + idRiga + "\" >" + suggestion.data.descr + " - " + suggestion.data.misura + "</p>";
                     $("#incolonnaArticoli").append(articoli);
                     var quantita = "<input id=\"idQuantita-" + idRiga + "\" type=\"number\" class=\"form-control arrQuantita\" min=\"1\" value=\"1\">";
                     $("#incolonnaQuantita").append(quantita);

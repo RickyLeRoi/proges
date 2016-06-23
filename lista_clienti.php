@@ -8,9 +8,9 @@
     <meta name="description" content="Gestionale per etichettificio Provenzano"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-    <?php include_once("template/parrot/style.php") // Carica gli stili del tema in uso ?>
-
-    <?php include("function/session.php"); ?>
+    <?php include_once("template/parrot/style.php");
+            include_once("function/session.php");
+            include_once("DB/config.php");?>
 
 </head>
 <body>
@@ -135,8 +135,6 @@
             }
         });
     }
-
-
 </script>
 <script type="text/javascript">
     var rowsReturned;

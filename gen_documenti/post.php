@@ -146,6 +146,7 @@ if (isset($_GET["ddt_n"])) {
         $peso = $obj->peso;
         $quantita = explode("||", $obj->arr_qta);      //
         $prodotti = explode("||", $obj->arr_beni);      //  Da ciclare nel foglio fatture stampato.
+        $prezzi_cad = explode("||", $obj->arr_imp_uni);
 
         $data_rit = $obj->data_rit;
         $data_rit = explode(" ", $data_rit);

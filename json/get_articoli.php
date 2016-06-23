@@ -35,6 +35,7 @@ while ($articoli= $result->fetch_object()) {
             "cod_int" => $articoli->cod_int,
             "misura" => $articoli->misura,
             "descr" => $articoli->descr,
+            "misura" => $articoli->misura,
             "cod_barre" => $articoli->cod_barre,
             "prezzo" => $articoli->prezzo,
             "note" => $articoli->note,

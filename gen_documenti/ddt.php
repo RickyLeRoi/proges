@@ -161,6 +161,9 @@ if ((isset($post)) == true) {
             .stampa {
                 display: none;
             }
+            .arrQuantita {
+                display: block;
+            }
         }
 
         .autocomplete-suggestions {
@@ -301,16 +304,16 @@ if ((isset($post)) == true) {
                 <tr>
                     <td colspan="3">
                         <p class="col-sm-4">Destinatario</p>
-                        <p class="col-sm-8"><input value="<?php echo @$cliente ?>" id="cliente" class="form-control" style="width:50%; display:inline" type="text" placeholder="Nome cliente">
-                            <input id="piva" value="<?php echo @$piva ?>" class="form-control" style="width:50%; display:inline" type="text" readonly placeholder="auto P.IVA"></p>
+                        <p class="col-sm-8"><input value="<?php echo @$cliente ?>" id="cliente" class="form-control" style="width:49%; display:inline" type="text" placeholder="Nome cliente">
+                            <input id="piva" value="<?php echo @$piva ?>" class="form-control" style="width:49%; display:inline" type="text" readonly placeholder="auto P.IVA"></p>
                     </td>
                 </tr>
 
                 <tr>
                     <td colspan="3"><p class="col-sm-4">Domicilio o residenza</p>
                         <p class="col-sm-8">
-                            <input value="<?php echo @$indirizzo ?>" id="indirizzo" class="form-control" style="width:50%; display:inline" type="text" readonly placeholder="auto Indirizzo">
-                            <input value="<?php echo @$citta ?>" id="citta" class="form-control" style="width:50%; display:inline" type="text" readonly placeholder="auto Citta'"></p>
+                            <input value="<?php echo @$indirizzo ?>" id="indirizzo" class="form-control" style="width:49%; display:inline" type="text" readonly placeholder="auto Indirizzo">
+                            <input value="<?php echo @$citta ?>" id="citta" class="form-control" style="width:49%; display:inline" type="text" readonly placeholder="auto Citta'"></p>
                     </td>
                 </tr>
                 <tr>
@@ -356,7 +359,7 @@ if ((isset($post)) == true) {
                     <td>
                         <p class="col-md-12">Data e ora</p>
                         <p class="col-md-12">
-                            <input id="consegnaData" required class="form-control text-center" style="width:50%; display:inline" value="<?php echo @$data_consegna ?>" type="datetime-local"></p>
+                            <input id="consegnaData" required class="form-control text-center" style="display:inline" value="<?php echo @$data_consegna ?>" type="datetime-local"></p>
                     <td>
                         <p class="col-md-12">Firma del Conducente</p>
                     </td>
@@ -368,19 +371,16 @@ if ((isset($post)) == true) {
                 <tr class="qnt" height="400">
 
                     <td id="incolonnaQuantita">
-                        <input id="idQuantita-default" type="number" style="visibility: hidden"
-                               class="stampa form-control" min="0">
+                        <input id="idQuantita-default" type="number" style="visibility: hidden" class="stampa form-control" min="0">
                         <?php
                         if (isset($post)) :
                             foreach ($quantita as $q_id => $quantitaProdotto) : ?>
-                                <input id="idQuantita-<?php echo $q_id + 1 ?>" type="number"
-                                       class="form-control arrQuantita" min="1" value="<?php echo $quantitaProdotto ?>">
+                                <input id="idQuantita-<?php echo $q_id + 1 ?>" type="number" class="form-control arrQuantita" min="1" value="<?php echo $quantitaProdotto ?>">
                             <?php endforeach; endif ?>
                     </td>
 
                     <td id="incolonnaArticoli" colspan="2">
-                        <input id="incolonnatore" type="text" class="stampa form-control"
-                               placeholder="Descrizione articolo">
+                        <input id="incolonnatore" type="text" class="stampa form-control" placeholder="Descrizione articolo">
                         <?php
                         if (isset($post)) :
                             foreach ($prodotti as $p_id => $prodotto) : ?>
@@ -388,6 +388,14 @@ if ((isset($post)) == true) {
                                    id="idArticoli-<?php echo $p_id + 1 ?>"><?php echo $prodotto ?></p>
                             <?php endforeach; endif ?>
                     </td>
+                    <td style="display:none" id="incolonnaPrezzi">
+                    <?php
+                        if (isset($post)) :
+                            foreach ($prezzi_cad as $prezzo_id => $prezzo) : ?>
+                                <p class="valuta col-xs-10 noMargin"
+                                   id="prezzo-<?php echo $prezzo_id + 1 ?>"><?php echo $prezzo ?></p>
+                            <?php endforeach; endif ?>
+                        <!-- Invisibilo --></td>
 
                 </tr>
                 <tr>
@@ -410,7 +418,7 @@ if ((isset($post)) == true) {
                     </td>
                     <td>
                         <p class="col-md-12">Data e ora di ritiro</p>
-                        <p class="col-md-12"><input class="form-control" value="<?php echo @$data_rit ?>" type="datetime-local" id="dataRitiro"></p>
+                        <p class="col-md-12"><input class="form-control text-center" value="<?php echo @$data_rit ?>" type="datetime-local" id="dataRitiro"></p>
                     </td>
                     <td>
                         <p class="col-md-12">Firme</p>
@@ -442,7 +450,7 @@ if ((isset($post)) == true) {
     <div class="container">
         <div class="row text-right">
             <div class="col-sm-4">
-                <a href="../fatture.php"> <span class="glyphicon glyphicon-chevron-left"></span>Indietro</a>
+                <a href="../ddt.php"> <span class="glyphicon glyphicon-chevron-left"></span>Indietro</a>
             </div>
             <div class="col-sm-4">
                 <a href="#" onclick=save()> <i class="fa fa-floppy-o" aria-hidden="true"></i> Salva</a>
@@ -488,6 +496,9 @@ if ((isset($post)) == true) {
 
                         var quantita = "<input id=\"idQuantita-" + idRiga + "\" type=\"number\" class=\"form-control arrQuantita\" min=\"1\" value=\"1\">";
                         $("#incolonnaQuantita").append(quantita);
+
+                        var prezzo = "<p class=\"valuta col-xs-10 noMargin\" id=\"prezzo-" + idRiga + "\">" + parseFloat(suggestion.data.prezzo).toFixed(2) + "</p> ";
+                        $("#incolonnaPrezzi").append(prezzo);
                         memory.push(suggestion.data.descr);
                         idRiga++;
 
@@ -564,6 +575,7 @@ if ((isset($post)) == true) {
             articoli: ciclaArray($(".arrArticoli "), "textContent"),
             mezzo: $("#mezzo").val(),
             nota: $("#nota").val(),
+            prezzi : ciclaArray($("p[id*=prezzo-]"), "textContent"),
             vettore: $("input[name=sceltaConsegna]:checked").val()
 
 
