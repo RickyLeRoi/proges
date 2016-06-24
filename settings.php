@@ -7,10 +7,12 @@
     <title>Settaggi liste</title>
     <meta name="description" content="Gestionale per etichettificio Provenzano"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-
+        <?php include("function/session.php");
+    include("DB/config.php");
+    ?>
     <?php include_once("template/parrot/style.php") // Carica gli stili del tema in uso ?>
 
-    <?php include("function/session.php"); ?>
+
     <style>
         label {
             color: #FFF;

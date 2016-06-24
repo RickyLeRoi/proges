@@ -96,6 +96,8 @@ if (isset($_GET["fattura_n"]) || isset($_GET["preventivo_n"]) || isset($_GET["nd
             $esente_num = $obj->esente_num;
             $esente_dal = $obj->esente_dal;
             $esente_al = $obj->esente_al;
+            $ddt_n = explode(",", $obj->all_ddt);
+            //print_r($ddt_n);
 
             include_once("fattura.php");
         }
@@ -167,6 +169,7 @@ if (isset($_GET["ddt_n"])) {
             $memory .= '"' . $prodotto . '",';
         }
         $memory .= "\"default\"]";
+
         include_once("./ddt.php");
     }
 }

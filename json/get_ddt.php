@@ -3,6 +3,14 @@
 include_once("../function/session.php");
 include_once("../DB/config.php");
 
+if ((isset($_GET["page"])) && (isset($_GET["limit"]))) {
+    $page = $_GET["page"];
+    $limit = $_GET["limit"];
+} else {
+    $page = 0;
+    $limit = 30;
+}
+
 // Queries
 if (isset($_GET["check"])) {
     $check = mysqli_real_escape_string($conndb, $_GET["check"]);
@@ -10,7 +18,7 @@ if (isset($_GET["check"])) {
               FROM stampa_ddt
               LEFT JOIN clienti ON stampa_ddt.Piva=clienti.PIVAC OR stampa_ddt.Piva=CFC
               WHERE clienti.nomeC LIKE \"%" . $check . "%\" OR clienti.cognomeC LIKE \"%" . $check . "%\" OR  clienti.codC LIKE \"%" . $check . "%\"
-              ORDER BY stampa_ddt.id ASC";
+              ORDER BY stampa_ddt.id ASC LIMIT " . $limit . " OFFSET " . $page;
 } else {
     $check = '';
     $query = "SELECT stampa_ddt.*, codC, nomeC, cognomeC

@@ -119,7 +119,7 @@ $queryb = "SELECT id
         <div class="row">
         <nav class="col-sm-12">
             <ul class="pager">
-                <li class="previous"><a id="prec" href="#"><span aria-hidden="true">&larr;</span> Precedente</a></li>
+                <li class="previous"><a style="display: none" id="prec" href="#"><span aria-hidden="true">&larr;</span> Precedente</a></li>
                 <li class="next"><a id="succ" href="#">Successivo <span aria-hidden="true">&rarr;</span></a></li>
             </ul>
         </nav>
@@ -137,6 +137,10 @@ $queryb = "SELECT id
     limit = 30;
     suggerimento("");
 
+        $("#filtro").keydown(function() {
+            page = 0;
+            limit = 30;
+        });
     function suggerimento(runsVar) {
 
         var call = $.ajax({
@@ -163,7 +167,6 @@ $queryb = "SELECT id
                     "<td>" + records[x].data.totale + " €</td>" +
                     "<td><a href='http://<?php echo $base_url ?>/gen_documenti/post.php?fattura_n=" + records[x].data.num + "&documento=fattura'>Link</a></td>"; 
                 $("#records").append("<tr>" + record + "</tr>");
-                rowsReturned++;
             }
 
             if (jQuery.isEmptyObject(records)) {
@@ -185,10 +188,16 @@ $queryb = "SELECT id
 
 
     $("#succ").click(function() {
+        page += +30;
+        limit += +30;
+        suggerimento($("#filtro").val());
         if (page == 0) {
-            page += +30;
-            limit += +30;
-            suggerimento($("#filtro").val());
+
+            $("#prec").show();
+        }
+
+        if (page > 0 ) {
+            $("#prec").show();
         }
     });
 
@@ -198,35 +207,12 @@ $queryb = "SELECT id
             limit += -30;
             suggerimento($("#filtro").val());
             $("#prec").show();
-        }
-
-        if (page == 0 ) {
-            $("#prec").hide();
-        }
-        if (page > 0 ) {
-            $("#prec").show();
+            if (page == 0 ) {
+                $("#prec").hide();
+            }
         }
     });
 
-    if (page == 0 ) {
-        $("#prec").hide();
-    }
-    function prevNext() {
-        var prev = document.getElementById("prec").parentNode;
-        if (page < 0 || page == 0) {
-            prev.className = "hide";
-        }
-        else {
-            prev.className = "previous";
-        }
-        var succ = document.getElementById("succ").parentNode;
-        if (rowsReturned != 29) {
-            succ.className = "hide";
-        }
-        else {
-            succ.className = "next";
-        }
-    }
     suggerimento($("#filtro").val());
 
 </script>

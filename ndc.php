@@ -145,7 +145,7 @@ $queryb = "SELECT id
     <div class="row">
         <nav class="col-sm-12">
             <ul class="pager">
-                <li class="previous"><a id="prec" href="#"><span aria-hidden="true">&larr;</span> Precedente</a></li>
+                <li class="previous"><a style="display:none" id="prec" href="#"><span aria-hidden="true">&larr;</span> Precedente</a></li>
                 <li class="next"><a id="succ" href="#">Successivo <span aria-hidden="true">&rarr;</span></a></li>
             </ul>
         </nav>
@@ -156,17 +156,30 @@ $queryb = "SELECT id
 <?php include_once("template/parrot/foot.php") ?>
 
 <script>
+var records,
+    rowsReturned = 0;
+    page = 0,
+    limit = 30;
     suggerimento("");
+
+    $("#filtro").keydown(function() {
+        page = 0;
+        limit = 30;
+    });
     function suggerimento(runsVar) {
 
         var call = $.ajax({
             url: "http://<?php echo $base_url ?>/json/get_ndc.php",
             method: "GET",
-            data: "check=" + runsVar,
+            data: "check=" + runsVar +"&page="+page+"&limit="+limit,
             dataType: "json"
         });
 
-        call.done(function (msg) {
+
+call.error(function (msg) {
+            console.log(msg);
+        });
+ call.done(function (msg) {
 
             var records = msg.suggestions;
             console.log(records);
@@ -178,7 +191,7 @@ $queryb = "SELECT id
                     "<td>" + records[x].data.nomeC + " " + records[x].data.cognomeC + "</td>" +
                     "<td>" + records[x].data.data_doc + "</td>" +
                     "<td>" + records[x].data.pagamDescr + "</td>" +
-                    "<td>" + records[x].data.totale + " €</td>" +
+                    "<td width='300px'>" + records[x].data.totale + "</td>" +
                     "<td><a href='http://<?php echo $base_url ?>/gen_documenti/post.php?ndc_n=" + records[x].data.num + "&documento=ndc'>Link</a></td>"; 
                 $("#records").append("<tr>" + record + "</tr>");
             }
@@ -193,16 +206,20 @@ $queryb = "SELECT id
             }
             $("#voci").text(voci);
         });
-
-        call.error(function (msg) {
-            console.log(msg);
-        });
     }
+
+
     $("#succ").click(function() {
-        if (rowsReturned == 29) {
-            page += +30;
-            limit += +30;
-            loadPage(page, limit);
+        page += +30;
+        limit += +30;
+        suggerimento($("#filtro").val());
+        if (page == 0) {
+
+            $("#prec").show();
+        }
+
+        if (page > 0 ) {
+            $("#prec").show();
         }
     });
 
@@ -210,27 +227,16 @@ $queryb = "SELECT id
         if (page !=0 ) {
             page += -30;
             limit += -30;
-            loadPage(page, limit)
+            suggerimento($("#filtro").val());
+            $("#prec").show();
+            if (page == 0 ) {
+                $("#prec").hide();
+            }
         }
     });
-    function prevNext() {
-        var prev = document.getElementById("prec").parentNode;
-        if (page < 0 || page == 0) {
-            prev.className = "hide";
-        }
-        else {
-            prev.className = "previous";
-        }
-        var succ = document.getElementById("succ").parentNode;
-        if (rowsReturned != 29) {
-            succ.className = "hide";
-        }
-        else {
-            succ.className = "next";
-        }
-    }
-    loadPage(0, 30);
 
+
+    suggerimento($("#filtro").val());
 </script>
 
 </body>

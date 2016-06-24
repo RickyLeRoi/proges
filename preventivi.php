@@ -145,7 +145,7 @@ Totale voci n. <span id="voci"></span>
     <div class="row">
         <nav class="col-sm-12">
             <ul class="pager">
-                <li class="previous"><a id="prec" href="#"><span aria-hidden="true">&larr;</span> Precedente</a></li>
+                <li class="previous"><a style="display:none" id="prec" href="#"><span aria-hidden="true">&larr;</span> Precedente</a></li>
                 <li class="next"><a id="succ" href="#">Successivo <span aria-hidden="true">&rarr;</span></a></li>
             </ul>
         </nav>
@@ -156,13 +156,17 @@ Totale voci n. <span id="voci"></span>
 <?php include_once("template/parrot/foot.php") ?>
 
 <script>
+    var records,
+    rowsReturned = 0;
+    page = 0,
+    limit = 30;
     suggerimento("");
     function suggerimento(runsVar) {
 
         var call = $.ajax({
             url: "http://<?php echo $base_url ?>/json/get_preventivi.php",
             method: "GET",
-            data: "check=" + runsVar,
+            data: "check=" + runsVar +"&page="+page+"&limit="+limit,
             dataType: "json"
         });
 
@@ -198,11 +202,18 @@ Totale voci n. <span id="voci"></span>
             console.log(msg);
         });
     }
+
     $("#succ").click(function() {
-        if (rowsReturned == 29) {
-            page += +30;
-            limit += +30;
-            loadPage(page, limit);
+        page += +30;
+        limit += +30;
+        suggerimento($("#filtro").val());
+        if (page == 0) {
+
+            $("#prec").show();
+        }
+
+        if (page > 0 ) {
+            $("#prec").show();
         }
     });
 
@@ -210,26 +221,14 @@ Totale voci n. <span id="voci"></span>
         if (page !=0 ) {
             page += -30;
             limit += -30;
-            loadPage(page, limit)
+            suggerimento($("#filtro").val());
+            $("#prec").show();
+            if (page == 0 ) {
+                $("#prec").hide();
+            }
         }
     });
-    function prevNext() {
-        var prev = document.getElementById("prec").parentNode;
-        if (page < 0 || page == 0) {
-            prev.className = "hide";
-        }
-        else {
-            prev.className = "previous";
-        }
-        var succ = document.getElementById("succ").parentNode;
-        if (rowsReturned != 29) {
-            succ.className = "hide";
-        }
-        else {
-            succ.className = "next";
-        }
-    }
-    loadPage(0, 30);
+
 
 </script>
 

@@ -13,4 +13,5 @@ $conndb = mysqli_connect($host, $userDB, $pswdDB, $database);
 if (!$conndb) {
     die("DB inesistente o connessione fallita: " . mysqli_connect_error());
 }
+
 ?>

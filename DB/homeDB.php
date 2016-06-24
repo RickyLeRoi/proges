@@ -1,3 +1,5 @@
+<?php include("./config.php"); ?>
+<?php include_once("../function/session.php") ?>
 <!DOCTYPE html>
 
 <html lang="it">
