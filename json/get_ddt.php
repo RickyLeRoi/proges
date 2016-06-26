@@ -41,6 +41,7 @@ while ($ddt = $result->fetch_object()) {
             "cognomeC" => $ddt->cognomeC,
             "data_doc" => $ddt->data_doc,
             "data_rit" => $ddt->data_rit,
+            "data_consegna" => $ddt->data_consegna,
             "note" => $ddt->note
         ]
     ]);

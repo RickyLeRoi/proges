@@ -114,6 +114,7 @@ if (isset($_GET["fattura_n"]) || isset($_GET["preventivo_n"]) || isset($_GET["nd
         }
 
         if (isset($_GET["preventivo_n"])) {
+            $tipologia = explode("||", $obj->tipologia);
             include_once("preventivo.php");
         }
 
@@ -165,8 +166,8 @@ if (isset($_GET["ddt_n"])) {
 
         $vettore = $obj->vettore;
         $note = $obj->note;
-
-        $vettore = $obj->vettore;
+        $mezzo_scelto = $obj->mezzo;
+        //print_r($mezzo_scelto);
 
         $memory = "[";
         foreach ($prodotti as $prodotto) {

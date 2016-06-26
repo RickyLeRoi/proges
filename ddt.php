@@ -106,8 +106,9 @@ $queryb = "SELECT id
             <th>Codice Cliente</th>
             <th>Cliente</th>
             <th>Data</th>
-            <th>Ritiro</th>
-            <th width="300px">Note</th>
+            <th>Consegna</th>
+            <th>Vettore</th>
+            <th width="200px">Note</th>
             <th>Link</th>
         </tr>
         </thead>
@@ -164,7 +165,8 @@ call.error(function (msg) {
                     "<td>" + records[x].data.nomeC + " " + records[x].data.cognomeC + "</td>" +
                     "<td>" + records[x].data.data_doc + "</td>" +
                     "<td>" + records[x].data.data_rit + "</td>" +
-                    "<td width='300px'>" + records[x].data.note + "</td>" +
+                    "<td>" + records[x].data.data_consegna + "</td>" +
+                    "<td width='200px'>" + records[x].data.note + "</td>" +
                     "<td><a href='http://<?php echo $base_url ?>/gen_documenti/post.php?ddt_n=" + records[x].data.num + "&documento=ddt'>Link</a></td>"; 
                 $("#records").append("<tr>" + record + "</tr>");
             }

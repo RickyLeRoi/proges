@@ -142,7 +142,7 @@ if ((isset($post)) == true) {
         size: a4;
         }
         .qnt {
-        //height: 6cm;
+            min-height: 6cm;
         }
         .var {
         height: 3cm;
@@ -221,7 +221,7 @@ if ((isset($post)) == true) {
             }
 
             .qnt {
-                height: 6cm;
+                min-height: 6cm;
             }
 
             .var {
@@ -280,13 +280,9 @@ if ((isset($post)) == true) {
                         <p class="col-md-12">
                         <h5>
                         <p><strong>FATTURA N.
-                                <input id="fattId" class="stampa form-control"
-                                       style="width:15%; text-align:right; display:inline" type="number" size="4"
-                                       placeholder="0000" <?php if (isset($id)) echo "value='" . $id . "'" ?> readonly>/
+                                <input id="fattId" class="stampa form-control" style="width:15%; text-align:right; display:inline" type="number" size="4" <?php if (isset($id)) echo "value='" . $id . "'" ?> >/
                                 <?php echo $anno ?>
-                                <br/> del <input id="data" type="date" value="<?php echo $data ?>"
-                                                 class="stampa form-control"
-                                                 style="width:30%; display:inline">
+                                <br/> del <input id="data" type="date" value="<?php echo $data ?>" class="stampa form-control" style="width:30%; display:inline">
                             </strong></p>
                         </h5>
                         </p>
@@ -313,27 +309,26 @@ if ((isset($post)) == true) {
 
                     <td colspan="2">
                         <div class="col-md-12">
-                            Spett.le<br/><br/>
-                            <input id="cliente" type="text" class="text-left form-control"
-                                   placeholder="Cliente con suggerimento" <?php if (isset($cliente)) echo "value='" . $cliente . "'" ?>><br/>
-                            <input id="ivaCliente" type="text" class="text-left form-control" placeholder="auto P.IVA"
-                                <?php if (isset($cliente)) echo "value='" . $piva . "'" ?> readonly><br/>
-                            <input id="indirizzo" type="text" class="text-left form-control"
-                                   placeholder="auto Indirizzo legale"
-                                   readonly <?php if (isset($indirizzo)) echo "value='" . $indirizzo . "'" ?>><br/>
-                            <input id="citta" class="text-left form-control" type="text"
-                                   style="width: auto; max-width:45%; display:inline;"
-                                   placeholder="auto Città" <?php if (isset($citta)) echo "value='" . $citta . "'" ?>
+                            Spett.le<br/>
+                            <input id="cliente" type="text" class="text-left form-control" placeholder="Cliente con suggerimento" <?php if (isset($cliente)) echo "value='" . $cliente . "'" ?>>
+                            <p>P. IVA <input id="ivaCliente" style="display:inline, width:90%;" type="text" class="text-left form-control"
+                                <?php if (isset($cliente)) echo "value='" . $piva . "'" ?> readonly></p>
+                            <p><input id="indirizzo" type="text" class="text-left form-control"
+                                   placeholder="Indirizzo"
+                                   readonly <?php if (isset($indirizzo)) echo "value='" . $indirizzo . "'" ?>></p>
+                            <p><input id="citta" class="text-left form-control" type="text"
+                                   style="width: auto; max-width:65%; display:inline;"
+                                   placeholder="Città" <?php if (isset($citta)) echo "value='" . $citta . "'" ?>
                                    readonly>
                             <span style="width: auto;"> - </span>
                             <input id="pr" class="text-left form-control" type="text"
                                    style="width: auto; max-width:15%; display:inline;"
-                                   placeholder="(PR)" <?php if (isset($prov)) echo "value='" . $prov . "'" ?> readonly>
+                                    <?php if (isset($prov)) echo "value='" . $prov . "'" ?> readonly>
                             <span style="width: auto;"> - </span>
-                            <input id="cap" class="text-left form-control" type="number" min="00010" max="98199"
-                                   style="width: auto; max-width:25%; display:inline;"
-                                   placeholder="auto CAP" <?php if (isset($cap)) echo "value='" . $cap . "'" ?>
-                                   readonly>
+                            <input id="cap" class="text-left form-control" type="number"
+                                   style="width:20%; display:inline;"
+                                    <?php if (isset($cap)) echo "value='" . $cap . "'" ?>
+                                   readonly> </p>
                         </div>
                     </td>
 
@@ -341,7 +336,7 @@ if ((isset($post)) == true) {
 
                 </thead>
 
-                <tbody>
+                <tbody height="600px">
                 <tr style="background: lightgreen" class="stampa">
                     <td id="scegliDDT" colspan="2">
                         <input id="selectDDT" placeholder="Numero DDT" type="number" class="stampa form-control arrQuantita" min="1">

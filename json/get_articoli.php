@@ -7,9 +7,24 @@ include_once("../DB/config.php");
 // Queries
 if (isset($_GET["check"])) $check = mysqli_real_escape_string($conndb,$_GET["check"]);
 
-    else $check = "Nessuna query";
+else $check = "Nessuna query";
+
+
+
+
 
 $query = "SELECT * FROM articoli WHERE misura LIKE \"%" . $check . "%\" OR descr LIKE \"%" . $check . "%\" OR cod_barre LIKE \"%" . $check . "%\" OR prezzo LIKE \"%" . $check . "%\" OR cod_int LIKE \"%" . $check . "%\"";
+
+//print_r($query);
+if ((isset($_GET["page"])) && (isset($_GET["limit"]))) {
+    $page = $_GET["page"];
+    $limit = $_GET["limit"];
+
+    $query .= " DESC LIMIT " . $limit . " OFFSET " . $page;
+    print_r($query);
+}
+
+
 
 /* check connection */
 
@@ -39,7 +54,8 @@ while ($articoli= $result->fetch_object()) {
             "cod_barre" => $articoli->cod_barre,
             "prezzo" => $articoli->prezzo,
             "tipologia" => $articoli->tipologia,
-            "note" => $articoli->note
+            "note" => $articoli->note,
+            "cliente" => $articoli->cliente
         ]
     ]);
 }

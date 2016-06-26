@@ -391,7 +391,7 @@ if ((isset($post)) == true) {
                 </tr>
                         <?php
 
-                        // DDT allegati
+                        // fatture allegate
                         //print_r($ddt_n[0]);
                         if (!empty($doc_fatt[0])) :
                             for ($ii = 0; $ii < count(@$doc_fatt); $ii++) :

@@ -55,6 +55,12 @@ if ((isset($post)) == true) {
             padding-bottom: 60px;
         }
 
+        .borderless td {
+            border-top: none !important;
+            border-bottom: none !important;
+            height: auto;
+            padding-bottom: 0px;
+        }
         .arrArticoli:hover {
             cursor: pointer;
             color: firebrick;
@@ -77,13 +83,12 @@ if ((isset($post)) == true) {
                 border-top: solid 1px;
                 font-size: 36px;
             }
-
-            .noMargin {
-                padding: 6px 12px;
-                margin: 0;
-                line-height: 1.42857143;
-                height: 34px;
-            }
+        .noMargin {
+        padding: 6px 12px;
+        margin: 0;
+        line-height: 1.42857143;
+        height: 34px;
+        }
 
             body {
                 max-width: 1400px;
@@ -91,70 +96,60 @@ if ((isset($post)) == true) {
             }
         }
         @media print {
-            .noMargin {
-                margin: 0 0 0;
-            }
-
-            .form-control {
-                display: inline-block;
-                width: auto;
-            }
-
-            select.form-control {
-                position: relative !important;
-                top: -1px !important;
-                z-index: 1;
-            }
-
-            input[type=number],
-            input[type=text],
-            input[type=date],
-            select.form-control,
-            input[type=datetime] {
-                border: none;
-                background: transparent;
-                box-shadow: none;
-                height: 13px;
-                padding-left: 0;
-                padding-right: 0;
-                margin: 0 0 0;
-                font-size: 7pt;
-                position: relative;
-                top: -1px;
-                width: auto;
-            }
-
-            p {
-                font-size: 7pt;
-                height: 13px;
-            }
-
-            .logo {
-                max-width: 100%;
-                width: 100px;
-                height: auto;
-            }
-
-            #sottotabella {
-                border: none !important;
-                border-collapse: collapse;
-            }
-
-            page {
-                size: a4;
-            }
-
-            .qnt {
-                height: 6cm;
-            }
-
-            .var {
-                height: 3cm;
-            }
-
-            .stampa {
-                display: none;
-            }
+        .noMargin {
+        margin: 0 0 0;
+        }
+        .form-control {
+        display: inline-block;
+        width: auto;
+        }
+        select.form-control {
+        position: relative !important;
+        top: -1px !important;
+        z-index: 1;
+        }
+        input[type=number],
+        input[type=text],
+        input[type=date],
+        select.form-control,
+        input[type=datetime] {
+        border: none;
+        background: transparent;
+        box-shadow: none;
+        height: 13px;
+        padding-left: 0;
+        padding-right: 0;
+        margin: 0 0 0;
+        font-size: 7pt;
+        position: relative;
+        top: -1px;
+        width: auto;
+        }
+        p {
+        font-size: 7pt;
+        //height: 13px;
+        }
+        .logo {
+        max-width: 100%;
+        width: 100px;
+        height: auto;
+        }
+        #sottotabella {
+        border: none !important;
+        border-collapse: collapse;
+        }
+        page {
+        size: a4;
+        }
+        .qnt {
+            min-height: 6cm;
+        }
+        .var {
+        height: 3cm;
+        }
+        .stampa {
+        display: none;
+        }
         }
         .autocomplete-suggestions {
             color: #000000
@@ -226,7 +221,7 @@ if ((isset($post)) == true) {
             }
 
             .qnt {
-                height: 6cm;
+                min-height: 6cm;
             }
 
             .var {
@@ -352,55 +347,58 @@ if ((isset($post)) == true) {
 
                 <tbody>
 
+                <tr style="background: lightgreen" class="stampa">
+                    <td id="incolonnaArticoli" colspan="4">
+                        <input class="stampa form-control incolonnatore" type="text"
+                               placeholder="Descrizione articolo automatica">
+                    </td>
+                <tr>
                 <tr>
                     <td><p class="col-md-12">Quantità</p></td>
                     <td width="300px"><p class="col-md-12">Descrizione della merce</p></td>
                     <td><p class="col-md-12">Imp.unit.</p></td>
                     <td><p class="col-md-12">Importo</p></td>
                 </tr>
+                <tr class="qnt hiddenElement stampa">
 
-                <tr class="qnt" height="800px">
-
-                    <td id="incolonnaQuantita">
-                        <input id="idQuantitadefault" type="number" style="text-align:right;"
-                               class="stampa hiddenElement form-control arrQuantita" min="1">
-                        <?php
-                        if (isset($post)) :
-                            foreach ($quantita as $q_id => $quantitaProdotto) : ?>
-                                <input id="idQuantita-<?php echo $q_id + 1 ?>" type="number" class="form-control arrQuantita" min="1" value="<?php echo $quantitaProdotto ?>">
-                            <?php endforeach; endif ?>
-                        <!-- QUI -->
-                    </td>
-
-                    <td id="incolonnaArticoli">
-                        <input class="stampa form-control incolonnatore" type="text" placeholder="Descrizione articolo automatica">
-                        <?php
-                        if (isset($post)) :
-                            foreach ($prodotti as $p_id => $prodotto) : ?>
-                                <p class="col-xs-12 arrArticoli noMargin" id="idArticoli-<?php echo $p_id + 1 ?>"><?php echo $prodotto ?></p>
-                            <?php endforeach; endif ?>
-                    </td>
-
+                <!--
                     <td id="incolonnaPrezzi">
-                        <input class="hiddenElement form-control stampa" style="text-align:right;" type="text" placeholder="auto da DB €" readonly>
-                        <?php
-                        if (isset($post)) :
-                            foreach ($prezzi_cad as $prezzo_cad_id => $prezzo_cad) : ?>
-                                <p class="valuta col-xs-10 noMargin"
-                                   id="prezzo-<?php echo $prezzo_cad_id + 1 ?>"><?php echo $prezzo_cad ?></p>
-                            <?php endforeach; endif ?>
+                        <input class="hiddenElement form-control stampa" style="text-align:right;" type="text"
+                               placeholder="auto da DB €" readonly>
                     </td>
 
                     <td id="incolonnaPrezziTot">
-                        <input class="hiddenElement form-control stampa" style="text-align:right;" type="text" placeholder="auto da riga €" readonly>
-                        <?php
-                        if (isset($post)) :
-                            foreach ($prezzi as $prezzo_id => $prezzo) : ?>
-                                <p class="valuta col-xs-10 noMargin" id="prezzoTOT-<?php echo $prezzo_id + 1 ?>"><?php echo $prezzo ?></p>
-                            <?php endforeach; endif ?>
+                        <input class="hiddenElement form-control stampa" style="text-align:right;" type="text"
+                               placeholder="auto da riga €" readonly>
                     </td>
-
+                -->
                 </tr>
+
+
+               <?php if (isset($post)) :
+                    if ($quantita[0] != "") {
+                        for ($i = 0; count($quantita) > $i; $i++) : ?>
+                            <tr id="ordini-<?php echo $i+1 ?>" class="borderless">
+
+                                <td>
+                                    <input id="idQuantita-<?php echo $i + 1 ?>" type="number" class="form-control arrQuantita" min="1" value="<?php echo $quantita[$i] ?>">
+                                </td>
+                                <td>
+                                    <p class="col-xs-12 arrArticoli noMargin"
+                                   id="idArticoli-<?php echo $i + 1 ?>"><?php echo $prodotti[$i] ?></p>
+                                </td>
+                                <td><p class="valuta col-xs-10 noMargin"
+                                   id="prezzo-<?php echo $i + 1 ?>"><?php echo $prezzi_cad[$i] ?></p></td>
+                                <td><p class="valuta col-xs-10 noMargin"
+                                   id="prezzoTOT-<?php echo $i + 1 ?>"><?php echo $prezzi[$i] ?></p></td>
+                               <input type="hidden" value="<?php echo $tipologia[$i]; ?>" id="tipologia-<?php echo $i + 1 ?>">
+                            </tr>
+                        <?php endfor;
+                    }?>
+
+                <?php endif ?>
+                <!-- Tabella interattiva // FINE -->
+                <tr>
 
                 <tr>
                     <td style="text-align:center" colspan="2" rowspan="3"><p>Contributo CONAI assolto ove dovuto.</p>
@@ -451,8 +449,25 @@ if ((isset($post)) == true) {
 <?php include_once("../template/parrot/foot.php") ?>
 
 <script>
+
     var memory = <?php echo $memory ?>;
+    var sommaDDT = 0; <?php //echo $DDTarray ?>;
     var idRiga = <?php echo $idRiga ?>;
+    var controlloClick = 1;
+
+    function sommaDDT_ () {
+        var valori = $("input[id*=inputDDT]");
+        for (var i = 0; valori.length > i; i++) {
+            sommaDDT = sommaDDT + parseFloat(valori[i].value);
+            console.log(valori[i].value);
+        }
+
+    }
+
+    <?php if (isset($post)) : ?>
+        sommaDDT_ ();
+    <?php endif ?>
+
     $('.incolonnatore').devbridgeAutocomplete({
         dataType: "json",
         paramName: "check",
@@ -463,27 +478,34 @@ if ((isset($post)) == true) {
         onSelect: function (suggestion) {
             var execute = false;
             $(function () {
-                var checkIfExists = memory.indexOf(suggestion.data.descr);
+                var checkIfExists = memory.indexOf(suggestion.data.descr +" - "+suggestion.data.misura);
                 console.log(checkIfExists);
                 if (checkIfExists !== -1) {
-                    alert("Hai già inserito questo prodotto");
-                    execute = false;
-                }
-                else {
-                    execute = true;
-                }
+                        alert("Hai già inserito questo prodotto");
+                        execute = false;
+                    }
+                    else {
+                        execute = true;
+                    }
 
                 if (execute === true) {
-                    var articoli = "<p class=\"col-xs-12 arrArticoli noMargin\" id=\"idArticoli-" + idRiga + "\" >" + suggestion.data.descr + " - " + suggestion.data.misura + "</p>";
-                    $("#incolonnaArticoli").append(articoli);
-                    var quantita = "<input id=\"idQuantita-" + idRiga + "\" type=\"number\" class=\"form-control arrQuantita\" min=\"1\" value=\"1\">";
-                    $("#incolonnaQuantita").append(quantita);
-                    var prezzo = "<p class=\"valuta col-xs-10 noMargin\" id=\"prezzo-" + idRiga + "\">" + parseFloat(suggestion.data.prezzo).toFixed(2) + "</p> ";
-                    var prezzoTOT = "<p class=\"valuta col-xs-10 noMargin\" id=\"prezzoTOT-" + idRiga + "\">" + parseFloat(suggestion.data.prezzo).toFixed(2) + "</p>";
-                    $("#incolonnaPrezzi").append(prezzo);
-                    $("#incolonnaPrezziTot").append(prezzoTOT);
+
+                    var tr = "<tr id=ordini-"+ idRiga +" class=\"borderless\">";
+
+                    tr += "<td><input id=\"idQuantita-" + idRiga + "\" type=\"number\" class=\"form-control arrQuantita\" min=\"1\" value=\"1\"></td>";
+
+                    tr += "<td><p class=\"col-xs-12 arrArticoli noMargin\" id=\"idArticoli-" + idRiga + "\" >" + suggestion.data.descr + " - " + suggestion.data.misura + "</p></td>";
+
+
+                    tr += "<td><p class=\"valuta col-xs-10 noMargin\" id=\"prezzo-" + idRiga + "\">" + parseFloat(suggestion.data.prezzo).toFixed(2) + "</p></td>";
+
+                    tr += "<td><p class=\"valuta col-xs-10 noMargin\" id=\"prezzoTOT-" + idRiga + "\">" + parseFloat(suggestion.data.prezzo).toFixed(2) + "</p></td>";
+
+                    tr += '<input type="hidden" id="tipologia-'+ idRiga +'" value="' + suggestion.data.tipologia + '">'
+                    $(".qnt").after(tr);
+
                     prezziTot($("#idQuantita-" + idRiga));
-                    memory.push(suggestion.data.descr);
+                    memory.push(suggestion.data.descr +" - "+suggestion.data.misura);
                     idRiga++;
 
                     $(".arrQuantita, #iva").keyup(function () {
@@ -499,7 +521,6 @@ if ((isset($post)) == true) {
                     })
                 }
 
-
             });
         }
     });
@@ -513,10 +534,34 @@ if ((isset($post)) == true) {
         quantitaId = quantita.attr("id");
         quantitaId = quantitaId.split("-");
         prezzoUnitario = $("#prezzo-" + quantitaId[1]).text();
-        prezzoTotale = quantitaScelta * (parseFloat(prezzoUnitario));
+        tipologia = $("#tipologia-" + quantitaId[1]).val(); //
+        console.log(tipologia);
+
+        //controlla tipologia
+
+        /*  Normale
+        *   Scaglione
+
+            Es. 19458 etichette. verrà scritto quantità 20000 (manualmente) = (20000/1000) * 11.64 [quantità/1000 * pr.unitarioSCAGLIONE]
+
+
+        *   Stock
+        */
+
+        if (tipologia == "Normale" || tipologia == undefined) {
+            prezzoTotale = quantitaScelta * (parseFloat(prezzoUnitario));
+        }
+
+        if (tipologia == "Scaglione") {
+            prezzoTotale = ((quantitaScelta / 1000) * (parseFloat(prezzoUnitario)));
+        }
+
+        if (tipologia == "Stock") {
+            prezzoTotale = parseFloat(prezzoUnitario);
+        }
+
         prezzoTotID = $("#prezzoTOT-" + quantitaId[1]);
         prezzoTotID.text(prezzoTotale.toFixed(2));
-
         var selectPrezzi = $("p[id*=prezzoTOT-]");
         //console.log(selectPrezzi.length);
         //console.log(selectPrezzi);
@@ -526,8 +571,9 @@ if ((isset($post)) == true) {
             prezzoDaSommare = parseFloat(selectPrezzi[i].textContent);
             //console.log(prezzoDaSommare);
             somma += prezzoDaSommare;
-        }
 
+        }
+        somma += sommaDDT;
         $("#parziale").val(somma.toFixed(2));
         var iva = $("#iva").val();
         iva = somma * (iva / 100);
@@ -557,8 +603,89 @@ if ((isset($post)) == true) {
         }
     });
 
+// ------------------------
+
+
+    // array_push($newKey, [
+    //     "value" => $ddt->id,
+    //     "data" => [
+    //         "num" => $ddt->id,
+    //         "data_doc" => $ddt->data_doc,
+    //         "arr_qta" => $arr_qta,
+    //         "arr_beni" => $arr_beni,
+    //         "arr_prezzi" => $arr_prezzi,
+    //         "arr_prezzi_tot" => $arr_prezzi_tot,
+    //         "somma" => array_sum($arr_prezzi_tot)
+    //     ]
+    // ]);
+
+    $('#selectDDT').devbridgeAutocomplete({
+        dataType: "json",
+        paramName: "check",
+        serviceUrl: 'http://<?php echo $base_url ?>/json/get_ddt_xfatt.php',
+        formatResult: function (suggestion, currentValue) {
+            return "DDT n° " + suggestion.data.num;
+        },
+        onSelect: function (suggestion) {
+            console.log($("#inputDDT-" + suggestion.data.num));
+            if ($("#inputDDT-" + suggestion.data.num).length == 0) {
+                var ddt = `
+                    <tr onclick="cancellaDDT($(this))" class="ddt-` + suggestion.data.num +`">
+                        <input id="inputDDT-` + suggestion.data.num +`" type="hidden" value="` + suggestion.data.somma + `"></td>
+                        <th colspan="4"><p>DDT N° ` + suggestion.data.num + ` del ` + suggestion.data.data_doc +` </p></th>
+                    </tr>`;
+
+                    var qta = suggestion.data.arr_qta;
+                    for (var i = 0; i < qta.length; i++) {
+                    ddt += `
+                        <tr class="ddt-` + suggestion.data.num +` borderless" id="DDT-` + (i +1) + `" class="borderless">
+                        <td><input type="number" readonly class="form-control arrQuantita" value="`+ suggestion.data.arr_qta[i] + `"></td>
+                        <td><p class="col-xs-12 noMargin">    `+ suggestion.data.arr_beni[i] + `</p></td>
+                        <td><p class="col-xs-12 noMargin valuta">`+ suggestion.data.arr_prezzi[i] + `</p></td>
+                        <td><p class="col-xs-12 noMargin valuta">`+ suggestion.data.arr_prezzi_tot[i] + `</p>
+                        </tr>`;
+                    };
+
+                $(".qnt").before(ddt);
+                sommaDDT += suggestion.data.somma;
+                prezziTot($("#calcola"));
+            }
+            else {
+                alert("DDT già esistente!");
+            }
+        }
+    });
+
+
+//-------------------------
+
+    function cancellaDDT(elemento) {
+        console.log(elemento);
+        id = elemento.attr("class");
+        id = id.split("-");
+        sottrai = $("#inputDDT-" + id[1]).val();
+        $(".ddt-"+ id[1]).remove();
+        sommaDDT -= parseFloat(sottrai);
+        console.log(sottrai);
+        prezziTot($("#calcola"));
+    }
+
+    function saveDDT() {
+        var countDDT = $("input[id*=inputDDT]");
+        //console.log(countDDT);
+        var id_ddt = [];
+        for (var i = 0; i < countDDT.length; i++) {
+            //console.log(countDDT.length);
+            idDDT = countDDT[i].id;
+            idDDT = idDDT.split("-");
+            id_ddt.push(idDDT[1]);
+        }
+
+        return String(id_ddt);
+    }
     function save() {
         var dati = {
+            ddt : saveDDT(),
             richiesta: "preventivo",
             azione: "<?php if (!isset($azione)) {
                 echo "aggiungi";
@@ -568,21 +695,25 @@ if ((isset($post)) == true) {
             id: $("#fattId").val(),
             data: $("#data").val(),
             pagamento: $("#pagamento").val(),
-            cliente: $("#cliente").val(),
-            ivaCliente: $("#ivaCliente").val(),
-            indirizzoCliente: $("#indirizzo").val(),
-            cittaCliente: $("#citta").val(),
+            cliente: escapeHtml($("#cliente").val()),
+            ivaCliente: escapeHtml($("#ivaCliente").val()),
+            indirizzoCliente: escapeHtml($("#indirizzo").val()),
+            cittaCliente: escapeHtml($("#citta").val()),
             pr: $("#pr").val(),
             cap: $("#cap").val(),
             arrayQuantita: ciclaArray($("input[id*=idQuantita-]"), "value"),
             arrayProdotti: ciclaArray($("p[id*=idArticoli-]"), "textContent"),
             arrayPrezziCad: ciclaArray($("p[id*=prezzo-]"), "textContent"),
             arrayPrezzi: ciclaArray($("p[id*=prezzoTOT-]"), "textContent"),
+            tipologie: ciclaArray($("input[id*=tipologia-]"), "value"),
             parziale: $("#parziale").val(),
             iva: $("#iva").val(),
-            totaleDovuto: $("#totaleDovuto").val()
+            totaleDovuto: $("#totaleDovuto").val(),
+            esenteNum: $("#esenteNum").val(),
+            esIvaDal: $("#esIvaDal").val(),
+            esIvaAl: $("#esIvaAl").val()
         };
-
+        if (controlloClick == 1) {
         var call = $.ajax({
             url: "http://<?php echo $base_url ?>/gen_documenti/post.php",
             method: "POST",
@@ -590,12 +721,14 @@ if ((isset($post)) == true) {
             dataType: "json"
         });
         call.done(function (msg) {
+            controlloClick = 0;
             console.log(msg.vai);
             if (msg.vai == "ok") {
                 window.location.assign("http://<?php echo $base_url ?>/gen_documenti/post.php?" + msg.cosa + "=" + msg.dove + "&documento=" + msg.documento);
             }
 
             if (msg.vai == "no") {
+                controlloClick = 1;
                 console.log(msg.perche);
                 var elem = '<div class="alert alert-danger" role="alert"><strong>Errore: </strong><span class="text">' + msg.perche + ' </span> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&nbsp &times;</span></button>';
 
@@ -603,6 +736,7 @@ if ((isset($post)) == true) {
                 $("#controlloQuery").append(elem);
             }
         });
+    }
 
         //console.log(dati);
         return true;
@@ -613,10 +747,10 @@ if ((isset($post)) == true) {
             ritorna = "";
         for (i = 0; i < variabile.length; i++) {
             if ((i + 1) < variabile.length) {
-                ritorna += variabile[i][nodo] + "||";
+                ritorna += escapeHtml(variabile[i][nodo]) + "||";
             }
             else {
-                ritorna += variabile[i][nodo];
+                ritorna += escapeHtml(variabile[i][nodo]);
             }
         }
 
@@ -630,7 +764,8 @@ if ((isset($post)) == true) {
         console.log(elemento.text());
         console.log("array - " + index);
         delete memory[index];
-        $("#prezzo-" + id[1] + ",#idArticoli-" + id[1] + ",#idQuantita-" + id[1] + ",#prezzo-" + id[1] + ",#prezzoTOT-" + id[1]).remove();
+        console.log("#ordini-" + id[1]);
+        $("#ordini-" + id[1]).remove();
     }
 
     function checkIva() {
@@ -661,6 +796,7 @@ if ((isset($post)) == true) {
             return map[m];
         });
     }
+
 
 </script>
 </body>

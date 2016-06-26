@@ -273,15 +273,14 @@ if ((isset($post)) == true) {
             <table class="table-bordered table table-striped">
                 <thead>
                                 <tr>
-                    <td colspan="3">
-                        <div style="display:inline; float:left;">
+                        <td style="border-right: none !important">
                             <img width="500px" src="../images/logobb.png" alt="Tipografia Provenzano">
-                        </div>
+                        </td>
 
-                        <div style="display:inline; float:right;">
+                        <td colspan="2" style="border-left: none !important">
                             <p class="col-md-12"><h5 class="text-center"><strong>DOCUMENTO DI TRASPORTO DPR 476/96</strong>
                         </h5></p>
-                        <div class="text-left">
+                        <div class="text-center">
                             <p class="col-xs-4"><input name="sceltaConsegna" <?php if (@$vettore == "Mittente") {
                                     echo "checked";
                                 } ?> value="Mittente" type="radio"> Mittente </p>
@@ -293,12 +292,12 @@ if ((isset($post)) == true) {
                                 } ?> value="Vettore" id="vect" type="radio">
                                 Vettore</p>
                             <div class="clearfix"></div>
-                            <p class="col-md-12 text-center"><strong>Bagheria,</strong> <input id="data" type="date" value="<?php echo $data ?>" class="stampa form-control" style="width: auto; display:inline">
+                            <p style="padding-top: 5px" class="col-xs-12 text-left"><strong>Bagheria,</strong> <input id="data" type="date" value="<?php echo $data ?>" class="stampa form-control" style="width: auto !important; display:inline !important; position: relative; top: 0.15px;">
                             </p>
 
-                            <p class="col-md-12">DDT N° <input class="form-control" style="width: auto; display: inline" id="idDDT" type="number" value="<?php echo @$id ?>" readonly></p>
+                            <p style="padding-top: 5px" class="col-xs-12 text-left">DDT N° <input class="form-control" style="width: auto !important; display: inline !important" id="idDDT" type="number" value="<?php echo @$id ?>" readonly></p>
                             </strong>
-                        </div>
+                        </td>
 </div>
                     </td>
                 </tr>
@@ -368,48 +367,52 @@ if ((isset($post)) == true) {
                     </td>
                 </tr>
                 <tr>
-                    <td><p class="col-md-12">Q.tà'</p></td>
-                    <td colspan="2"><p class="col-md-12">Descrizione dei beni</p></td>
+                    <td colspan="3">
+                        <p class="col-xs-2">Q.tà'</p>
+                        <p class="col-xs-10">Descrizione dei beni</p>
+                    </td>
                 </tr>
                 <tr class="qnt" height="400">
+                    <td colspan="3">
+                        <div class="col-xs-2" id="incolonnaQuantita">
+                            <input id="idQuantita-default" type="number" style="visibility: hidden" class="stampa form-control" min="0">
+                            <?php
+                            if (isset($post)) :
+                                foreach ($quantita as $q_id => $quantitaProdotto) : ?>
+                            <!-- Cose nuove -->
+                                   <input type="hidden" value="<?php echo $arr_tipologia[$q_id]; ?>" id="tipologia-<?php echo $q_id + 1 ?>">
+                                    <input id="idQuantita-<?php echo $q_id + 1 ?>" type="number" class="form-control arrQuantita" min="1" value="<?php echo $quantitaProdotto ?>">
+                                <?php endforeach; endif ?>
+                        </div>
 
-                    <td id="incolonnaQuantita">
-                        <input id="idQuantita-default" type="number" style="visibility: hidden" class="stampa form-control" min="0">
+                        <div class="col-xs-10" id="incolonnaArticoli" colspan="2">
+                            <input id="incolonnatore" type="text" class="stampa form-control" placeholder="Descrizione articolo">
+                            <?php
+                            if (isset($post)) :
+                                foreach ($prodotti as $p_id => $prodotto) : ?>
+                                    <p class="col-xs-12 arrArticoli noMargin"
+                                       id="idArticoli-<?php echo $p_id + 1 ?>"><?php echo $prodotto ?></p>
+                                <?php endforeach; endif ?>
+                        </div>
+                        <td style="display:none" id="incolonnaPrezzi">
                         <?php
-                        if (isset($post)) :
-                            foreach ($quantita as $q_id => $quantitaProdotto) : ?>
-                        <!-- Cose nuove -->
-                               <input type="hidden" value="<?php echo $arr_tipologia[$q_id]; ?>" id="tipologia-<?php echo $q_id + 1 ?>">
-                                <input id="idQuantita-<?php echo $q_id + 1 ?>" type="number" class="form-control arrQuantita" min="1" value="<?php echo $quantitaProdotto ?>">
-                            <?php endforeach; endif ?>
+                            if (isset($post)) :
+                                foreach ($prezzi_cad as $prezzo_id => $prezzo) : ?>
+                                    <p class="valuta col-xs-10 noMargin"
+                                       id="prezzo-<?php echo $prezzo_id + 1 ?>"><?php echo $prezzo ?></p>
+                                <?php endforeach; endif ?>
+                            <!-- Invisibilo -->
+                        </td>
                     </td>
-
-                    <td id="incolonnaArticoli" colspan="2">
-                        <input id="incolonnatore" type="text" class="stampa form-control" placeholder="Descrizione articolo">
-                        <?php
-                        if (isset($post)) :
-                            foreach ($prodotti as $p_id => $prodotto) : ?>
-                                <p class="col-xs-12 arrArticoli noMargin"
-                                   id="idArticoli-<?php echo $p_id + 1 ?>"><?php echo $prodotto ?></p>
-                            <?php endforeach; endif ?>
-                    </td>
-                    <td style="display:none" id="incolonnaPrezzi">
-                    <?php
-                        if (isset($post)) :
-                            foreach ($prezzi_cad as $prezzo_id => $prezzo) : ?>
-                                <p class="valuta col-xs-10 noMargin"
-                                   id="prezzo-<?php echo $prezzo_id + 1 ?>"><?php echo $prezzo ?></p>
-                            <?php endforeach; endif ?>
-                        <!-- Invisibilo --></td>
 
                 </tr>
                 <tr>
                     <td>
                         <p class="col-md-12">Vettori, domicilio o residenza</p>
                         <p class="col-md-12">
-                            <select style="display: none;" id="mezzo" class="form-control">
+                            <select style="display: none; <?php if (@$vettore == "Vettore") { echo "display: block"; }  ?>" id="mezzo" class="form-control">
                                 <?php foreach ($mezzi as $mezzo) :
-                                    if ($mezzo == $vettore) {
+                                    if ($mezzo == $mezzo_scelto) {
                                         $selected = "selected";
                                     } else {
                                         $selected = "";
@@ -605,9 +608,9 @@ if ((isset($post)) == true) {
             }
 
             if (mancante == "") {
-                var elem = '<div class="alert alert-danger" role="alert"><strong>Campi mancanti: </strong><span class="text">' + mancante + ' </span> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&nbsp &times;</span></button>';
+                //var elem = '<div class="alert alert-danger" role="alert"><strong>Campi mancanti: </strong><span class="text">' + mancante + ' </span> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&nbsp &times;</span></button>';
                 //$("#controlloQuery").removeClass("hidden");
-                $("#controlloQuery").append(elem);
+                //$("#controlloQuery").append(elem);
             }
         }
 
