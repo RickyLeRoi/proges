@@ -7,11 +7,13 @@ include_once("config.php");
 $sql_art = "CREATE TABLE articoli (
 id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 cod_int VARCHAR(6) NOT NULL,
+cliente VARCHAR(30) NULL,
 descr VARCHAR(200) NOT NULL,
 misura VARCHAR(50) NULL,
 cod_barre BIGINT NULL,
-prezzo INT NOT NULL,
+prezzo FLOAT(6,2) NOT NULL,
 note VARCHAR(200) NULL,
+tipologia TEXT(10) NOT NULL,
 UNIQUE (cod_int)
 ) DEFAULT CHARACTER SET utf8";
 

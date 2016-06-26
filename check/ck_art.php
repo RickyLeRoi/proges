@@ -4,15 +4,16 @@ $ck = "";
    if($_SERVER["REQUEST_METHOD"] == "POST") {
        switch ($_POST['case']) {
            case "add":
-               $cod_int = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['cod_int']));
-               $nome = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['nome']));
-               $descr = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['descr']));
-               $cod_barre = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['cod_barre']));
-               $prezzo = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['prezzo']));
-               $note = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['note']));
-               $misura = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['misura']));
+               $cod_int = mysqli_real_escape_string($conndb, $_POST['cod_int']);
+               $cliente = mysqli_real_escape_string($conndb, $_POST['cliente']);
+               $descr = mysqli_real_escape_string($conndb, $_POST['descr']);
+               $cod_barre = mysqli_real_escape_string($conndb, $_POST['cod_barre']);
+               $prezzo = mysqli_real_escape_string($conndb, $_POST['prezzo']);
+               $note = mysqli_real_escape_string($conndb, $_POST['note']);
+               $misura = mysqli_real_escape_string($conndb, $_POST['misura']);
+               $tipologia = mysqli_real_escape_string($conndb, $_POST['tipologia']);
 
-               $sql_ins = "INSERT INTO articoli (cod_int, descr, misura, cod_barre, prezzo, note) VALUES ('$cod_int', '$descr', '$misura', '$cod_barre', '$prezzo', '$note')";
+               $sql_ins = "INSERT INTO articoli (cod_int, cliente, descr, misura, cod_barre, prezzo, note, tipologia) VALUES ('$cod_int', '$cliente', '$descr', '$misura', '$cod_barre', '$prezzo', '$note', '$tipologia')";
 
                //controllo inserimento
                if ($conndb->query($sql_ins) === TRUE) {
@@ -30,15 +31,17 @@ $ck = "";
                } break;
 
            case "edit":
-               $id = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['id']));
-               $cod_int = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['cod_int']));
-               $descr = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['descr']));
-               $cod_barre = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['cod_barre']));
-               $prezzo = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['prezzo']));
-               $note = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['note']));
-               $misura = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['misura']));
+               $id = mysqli_real_escape_string($conndb, $_POST['id']);
+               $cod_int = mysqli_real_escape_string($conndb, $_POST['cod_int']);
+               $cliente = mysqli_real_escape_string($conndb, $_POST['cliente']);
+               $descr = mysqli_real_escape_string($conndb, $_POST['descr']);
+               $cod_barre = mysqli_real_escape_string($conndb, $_POST['cod_barre']);
+               $prezzo = mysqli_real_escape_string($conndb, $_POST['prezzo']);
+               $note = mysqli_real_escape_string($conndb, $_POST['note']);
+               $misura = mysqli_real_escape_string($conndb, $_POST['misura']);
+               $tipologia = mysqli_real_escape_string($conndb, $_POST['tipologia']);
 
-               $sql_edit = "UPDATE articoli SET cod_int='$cod_int', descr='$descr', misura='$misura',cod_barre='$cod_barre', prezzo='$prezzo', note='$note' WHERE id='$id';";
+               $sql_edit = "UPDATE articoli SET cod_int='$cod_int', cliente='$cliente', descr='$descr', misura='$misura',cod_barre='$cod_barre', prezzo='$prezzo', note='$note', tipologia='$tipologia' WHERE id='$id';";
 
                 //controllo inserimento
                 if ($conndb->query($sql_edit) === TRUE) {
@@ -57,7 +60,7 @@ $ck = "";
 
            case "del":
 
-               $id = htmlspecialchars(mysqli_real_escape_string($conndb, $_POST['id']));
+               $id = mysqli_real_escape_string($conndb, $_POST['id']);
 
                $sql_del = "DELETE FROM articoli WHERE id='$id'";
 
@@ -148,37 +151,42 @@ $ck = "";
             <tr>
                 <th>ID</th>
                 <th>Codice interno</th>
+                <th>Cliente</th>
                 <th>Descrizione</th>
-                <th>Misura</th>
                 <th>Codice a barre</th>
+                <th>Misura</th>
                 <th>Prezzo</th>
                 <th>Note</th>
-                <th colspan="2">Azioni</th>
+                <th>Tipologia</th>
+                <th>Azioni</th>
             </tr>
         </thead>
         <tbody>
             <?php
             include("../DB/config.php");
-            $sql = "SELECT * FROM articoli ORDER BY id";
+            $sql = "SELECT * FROM articoli ORDER BY cliente";
             $result = mysqli_query($conndb, $sql);
             while($row = mysqli_fetch_array($result)) {
                 $id = $row['id'];
                 $cod_int = $row['cod_int'];
-                $misura = $row['misura'];
+                $cliente = $row['cliente'];
                 $descr = $row['descr'];
-
                 $cod_barre = $row['cod_barre'];
+                $misura = $row['misura'];
                 $prezzo = $row['prezzo'];
                 $note = $row['note'];
+                $tipologia = $row['tipologia'];
 
                 echo "<tr>
                 <td class='valore-" . $id . "'>" . $id . "</td>
                 <td class='valore-" . $id . "'>" . $cod_int . "</td>
-                <td class='valore-" . $id . "'>" . $misura . "</td>
+                <td class='valore-" . $id . "'>" . $cliente . "</td>
                 <td class='valore-" . $id . "'>" . $descr . "</td>
                 <td class='valore-" . $id . "'>" . $cod_barre . "</td>
+                <td class='valore-" . $id . "'>" . $misura . "</td>
                 <td class='valore-" . $id . "'>" . $prezzo . "</td>
                 <td class='valore-" . $id . "'>" . $note . "</td>
+                <td class='valore-" . $id . "'>" . $tipologia . "</td>
                 <td colspan=2 class='form-inline'>
                     
                     <form  action='#' method='POST'>
@@ -218,9 +226,9 @@ $ck = "";
                     </div>
                     <div class="col-sm-12">
                         <div class="row">
-                            <label class="col-sm-2 control-label">Misura</label>
+                            <label class="col-sm-2 control-label">Cliente</label>
                             <div class="col-sm-10">
-                                <input type="number" class="form-control" name="misura" placeholder="Misura">
+                                <input type="text" class="form-control" name="cliente" placeholder="Cliente">
                             </div>
                         </div>
                     </div>
@@ -237,6 +245,14 @@ $ck = "";
                             <label class="col-sm-2 control-label">Codice a barre</label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" name="cod_barre" placeholder="Codice a barre">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <label class="col-sm-2 control-label">Misura</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="misura" placeholder="Misura">
                             </div>
                         </div>
                     </div>
@@ -260,6 +276,20 @@ $ck = "";
                             </div>
                         </div>
                     </div>
+                <div class="col-sm-12">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <label class="control-label">Tipologia</label>
+                        </div>
+                        <div class="col-sm-10">
+                            <select class="form-control" name="tipologia">
+                                <option>Normale</option>
+                                <option>Scaglione</option>
+                                <option>Stock</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
                     <div class="col-sm-2 col-sm-offset-10">
                         <input type="hidden" name="case" value="add">
                         <input class="form-control" type="submit" value="Aggiungi">
@@ -289,9 +319,9 @@ $ck = "";
                     </div>
                     <div class="col-sm-12">
                         <div class="row">
-                            <label class="col-sm-2 control-label">Misura</label>
+                            <label class="col-sm-2 control-label">Cliente</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control modifica" name="misura" placeholder="Misura">
+                                <input type="text" class="form-control modifica" name="cliente" placeholder="Cliente">
                             </div>
                         </div>
                     </div>
@@ -309,6 +339,14 @@ $ck = "";
                             <div class="col-sm-10">
                                 <input type="text" class="form-control modifica" name="cod_barre"
                                        placeholder="Codice a barre">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <label class="col-sm-2 control-label">Misura</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control modifica" name="misura" placeholder="Misura">
                             </div>
                         </div>
                     </div>
@@ -332,6 +370,20 @@ $ck = "";
                             </div>
                         </div>
                     </div>
+                <div class="col-sm-12">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <label class="control-label">Tipologia</label>
+                        </div>
+                        <div class="col-sm-10">
+                            <select class="form-control" name="tipologia">
+                                <option>Normale</option>
+                                <option>Scaglione</option>
+                                <option>Stock</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
                     <div class="col-sm-2 col-sm-offset-10">
                         <input type="hidden" name="case" value="edit">
                         <input class="form-control" type="submit" value="Aggiungi">
@@ -352,11 +404,14 @@ $ck = "";
                 console.log(obj[0].textContent);
                 $(".modifica[name=id]").val(obj[0].textContent);
                 $(".modifica[name=cod_int]").val(obj[1].textContent);
-                $(".modifica[name=misura]").val(obj[2].textContent);
+                $(".modifica[name=cliente]").val(obj[2].textContent);
                 $(".modifica[name=descr]").val(obj[3].textContent);
                 $(".modifica[name=cod_barre]").val(obj[4].textContent);
-                $(".modifica[name=prezzo]").val(obj[5].textContent);
-                $(".modifica[name=note]").val(obj[6].textContent);
+                $(".modifica[name=misura]").val(obj[5].textContent);
+                $(".modifica[name=prezzo]").val(obj[6].textContent);
+                $(".modifica[name=note]").val(obj[7].textContent);
+                $(".modifica[name=tipologia]").val(obj[8].textContent);
+
             }
         </script>
 	</body>

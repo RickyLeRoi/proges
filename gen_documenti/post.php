@@ -35,7 +35,7 @@ if (isset($_POST["data"])) {
     //Parti dalla numerazione attuale
 
     //Se si tratta di fattura o preventivo
-    if ($stampa == "fattura" || $stampa == "preventivo") {
+    if ($stampa == "fattura" || $stampa == "preventivo" || $stampa == "ndc") {
         include_once("./postdatas/fatt_prev.php");
     }
 
@@ -96,6 +96,7 @@ if (isset($_GET["fattura_n"]) || isset($_GET["preventivo_n"]) || isset($_GET["nd
             $esente_num = $obj->esente_num;
             $esente_dal = $obj->esente_dal;
             $esente_al = $obj->esente_al;
+            $tipologia = explode("||", $obj->tipologia);
             $ddt_n = explode(",", $obj->all_ddt);
             //print_r($ddt_n);
 
@@ -106,6 +107,9 @@ if (isset($_GET["fattura_n"]) || isset($_GET["preventivo_n"]) || isset($_GET["nd
             $esente_num = $obj->esente_num;
             $esente_dal = $obj->esente_dal;
             $esente_al = $obj->esente_al;
+            $doc_fatt = explode(",",$obj->doc_fatt);
+            //print_r($doc_fatt);
+            $arr_tipologia = explode("||", $obj->arr_tipologia);
             include_once("ndc.php");
         }
 
@@ -169,6 +173,7 @@ if (isset($_GET["ddt_n"])) {
             $memory .= '"' . $prodotto . '",';
         }
         $memory .= "\"default\"]";
+        $arr_tipologia = explode("||", $obj->arr_tipologia);
 
         include_once("./ddt.php");
     }

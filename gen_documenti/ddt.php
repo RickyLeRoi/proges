@@ -96,6 +96,7 @@ if ((isset($post)) == true) {
         }
 
         @media print {
+
             .noMargin {
                 margin: 0 0 0;
             }
@@ -213,6 +214,9 @@ if ((isset($post)) == true) {
         }
 
         @media print {
+            body {
+                width: 20cm;
+            }
             p {
                 font-size: 7pt;
             }
@@ -268,15 +272,14 @@ if ((isset($post)) == true) {
         <div class="table-responsive">
             <table class="table-bordered table table-striped">
                 <thead>
-                <tr colspan="2">
-                    <td>
-                        <div class="col-md-12"><img width="550px" src="../images/logobb.png"
-                                                    alt="Tipografia Provenzano">
+                                <tr>
+                    <td colspan="3">
+                        <div style="display:inline; float:left;">
+                            <img width="500px" src="../images/logobb.png" alt="Tipografia Provenzano">
                         </div>
-                    </td>
-                    <td colspan="2">
 
-                        <p class="col-md-12"><h5 class="text-center"><strong>DOCUMENTO DI TRASPORTO DPR 476/96</strong>
+                        <div style="display:inline; float:right;">
+                            <p class="col-md-12"><h5 class="text-center"><strong>DOCUMENTO DI TRASPORTO DPR 476/96</strong>
                         </h5></p>
                         <div class="text-left">
                             <p class="col-xs-4"><input name="sceltaConsegna" <?php if (@$vettore == "Mittente") {
@@ -293,10 +296,10 @@ if ((isset($post)) == true) {
                             <p class="col-md-12 text-center"><strong>Bagheria,</strong> <input id="data" type="date" value="<?php echo $data ?>" class="stampa form-control" style="width: auto; display:inline">
                             </p>
 
-                            <p class="col-md-12">DDT N° <input class="form-control" style="width: auto; display: inline" id="idDDT" type="number" value="<?php echo @$id ?>" readonly placeholder="0000"></p>
+                            <p class="col-md-12">DDT N° <input class="form-control" style="width: auto; display: inline" id="idDDT" type="number" value="<?php echo @$id ?>" readonly></p>
                             </strong>
                         </div>
-
+</div>
                     </td>
                 </tr>
                 </thead>
@@ -304,16 +307,16 @@ if ((isset($post)) == true) {
                 <tr>
                     <td colspan="3">
                         <p class="col-sm-4">Destinatario</p>
-                        <p class="col-sm-8"><input value="<?php echo @$cliente ?>" id="cliente" class="form-control" style="width:49%; display:inline" type="text" placeholder="Nome cliente">
-                            <input id="piva" value="<?php echo @$piva ?>" class="form-control" style="width:49%; display:inline" type="text" readonly placeholder="auto P.IVA"></p>
+                        <p class="col-sm-8"><input value="<?php echo @$cliente ?>" id="cliente" class="form-control" style="width:49%; display:inline" type="text" placeholder="Nome">
+                            P.IVA/C.F. - <input id="piva" value="<?php echo @$piva ?>" class="form-control" style="width:42%; display:inline" type="text"></p>
                     </td>
                 </tr>
 
                 <tr>
                     <td colspan="3"><p class="col-sm-4">Domicilio o residenza</p>
                         <p class="col-sm-8">
-                            <input value="<?php echo @$indirizzo ?>" id="indirizzo" class="form-control" style="width:49%; display:inline" type="text" readonly placeholder="auto Indirizzo">
-                            <input value="<?php echo @$citta ?>" id="citta" class="form-control" style="width:49%; display:inline" type="text" readonly placeholder="auto Citta'"></p>
+                            <input value="<?php echo @$indirizzo ?>" id="indirizzo" class="form-control" style="width:49%; display:inline" type="text" placeholder="Indirizzo">
+                            <input value="<?php echo @$citta ?>" id="citta" class="form-control" style="width:49%; display:inline" type="text" placeholder="Città"></p>
                     </td>
                 </tr>
                 <tr>
@@ -375,6 +378,8 @@ if ((isset($post)) == true) {
                         <?php
                         if (isset($post)) :
                             foreach ($quantita as $q_id => $quantitaProdotto) : ?>
+                        <!-- Cose nuove -->
+                               <input type="hidden" value="<?php echo $arr_tipologia[$q_id]; ?>" id="tipologia-<?php echo $q_id + 1 ?>">
                                 <input id="idQuantita-<?php echo $q_id + 1 ?>" type="number" class="form-control arrQuantita" min="1" value="<?php echo $quantitaProdotto ?>">
                             <?php endforeach; endif ?>
                     </td>
@@ -431,7 +436,7 @@ if ((isset($post)) == true) {
                 </tr>
                 <tr height="400" class="var">
                     <td><p class="col-md-12">Annotazioni - Variazioni</p>
-                        <p class="col-md-12"><textarea placeholder="Nessuna nota..." id="nota" class="form-control" cols="50" rows="10"><?php echo @$note ?></textarea></p></td>
+                        <p class="col-md-12"><textarea id="nota" class="form-control" cols="50" rows="10"><?php echo @$note ?></textarea></p></td>
                     <td colspan="2"><p class="col-md-12">Firma del destinatario</p></td>
 
                 </tr>
@@ -494,7 +499,7 @@ if ((isset($post)) == true) {
                         var articoli = "<p class=\"col-sm-12 arrArticoli noMargin\" id=\"idArticoli-" + idRiga + "\" >" + suggestion.data.descr + " - " + suggestion.data.misura + "</p>";
                         $("#incolonnaArticoli").append(articoli);
 
-                        var quantita = "<input id=\"idQuantita-" + idRiga + "\" type=\"number\" class=\"form-control arrQuantita\" min=\"1\" value=\"1\">";
+                        var quantita = "<input id=\"tipologia-" + idRiga + "\" type=\"hidden\"value=\"" + suggestion.data.tipologia + "\"><input id=\"idQuantita-" + idRiga + "\" type=\"number\" class=\"form-control arrQuantita\" min=\"1\" value=\"1\">";
                         $("#incolonnaQuantita").append(quantita);
 
                         var prezzo = "<p class=\"valuta col-xs-10 noMargin\" id=\"prezzo-" + idRiga + "\">" + parseFloat(suggestion.data.prezzo).toFixed(2) + "</p> ";
@@ -527,7 +532,7 @@ if ((isset($post)) == true) {
         paramName: "check",
         serviceUrl: 'http://<?php echo $base_url ?>/json/get_clienti.php',
         formatResult: function (suggestion, currentValue) {
-            return suggestion.data.PIVAC + ' - ' + suggestion.data.nomeC + " " + suggestion.data.cognomeC;
+            return  suggestion.data.nomeC + " " + suggestion.data.cognomeC + ' - ' + suggestion.data.PIVAC;
         },
         onSelect: function (suggestion) {
             $(function () {
@@ -560,6 +565,7 @@ if ((isset($post)) == true) {
             } else {
                 echo $azione;
             } ?>",
+            tipologie: ciclaArray($("input[id*=tipologia-]"), "value"),
             aspettoBeni: $("#aspettoBeni").val(),
             cliente: $("#cliente").val(),
             indirizzo: $("#indirizzo").val(),
@@ -587,7 +593,7 @@ if ((isset($post)) == true) {
             console.log(Object.keys(dati));
             for (var i = 0; indici.length > i; i++) {
 
-                if (dati[indici[i]] == "") {
+                if (dati[indici[i]] == "" || dati[indici[i]] == undefined) {
                     if (indici[i] == "idDDT") {
                         dati.idDDT = "ok";
                     }
@@ -598,9 +604,9 @@ if ((isset($post)) == true) {
                 }
             }
 
-            if (mancante == " ") {
+            if (mancante == "") {
                 var elem = '<div class="alert alert-danger" role="alert"><strong>Campi mancanti: </strong><span class="text">' + mancante + ' </span> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&nbsp &times;</span></button>';
-                $("#controlloQuery").removeClass("hidden");
+                //$("#controlloQuery").removeClass("hidden");
                 $("#controlloQuery").append(elem);
             }
         }

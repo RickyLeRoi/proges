@@ -38,7 +38,8 @@ while ($articoli= $result->fetch_object()) {
             "misura" => $articoli->misura,
             "cod_barre" => $articoli->cod_barre,
             "prezzo" => $articoli->prezzo,
-            "note" => $articoli->note,
+            "tipologia" => $articoli->tipologia,
+            "note" => $articoli->note
         ]
     ]);
 }

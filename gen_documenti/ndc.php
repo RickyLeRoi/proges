@@ -41,7 +41,7 @@ if ((isset($post)) == true) {
 
 <html>
 <head>
-    <title>Fattura</title>
+    <title>NDC</title>
     <meta charset="utf-8">
     <meta name="image" content="../images/logos.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -61,6 +61,13 @@ if ((isset($post)) == true) {
         }
         .hiddenElement {
             visibility: hidden;
+        }
+
+        .borderless td {
+            border-top: none !important;
+            border-bottom: none !important;
+            height: auto;
+            padding-bottom: 0px;
         }
 
         @media screen {
@@ -126,7 +133,7 @@ if ((isset($post)) == true) {
 
             p {
                 font-size: 7pt;
-                height: 13px;
+                //height: 13px;
             }
 
             .logo {
@@ -284,7 +291,7 @@ if ((isset($post)) == true) {
                     <td colspan="2" style="width:600;">
                         <p class="col-md-12">
                             <h5>
-                        <p><strong>FATTURA N.
+                        <p><strong>NDC N.
                                 <input id="fattId" class="stampa form-control"
                                        style="width:15%; text-align:right; display:inline" type="number" size="4"
                                        placeholder="0000" <?php if (isset($id)) echo "value='" . $id . "'" ?> readonly>/
@@ -349,7 +356,17 @@ if ((isset($post)) == true) {
                 </thead>
 
                 <tbody>
+                <tr style="background: lightgreen" class="stampa">
+                    <td id="scegliDDT" colspan="2">
+                        <input id="selectDDT" placeholder="Riferimento Fattura..." type="number" class="stampa form-control arrQuantita" min="1">
+                        <!-- QUI -->
+                    </td>
 
+                    <td id="incolonnaArticoli" colspan="2">
+                        <input class="stampa form-control incolonnatore" type="text"
+                               placeholder="Descrizione articolo automatica">
+                    </td>
+                </tr>
                 <tr>
                     <td><p class="col-md-12">Quantità</p></td>
                     <td width="300px"><p class="col-md-12">Descrizione della merce</p></td>
@@ -357,56 +374,77 @@ if ((isset($post)) == true) {
                     <td><p class="col-md-12">Importo</p></td>
                 </tr>
 
-                <tr class="qnt" height="800px">
+ <!-- Tabella interattiva // INIZIO -->
+                <tr class="qnt hiddenElement stampa">
 
-                    <td id="incolonnaQuantita">
-                        <input id="idQuantitadefault" type="number" style="text-align:right;"
-                               class="stampa hiddenElement form-control arrQuantita" min="1">
-                        <?php
-                        if (isset($post)) :
-                            foreach ($quantita as $q_id => $quantitaProdotto) : ?>
-                                <input id="idQuantita-<?php echo $q_id + 1 ?>" type="number"
-                                       class="form-control arrQuantita" min="1" value="<?php echo $quantitaProdotto ?>">
-                            <?php endforeach; endif ?>
-                        <!-- QUI -->
-                    </td>
-
-                    <td id="incolonnaArticoli">
-                        <input class="stampa form-control incolonnatore" type="text"
-                               placeholder="Descrizione articolo automatica">
-                        <?php
-                        if (isset($post)) :
-                            foreach ($prodotti as $p_id => $prodotto) : ?>
-                                <p class="col-xs-12 arrArticoli noMargin"
-                                   id="idArticoli-<?php echo $p_id + 1 ?>"><?php echo $prodotto ?></p>
-                            <?php endforeach; endif ?>
-                    </td>
-
+                <!--
                     <td id="incolonnaPrezzi">
                         <input class="hiddenElement form-control stampa" style="text-align:right;" type="text"
                                placeholder="auto da DB €" readonly>
-                        <?php
-                        if (isset($post)) :
-                            foreach ($prezzi_cad as $prezzo_cad_id => $prezzo_cad) : ?>
-                                <p class="valuta col-xs-10 noMargin"
-                                   id="prezzo-<?php echo $prezzo_cad_id + 1 ?>"><?php echo $prezzo_cad ?></p>
-                            <?php endforeach; endif ?>
                     </td>
 
                     <td id="incolonnaPrezziTot">
                         <input class="hiddenElement form-control stampa" style="text-align:right;" type="text"
                                placeholder="auto da riga €" readonly>
-                        <?php
-                        if (isset($post)) :
-                            foreach ($prezzi as $prezzo_id => $prezzo) : ?>
-                                <p class="valuta col-xs-10 noMargin"
-                                   id="prezzoTOT-<?php echo $prezzo_id + 1 ?>"><?php echo $prezzo ?></p>
-                            <?php endforeach; endif ?>
                     </td>
-
+                -->
                 </tr>
+                        <?php
+
+                        // DDT allegati
+                        //print_r($ddt_n[0]);
+                        if (!empty($doc_fatt[0])) :
+                            for ($ii = 0; $ii < count(@$doc_fatt); $ii++) :
+
+                                $num_doc_ = $doc_fatt[$ii];
+
+                                $query = "SELECT * FROM stampa_fattura WHERE id=".$num_doc_;
+                                $result = $conndb->query($query);
+                                $fatt = $result->fetch_object();
+                                //print_r($ddt);
+
+                                $data_fatt = $fatt->data_doc;
+
+                                 ?>
+
+                                <tr onclick="cancellaFATT($(this))" id="fatt-<?php echo $doc_fatt[$ii] ?>">
+                                <th colspan="4">
+                                <p>rif. FATTURA n° <?php echo $doc_fatt[$ii] ?> del <?php echo $data_fatt ?> </p>
+                                </th>
+                                </tr>
+
+                                <?php
+
+                            endfor;
+                        endif;
+                        // Articoli salvati
+                        if (isset($post)) :
+                            if ($quantita[0] != "") {
+                            for ($i = 0; count($quantita) > $i; $i++) : ?>
+                            <tr id="ordini-<?php echo $i+1 ?>" class="borderless">
+
+                                <td>
+                                    <input id="idQuantita-<?php echo $i + 1 ?>" type="number" class="form-control arrQuantita" min="1" value="<?php echo $quantita[$i] ?>">
+                                </td>
+                                <td>
+                                    <p class="col-xs-12 arrArticoli noMargin"
+                                   id="idArticoli-<?php echo $i + 1 ?>"><?php echo $prodotti[$i] ?></p>
+                                </td>
+                                <td><p class="valuta col-xs-10 noMargin"
+                                   id="prezzo-<?php echo $i + 1 ?>"><?php echo $prezzi_cad[$i] ?></p></td>
+                                <td><p class="valuta col-xs-10 noMargin"
+                                   id="prezzoTOT-<?php echo $i + 1 ?>"><?php echo $prezzi[$i] ?></p></td>
+                               <input type="hidden" value="<?php echo $arr_tipologia[$i]; ?>" id="tipologia-<?php echo $i + 1 ?>">
+                            </tr>
+                            <?php endfor; }?>
+
+
+                        <?php endif ?>
+                <!-- Tabella interattiva // FINE -->
 
                 <tr>
+                </tr>
+                <tfoot>
                     <td style="text-align:center" colspan="2" rowspan="3"><p>Contributo CONAI assolto ove dovuto.</p>
                     </td>
                     <td style="text-align:right"><p>Totale parziale €</p></td>
@@ -458,8 +496,7 @@ if ((isset($post)) == true) {
                     <td class="text-center"><p>S. E. & O.</p></td>
                 </tr>
 
-                </tbody>
-
+                <tfoot>
             </table>
         </div>
     </div>
@@ -469,7 +506,10 @@ if ((isset($post)) == true) {
 
 <script>
     var memory = <?php echo $memory ?>;
+    var sommaDDT = 0; <?php //echo $DDTarray ?>;
     var idRiga = <?php echo $idRiga ?>;
+    var controlloClick = 1;
+
     $('.incolonnatore').devbridgeAutocomplete({
         dataType: "json",
         paramName: "check",
@@ -480,27 +520,34 @@ if ((isset($post)) == true) {
         onSelect: function (suggestion) {
             var execute = false;
             $(function () {
-                var checkIfExists = memory.indexOf(suggestion.data.descr);
+                var checkIfExists = memory.indexOf(suggestion.data.descr +" - "+suggestion.data.misura);
                 console.log(checkIfExists);
                 if (checkIfExists !== -1) {
-                    alert("Hai già inserito questo prodotto");
-                    execute = false;
-                }
-                else {
-                    execute = true;
-                }
+                        alert("Hai già inserito questo prodotto");
+                        execute = false;
+                    }
+                    else {
+                        execute = true;
+                    }
 
                 if (execute === true) {
-                    var articoli = "<p class=\"col-xs-12 arrArticoli noMargin\" id=\"idArticoli-" + idRiga + "\" >" + suggestion.data.descr + " - " + suggestion.data.misura + "</p>";
-                    $("#incolonnaArticoli").append(articoli);
-                    var quantita = "<input id=\"idQuantita-" + idRiga + "\" type=\"number\" class=\"form-control arrQuantita\" min=\"1\" value=\"1\">";
-                    $("#incolonnaQuantita").append(quantita);
-                    var prezzo = "<p class=\"valuta col-xs-10 noMargin\" id=\"prezzo-" + idRiga + "\">" + parseFloat(suggestion.data.prezzo).toFixed(2) + "</p> ";
-                    var prezzoTOT = "<p class=\"valuta col-xs-10 noMargin\" id=\"prezzoTOT-" + idRiga + "\">" + parseFloat(suggestion.data.prezzo).toFixed(2) + "</p>";
-                    $("#incolonnaPrezzi").append(prezzo);
-                    $("#incolonnaPrezziTot").append(prezzoTOT);
+
+                    var tr = "<tr id=ordini-"+ idRiga +" class=\"borderless\">";
+
+                    tr += "<td><input id=\"idQuantita-" + idRiga + "\" type=\"number\" class=\"form-control arrQuantita\" min=\"1\" value=\"1\"></td>";
+
+                    tr += "<td><p class=\"col-xs-12 arrArticoli noMargin\" id=\"idArticoli-" + idRiga + "\" >" + suggestion.data.descr + " - " + suggestion.data.misura + "</p></td>";
+
+
+                    tr += "<td><p class=\"valuta col-xs-10 noMargin\" id=\"prezzo-" + idRiga + "\">" + parseFloat(suggestion.data.prezzo).toFixed(2) + "</p></td>";
+
+                    tr += "<td><p class=\"valuta col-xs-10 noMargin\" id=\"prezzoTOT-" + idRiga + "\">" + parseFloat(suggestion.data.prezzo).toFixed(2) + "</p></td>";
+
+                    tr += '<input type="hidden" id="tipologia-'+ idRiga +'" value="' + suggestion.data.tipologia + '">'
+                    $(".qnt").after(tr);
+
                     prezziTot($("#idQuantita-" + idRiga));
-                    memory.push(suggestion.data.descr);
+                    memory.push(suggestion.data.descr +" - "+suggestion.data.misura);
                     idRiga++;
 
                     $(".arrQuantita, #iva").keyup(function () {
@@ -516,7 +563,6 @@ if ((isset($post)) == true) {
                     })
                 }
 
-
             });
         }
     });
@@ -530,10 +576,34 @@ if ((isset($post)) == true) {
         quantitaId = quantita.attr("id");
         quantitaId = quantitaId.split("-");
         prezzoUnitario = $("#prezzo-" + quantitaId[1]).text();
-        prezzoTotale = quantitaScelta * (parseFloat(prezzoUnitario));
+        tipologia = $("#tipologia-" + quantitaId[1]).val(); //
+        console.log(tipologia);
+
+        //controlla tipologia
+
+        /*  Normale
+        *   Scaglione
+
+            Es. 19458 etichette. verrà scritto quantità 20000 (manualmente) = (20000/1000) * 11.64 [quantità/1000 * pr.unitarioSCAGLIONE]
+
+
+        *   Stock
+        */
+
+        if (tipologia == "Normale" || tipologia == undefined) {
+            prezzoTotale = quantitaScelta * (parseFloat(prezzoUnitario));
+        }
+
+        if (tipologia == "Scaglione") {
+            prezzoTotale = ((quantitaScelta / 1000) * (parseFloat(prezzoUnitario)));
+        }
+
+        if (tipologia == "Stock") {
+            prezzoTotale = parseFloat(prezzoUnitario);
+        }
+
         prezzoTotID = $("#prezzoTOT-" + quantitaId[1]);
         prezzoTotID.text(prezzoTotale.toFixed(2));
-
         var selectPrezzi = $("p[id*=prezzoTOT-]");
         //console.log(selectPrezzi.length);
         //console.log(selectPrezzi);
@@ -543,8 +613,9 @@ if ((isset($post)) == true) {
             prezzoDaSommare = parseFloat(selectPrezzi[i].textContent);
             //console.log(prezzoDaSommare);
             somma += prezzoDaSommare;
-        }
 
+        }
+        somma += sommaDDT;
         $("#parziale").val(somma.toFixed(2));
         var iva = $("#iva").val();
         iva = somma * (iva / 100);
@@ -574,7 +645,114 @@ if ((isset($post)) == true) {
         }
     });
 
-    function save() {
+// ------------------------
+
+
+    // array_push($newKey, [
+    //     "value" => $ddt->id,
+    //     "data" => [
+    //         "num" => $ddt->id,
+    //         "data_doc" => $ddt->data_doc,
+    //         "arr_qta" => $arr_qta,
+    //         "arr_beni" => $arr_beni,
+    //         "arr_prezzi" => $arr_prezzi,
+    //         "arr_prezzi_tot" => $arr_prezzi_tot,
+    //         "somma" => array_sum($arr_prezzi_tot)
+    //     ]
+    // ]);
+
+    $('#selectDDT').devbridgeAutocomplete({
+        dataType: "json",
+        paramName: "check",
+        serviceUrl: 'http://<?php echo $base_url ?>/json/get_fatture_xndc.php',
+        formatResult: function (suggestion, currentValue) {
+            return "Fattura n° " + suggestion.data.num;
+        },
+        onSelect: function (suggestion) {
+            console.log($("#fatt-" + suggestion.data.num));
+            if ($("#fatt-" + suggestion.data.num).length == 0) {
+                var fatt = `
+                    <tr onclick="cancellaFATT($(this))" id="fatt-` + suggestion.data.num +`">
+                        <th colspan="4"><p>rif. FATTURA n° ` + suggestion.data.num + ` del ` + suggestion.data.data_doc +` </p></th>
+                    </tr>`;
+
+                $(".qnt").before(fatt);
+
+            }
+            else {
+                alert("Fattura già esistente!");
+            }
+        }
+    });
+
+
+//-------------------------
+
+    function cancellaFATT(elemento) {
+        console.log(elemento);
+        id = elemento.attr("id");
+        id = id.split("-");
+        $("#fatt-"+ id[1]).remove();
+
+    }
+
+    function saveFATT() {
+        var countFATT = $("tr[id*=fatt-]");
+        //console.log(countDDT);
+        var id_fatt = [];
+        for (var i = 0; i < countFATT.length; i++) {
+            //console.log(countDDT.length);
+            idFATT = countFATT[i].id;
+            idFATT = idFATT.split("-");
+            id_fatt.push(idFATT[1]);
+        }
+
+        return String(id_fatt);
+    }
+       //console.log(dati);
+function ciclaArray(variabile, nodo) {
+        var i = 0,
+            ritorna = "";
+        for (i = 0; i < variabile.length; i++) {
+            if ((i + 1) < variabile.length) {
+                ritorna += escapeHtml(variabile[i][nodo]) + "||";
+            }
+            else {
+                ritorna += escapeHtml(variabile[i][nodo]);
+            }
+        }
+
+        return ritorna;
+    }
+
+    function cancella(elemento) {
+        id = elemento.attr("id");
+        id = id.split("-");
+        index = memory.indexOf(elemento.text());
+        console.log(elemento.text());
+        console.log("array - " + index);
+        delete memory[index];
+        console.log("#ordini-" + id[1]);
+        $("#ordini-" + id[1]).remove();
+    }
+
+    function checkIva() {
+        var ammIva = $("#iva").val();
+        if (ammIva != 0) {
+            console.log($("#iva").val());
+            $("#ifIva0 p").hide();
+        }
+
+        else {
+            $("#ifIva0 p").show();
+        }
+    }
+    checkIva();
+    $("#iva").click(function () {
+        checkIva();
+    });
+
+        function save() {
         var dati = {
             richiesta: "ndc",
             azione: "<?php if (!isset($azione)) {
@@ -586,6 +764,7 @@ if ((isset($post)) == true) {
             data: $("#data").val(),
             pagamento: $("#pagamento").val(),
             cliente: $("#cliente").val(),
+            tipologie: ciclaArray($("input[id*=tipologia-]"), "value"),
             ivaCliente: $("#ivaCliente").val(),
             indirizzoCliente: $("#indirizzo").val(),
             cittaCliente: $("#citta").val(),
@@ -595,6 +774,7 @@ if ((isset($post)) == true) {
             arrayProdotti: ciclaArray($("p[id*=idArticoli-]"), "textContent"),
             arrayPrezziCad: ciclaArray($("p[id*=prezzo-]"), "textContent"),
             arrayPrezzi: ciclaArray($("p[id*=prezzoTOT-]"), "textContent"),
+            doc_fatt: saveFATT(),
             parziale: $("#parziale").val(),
             iva: $("#iva").val(),
             totaleDovuto: $("#totaleDovuto").val(),
@@ -628,46 +808,6 @@ if ((isset($post)) == true) {
         return true;
     }
 
-    function ciclaArray(variabile, nodo) {
-        var i = 0,
-            ritorna = "";
-        for (i = 0; i < variabile.length; i++) {
-            if ((i + 1) < variabile.length) {
-                ritorna += variabile[i][nodo] + "||";
-            }
-            else {
-                ritorna += variabile[i][nodo];
-            }
-        }
-
-        return ritorna;
-    }
-
-    function cancella(elemento) {
-        id = elemento.attr("id");
-        id = id.split("-");
-        index = memory.indexOf(elemento.text());
-        console.log(elemento.text());
-        console.log("array - " + index);
-        delete memory[index];
-        $("#prezzo-" + id[1] + ",#idArticoli-" + id[1] + ",#idQuantita-" + id[1] + ",#prezzo-" + id[1] + ",#prezzoTOT-" + id[1]).remove();
-    }
-
-    function checkIva() {
-        var ammIva = $("#iva").val();
-        if (ammIva != 0) {
-            console.log($("#iva").val());
-            $("#ifIva0 p").hide();
-        }
-
-        else {
-            $("#ifIva0 p").show();
-        }
-    }
-    checkIva();
-    $("#iva").click(function () {
-        checkIva();
-    });
     function escapeHtml(text) {
         var map = {
             '&': '&amp;',
@@ -681,6 +821,8 @@ if ((isset($post)) == true) {
             return map[m];
         });
     }
+
+   //------
 
 </script>
 </body>

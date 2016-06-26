@@ -18,13 +18,13 @@ if (isset($_GET["check"])) {
               FROM stampa_ddt
               LEFT JOIN clienti ON stampa_ddt.Piva=clienti.PIVAC OR stampa_ddt.Piva=CFC
               WHERE clienti.nomeC LIKE \"%" . $check . "%\" OR clienti.cognomeC LIKE \"%" . $check . "%\" OR  clienti.codC LIKE \"%" . $check . "%\"
-              ORDER BY stampa_ddt.id ASC LIMIT " . $limit . " OFFSET " . $page;
+              ORDER BY stampa_ddt.id DESC LIMIT " . $limit . " OFFSET " . $page;
 } else {
     $check = '';
     $query = "SELECT stampa_ddt.*, codC, nomeC, cognomeC
               FROM stampa_ddt
               LEFT JOIN clienti ON stampa_ddt.Piva=clienti.PIVAC OR stampa_ddt.Piva=CFC
-              ORDER BY stampa_ddt.id ASC";
+              ORDER BY stampa_ddt.id DESC";
 }
 
 $result = $conndb->query($query);

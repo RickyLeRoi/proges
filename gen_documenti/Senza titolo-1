@@ -3,7 +3,7 @@ QUANTITA    DESCRIZIONE DELLA MERCE         IMP.UNIT    IMPORTO
             Doc: DDT n°5 del 2016/06/26
 2               piselli surgelati           5.00        10.00
 215             etichette 1000pz            2.00        230.00
-1               piselloni                   12.00       12.00
+1               pisellini                   12.00       12.00
 
 2           Art: etichette 1000pz           2.00        4.00
 
@@ -16,3 +16,20 @@ QUANTITA    DESCRIZIONE DELLA MERCE         IMP.UNIT    IMPORTO
 |     - Art:                    |
 |     - Doc:                    |
 |_______________________________|
+
+
+
+
+normali / stock / scaglioni
+
+articolo etichette. da 10000pz a 18000pz è uno STOCK. Prezzo 210€ indipendentemente dalla quantità.
+    Es. 11213 etichette = 210€
+        18000 etichette = 210€
+in quantità deve SEMPRE spuntare il numero reale delle ETICHETTE non dello STOCK, quindi 11213 nel primo caso e 18000 nel secondo anche se in realtà è UN SOLO pacco.
+
+articolo etichette, da 18001 a 25000 è uno SCAGLIONE. Prezzo 11.64€ ogni 1000 etichette.
+    Es. 19458 etichette. verrà scritto quantità 20000 (manualmente) = (20000/1000) * 11.64 [quantità/1000 * pr.unitarioSCAGLIONE]
+    Es. 25000 etichette. verrà scritto quantità 25000 (manualmente) = (25000/1000) * 11.64 [quantità/1000 * pr.unitarioSCAGLIONE]
+    
+articolo vachetta patatine fritte è articolo NORMALE. Prezzo 2€ ogni vaschetta.
+    Es. 5 vaschette di patatine fritte = 10€

@@ -127,7 +127,7 @@ if ((isset($post)) == true) {
         }
         p {
         font-size: 7pt;
-        height: 13px;
+        //height: 13px;
         }
         .logo {
         max-width: 100%;
@@ -342,7 +342,17 @@ if ((isset($post)) == true) {
                 </thead>
 
                 <tbody>
+                <tr style="background: lightgreen" class="stampa">
+                    <td id="scegliDDT" colspan="2">
+                        <input id="selectDDT" placeholder="Numero DDT" type="number" class="stampa form-control arrQuantita" min="1">
+                        <!-- QUI -->
+                    </td>
 
+                    <td id="incolonnaArticoli" colspan="2">
+                        <input class="stampa form-control incolonnatore" type="text"
+                               placeholder="Descrizione articolo automatica">
+                    </td>
+                </tr>
                 <tr>
                     <td><p class="col-md-12">Quantità</p></td>
                     <td width="300px"><p class="col-md-12">Descrizione della merce</p></td>
@@ -352,19 +362,9 @@ if ((isset($post)) == true) {
                 </tr>
 
                 <!-- Tabella interattiva // INIZIO -->
-                <tr class="qnt stampa">
+                <tr class="qnt hiddenElement stampa">
 
-                    <td id="incolonnaQuantita">
-                        <input id="idQuantitadefault" type="number" style="text-align:right;"
-                               class="stampa hiddenElement form-control arrQuantita" min="1">
-                        <!-- QUI -->
-                    </td>
-
-                    <td id="incolonnaArticoli">
-                        <input class="stampa form-control incolonnatore" type="text"
-                               placeholder="Descrizione articolo automatica">
-                    </td>
-
+                <!--
                     <td id="incolonnaPrezzi">
                         <input class="hiddenElement form-control stampa" style="text-align:right;" type="text"
                                placeholder="auto da DB €" readonly>
@@ -374,72 +374,79 @@ if ((isset($post)) == true) {
                         <input class="hiddenElement form-control stampa" style="text-align:right;" type="text"
                                placeholder="auto da riga €" readonly>
                     </td>
-
+                -->
                 </tr>
                         <?php
 
                         // DDT allegati
                         $DDTsomma = 0;
-                        for ($ii = 0; $ii < count($ddt_n); $ii++) {
-                            if ($ddt_n != "") :
-                            $num_doc_ = $ddt_n[$ii];
+                        $DDTarray = [];
+                        $arr_prezzi_tot = [];
+                        //print_r($ddt_n[0]);
+                        if (!empty($ddt_n[0])) :
+                            for ($ii = 0; $ii < count(@$ddt_n); $ii++) :
 
-                            $query = "SELECT * FROM stampa_ddt WHERE id=".$num_doc_;
-                            $result = $conndb->query($query);
-                            $ddt = $result->fetch_object();
-                            //print_r($ddt);
-                            $arr_prezzi= explode("||", $ddt->arr_imp_uni);
-                            $arr_qta = explode("||", $ddt->arr_qta);
-                            $arr_beni = explode("||", $ddt->arr_beni);
-                            $data_ddt = $ddt->data_doc;
-                            $DDTarray = 0;
+                                $num_doc_ = $ddt_n[$ii];
 
+                                $query = "SELECT * FROM stampa_ddt WHERE id=".$num_doc_;
+                                $result = $conndb->query($query);
+                                $ddt = $result->fetch_object();
+                                //print_r($ddt);
+                                $arr_prezzi= explode("||", $ddt->arr_imp_uni);
+                                $arr_qta = explode("||", $ddt->arr_qta);
+                                $arr_beni = explode("||", $ddt->arr_beni);
+                                $data_ddt = $ddt->data_doc;
+                                $DDTarray = 0;
 
-                            foreach ($arr_prezzi as $key=>$prezzo) {
-                                $arr_prezzi_tot[] = $prezzo * $arr_qta[$key];
-                            }
+                                $arr_prezzi_tot = [];
+                                for ($k = 0; count($arr_prezzi) > $k; $k++) {
+                                    array_push($arr_prezzi_tot, ($arr_prezzi[$k] * $arr_qta[$k]));
+                                }
 
-                            $somma = array_sum($arr_prezzi_tot)
-                             ?>
+                                //print_r($arr_prezzi_tot);
+                                $somma = array_sum($arr_prezzi_tot);
 
-                            <tr onclick="cancellaDDT($(this))" class="ddt-<?php echo $ddt->id ?>">
-                            <input id="inputDDT-<?php echo $ddt->id ?>" type="hidden" value="<?php echo $somma ?>">
-                            <th colspan="4">
-                            <p>DDT N° <?php echo $ddt->id ?> del <?php echo $data_ddt ?> </p>
-                            </th>
-                            </tr>
-                            <?php for ($i=0; count($arr_prezzi) > $i; $i++ ) :
-                                $arr_prezzi_tot = $arr_prezzi[$i] * $arr_qta[$i];
+                                //echo "risultato: ".$somma." altro: ".$ii;
+                                 ?>
 
-
-                            ?>
-                                <!-- FOR -->
-                                <tr class="ddt-<?php echo $ddt->id ?> borderless">
-                                <td><input type="number" readonly="" class="form-control arrQuantita" value="<?php echo $arr_qta[$i] ?>"></td>
-                                <td><p class="col-xs-12 noMargin"><?php echo $arr_beni[$i] ?></p></td>
-                                <td><p class="col-xs-12 noMargin valuta"><?php echo $arr_prezzi[$i] ?></p></td>
-                                <td><p class="col-xs-12 noMargin valuta"><?php echo  $arr_prezzi_tot ?></p></td>
-
+                                <tr onclick="cancellaDDT($(this))" class="ddt-<?php echo $ddt->id ?>">
+                                <input id="inputDDT-<?php echo $ddt->id ?>" type="hidden" value="<?php echo $somma ?>">
+                                <th colspan="4">
+                                <p>DDT N° <?php echo $ddt->id ?> del <?php echo $data_ddt ?> </p>
+                                </th>
                                 </tr>
-                            <?php
-                            $DDTarray = $DDTarray + $arr_prezzi_tot;
+                                <?php for ($i=0; count($arr_prezzi) > $i; $i++ ) :
+                                    $arr_prezzi_tot = $arr_prezzi[$i] * $arr_qta[$i];
 
+
+                                ?>
+                                    <!-- FOR -->
+                                    <tr class="ddt-<?php echo $ddt->id ?> borderless">
+                                    <td><input type="number" readonly="" class="form-control arrQuantita" value="<?php echo $arr_qta[$i] ?>"></td>
+                                    <td><p class="col-xs-12 noMargin"><?php echo $arr_beni[$i] ?></p></td>
+                                    <td><p class="col-xs-12 noMargin valuta"><?php echo $arr_prezzi[$i] ?></p></td>
+                                    <td><p class="col-xs-12 noMargin valuta"><?php echo  $arr_prezzi_tot ?></p></td>
+
+                                    </tr>
+                                <?php
+
+
+                                endfor;
+
+                                ?>
+
+                                <?php
 
                             endfor;
-
-                            ?>
-
-                            <?php
-                            endif;
-                        }
+                        endif;
                         // Articoli salvati
                         if (isset($post)) :
+                            if ($quantita[0] != "") {
                             for ($i = 0; count($quantita) > $i; $i++) : ?>
                             <tr id="ordini-<?php echo $i+1 ?>" class="borderless">
 
                                 <td>
-                                    <input id="idQuantita-<?php echo $i + 1 ?>" type="number"
-                                       class="form-control arrQuantita" min="1" value="<?php echo $quantita[$i] ?>">
+                                    <input id="idQuantita-<?php echo $i + 1 ?>" type="number" class="form-control arrQuantita" min="1" value="<?php echo $quantita[$i] ?>">
                                 </td>
                                 <td>
                                     <p class="col-xs-12 arrArticoli noMargin"
@@ -449,8 +456,9 @@ if ((isset($post)) == true) {
                                    id="prezzo-<?php echo $i + 1 ?>"><?php echo $prezzi_cad[$i] ?></p></td>
                                 <td><p class="valuta col-xs-10 noMargin"
                                    id="prezzoTOT-<?php echo $i + 1 ?>"><?php echo $prezzi[$i] ?></p></td>
+                               <input type="hidden" value="<?php echo $tipologia[$i]; ?>" id="tipologia-<?php echo $i + 1 ?>">
                             </tr>
-                            <?php endfor; ?>
+                            <?php endfor; }?>
 
 
                         <?php endif ?>
@@ -511,7 +519,6 @@ if ((isset($post)) == true) {
                 </tbody>
 
             </table>
-            <input type="text" id="selectDDT" name="">
             <input type="hidden" value="0" id="calcola">
         </div>
     </div>
@@ -521,8 +528,23 @@ if ((isset($post)) == true) {
 
 <script>
     var memory = <?php echo $memory ?>;
-    var sommaDDT = <?php echo $DDTarray ?>;
+    var sommaDDT = 0; <?php //echo $DDTarray ?>;
     var idRiga = <?php echo $idRiga ?>;
+    var controlloClick = 1;
+
+    function sommaDDT_ () {
+        var valori = $("input[id*=inputDDT]");
+        for (var i = 0; valori.length > i; i++) {
+            sommaDDT = sommaDDT + parseFloat(valori[i].value);
+            console.log(valori[i].value);
+        }
+
+    }
+
+    <?php if (isset($post)) : ?>
+        sommaDDT_ ();
+    <?php endif ?>
+
     $('.incolonnatore').devbridgeAutocomplete({
         dataType: "json",
         paramName: "check",
@@ -533,7 +555,7 @@ if ((isset($post)) == true) {
         onSelect: function (suggestion) {
             var execute = false;
             $(function () {
-                var checkIfExists = memory.indexOf(suggestion.data.descr);
+                var checkIfExists = memory.indexOf(suggestion.data.descr +" - "+suggestion.data.misura);
                 console.log(checkIfExists);
                 if (checkIfExists !== -1) {
                         alert("Hai già inserito questo prodotto");
@@ -555,10 +577,12 @@ if ((isset($post)) == true) {
                     tr += "<td><p class=\"valuta col-xs-10 noMargin\" id=\"prezzo-" + idRiga + "\">" + parseFloat(suggestion.data.prezzo).toFixed(2) + "</p></td>";
 
                     tr += "<td><p class=\"valuta col-xs-10 noMargin\" id=\"prezzoTOT-" + idRiga + "\">" + parseFloat(suggestion.data.prezzo).toFixed(2) + "</p></td>";
+
+                    tr += '<input type="hidden" id="tipologia-'+ idRiga +'" value="' + suggestion.data.tipologia + '">'
                     $(".qnt").after(tr);
 
                     prezziTot($("#idQuantita-" + idRiga));
-                    memory.push(suggestion.data.descr);
+                    memory.push(suggestion.data.descr +" - "+suggestion.data.misura);
                     idRiga++;
 
                     $(".arrQuantita, #iva").keyup(function () {
@@ -587,10 +611,34 @@ if ((isset($post)) == true) {
         quantitaId = quantita.attr("id");
         quantitaId = quantitaId.split("-");
         prezzoUnitario = $("#prezzo-" + quantitaId[1]).text();
-        prezzoTotale = quantitaScelta * (parseFloat(prezzoUnitario));
+        tipologia = $("#tipologia-" + quantitaId[1]).val(); //
+        console.log(tipologia);
+
+        //controlla tipologia
+
+        /*  Normale
+        *   Scaglione
+
+            Es. 19458 etichette. verrà scritto quantità 20000 (manualmente) = (20000/1000) * 11.64 [quantità/1000 * pr.unitarioSCAGLIONE]
+
+
+        *   Stock
+        */
+
+        if (tipologia == "Normale" || tipologia == undefined) {
+            prezzoTotale = quantitaScelta * (parseFloat(prezzoUnitario));
+        }
+
+        if (tipologia == "Scaglione") {
+            prezzoTotale = ((quantitaScelta / 1000) * (parseFloat(prezzoUnitario)));
+        }
+
+        if (tipologia == "Stock") {
+            prezzoTotale = parseFloat(prezzoUnitario);
+        }
+
         prezzoTotID = $("#prezzoTOT-" + quantitaId[1]);
         prezzoTotID.text(prezzoTotale.toFixed(2));
-
         var selectPrezzi = $("p[id*=prezzoTOT-]");
         //console.log(selectPrezzi.length);
         //console.log(selectPrezzi);
@@ -713,7 +761,6 @@ if ((isset($post)) == true) {
         return String(id_ddt);
     }
     function save() {
-
         var dati = {
             ddt : saveDDT(),
             richiesta: "fattura",
@@ -735,6 +782,7 @@ if ((isset($post)) == true) {
             arrayProdotti: ciclaArray($("p[id*=idArticoli-]"), "textContent"),
             arrayPrezziCad: ciclaArray($("p[id*=prezzo-]"), "textContent"),
             arrayPrezzi: ciclaArray($("p[id*=prezzoTOT-]"), "textContent"),
+            tipologie: ciclaArray($("input[id*=tipologia-]"), "value"),
             parziale: $("#parziale").val(),
             iva: $("#iva").val(),
             totaleDovuto: $("#totaleDovuto").val(),
@@ -742,7 +790,7 @@ if ((isset($post)) == true) {
             esIvaDal: $("#esIvaDal").val(),
             esIvaAl: $("#esIvaAl").val()
         };
-
+        if (controlloClick == 1) {
         var call = $.ajax({
             url: "http://<?php echo $base_url ?>/gen_documenti/post.php",
             method: "POST",
@@ -750,12 +798,14 @@ if ((isset($post)) == true) {
             dataType: "json"
         });
         call.done(function (msg) {
+            controlloClick = 0;
             console.log(msg.vai);
             if (msg.vai == "ok") {
                 window.location.assign("http://<?php echo $base_url ?>/gen_documenti/post.php?" + msg.cosa + "=" + msg.dove + "&documento=" + msg.documento);
             }
 
             if (msg.vai == "no") {
+                controlloClick = 1;
                 console.log(msg.perche);
                 var elem = '<div class="alert alert-danger" role="alert"><strong>Errore: </strong><span class="text">' + msg.perche + ' </span> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&nbsp &times;</span></button>';
 
@@ -763,6 +813,7 @@ if ((isset($post)) == true) {
                 $("#controlloQuery").append(elem);
             }
         });
+    }
 
         //console.log(dati);
         return true;
