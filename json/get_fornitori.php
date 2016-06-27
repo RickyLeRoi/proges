@@ -10,7 +10,7 @@ if ((isset($_GET["page"])) && (isset($_GET["limit"]))) {
     $limit = 30;
 }
 
-$sql = "SELECT * FROM fornitori" LIMIT " . $limit . " OFFSET " . $page";
+$sql = "SELECT * FROM fornitori LIMIT " . $limit . " OFFSET " . $page;
 $result = mysqli_query($conndb, $sql);
 $results = array();
 $key = 0;

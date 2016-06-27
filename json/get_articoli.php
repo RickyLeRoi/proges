@@ -20,8 +20,8 @@ if ((isset($_GET["page"])) && (isset($_GET["limit"]))) {
     $page = $_GET["page"];
     $limit = $_GET["limit"];
 
-    $query .= " DESC LIMIT " . $limit . " OFFSET " . $page;
-    print_r($query);
+    $query .= "ORDER BY articoli.id DESC LIMIT " . $limit . " OFFSET " . $page;
+    //print_r($query);
 }
 
 

@@ -185,8 +185,8 @@ call.error(function (msg) {
 
 
     $("#succ").click(function() {
-        page += +30;
-        limit += +30;
+        page += +20;
+        limit += +20;
         suggerimento($("#filtro").val());
         if (page == 0) {
 
@@ -200,38 +200,8 @@ call.error(function (msg) {
 
     $("#prec").click(function() {
         if (page !=0 ) {
-            page += -30;
-            limit += -30;
-            suggerimento($("#filtro").val());
-            $("#prec").show();
-            if (page == 0 ) {
-                $("#prec").hide();
-            }
-        }
-    });
-
-    suggerimento($("#filtro").val());
-
-
-
-    $("#succ").click(function() {
-        page += +30;
-        limit += +30;
-        suggerimento($("#filtro").val());
-        if (page == 0) {
-
-            $("#prec").show();
-        }
-
-        if (page > 0 ) {
-            $("#prec").show();
-        }
-    });
-
-    $("#prec").click(function() {
-        if (page !=0 ) {
-            page += -30;
-            limit += -30;
+            page += -20;
+            limit += -20;
             suggerimento($("#filtro").val());
             $("#prec").show();
             if (page == 0 ) {

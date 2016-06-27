@@ -43,11 +43,11 @@ if(mysqli_num_rows($result)==1)
     echo '';
     }
 ?>
+                            <li id="ck_art"><a href="http://<?php echo $base_url ?>/check/ck_art.php">Articoli</a></li>
                             <li id="ck_causale"><a href="http://<?php echo $base_url ?>/check/ck_causale.php">Causale</a></li>
                             <li id="ck_mezzo"><a href="http://<?php echo $base_url ?>/check/ck_mezzo.php">Mezzo Trasporto</a></li>
                             <li id="ck_iva"><a href="http://<?php echo $base_url ?>/check/ck_iva.php">IVA</a></li>
                             <li id="ck_imb"><a href="http://<?php echo $base_url ?>/check/ck_imb.php">Imballo</a></li>
-                            <li id="ck_art"><a href="http://<?php echo $base_url ?>/check/ck_art.php">Articoli</a></li>
                             <li id="ck_spagg"><a href="http://<?php echo $base_url ?>/check/ck_spagg.php">Spese Aggiuntive</a></li>
                             <li id="ck_pagam"><a href="http://<?php echo $base_url ?>/check/ck_pagam.php">Pagamento</a></li>
                         </ul>

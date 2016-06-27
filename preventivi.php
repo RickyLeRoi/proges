@@ -204,8 +204,8 @@ Totale voci n. <span id="voci"></span>
     }
 
     $("#succ").click(function() {
-        page += +30;
-        limit += +30;
+        page += +20;
+        limit += +20;
         suggerimento($("#filtro").val());
         if (page == 0) {
 
@@ -219,8 +219,8 @@ Totale voci n. <span id="voci"></span>
 
     $("#prec").click(function() {
         if (page !=0 ) {
-            page += -30;
-            limit += -30;
+            page += -20;
+            limit += -20;
             suggerimento($("#filtro").val());
             $("#prec").show();
             if (page == 0 ) {

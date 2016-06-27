@@ -137,14 +137,15 @@ $ck = "";
     </small>
     <br/>
     <span style="color:#EA640C">
-    Totale voci n.
-    <?php
-    $sql_rows = "SELECT * FROM articoli";
-    echo mysqli_num_rows(mysqli_query($conndb, $sql_rows));
-    ?>
+Totale voci n. <span id="voci"></span>
     </span>
 </div>
-
+<div class="container">
+    <form method="post" action="#">
+        <input onkeyup="suggerimento($(this).val())" id="filtro" class="form-control" type="text"
+               placeholder="Filtra per utente">
+    </form>
+</div>
 <div class="container">
     <table class="table">
         <thead>
@@ -157,50 +158,23 @@ $ck = "";
                 <th>Misura</th>
                 <th>Prezzo</th>
                 <th>Note</th>
-                <th>Tipologia</th>
+                <th hidden="hidden">Tipologia</th>
                 <th>Azioni</th>
             </tr>
         </thead>
-        <tbody>
-            <?php
-            include("../DB/config.php");
-            $sql = "SELECT * FROM articoli ORDER BY cliente";
-            $result = mysqli_query($conndb, $sql);
-            while($row = mysqli_fetch_array($result)) {
-                $id = $row['id'];
-                $cod_int = $row['cod_int'];
-                $cliente = $row['cliente'];
-                $descr = $row['descr'];
-                $cod_barre = $row['cod_barre'];
-                $misura = $row['misura'];
-                $prezzo = $row['prezzo'];
-                $note = $row['note'];
-                $tipologia = $row['tipologia'];
+        <tbody id="records">
 
-                echo "<tr>
-                <td class='valore-" . $id . "'>" . $id . "</td>
-                <td class='valore-" . $id . "'>" . $cod_int . "</td>
-                <td class='valore-" . $id . "'>" . $cliente . "</td>
-                <td class='valore-" . $id . "'>" . $descr . "</td>
-                <td class='valore-" . $id . "'>" . $cod_barre . "</td>
-                <td class='valore-" . $id . "'>" . $misura . "</td>
-                <td class='valore-" . $id . "'>" . $prezzo . "</td>
-                <td class='valore-" . $id . "'>" . $note . "</td>
-                <td class='valore-" . $id . "'>" . $tipologia . "</td>
-                <td colspan=2 class='form-inline'>
-                    
-                    <form  action='#' method='POST'>
-                        <button class='form-control' type='submit' name='case' value='del'>Elimina</button>
-                        <input class='form-control' type='button' value='Modifica' data-toggle=\"tab\" onClick='modifica(\"valore-" . $id . "\")'>
-                        <input type='hidden' name='id' value='" . $id . "'>
-                    </form>
-                </td>
-                </tr>";
-            }
-            mysqli_close($conndb);
-            ?>
         </tbody>
     </table>
+    <div class="row">
+        <nav class="col-sm-12">
+            <ul class="pager">
+                <li class="previous"><a style="display: none" id="prec" href="#"><span aria-hidden="true">&larr;</span> Precedente</a></li>
+                <li class="next"><a id="succ" href="#">Successivo <span aria-hidden="true">&rarr;</span></a></li>
+            </ul>
+        </nav>
+    </div>
+
     <div>
 
         <!-- Nav tabs -->
@@ -397,22 +371,141 @@ $ck = "";
     </div>
 </div>
 	<?php include_once("./../template/parrot/foot.php") ?>
-        <script>
-            function modifica(val) {
-                var obj = ($("." + val));
-                $("#openModTab").click();
-                console.log(obj[0].textContent);
-                $(".modifica[name=id]").val(obj[0].textContent);
-                $(".modifica[name=cod_int]").val(obj[1].textContent);
-                $(".modifica[name=cliente]").val(obj[2].textContent);
-                $(".modifica[name=descr]").val(obj[3].textContent);
-                $(".modifica[name=cod_barre]").val(obj[4].textContent);
-                $(".modifica[name=misura]").val(obj[5].textContent);
-                $(".modifica[name=prezzo]").val(obj[6].textContent);
-                $(".modifica[name=note]").val(obj[7].textContent);
-                $(".modifica[name=tipologia]").val(obj[8].textContent);
+    <script>
 
+/*
+
+                echo "<tr>
+                <td class='valore-" . $id . "'>" . $id . "</td>
+                <td class='valore-" . $id . "'>" . $cod_int . "</td>
+                <td class='valore-" . $id . "'>" . $cliente . "</td>
+                <td class='valore-" . $id . "'>" . $descr . "</td>
+                <td class='valore-" . $id . "'>" . $cod_barre . "</td>
+                <td class='valore-" . $id . "'>" . $misura . "</td>
+                <td class='valore-" . $id . "'>" . $prezzo . "</td>
+                <td class='valore-" . $id . "'>" . $note . "</td>
+                <td class='valore-" . $id . "'>" . $tipologia . "</td>
+                <td colspan=2 class='form-inline'>
+
+                    <form  action='#' method='POST'>
+                        <button class='form-control' type='submit' name='case' value='del'>Elimina</button>
+                        <input class='form-control' type='button' value='Modifica' data-toggle=\"tab\" onClick='modifica(\"valore-" . $id . "\")'>
+                        <input type='hidden' name='id' value='" . $id . "'>
+                    </form>
+                </td>
+                </tr>";
+
+                */
+    function suggerimento(runsVar) {
+
+        var call = $.ajax({
+            url: "http://<?php echo $base_url ?>/json/get_articoli.php",
+            method: "GET",
+            data: "check=" + runsVar +"&page="+page+"&limit="+limit,
+            dataType: "json"
+
+        });
+
+        call.done(function (msg) {
+
+            var records = msg.suggestions;
+            console.log(records);
+            $("#records").html("");
+            rowsReturned = 0;
+            for (var x in records) {
+                console.log(msg.suggestions[x].value);
+                var record = "" +
+                    "<td class='valore-" + msg.suggestions[x].value + "'>" + msg.suggestions[x].value + "</td>" +
+                    "<td class='valore-" + msg.suggestions[x].value + "'>" + records[x].data.cod_int + "</td>" +
+                    "<td class='valore-" + msg.suggestions[x].value + "'>" + records[x].data.cliente + "</td>" +
+                    "<td class='valore-" + msg.suggestions[x].value + "'>" + records[x].data.descr + "</td>" +
+                    "<td class='valore-" + msg.suggestions[x].value + "'>" + records[x].data.cod_barre + "</td>" +
+                    "<td class='valore-" + msg.suggestions[x].value + "'>" + records[x].data.misura + "</td>" +
+                    "<td class='valore-" + msg.suggestions[x].value + "'>" + records[x].data.prezzo + " €</td>" +
+                    "<td class='valore-" + msg.suggestions[x].value + "'>" + records[x].data.note + "</td>" +
+                    "<td hidden='hidden' class='valore-" + msg.suggestions[x].value + "'>" + records[x].data.tipologia + "</td>" +
+                    `<td colspan=2 class='form-inline'>
+
+                    <form  action='#' method='POST'>
+                        <button class='form-control' type='submit' name='case' value='del'>Elimina</button>
+                        <input class='form-control' type='button' value='Modifica' data-toggle=\"tab\" onClick='modifica(\"valore-`+ msg.suggestions[x].value +`\")'>
+                        <input type='hidden' name='id' value='`+ msg.suggestions[x].value +`'>
+                    </form>
+                </td>`;
+                $("#records").append("<tr>" + record + "</tr>");
             }
-        </script>
+
+            if (jQuery.isEmptyObject(records)) {
+                record = "<tr><td colspan='10'>" + "Non è presente alcun record" + "</td></tr>";
+                $("#records").html(record);
+            }
+            var voci = parseInt(x) + 1;
+            if (!voci) {
+                voci = "0";
+            }
+            $("#voci").text(voci);
+
+        });
+
+        call.error(function (msg) {
+            console.log(msg);
+        });
+    }
+        var records,
+            rowsReturned = 0;
+            page = 0,
+            limit = 20;
+            suggerimento("");
+
+                $("#filtro").keydown(function() {
+                    page = 0;
+                    limit = 20;
+                });
+            $("#succ").click(function() {
+                page += +20;
+                limit += +20;
+                suggerimento($("#filtro").val());
+                if (page == 0) {
+
+                    $("#prec").show();
+                }
+
+                if (page > 0 ) {
+                    $("#prec").show();
+                }
+            });
+
+            $("#prec").click(function() {
+                if (page !=0 ) {
+                    page += -20;
+                    limit += -20;
+                    suggerimento($("#filtro").val());
+                    $("#prec").show();
+                    if (page == 0 ) {
+                        $("#prec").hide();
+                    }
+                }
+            });
+
+            suggerimento($("#filtro").val());
+
+
+        function modifica(val) {
+            var obj = ($("." + val));
+            $("#openModTab").click();
+
+            console.log(obj[0].textContent);
+            $(".modifica[name=id]").val(obj[0].textContent);
+            $(".modifica[name=cod_int]").val(obj[1].textContent);
+            $(".modifica[name=cliente]").val(obj[2].textContent);
+            $(".modifica[name=descr]").val(obj[3].textContent);
+            $(".modifica[name=cod_barre]").val(obj[4].textContent);
+            $(".modifica[name=misura]").val(obj[5].textContent);
+            $(".modifica[name=prezzo]").val(obj[6].textContent);
+            $(".modifica[name=note]").val(obj[7].textContent);
+            $(".modifica[name=tipologia]").val(obj[8].textContent);
+
+        }
+    </script>
 	</body>
 </html>

@@ -112,7 +112,7 @@ if ((isset($post)) == true) {
         input[type=text],
         input[type=date],
         select.form-control,
-        input[type=datetime] {
+        input[type=datetime], #nota {
         border: none;
         background: transparent;
         box-shadow: none;
@@ -336,16 +336,18 @@ if ((isset($post)) == true) {
 
                 </thead>
 
-                <tbody height="600px">
+                <tbody>
                 <tr style="background: lightgreen" class="stampa">
-                    <td id="scegliDDT" colspan="2">
-                        <input id="selectDDT" placeholder="Numero DDT" type="number" class="stampa form-control arrQuantita" min="1">
-                        <!-- QUI -->
-                    </td>
+                    <td  colspan="4">
+                        <div id="scegliDDT">
+                            <input id="selectDDT" placeholder="Numero DDT" type="number" class="stampa form-control arrQuantita" min="1">
+                            <!-- QUI -->
+                        </div>
 
-                    <td id="incolonnaArticoli" colspan="2">
-                        <input class="stampa form-control incolonnatore" type="text"
-                               placeholder="Descrizione articolo automatica">
+                            <div id="incolonnaArticoli">
+                                <input class="stampa form-control incolonnatore" type="text"
+                                   placeholder="Descrizione articolo automatica">
+                       </div>
                     </td>
                 </tr>
                 <tr>
@@ -459,7 +461,9 @@ if ((isset($post)) == true) {
                         <?php endif ?>
                 <!-- Tabella interattiva // FINE -->
                 <tr>
-                    <td style="text-align:center" colspan="2" rowspan="3"><p>Contributo CONAI assolto ove dovuto.</p>
+                    <td style="text-align:center" colspan="2" rowspan="3">
+                    <p class="col-md-12"><textarea id="nota" class="form-control" cols="50" rows="10"><?php echo @$note ?></textarea></p>
+                    <p>Contributo CONAI assolto ove dovuto.</p>
                     </td>
                     <td style="text-align:right"><p>Totale parziale €</p></td>
                     <td>
@@ -780,6 +784,7 @@ if ((isset($post)) == true) {
             tipologie: ciclaArray($("input[id*=tipologia-]"), "value"),
             parziale: $("#parziale").val(),
             iva: $("#iva").val(),
+            note: $("#nota").val(),
             totaleDovuto: $("#totaleDovuto").val(),
             esenteNum: $("#esenteNum").val(),
             esIvaDal: $("#esIvaDal").val(),

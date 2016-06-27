@@ -132,7 +132,7 @@ if ((isset($post)) == true) {
             }
 
             p {
-                font-size: 7pt;
+                font-size: 8pt;
                 height: 13px;
             }
 
@@ -218,7 +218,7 @@ if ((isset($post)) == true) {
                 width: 20cm;
             }
             p {
-                font-size: 7pt;
+                font-size: 8pt;
             }
 
             .smaller {
@@ -275,6 +275,8 @@ if ((isset($post)) == true) {
                                 <tr>
                         <td style="border-right: none !important">
                             <img width="500px" src="../images/logobb.png" alt="Tipografia Provenzano">
+                            <p style="font-size: 13pt;" class="col-md-12">90011 Bagheria (PA), via Cortile Greco, 15</p>
+                            <p style="font-size: 13pt;" class="col-md-12">Tel/Fax 091-934277 - P.IVA 06042040821</p>
                         </td>
 
                         <td colspan="2" style="border-left: none !important">
@@ -406,6 +408,9 @@ if ((isset($post)) == true) {
                     </td>
 
                 </tr>
+                    <tr>
+                    <td height=70 colspan="3"><p class="col-md-12">Riferimento ordini clienti</p></td>
+                </tr>
                 <tr>
                     <td>
                         <p class="col-md-12">Vettori, domicilio o residenza</p>
@@ -431,11 +436,6 @@ if ((isset($post)) == true) {
                     <td>
                         <p class="col-md-12">Firme</p>
                     </td>
-                </tr>
-                <tr>
-                    <td height=60><p class="col-md-12"></p></td>
-                    <td height=60><p class="col-md-12"></p></td>
-                    <td height=60><p class="col-md-12"></p></td>
                 </tr>
                 <tr height="400" class="var">
                     <td><p class="col-md-12">Annotazioni - Variazioni</p>

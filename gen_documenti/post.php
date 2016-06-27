@@ -57,6 +57,7 @@ if (isset($_GET["fattura_n"]) || isset($_GET["preventivo_n"]) || isset($_GET["nd
 
     if (isset($_GET["ndc_n"])) {
         $id_doc = $_GET["ndc_n"];
+
     }
 
 
@@ -85,6 +86,7 @@ if (isset($_GET["fattura_n"]) || isset($_GET["preventivo_n"]) || isset($_GET["nd
         $parziale = $obj->tot_parziale;
         $totale = $obj->tot_dovuto;
 
+
         $memory = "[";
         foreach ($prodotti as $prodotto) {
             $memory .= '"' . $prodotto . '",';
@@ -98,12 +100,14 @@ if (isset($_GET["fattura_n"]) || isset($_GET["preventivo_n"]) || isset($_GET["nd
             $esente_al = $obj->esente_al;
             $tipologia = explode("||", $obj->tipologia);
             $ddt_n = explode(",", $obj->all_ddt);
+            $note = $obj->note;
             //print_r($ddt_n);
 
             include_once("fattura.php");
         }
 
         if (isset($_GET["ndc_n"])) {
+            $note = $obj->note;
             $esente_num = $obj->esente_num;
             $esente_dal = $obj->esente_dal;
             $esente_al = $obj->esente_al;
@@ -115,6 +119,7 @@ if (isset($_GET["fattura_n"]) || isset($_GET["preventivo_n"]) || isset($_GET["nd
 
         if (isset($_GET["preventivo_n"])) {
             $tipologia = explode("||", $obj->tipologia);
+            $note = $obj->note;
             include_once("preventivo.php");
         }
 
@@ -126,6 +131,7 @@ if (isset($_GET["ddt_n"])) {
     $stampa = $_GET["documento"];
     $id_doc = $_GET["ddt_n"];
     $azione = "modifica";
+
 
     $sql = "SELECT * FROM stampa_" . $stampa . " WHERE id=" . $id_doc;
 

@@ -26,8 +26,9 @@
  */
 //print_r($_POST["data"]);
 
-
+$insert["nota"] = htmlentities($insert["nota"], ENT_QUOTES,  'UTF-8');
 if ($insert["azione"] === "modifica") {
+
     $doc_n = $insert["idDDT"];
     $sql = "UPDATE stampa_" . $stampa . "
         SET data_doc='" . $insert["data"] . "', peso='" . $insert["peso"] . "', data_consegna='" . $insert["consegnaData"] . "',data_rit='" . $insert["ritiroData"] . "', mezzo='" . $insert["mezzo"] . "', cliente='" . $insert["cliente"] . "', Piva='" . $insert["piva"] . "', indirizzo='" . $insert["indirizzo"] . "', citta='" . $insert["citta"] . "', causale='" . $insert["causale"] . "', imballo='" . $insert["aspettoBeni"] . "', n_colli='" . $insert["colli"] . "', arr_qta='" . $insert["quantita"] . "', arr_beni='" . $insert["articoli"] . "', vettore='" . $insert["vettore"] . "', note='" . $insert["nota"] . "', arr_imp_uni='" . $insert["prezzi"] . "', arr_tipologia='" . $insert["tipologie"] . "' WHERE id=" . $doc_n;
@@ -37,8 +38,15 @@ if ($insert["azione"] === "modifica") {
     $sql = "SELECT id FROM stampa_" . $stampa . " ORDER BY id DESC";
 
     if ($result = $conndb->query($sql)) {
-        $obj = $result->fetch_object();
-        $doc_n = $obj->id + 1;
+
+        if ($result->num_rows == 0) {
+            $doc_n = 1;
+        }
+
+        else {
+            $obj = $result->fetch_object();
+            $doc_n = $obj->id + 1;
+        }
     }
 
     if ($stampa == "ddt") {

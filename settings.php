@@ -96,6 +96,7 @@ if ($conndb->connect_errno) {
     </div>
 
     <?php endif; ?>
+    <!--
     <h2 style="color: #FFF" >Record visualizzabili</h2>
     <form class="form-horizontal" method="post" action="#">
         <div class="form-group">
@@ -192,6 +193,29 @@ if ($conndb->connect_errno) {
         </div>
     </form>
 </div>
+
+    <form class="form-horizontal" action="function/download.php" method="POST">
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Download</label>
+            <div class="col-sm-10">
+                <select class="btn btn-default" name="file">
+                    <?php
+                    $dir = "DB/backup";
+                    $dh  = opendir($dir);
+                    while (false !== ($filename = readdir($dh))) {
+                        $files[] = $filename;
+                    }
+                        rsort($files);
+                    for ($i=0; $i<count($files); $i++) {
+                    echo "<option>".$files[$i]."</option>";
+                    }
+                    ?>
+                </select>
+                <input class="btn btn-default" type="submit" value="Scarica">
+            </div>
+        </div>
+    </form>
+<!--</div>-->
 
 <?php include_once("template/parrot/foot.php") ?>
 

@@ -188,8 +188,8 @@ $queryb = "SELECT id
 
 
     $("#succ").click(function() {
-        page += +30;
-        limit += +30;
+        page += +20;
+        limit += +20;
         suggerimento($("#filtro").val());
         if (page == 0) {
 
@@ -203,8 +203,8 @@ $queryb = "SELECT id
 
     $("#prec").click(function() {
         if (page !=0 ) {
-            page += -30;
-            limit += -30;
+            page += -20;
+            limit += -20;
             suggerimento($("#filtro").val());
             $("#prec").show();
             if (page == 0 ) {

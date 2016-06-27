@@ -445,7 +445,9 @@ if ((isset($post)) == true) {
                 <tr>
                 </tr>
                 <tfoot>
-                    <td style="text-align:center" colspan="2" rowspan="3"><p>Contributo CONAI assolto ove dovuto.</p>
+                    <td style="text-align:center" colspan="2" rowspan="3">
+                        <p class="col-md-12"><textarea id="nota" class="form-control" cols="50" rows="10"><?php echo @$note ?></textarea></p>
+                        <p>Contributo CONAI assolto ove dovuto.</p>
                     </td>
                     <td style="text-align:right"><p>Totale parziale €</p></td>
                     <td>
@@ -777,6 +779,7 @@ function ciclaArray(variabile, nodo) {
             doc_fatt: saveFATT(),
             parziale: $("#parziale").val(),
             iva: $("#iva").val(),
+            note: $("#nota").val(),
             totaleDovuto: $("#totaleDovuto").val(),
             esenteNum: $("#esenteNum").val(),
             esIvaDal: $("#esIvaDal").val(),
