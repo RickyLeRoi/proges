@@ -49,7 +49,8 @@ while ($ddt = $result->fetch_object()) {
             "arr_beni" => $arr_beni,
             "arr_prezzi" => $arr_prezzi,
             "arr_prezzi_tot" => $arr_prezzi_tot,
-            "somma" => array_sum($arr_prezzi_tot)
+            "somma" => array_sum($arr_prezzi_tot),
+            "note" => $ddt->note
         ]
     ]);
 }

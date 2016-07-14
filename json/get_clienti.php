@@ -9,7 +9,15 @@ if (isset($_GET["check"])) $check = mysqli_real_escape_string($conndb, $_GET["ch
 
 else $check = "Nessuna query";
 
-$query = "SELECT id, nomeC, cognomeC, indirizzoLC, cittaLC, provLC, capLC, PIVAC, CFC FROM clienti WHERE nomeC LIKE \"%" . $check . "%\" OR cognomeC LIKE \"%" . $check . "%\" OR indirizzoLC LIKE \"%" . $check . "%\" OR cittaLC LIKE \"%" . $check . "%\" OR PIVAC LIKE \"%" . $check . "%\" OR emailLC LIKE \"%" . $check . "%\"";
+$query = "SELECT * 
+          FROM clienti 
+          WHERE 
+          nomeC LIKE \"%" . $check . "%\" OR 
+          cognomeC LIKE \"%" . $check . "%\" OR 
+          indirizzoLC LIKE \"%" . $check . "%\" OR 
+          cittaLC LIKE \"%" . $check . "%\" OR 
+          PIVAC LIKE \"%" . $check . "%\" OR 
+          emailLC LIKE \"%" . $check . "%\"";
 
 /* check connection */
 
@@ -42,7 +50,12 @@ while ($clienti = $result->fetch_object()) {
             "cittaLC" => check_null($clienti->cittaLC),
             "provLC" => check_null($clienti->provLC),
             "capLC" => check_null($clienti->capLC),
-            "PIVAC" => check_null($clienti->PIVAC)
+            "PIVAC" => check_null($clienti->PIVAC),
+            "codC" => check_null($clienti->codC),
+            "indirizzoAC" => check_null($clienti->indirizzoAC),
+            "cittaAC" => check_null($clienti->cittaAC),
+            "provAC" => check_null($clienti->provAC),
+            "capAC" => check_null($clienti->capLC)
         ]
     ]);
 }
@@ -50,7 +63,7 @@ while ($clienti = $result->fetch_object()) {
 function check_null($val)
 {
     if (($val == "") || ($val == " ")) {
-        return "ND";
+        return " ";
     } else return $val;
 }
 

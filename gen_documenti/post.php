@@ -65,7 +65,7 @@ if (isset($_GET["fattura_n"]) || isset($_GET["preventivo_n"]) || isset($_GET["nd
 
     if ($result = $conndb->query($sql)) {
         $obj = $result->fetch_object();
-
+        $codC = $obj->codC;
         $id = $obj->id;
         $data = $obj->data_doc;
         $anno = explode("-", $obj->data_doc);
@@ -142,8 +142,6 @@ if (isset($_GET["ddt_n"])) {
         //print_r($obj);
 
 
-
-
         $id = $obj->id;
         $data = $obj->data_doc;
 
@@ -151,8 +149,8 @@ if (isset($_GET["ddt_n"])) {
         $piva = $obj->Piva;
         $indirizzo = $obj->indirizzo;
         $citta = $obj->citta;
-        $prov = $obj->prov;
-        $cap = $obj->cap;
+        //$prov = $obj->prov;   // abolito
+        //$cap = $obj->cap;     // abolito
         $causale = $obj->causale;
         $imballo = $obj->imballo;
         $colli = $obj->n_colli;
@@ -160,7 +158,7 @@ if (isset($_GET["ddt_n"])) {
         $quantita = explode("||", $obj->arr_qta);      //
         $prodotti = explode("||", $obj->arr_beni);      //  Da ciclare nel foglio fatture stampato.
         $prezzi_cad = explode("||", $obj->arr_imp_uni);
-
+        $codC =$obj->codC;
         $data_rit = $obj->data_rit;
         $data_rit = explode(" ", $data_rit);
         $data_rit = $data_rit[0] . "T" . $data_rit[1];

@@ -24,23 +24,46 @@ if (!isset($insert["esenteNum"]) || @$insert["esenteNum"] == 0) {
 if ($insert["azione"] === "modifica") {
 
     $sql = "UPDATE stampa_" . $stampa . "
-        SET data_doc='" . $insert["data"] . "', pagamento='" . $insert["pagamento"] . "', cliente='" . $insert["cliente"] . "', Piva='" . $insert["ivaCliente"] . "', indirizzo='" . $insert["indirizzoCliente"] . "', citta='" . $insert["cittaCliente"] . "', prov='" . $insert["pr"] . "', cap='" . $insert["cap"] . "', arr_qta='" . $insert["arrayQuantita"] . "', arr_beni='" . $insert["arrayProdotti"] . "', arr_imp_uni='" . $insert["arrayPrezziCad"] . "', arr_importo='" . $insert["arrayPrezzi"] . "', tot_parziale='" . $insert["parziale"] . "', tot_dovuto='" . $insert["totaleDovuto"] . "' , iva='" . $insert["iva"] . "', note='" . $insert["note"] . "'";
+        SET codC='" . mysqli_real_escape_string($conndb, $insert["codC"]) . "', 
+        data_doc='" . mysqli_real_escape_string($conndb, $insert["data"]) . "', 
+        pagamento='" . mysqli_real_escape_string($conndb, $insert["pagamento"]) . "', 
+        cliente='" . mysqli_real_escape_string($conndb, $insert["cliente"]) . "', 
+        Piva='" . mysqli_real_escape_string($conndb, $insert["ivaCliente"]) . "', 
+        indirizzo='" . mysqli_real_escape_string($conndb, $insert["indirizzoCliente"]) . "', 
+        citta='" . mysqli_real_escape_string($conndb, $insert["cittaCliente"]) . "', 
+        prov='" . mysqli_real_escape_string($conndb, $insert["pr"]) . "', 
+        cap='" . mysqli_real_escape_string($conndb, $insert["cap"]) . "', 
+        arr_qta='" . mysqli_real_escape_string($conndb, $insert["arrayQuantita"]) . "',
+        arr_beni='" . mysqli_real_escape_string($conndb, $insert["arrayProdotti"]) . "', 
+        arr_imp_uni='" . mysqli_real_escape_string($conndb, $insert["arrayPrezziCad"]) . "', 
+        arr_importo='" . mysqli_real_escape_string($conndb, $insert["arrayPrezzi"]) . "', 
+        tot_parziale='" . mysqli_real_escape_string($conndb, $insert["parziale"]) . "', 
+        tot_dovuto='" . mysqli_real_escape_string($conndb, $insert["totaleDovuto"]) . "' , 
+        iva='" . mysqli_real_escape_string($conndb, $insert["iva"]) . "', 
+        note='" . mysqli_real_escape_string($conndb, $insert["note"]) . "'";
 
 //tipologia
     if ($stampa == "fattura" || $stampa == "ndc") {
-        $sql .= ", esente_num='" . $insert["esenteNum"] . "', esente_dal='" . $insert["esIvaDal"] . "', esente_al='" . $insert["esIvaAl"] . "',";
+        $sql .= ", 
+        esente_num='" . mysqli_real_escape_string($conndb, $insert["esenteNum"]) . "', 
+        esente_dal='" . mysqli_real_escape_string($conndb, $insert["esIvaDal"]) . "', 
+        esente_al='" . mysqli_real_escape_string($conndb, $insert["esIvaAl"]) . "',";
     }
 
     if ($stampa == "fattura") {
-        $sql .= " all_ddt='" . $insert["ddt"] . "', tipologia='" . $insert["tipologie"] . "'";
+        $sql .= " 
+        all_ddt='" . mysqli_real_escape_string($conndb, $insert["ddt"]) . "', 
+        tipologia='" . mysqli_real_escape_string($conndb, $insert["tipologie"]) . "'";
     }
 
     if ($stampa == "ndc") {
-        $sql .= " arr_tipologia='" . $insert["tipologie"] . "', doc_fatt='" . $insert["doc_fatt"] . "'";
+        $sql .= " 
+        arr_tipologia='" . mysqli_real_escape_string($conndb, $insert["tipologie"]) . "', 
+        doc_fatt='" . mysqli_real_escape_string($conndb, $insert["doc_fatt"]) . "'";
     }
 
-    $sql .= 'WHERE id="' . $insert["id"] . '"';
-    $doc_n = $insert["id"];
+    $sql .= 'WHERE id="' . mysqli_real_escape_string($conndb, $insert["id"]) . '"';
+    $doc_n = mysqli_real_escape_string($conndb, $insert["id"]);
 } else {
 
     // Controlla a che numero siamo
@@ -61,20 +84,81 @@ if ($insert["azione"] === "modifica") {
 
     if ($stampa == "fattura") {
         $sql = "INSERT INTO stampa_" . $stampa . "
-            (id, data_doc, pagamento, cliente, Piva, indirizzo, citta, prov, cap, arr_qta, arr_beni, arr_imp_uni, arr_importo, tot_parziale, tot_dovuto, iva, esente_num, esente_dal, esente_al, all_ddt, tipologia, note) values
-            ('" . $doc_n . "','" . $insert["data"] . "','" . $insert["pagamento"] . "','" . $insert["cliente"] . "','" . $insert["ivaCliente"] . "','" . $insert["indirizzoCliente"] . "','" . $insert["cittaCliente"] . "','" . $insert["pr"] . "','" . $insert["cap"] . "','" . $insert["arrayQuantita"] . "','" . $insert["arrayProdotti"] . "','" . $insert["arrayPrezziCad"] . "','" . $insert["arrayPrezzi"] . "','" . $insert["parziale"] . "','" . $insert["totaleDovuto"] . "','" . $insert["iva"] . "','" . $insert["esenteNum"] . "','" . $insert["esIvaDal"] . "','" . $insert["esIvaAl"] . "','" . $insert["ddt"] . "','" . $insert["tipologie"] . "','" . $insert["note"] . "')";
+            (id, codC, data_doc, pagamento, cliente, Piva, indirizzo, citta, prov, cap, arr_qta, arr_beni, arr_imp_uni, arr_importo, tot_parziale, tot_dovuto, iva, esente_num, esente_dal, esente_al, all_ddt, tipologia, note) values
+            ('" . $doc_n . "',
+            '" . mysqli_real_escape_string($conndb, $insert["codC"]) . "',
+            '" . mysqli_real_escape_string($conndb, $insert["data"]) . "',
+            '" . mysqli_real_escape_string($conndb, $insert["pagamento"]) . "',
+            '" . mysqli_real_escape_string($conndb, $insert["cliente"]) . "',
+            '" . mysqli_real_escape_string($conndb, $insert["ivaCliente"]) . "',
+            '" . mysqli_real_escape_string($conndb, $insert["indirizzoCliente"]) . "',
+            '" . mysqli_real_escape_string($conndb, $insert["cittaCliente"]) . "',
+            '" . mysqli_real_escape_string($conndb, $insert["pr"]) . "',
+            '" . mysqli_real_escape_string($conndb, $insert["cap"]) . "',
+            '" . mysqli_real_escape_string($conndb, $insert["arrayQuantita"]) . "',
+            '" . mysqli_real_escape_string($conndb, $insert["arrayProdotti"]) . "',
+            '" . mysqli_real_escape_string($conndb, $insert["arrayPrezziCad"]) . "',
+            '" . mysqli_real_escape_string($conndb, $insert["arrayPrezzi"]) . "',
+            '" . mysqli_real_escape_string($conndb, $insert["parziale"]) . "',
+            '" . mysqli_real_escape_string($conndb, $insert["totaleDovuto"]) . "',
+            '" . mysqli_real_escape_string($conndb, $insert["iva"]) . "',
+            '" . mysqli_real_escape_string($conndb, $insert["esenteNum"]) . "',
+            '" . mysqli_real_escape_string($conndb, $insert["esIvaDal"]) . "',
+            '" . mysqli_real_escape_string($conndb, $insert["esIvaAl"]) . "',
+            '" . mysqli_real_escape_string($conndb, $insert["ddt"]) . "',
+            '" . mysqli_real_escape_string($conndb, $insert["tipologie"]) . "',
+            '" . mysqli_real_escape_string($conndb, $insert["note"]) . "')";
     }
 
     if ($stampa == "ndc") {
         $sql = "INSERT INTO stampa_" . $stampa . " 
-            (id, data_doc, pagamento, cliente, Piva, indirizzo, citta, prov, cap, arr_qta, arr_beni, arr_imp_uni, arr_importo, tot_parziale, tot_dovuto, iva, esente_num, esente_dal, esente_al, arr_tipologia, doc_fatt, note) values
-            ('" . $doc_n . "','" . $insert["data"] . "','" . $insert["pagamento"] . "','" . $insert["cliente"] . "','" . $insert["ivaCliente"] . "','" . $insert["indirizzoCliente"] . "','" . $insert["cittaCliente"] . "','" . $insert["pr"] . "','" . $insert["cap"] . "','" . $insert["arrayQuantita"] . "','" . $insert["arrayProdotti"] . "','" . $insert["arrayPrezziCad"] . "','" . $insert["arrayPrezzi"] . "','" . $insert["parziale"] . "','" . $insert["totaleDovuto"] . "','" . $insert["iva"] . "','" . $insert["esenteNum"] . "','" . $insert["esIvaDal"] . "','" . $insert["esIvaAl"] . "','" . $insert["tipologie"] . "', '" . $insert["doc_fatt"] . "','" . $insert["note"] . "')";
+            (id, codC, data_doc, pagamento, cliente, Piva, indirizzo, citta, prov, cap, arr_qta, arr_beni, arr_imp_uni, arr_importo, tot_parziale, tot_dovuto, iva, esente_num, esente_dal, esente_al, arr_tipologia, doc_fatt, note) values
+            ('" . $doc_n . "',
+            '" . mysqli_real_escape_string($conndb, $insert["codC"]) . "',
+            '" . mysqli_real_escape_string($conndb, $insert["data"]) . "',
+            '" . mysqli_real_escape_string($conndb, $insert["pagamento"]) . "',
+            '" . mysqli_real_escape_string($conndb, $insert["cliente"]) . "',
+            '" . mysqli_real_escape_string($conndb, $insert["ivaCliente"]) . "',
+            '" . mysqli_real_escape_string($conndb, $insert["indirizzoCliente"]) . "',
+            '" . mysqli_real_escape_string($conndb, $insert["cittaCliente"]) . "',
+            '" . mysqli_real_escape_string($conndb, $insert["pr"]) . "',
+            '" . mysqli_real_escape_string($conndb, $insert["cap"]) . "',
+            '" . mysqli_real_escape_string($conndb, $insert["arrayQuantita"]) . "',
+            '" . mysqli_real_escape_string($conndb, $insert["arrayProdotti"]) . "',
+            '" . mysqli_real_escape_string($conndb, $insert["arrayPrezziCad"]) . "',
+            '" . mysqli_real_escape_string($conndb, $insert["arrayPrezzi"]) . "',
+            '" . mysqli_real_escape_string($conndb, $insert["parziale"]) . "',
+            '" . mysqli_real_escape_string($conndb, $insert["totaleDovuto"]) . "',
+            '" . mysqli_real_escape_string($conndb, $insert["iva"]) . "',
+            '" . mysqli_real_escape_string($conndb, $insert["esenteNum"]) . "',
+            '" . mysqli_real_escape_string($conndb, $insert["esIvaDal"]) . "',
+            '" . mysqli_real_escape_string($conndb, $insert["esIvaAl"]) . "',
+            '" . mysqli_real_escape_string($conndb, $insert["tipologie"]) . "',
+            '" . mysqli_real_escape_string($conndb, $insert["doc_fatt"]) . "',
+            '" . mysqli_real_escape_string($conndb, $insert["note"]) . "')";
     }
 
     if ($stampa == "preventivo") {
         $sql = "INSERT INTO stampa_" . $stampa . " 
-            (id, data_doc, pagamento, cliente, Piva, indirizzo, citta, prov, cap, arr_qta, arr_beni, arr_imp_uni, arr_importo, tot_parziale, tot_dovuto, iva, note) values
-            ('" . $doc_n . "','" . $insert["data"] . "','" . $insert["pagamento"] . "','" . $insert["cliente"] . "','" . $insert["ivaCliente"] . "','" . $insert["indirizzoCliente"] . "','" . $insert["cittaCliente"] . "','" . $insert["pr"] . "','" . $insert["cap"] . "','" . $insert["arrayQuantita"] . "','" . $insert["arrayProdotti"] . "','" . $insert["arrayPrezziCad"] . "','" . $insert["arrayPrezzi"] . "','" . $insert["parziale"] . "','" . $insert["totaleDovuto"] . "','" . $insert["iva"] . "','" . $insert["note"] . "')";
+            (id, codC, data_doc, pagamento, cliente, Piva, indirizzo, citta, prov, cap, arr_qta, arr_beni, arr_imp_uni, arr_importo, tot_parziale, tot_dovuto, iva, note) values
+            ('" . $doc_n . "',
+            '" . mysqli_real_escape_string($conndb, $insert["codC"]) . "',
+            '" . mysqli_real_escape_string($conndb, $insert["data"]) . "',
+            '" . mysqli_real_escape_string($conndb, $insert["pagamento"]) . "',
+            '" . mysqli_real_escape_string($conndb, $insert["cliente"]) . "',
+            '" . mysqli_real_escape_string($conndb, $insert["ivaCliente"]) . "',
+            '" . mysqli_real_escape_string($conndb, $insert["indirizzoCliente"]) . "',
+            '" . mysqli_real_escape_string($conndb, $insert["cittaCliente"]) . "',
+            '" . mysqli_real_escape_string($conndb, $insert["pr"]) . "',
+            '" . mysqli_real_escape_string($conndb, $insert["cap"]) . "',
+            '" . mysqli_real_escape_string($conndb, $insert["arrayQuantita"]) . "',
+            '" . mysqli_real_escape_string($conndb, $insert["arrayProdotti"]) . "',
+            '" . mysqli_real_escape_string($conndb, $insert["arrayPrezziCad"]) . "',
+            '" . mysqli_real_escape_string($conndb, $insert["arrayPrezzi"]) . "',
+            '" . mysqli_real_escape_string($conndb, $insert["parziale"]) . "',
+            '" . mysqli_real_escape_string($conndb, $insert["totaleDovuto"]) . "',
+            '" . mysqli_real_escape_string($conndb, $insert["iva"]) . "',
+            '" . mysqli_real_escape_string($conndb, $insert["note"]) . "')";
     }
     //echo "/*".$sql."*/";
 }

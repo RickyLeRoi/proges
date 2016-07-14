@@ -15,17 +15,15 @@ if ((isset($_GET["page"])) && (isset($_GET["limit"]))) {
 // Queries
 if (isset($_GET["check"])) {
     $check = mysqli_real_escape_string($conndb, $_GET["check"]);
-    $query = "SELECT stampa_preventivo.*, codC, nomeC, cognomeC
+    $query = "SELECT stampa_preventivo.*
               FROM stampa_preventivo
-              LEFT JOIN clienti ON stampa_preventivo.Piva=clienti.PIVAC OR stampa_preventivo.Piva=CFC
-              WHERE clienti.nomeC LIKE \"%" . $check . "%\" OR clienti.cognomeC LIKE \"%" . $check . "%\" OR  clienti.codC LIKE \"%" . $check . "%\"
-              ORDER BY stampa_preventivo.id DESC LIMIT " . $limit . " OFFSET " . $page;
+              WHERE cliente LIKE \"%" . $check . "%\" OR codC LIKE \"%" . $check . "%\"
+              ORDER BY id DESC LIMIT " . $limit . " OFFSET " . $page;
 } else {
     $check = '';
-    $query = "SELECT stampa_preventivo.*, codC, nomeC, cognomeC
+    $query = "SELECT stampa_preventivo.*
               FROM stampa_preventivo
-              LEFT JOIN clienti ON stampa_preventivo.Piva=clienti.PIVAC OR stampa_preventivo.Piva=CFC
-              ORDER BY stampa_preventivo.id DESC";
+              ORDER BY id DESC";
 }
 
 $result = $conndb->query($query);
@@ -38,8 +36,7 @@ while ($prev = $result->fetch_object()) {
         "data" => [
             "num" => $prev->id,
             "codC" => $prev->codC,
-            "nomeC" => $prev->nomeC,
-            "cognomeC" => $prev->cognomeC,
+            "cliente" => $prev->cliente,
             "data_doc" => $prev->data_doc,
             "pagamDescr" => $prev->pagamento,
             "totale" => $prev->tot_dovuto,

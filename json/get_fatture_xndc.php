@@ -25,6 +25,7 @@ while ($fattura = $result->fetch_object()) {
             "arr_qta" => $fattura->arr_qta,
             "arr_beni" => $fattura->arr_beni,
             "arr_misure" => $fattura->arr_misure,
+            "note" => $fattura->note
         ]
     ]);
 }

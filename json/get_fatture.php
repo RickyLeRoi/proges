@@ -15,17 +15,15 @@ if ((isset($_GET["page"])) && (isset($_GET["limit"]))) {
 // Queries
 if (isset($_GET["check"])) {
     $check = mysqli_real_escape_string($conndb, $_GET["check"]);
-    $query = "SELECT stampa_fattura.*, codC, nomeC, cognomeC
+    $query = "SELECT stampa_fattura.*
               FROM stampa_fattura
-              LEFT JOIN clienti ON stampa_fattura.Piva=clienti.PIVAC OR stampa_fattura.Piva=CFC
-              WHERE clienti.nomeC LIKE \"%" . $check . "%\" OR clienti.cognomeC LIKE \"%" . $check . "%\" OR  clienti.codC LIKE \"%" . $check . "%\"
-              ORDER BY stampa_fattura.id DESC LIMIT " . $limit . " OFFSET " . $page;
+              WHERE cliente LIKE \"%" . $check . "%\" OR codC LIKE \"%" . $check . "%\"
+              ORDER BY id DESC LIMIT " . $limit . " OFFSET " . $page;
 } else {
     $check = '';
-    $query = "SELECT stampa_fattura.*, codC, nomeC, cognomeC
+    $query = "SELECT stampa_fattura.*
               FROM stampa_fattura
-              LEFT JOIN clienti ON stampa_fattura.Piva=clienti.PIVAC OR stampa_fattura.Piva=CFC
-              ORDER BY stampa_fattura.id DESC";
+              ORDER BY id DESC";
 }
 
 $result = $conndb->query($query);
@@ -38,8 +36,7 @@ while ($fattura = $result->fetch_object()) {
         "data" => [
             "num" => $fattura->id,
             "codC" => $fattura->codC,
-            "nomeC" => $fattura->nomeC,
-            "cognomeC" => $fattura->cognomeC,
+            "cliente" => $fattura->cliente,
             "data_doc" => $fattura->data_doc,
             "pagamDescr" => $fattura->pagamento,
             "totale" => $fattura->tot_dovuto,

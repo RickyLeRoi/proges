@@ -93,6 +93,10 @@ if ((isset($post)) == true) {
                 max-width: 1400px;
                 margin: auto;
             }
+
+            .qnt {
+                height: 200px;
+            }
         }
 
         @media print {
@@ -151,9 +155,6 @@ if ((isset($post)) == true) {
                 size: a4;
             }
 
-            .qnt {
-                height: 6cm;
-            }
 
             .var {
                 height: 3cm;
@@ -241,7 +242,7 @@ if ((isset($post)) == true) {
             }
 
             .qnt {
-                height: 6cm;
+                height: 4cm;
             }
 
             .var {
@@ -321,8 +322,15 @@ if ((isset($post)) == true) {
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="3"><p class="col-sm-4">Causale del trasporto</p>
-                        <p class="col-sm-8"><select id="causale" class="form-control">
+                    <td colspan="3"><p class="col-sm-4">Luogo di destinazione</p>
+                        <p class="col-sm-8">
+                            <input value="<?php echo @$indirizzo_dest ?>" id="indirizzoDest" class="form-control" style="width:49%; display:inline" type="text" placeholder="Indirizzo">
+                            <input value="<?php echo @$citta_dest ?>" id="cittaDest" class="form-control" style="width:49%; display:inline" type="text" placeholder="Città"></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3"><p class="col-xs-4">Causale del trasporto</p>
+                        <p class="col-xs-8"><select id="causale" class="form-control">
                                 <?php if (isset($causale)) : ?>
                                     <option selected value="<?php echo $causale ?>"><?php echo $causale ?></option>
                                 <?php endif; ?>
@@ -374,7 +382,7 @@ if ((isset($post)) == true) {
                         <p class="col-xs-10">Descrizione dei beni</p>
                     </td>
                 </tr>
-                <tr class="qnt" height="400">
+                <tr class="qnt">
                     <td colspan="3">
                         <div class="col-xs-2" id="incolonnaQuantita">
                             <input id="idQuantita-default" type="number" style="visibility: hidden" class="stampa form-control" min="0">
@@ -417,7 +425,7 @@ if ((isset($post)) == true) {
                         <p class="col-md-12">
                             <select style="display: none; <?php if (@$vettore == "Vettore") { echo "display: block"; }  ?>" id="mezzo" class="form-control">
                                 <?php foreach ($mezzi as $mezzo) :
-                                    if ($mezzo == $mezzo_scelto) {
+                                    if ($mezzo == @$mezzo_scelto) {
                                         $selected = "selected";
                                     } else {
                                         $selected = "";
@@ -477,6 +485,8 @@ if ((isset($post)) == true) {
 <script>
     var memory = <?php echo $memory ?>;
     var idRiga = <?php echo $idRiga ?>;
+    var codCliente = "<?php if (isset($codC)) { echo $codC; } ?>";
+
     $('#incolonnatore').devbridgeAutocomplete({
         dataType: "json",
         paramName: "check",
@@ -541,8 +551,12 @@ if ((isset($post)) == true) {
             $(function () {
                 $("#cliente").val(suggestion.data.nomeC + " " + suggestion.data.cognomeC);
                 $("#piva").val(suggestion.data.PIVAC);
-                $("#citta").val(suggestion.data.cittaLC);
+                $("#citta").val(suggestion.data.cittaLC + " - " + suggestion.data.capLC + " - "+ suggestion.data.provLC);
                 $("#indirizzo").val(suggestion.data.indirizzoLC);
+
+                $("#cittaDest").val(suggestion.data.cittaAC + " - " + suggestion.data.capAC + " - " + suggestion.data.provAC);
+                $("#indirizzoDest").val(suggestion.data.indirizzoAC);
+                codCliente =  suggestion.data.codC;
             });
         }
     });
@@ -570,6 +584,8 @@ if ((isset($post)) == true) {
             } ?>",
             tipologie: ciclaArray($("input[id*=tipologia-]"), "value"),
             aspettoBeni: $("#aspettoBeni").val(),
+            indirizzo_dest: $("#indirizzoDest").val(),
+            citta_dest: $("#cittaDest").val(),
             cliente: $("#cliente").val(),
             indirizzo: $("#indirizzo").val(),
             citta: $("#citta").val(),
@@ -585,7 +601,8 @@ if ((isset($post)) == true) {
             mezzo: $("#mezzo").val(),
             nota: $("#nota").val(),
             prezzi : ciclaArray($("p[id*=prezzo-]"), "textContent"),
-            vettore: $("input[name=sceltaConsegna]:checked").val()
+            vettore: $("input[name=sceltaConsegna]:checked").val(),
+            codC : codCliente
 
 
         };
@@ -608,13 +625,13 @@ if ((isset($post)) == true) {
             }
 
             if (mancante == "") {
-                //var elem = '<div class="alert alert-danger" role="alert"><strong>Campi mancanti: </strong><span class="text">' + mancante + ' </span> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&nbsp &times;</span></button>';
-                //$("#controlloQuery").removeClass("hidden");
-                //$("#controlloQuery").append(elem);
+                var elem = '<div class="alert alert-danger" role="alert"><strong>Campi mancanti: </strong><span class="text">' + mancante + ' </span> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&nbsp &times;</span></button>';
+                $("#controlloQuery").removeClass("hidden");
+                $("#controlloQuery").append(elem);
             }
         }
 
-        err(dati);
+        //err(dati);
         var call = $.ajax({
             url: "http://<?php echo $base_url ?>/gen_documenti/post.php",
             method: "POST",

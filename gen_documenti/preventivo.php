@@ -457,6 +457,7 @@ if ((isset($post)) == true) {
     var sommaDDT = 0; <?php //echo $DDTarray ?>;
     var idRiga = <?php echo $idRiga ?>;
     var controlloClick = 1;
+    var codCliente = "<?php if (isset($codC)) { echo $codC; } ?>";
 
     function sommaDDT_ () {
         var valori = $("input[id*=inputDDT]");
@@ -602,6 +603,8 @@ if ((isset($post)) == true) {
             $("#citta").val(suggestion.data.cittaLC);
             $("#pr").val(suggestion.data.provLC);
             $("#cap").val(suggestion.data.capLC);
+            codCliente = suggestion.data.codC;
+
 
         }
     });
@@ -715,7 +718,8 @@ if ((isset($post)) == true) {
             totaleDovuto: $("#totaleDovuto").val(),
             esenteNum: $("#esenteNum").val(),
             esIvaDal: $("#esIvaDal").val(),
-            esIvaAl: $("#esIvaAl").val()
+            esIvaAl: $("#esIvaAl").val(),
+            codC : codCliente
         };
         if (controlloClick == 1) {
         var call = $.ajax({

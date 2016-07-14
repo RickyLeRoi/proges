@@ -14,17 +14,15 @@ if ((isset($_GET["page"])) && (isset($_GET["limit"]))) {
 // Queries
 if (isset($_GET["check"])) {
     $check = mysqli_real_escape_string($conndb, $_GET["check"]);
-    $query = "SELECT stampa_ndc.*, codC, nomeC, cognomeC
+    $query = "SELECT stampa_ndc.*
               FROM stampa_ndc
-              LEFT JOIN clienti ON stampa_ndc.Piva=clienti.PIVAC OR stampa_ndc.Piva=CFC
-              WHERE clienti.nomeC LIKE \"%" . $check . "%\" OR clienti.cognomeC LIKE \"%" . $check . "%\" OR  clienti.codC LIKE \"%" . $check . "%\"
-              ORDER BY stampa_ndc.id DESC LIMIT " . $limit . " OFFSET " . $page;
+              WHERE cliente LIKE \"%" . $check . "%\" OR codC LIKE \"%" . $check . "%\"
+              ORDER BY id DESC LIMIT " . $limit . " OFFSET " . $page;
 } else {
     $check = '';
-    $query = "SELECT stampa_ndc.*, codC, nomeC, cognomeC
+    $query = "SELECT stampa_ndc.*
               FROM stampa_ndc
-              LEFT JOIN clienti ON stampa_ndc.Piva=clienti.PIVAC OR stampa_ndc.Piva=CFC
-              ORDER BY stampa_ndc.id DESC";
+              ORDER BY id DESC";
 }
 
 $result = $conndb->query($query);
@@ -37,8 +35,7 @@ while ($ndc = $result->fetch_object()) {
         "data" => [
             "num" => $ndc->id,
             "codC" => $ndc->codC,
-            "nomeC" => $ndc->nomeC,
-            "cognomeC" => $ndc->cognomeC,
+            "cliente" => $ndc->cliente,
             "data_doc" => $ndc->data_doc,
             "pagamDescr" => $ndc->pagamento,
             "totale" => $ndc->tot_dovuto,

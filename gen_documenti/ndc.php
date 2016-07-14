@@ -511,6 +511,8 @@ if ((isset($post)) == true) {
     var sommaDDT = 0; <?php //echo $DDTarray ?>;
     var idRiga = <?php echo $idRiga ?>;
     var controlloClick = 1;
+    var codCliente = "<?php if (isset($codC)) { echo $codC; } ?>";
+
 
     $('.incolonnatore').devbridgeAutocomplete({
         dataType: "json",
@@ -643,6 +645,7 @@ if ((isset($post)) == true) {
             $("#citta").val(suggestion.data.cittaLC);
             $("#pr").val(suggestion.data.provLC);
             $("#cap").val(suggestion.data.capLC);
+            codCliente = suggestion.data.codC;
 
         }
     });
@@ -677,8 +680,9 @@ if ((isset($post)) == true) {
                     <tr onclick="cancellaFATT($(this))" id="fatt-` + suggestion.data.num +`">
                         <th colspan="4"><p>rif. FATTURA n° ` + suggestion.data.num + ` del ` + suggestion.data.data_doc +` </p></th>
                     </tr>`;
-
+                $("#nota").val(($("#nota").val()) + suggestion.data.note + "\n");
                 $(".qnt").before(fatt);
+
 
             }
             else {
@@ -783,7 +787,8 @@ function ciclaArray(variabile, nodo) {
             totaleDovuto: $("#totaleDovuto").val(),
             esenteNum: $("#esenteNum").val(),
             esIvaDal: $("#esIvaDal").val(),
-            esIvaAl: $("#esIvaAl").val()
+            esIvaAl: $("#esIvaAl").val(),
+            codC : codCliente
         };
 
         var call = $.ajax({

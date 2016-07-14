@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 include("DB/config.php");
 
 $query = "SELECT stampa_ddt.*, clienti.nomeC, clienti.cognomeC, clienti.codC
@@ -134,12 +134,12 @@ $queryb = "SELECT id
 var records,
     rowsReturned = 0;
     page = 0,
-    limit = 30;
+    limit = 20;
     suggerimento("");
 
         $("#filtro").keydown(function() {
             page = 0;
-            limit = 30;
+            limit = 20;
         });
     function suggerimento(runsVar) {
 
@@ -162,7 +162,7 @@ call.error(function (msg) {
                 var record = "" +
                     "<td>" + records[x].data.num + "</td>" +
                     "<td>" + records[x].data.codC + "</td>" +
-                    "<td>" + records[x].data.nomeC + " " + records[x].data.cognomeC + "</td>" +
+                    "<td>" + records[x].data.cliente + "</td>" +
                     "<td>" + records[x].data.data_doc + "</td>" +
                     "<td>" + records[x].data.data_rit + "</td>" +
                     "<td>" + records[x].data.data_consegna + "</td>" +

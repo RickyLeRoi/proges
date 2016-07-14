@@ -1,4 +1,4 @@
-<?php
+﻿<?php
     include("./DB/config.php");
 
 $query = "SELECT stampa_preventivo.*, clienti.nomeC, clienti.cognomeC, clienti.codC
@@ -159,7 +159,7 @@ Totale voci n. <span id="voci"></span>
     var records,
     rowsReturned = 0;
     page = 0,
-    limit = 30;
+    limit = 20;
     suggerimento("");
     function suggerimento(runsVar) {
 
@@ -179,7 +179,7 @@ Totale voci n. <span id="voci"></span>
                 var record = "" +
                     "<td>" + records[x].data.num + "</td>" +
                     "<td>" + records[x].data.codC + "</td>" +
-                    "<td>" + records[x].data.nomeC + " " + records[x].data.cognomeC + "</td>" +
+                    "<td>" + records[x].data.cliente + "</td>" +
                     "<td>" + records[x].data.data_doc + "</td>" +
                     "<td>" + records[x].data.pagamDescr + "</td>" +
                     "<td>" + records[x].data.totale + " €</td>" +

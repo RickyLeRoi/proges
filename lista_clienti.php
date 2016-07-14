@@ -44,6 +44,8 @@
             <th>Cellulare</th>
             <th>P.IVA</th>
             <th>Cod Fisc</th>
+            <th>Elimina</th>
+            <th>Modifica</th>
             <th>+ info</th>
         </tr>
         </thead>
@@ -210,8 +212,13 @@
                     }
                 )};
             td = document.createElement("td");
+            var elimina = "<td><a href='./function/azioni_cliente.php?elimina=" + records[id].codC + "'>Elimina</a></td>";
+            var modifica = "<td><a href='./function/azioni_cliente.php?modifica=" + records[id].codC + "'>Modifica</a></td>";
+            $(newTr).append(elimina);
+            $(newTr).append(modifica);
             td.appendChild(info);
             newTr.appendChild(td);
+
             document.getElementById('records').appendChild(newTr);
 
         }
