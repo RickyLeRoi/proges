@@ -1,2 +1,2 @@
 # proges
-gestionale provenzano
+gestionale tipografia
